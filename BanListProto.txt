@@ -1,0 +1,8 @@
+﻿# Examples are below.|You can ban a viewer, an IP, a DISK ID and a MAC address.
+# Viewers:|Assume Agent uses the viewer "Imprudence 1"
+# |- "Imprudence 1*" has no access
+34.206.39.153|This IP from 'junk.com' is banned.
+MAC:bacbf6d9e97686d38d6fc1c2b335f126|This sample MAC address is banned. 
+ID:bacbf6d9e97686d38d6fc1c2b335f1123|This sample DISK ID is banned. 
+http://griefergrid.com:8002|Ban this griefer grid (must start with http://)
+# Lines beginning with # is a comment and is ignored

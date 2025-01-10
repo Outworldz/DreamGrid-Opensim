@@ -1,0 +1,8 @@
+show users
+show uptime 
+show connections
+show circuits
+show pqueues
+show queues
+stats show
+monitor report

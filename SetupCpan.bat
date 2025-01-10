@@ -1,0 +1,13 @@
+perl -MCPAN -e File::BOM
+IF %ERRORLEVEL% NEQ 0 (
+ECHO %ERRORLEVEL%
+@rem EXIT /B %ERRORLEVEL%
+)
+
+call cpan Config::IniFiles
+IF %ERRORLEVEL% NEQ 0 (
+EXIT /B %ERRORLEVEL%
+)
+
+
+EXIT /B 

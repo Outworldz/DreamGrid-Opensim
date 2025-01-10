@@ -1,0 +1,4 @@
+;The file startup_commands.txt in OutworldzFiles\OpenSim\bin\ will  run region console commands once the simulator has finished starting up.
+; e.g. show stats. any lines that begin with ; are a comment and do not print
+
+show stats
