@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ClientStack.LindenUDP.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ClientStack.LindenUDP.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\UDP\obj\Release\OpenSim.Region.ClientStack.LindenUDP.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\UDP\obj\Release\OpenSim.Region.ClientStack.LindenUDP.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\UDP\obj\Release\OpenSim.Region.ClientStack.LindenUDP.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\UDP\obj\Release\OpenSim.Region.ClientStack.LindenUDP.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\UDP\obj\Release\OpenSim..EF41AC43.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\UDP\obj\Release\OpenSim.Region.ClientStack.LindenUDP.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\UDP\obj\Release\OpenSim.Region.ClientStack.LindenUDP.pdb

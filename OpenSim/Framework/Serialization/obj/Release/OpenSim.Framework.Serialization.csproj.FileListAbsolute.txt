@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Framework.Serialization.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Framework.Serialization.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim..D432B73A.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.pdb

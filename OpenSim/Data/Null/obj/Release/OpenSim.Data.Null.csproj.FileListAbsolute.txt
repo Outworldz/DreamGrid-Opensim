@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Data.Null.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Data.Null.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\Null\obj\Release\OpenSim.Data.Null.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\Null\obj\Release\OpenSim.Data.Null.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\Null\obj\Release\OpenSim.Data.Null.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\Null\obj\Release\OpenSim.Data.Null.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\Null\obj\Release\OpenSim..EEB375B5.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\Null\obj\Release\OpenSim.Data.Null.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\Null\obj\Release\OpenSim.Data.Null.pdb

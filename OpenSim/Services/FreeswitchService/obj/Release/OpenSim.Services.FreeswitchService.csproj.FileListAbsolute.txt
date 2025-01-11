@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.FreeswitchService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.FreeswitchService.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim..03A72AFF.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.pdb

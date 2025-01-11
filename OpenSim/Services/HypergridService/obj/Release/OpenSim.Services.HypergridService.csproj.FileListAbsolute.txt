@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.HypergridService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.HypergridService.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\HypergridService\obj\Release\OpenSim.Services.HypergridService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\HypergridService\obj\Release\OpenSim.Services.HypergridService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\HypergridService\obj\Release\OpenSim.Services.HypergridService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\HypergridService\obj\Release\OpenSim.Services.HypergridService.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\HypergridService\obj\Release\OpenSim..D3D45A49.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\HypergridService\obj\Release\OpenSim.Services.HypergridService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\HypergridService\obj\Release\OpenSim.Services.HypergridService.pdb

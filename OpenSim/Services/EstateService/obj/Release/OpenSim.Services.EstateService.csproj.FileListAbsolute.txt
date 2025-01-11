@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.EstateService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.EstateService.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim..69D880EA.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.pdb

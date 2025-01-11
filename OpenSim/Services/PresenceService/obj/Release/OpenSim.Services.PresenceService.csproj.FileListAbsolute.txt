@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.PresenceService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.PresenceService.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\PresenceService\obj\Release\OpenSim.Services.PresenceService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\PresenceService\obj\Release\OpenSim.Services.PresenceService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\PresenceService\obj\Release\OpenSim.Services.PresenceService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\PresenceService\obj\Release\OpenSim.Services.PresenceService.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\PresenceService\obj\Release\OpenSim..6EB6650E.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\PresenceService\obj\Release\OpenSim.Services.PresenceService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\PresenceService\obj\Release\OpenSim.Services.PresenceService.pdb

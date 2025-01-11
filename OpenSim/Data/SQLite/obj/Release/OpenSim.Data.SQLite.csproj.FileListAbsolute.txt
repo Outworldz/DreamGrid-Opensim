@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Data.SQLite.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Data.SQLite.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\SQLite\obj\Release\OpenSim.Data.SQLite.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\SQLite\obj\Release\OpenSim.Data.SQLite.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\SQLite\obj\Release\OpenSim.Data.SQLite.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\SQLite\obj\Release\OpenSim.Data.SQLite.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\SQLite\obj\Release\OpenSim..C9046069.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\SQLite\obj\Release\OpenSim.Data.SQLite.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\SQLite\obj\Release\OpenSim.Data.SQLite.pdb

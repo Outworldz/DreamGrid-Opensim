@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.Interfaces.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.Interfaces.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Interfaces\obj\Release\OpenSim.Services.Interfaces.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Interfaces\obj\Release\OpenSim.Services.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Interfaces\obj\Release\OpenSim.Services.Interfaces.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Interfaces\obj\Release\OpenSim.Services.Interfaces.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Interfaces\obj\Release\OpenSim..6DFE365E.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Interfaces\obj\Release\OpenSim.Services.Interfaces.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Interfaces\obj\Release\OpenSim.Services.Interfaces.pdb

@@ -1,0 +1,12 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ConsoleClient.exe
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ConsoleClient.runtimeconfig.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ConsoleClient.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ConsoleClient.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim.ConsoleClient.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim.ConsoleClient.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim.ConsoleClient.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim.ConsoleClient.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim..FA4CF257.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim.ConsoleClient.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim.ConsoleClient.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ConsoleClient\obj\Release\OpenSim.ConsoleClient.genruntimeconfig.cache

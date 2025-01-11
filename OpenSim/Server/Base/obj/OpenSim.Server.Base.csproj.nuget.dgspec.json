@@ -1,0 +1,549 @@
+{
+  "format": 1,
+  "restore": {
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj": {}
+  },
+  "projects": {
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj",
+        "projectName": "OpenSim.Data",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj",
+        "projectName": "OpenSim.Framework.Console",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj",
+        "projectName": "OpenSim.Framework.Monitoring",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj",
+        "projectName": "OpenSim.Framework",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj",
+        "projectName": "OpenSim.Framework.Servers.HttpServer",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\OpenSim.Framework.Servers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\OpenSim.Framework.Servers.csproj",
+        "projectName": "OpenSim.Framework.Servers",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\OpenSim.Framework.Servers.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj",
+        "projectName": "OpenSim.Server.Base",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
+              },
+              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\OpenSim.Framework.Servers.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\OpenSim.Framework.Servers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj",
+        "projectName": "SmartThreadPool",
+        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj",
+        "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
+        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

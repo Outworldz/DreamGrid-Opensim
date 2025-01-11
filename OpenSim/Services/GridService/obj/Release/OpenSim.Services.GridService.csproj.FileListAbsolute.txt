@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.GridService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.GridService.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\GridService\obj\Release\OpenSim.Services.GridService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\GridService\obj\Release\OpenSim.Services.GridService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\GridService\obj\Release\OpenSim.Services.GridService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\GridService\obj\Release\OpenSim.Services.GridService.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\GridService\obj\Release\OpenSim..EFA37BCA.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\GridService\obj\Release\OpenSim.Services.GridService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\GridService\obj\Release\OpenSim.Services.GridService.pdb

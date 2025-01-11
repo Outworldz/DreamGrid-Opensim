@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ClientStack.LindenCaps.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ClientStack.LindenCaps.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\Caps\obj\Release\OpenSim.Region.ClientStack.LindenCaps.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\Caps\obj\Release\OpenSim.Region.ClientStack.LindenCaps.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\Caps\obj\Release\OpenSim.Region.ClientStack.LindenCaps.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\Caps\obj\Release\OpenSim.Region.ClientStack.LindenCaps.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\Caps\obj\Release\OpenSim..2A8FE2D3.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\Caps\obj\Release\OpenSim.Region.ClientStack.LindenCaps.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ClientStack\Linden\Caps\obj\Release\OpenSim.Region.ClientStack.LindenCaps.pdb

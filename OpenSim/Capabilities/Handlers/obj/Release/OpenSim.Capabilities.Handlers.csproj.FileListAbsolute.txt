@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Capabilities.Handlers.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Capabilities.Handlers.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim..EA4F2E19.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.pdb

@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ApplicationPlugins.RegionModulesController.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ApplicationPlugins.RegionModulesController.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RegionModulesController\obj\Release\OpenSim.ApplicationPlugins.RegionModulesController.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RegionModulesController\obj\Release\OpenSim.ApplicationPlugins.RegionModulesController.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RegionModulesController\obj\Release\OpenSim.ApplicationPlugins.RegionModulesController.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RegionModulesController\obj\Release\OpenSim.ApplicationPlugins.RegionModulesController.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RegionModulesController\obj\Release\OpenSim..C433AE02.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RegionModulesController\obj\Release\OpenSim.ApplicationPlugins.RegionModulesController.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RegionModulesController\obj\Release\OpenSim.ApplicationPlugins.RegionModulesController.pdb

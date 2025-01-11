@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.AuthenticationService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.AuthenticationService.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AuthenticationService\obj\Release\OpenSim.Services.AuthenticationService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AuthenticationService\obj\Release\OpenSim.Services.AuthenticationService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AuthenticationService\obj\Release\OpenSim.Services.AuthenticationService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AuthenticationService\obj\Release\OpenSim.Services.AuthenticationService.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AuthenticationService\obj\Release\OpenSim..506F0D61.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AuthenticationService\obj\Release\OpenSim.Services.AuthenticationService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AuthenticationService\obj\Release\OpenSim.Services.AuthenticationService.pdb

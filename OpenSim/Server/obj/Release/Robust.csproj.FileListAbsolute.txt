@@ -1,0 +1,12 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Robust.exe
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Robust.runtimeconfig.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Robust.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Robust.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.csproj.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\obj\Release\Robust.genruntimeconfig.cache

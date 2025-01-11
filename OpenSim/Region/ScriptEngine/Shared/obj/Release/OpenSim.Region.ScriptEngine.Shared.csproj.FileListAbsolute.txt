@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ScriptEngine.Shared.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ScriptEngine.Shared.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\obj\Release\OpenSim.Region.ScriptEngine.Shared.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\obj\Release\OpenSim.Region.ScriptEngine.Shared.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\obj\Release\OpenSim.Region.ScriptEngine.Shared.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\obj\Release\OpenSim.Region.ScriptEngine.Shared.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\obj\Release\OpenSim..31CBD32B.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\obj\Release\OpenSim.Region.ScriptEngine.Shared.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\obj\Release\OpenSim.Region.ScriptEngine.Shared.pdb

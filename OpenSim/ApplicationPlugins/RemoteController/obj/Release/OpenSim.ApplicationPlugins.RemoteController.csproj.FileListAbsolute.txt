@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ApplicationPlugins.RemoteController.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.ApplicationPlugins.RemoteController.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RemoteController\obj\Release\OpenSim.ApplicationPlugins.RemoteController.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RemoteController\obj\Release\OpenSim.ApplicationPlugins.RemoteController.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RemoteController\obj\Release\OpenSim.ApplicationPlugins.RemoteController.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RemoteController\obj\Release\OpenSim.ApplicationPlugins.RemoteController.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RemoteController\obj\Release\OpenSim..01D95902.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RemoteController\obj\Release\OpenSim.ApplicationPlugins.RemoteController.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\ApplicationPlugins\RemoteController\obj\Release\OpenSim.ApplicationPlugins.RemoteController.pdb

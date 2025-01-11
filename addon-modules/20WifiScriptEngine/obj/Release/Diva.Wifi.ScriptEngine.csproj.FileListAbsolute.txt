@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Diva.Wifi.ScriptEngine.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Diva.Wifi.ScriptEngine.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\20WifiScriptEngine\obj\Release\Diva.Wifi.ScriptEngine.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\20WifiScriptEngine\obj\Release\Diva.Wifi.ScriptEngine.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\20WifiScriptEngine\obj\Release\Diva.Wifi.ScriptEngine.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\20WifiScriptEngine\obj\Release\Diva.Wifi.ScriptEngine.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\20WifiScriptEngine\obj\Release\Diva.Wif.26028019.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\20WifiScriptEngine\obj\Release\Diva.Wifi.ScriptEngine.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\20WifiScriptEngine\obj\Release\Diva.Wifi.ScriptEngine.pdb

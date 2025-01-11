@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Server.Base.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Server.Base.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\Base\obj\Release\OpenSim.Server.Base.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\Base\obj\Release\OpenSim.Server.Base.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\Base\obj\Release\OpenSim.Server.Base.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\Base\obj\Release\OpenSim.Server.Base.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\Base\obj\Release\OpenSim..8531DD9D.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\Base\obj\Release\OpenSim.Server.Base.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Server\Base\obj\Release\OpenSim.Server.Base.pdb

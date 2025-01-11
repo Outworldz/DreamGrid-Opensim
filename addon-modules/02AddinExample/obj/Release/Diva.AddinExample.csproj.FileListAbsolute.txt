@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Diva.AddinExample.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Diva.AddinExample.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\02AddinExample\obj\Release\Diva.AddinExample.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\02AddinExample\obj\Release\Diva.AddinExample.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\02AddinExample\obj\Release\Diva.AddinExample.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\02AddinExample\obj\Release\Diva.AddinExample.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\02AddinExample\obj\Release\Diva.Add.37AAB764.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\02AddinExample\obj\Release\Diva.AddinExample.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\02AddinExample\obj\Release\Diva.AddinExample.pdb

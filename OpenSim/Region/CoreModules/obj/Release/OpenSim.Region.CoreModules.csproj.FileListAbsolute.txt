@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.CoreModules.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.CoreModules.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\CoreModules\obj\Release\OpenSim.Region.CoreModules.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\CoreModules\obj\Release\OpenSim.Region.CoreModules.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\CoreModules\obj\Release\OpenSim.Region.CoreModules.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\CoreModules\obj\Release\OpenSim.Region.CoreModules.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\CoreModules\obj\Release\OpenSim..7CF75CC8.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\CoreModules\obj\Release\OpenSim.Region.CoreModules.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\CoreModules\obj\Release\OpenSim.Region.CoreModules.pdb

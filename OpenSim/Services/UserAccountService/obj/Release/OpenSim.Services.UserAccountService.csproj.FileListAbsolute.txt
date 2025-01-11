@@ -1,0 +1,9 @@
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.UserAccountService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Services.UserAccountService.pdb
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\UserAccountService\obj\Release\OpenSim.Services.UserAccountService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\UserAccountService\obj\Release\OpenSim.Services.UserAccountService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\UserAccountService\obj\Release\OpenSim.Services.UserAccountService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\UserAccountService\obj\Release\OpenSim.Services.UserAccountService.sourcelink.json
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\UserAccountService\obj\Release\OpenSim..1860034C.Up2Date
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\UserAccountService\obj\Release\OpenSim.Services.UserAccountService.dll
+O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\UserAccountService\obj\Release\OpenSim.Services.UserAccountService.pdb
