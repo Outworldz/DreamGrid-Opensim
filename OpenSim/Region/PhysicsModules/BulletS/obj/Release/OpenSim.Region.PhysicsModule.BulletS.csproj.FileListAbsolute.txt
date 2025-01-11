@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModule.BulletS.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModule.BulletS.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\BulletS\obj\Release\OpenSim.Region.PhysicsModule.BulletS.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\BulletS\obj\Release\OpenSim.Region.PhysicsModule.BulletS.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\BulletS\obj\Release\OpenSim.Region.PhysicsModule.BulletS.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\BulletS\obj\Release\OpenSim.Region.PhysicsModule.BulletS.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\BulletS\obj\Release\OpenSim..143F7554.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\BulletS\obj\Release\OpenSim.Region.PhysicsModule.BulletS.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\BulletS\obj\Release\OpenSim.Region.PhysicsModule.BulletS.pdb

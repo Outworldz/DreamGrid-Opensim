@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ScriptEngine.YEngine.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ScriptEngine.YEngine.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\YEngine\obj\Release\OpenSim.Region.ScriptEngine.YEngine.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\YEngine\obj\Release\OpenSim.Region.ScriptEngine.YEngine.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\YEngine\obj\Release\OpenSim.Region.ScriptEngine.YEngine.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\YEngine\obj\Release\OpenSim.Region.ScriptEngine.YEngine.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\YEngine\obj\Release\OpenSim..BFB17214.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\YEngine\obj\Release\OpenSim.Region.ScriptEngine.YEngine.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\YEngine\obj\Release\OpenSim.Region.ScriptEngine.YEngine.pdb

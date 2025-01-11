@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModule.ubOdeMeshing.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModule.ubOdeMeshing.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ubOdeMeshing\obj\Release\OpenSim.Region.PhysicsModule.ubOdeMeshing.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ubOdeMeshing\obj\Release\OpenSim.Region.PhysicsModule.ubOdeMeshing.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ubOdeMeshing\obj\Release\OpenSim.Region.PhysicsModule.ubOdeMeshing.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ubOdeMeshing\obj\Release\OpenSim.Region.PhysicsModule.ubOdeMeshing.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ubOdeMeshing\obj\Release\OpenSim..BFB03FFA.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ubOdeMeshing\obj\Release\OpenSim.Region.PhysicsModule.ubOdeMeshing.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ubOdeMeshing\obj\Release\OpenSim.Region.PhysicsModule.ubOdeMeshing.pdb

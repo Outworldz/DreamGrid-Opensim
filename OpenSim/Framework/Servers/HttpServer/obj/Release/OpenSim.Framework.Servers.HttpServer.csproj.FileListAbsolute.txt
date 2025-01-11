@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Framework.Servers.HttpServer.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Framework.Servers.HttpServer.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Servers\HttpServer\obj\Release\OpenSim.Framework.Servers.HttpServer.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Servers\HttpServer\obj\Release\OpenSim.Framework.Servers.HttpServer.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Servers\HttpServer\obj\Release\OpenSim.Framework.Servers.HttpServer.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Servers\HttpServer\obj\Release\OpenSim.Framework.Servers.HttpServer.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Servers\HttpServer\obj\Release\OpenSim..332909C8.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Servers\HttpServer\obj\Release\OpenSim.Framework.Servers.HttpServer.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\Servers\HttpServer\obj\Release\OpenSim.Framework.Servers.HttpServer.pdb

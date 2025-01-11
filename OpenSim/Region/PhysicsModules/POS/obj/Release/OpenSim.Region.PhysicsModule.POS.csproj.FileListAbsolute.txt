@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModule.POS.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModule.POS.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\POS\obj\Release\OpenSim.Region.PhysicsModule.POS.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\POS\obj\Release\OpenSim.Region.PhysicsModule.POS.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\POS\obj\Release\OpenSim.Region.PhysicsModule.POS.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\POS\obj\Release\OpenSim.Region.PhysicsModule.POS.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\POS\obj\Release\OpenSim..3FA78919.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\POS\obj\Release\OpenSim.Region.PhysicsModule.POS.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\POS\obj\Release\OpenSim.Region.PhysicsModule.POS.pdb

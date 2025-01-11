@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Framework.AssetLoader.Filesystem.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Framework.AssetLoader.Filesystem.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\AssetLoader\Filesystem\obj\Release\OpenSim.Framework.AssetLoader.Filesystem.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\AssetLoader\Filesystem\obj\Release\OpenSim.Framework.AssetLoader.Filesystem.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\AssetLoader\Filesystem\obj\Release\OpenSim.Framework.AssetLoader.Filesystem.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\AssetLoader\Filesystem\obj\Release\OpenSim.Framework.AssetLoader.Filesystem.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\AssetLoader\Filesystem\obj\Release\OpenSim..534502B3.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\AssetLoader\Filesystem\obj\Release\OpenSim.Framework.AssetLoader.Filesystem.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Framework\AssetLoader\Filesystem\obj\Release\OpenSim.Framework.AssetLoader.Filesystem.pdb

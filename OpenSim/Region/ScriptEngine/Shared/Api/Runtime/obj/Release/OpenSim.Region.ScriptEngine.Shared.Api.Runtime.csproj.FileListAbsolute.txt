@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\Api\Runtime\obj\Release\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\Api\Runtime\obj\Release\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\Api\Runtime\obj\Release\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\Api\Runtime\obj\Release\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\Api\Runtime\obj\Release\OpenSim..58BC6493.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\Api\Runtime\obj\Release\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\ScriptEngine\Shared\Api\Runtime\obj\Release\OpenSim.Region.ScriptEngine.Shared.Api.Runtime.pdb

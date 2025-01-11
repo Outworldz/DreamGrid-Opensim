@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ConvexDecompositionDotNet\obj\Release\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ConvexDecompositionDotNet\obj\Release\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ConvexDecompositionDotNet\obj\Release\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ConvexDecompositionDotNet\obj\Release\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ConvexDecompositionDotNet\obj\Release\OpenSim..3CE0D60F.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ConvexDecompositionDotNet\obj\Release\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\ConvexDecompositionDotNet\obj\Release\OpenSim.Region.PhysicsModules.ConvexDecompositionDotNet.pdb

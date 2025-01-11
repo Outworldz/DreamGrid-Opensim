@@ -1,7 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\SmartThreadPool.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\SmartThreadPool.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\ThirdParty\SmartThreadPool\obj\Release\SmartThreadPool.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\ThirdParty\SmartThreadPool\obj\Release\SmartThreadPool.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\ThirdParty\SmartThreadPool\obj\Release\SmartThreadPool.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\ThirdParty\SmartThreadPool\obj\Release\SmartThreadPool.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\ThirdParty\SmartThreadPool\obj\Release\SmartThreadPool.pdb

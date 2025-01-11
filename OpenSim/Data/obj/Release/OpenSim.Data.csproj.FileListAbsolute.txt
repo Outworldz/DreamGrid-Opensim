@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Data.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Data.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\obj\Release\OpenSim.Data.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\obj\Release\OpenSim.Data.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\obj\Release\OpenSim.Data.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\obj\Release\OpenSim.Data.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\obj\Release\OpenSim..B28A715D.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\obj\Release\OpenSim.Data.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Data\obj\Release\OpenSim.Data.pdb

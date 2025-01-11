@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModules.SharedBase.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSim.Region.PhysicsModules.SharedBase.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\SharedBase\obj\Release\OpenSim.Region.PhysicsModules.SharedBase.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\SharedBase\obj\Release\OpenSim.Region.PhysicsModules.SharedBase.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\SharedBase\obj\Release\OpenSim.Region.PhysicsModules.SharedBase.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\SharedBase\obj\Release\OpenSim.Region.PhysicsModules.SharedBase.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\SharedBase\obj\Release\OpenSim..5A908EF4.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\SharedBase\obj\Release\OpenSim.Region.PhysicsModules.SharedBase.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\PhysicsModules\SharedBase\obj\Release\OpenSim.Region.PhysicsModules.SharedBase.pdb

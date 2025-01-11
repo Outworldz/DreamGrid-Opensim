@@ -1,9 +1,0 @@
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\WhoGotWhat\obj\Release\WhoGotWhat.csproj.AssemblyReference.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\WhoGotWhat\obj\Release\WhoGotWhat.GeneratedMSBuildEditorConfig.editorconfig
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\WhoGotWhat\obj\Release\WhoGotWhat.csproj.CoreCompileInputs.cache
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\WhoGotWhat\obj\Release\WhoGotWhat.sourcelink.json
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\WhoGotWhat.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\WhoGotWhat.pdb
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\WhoGotWhat\obj\Release\WhoGotWhat.csproj.Up2Date
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\WhoGotWhat\obj\Release\WhoGotWhat.dll
-O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\WhoGotWhat\obj\Release\WhoGotWhat.pdb
