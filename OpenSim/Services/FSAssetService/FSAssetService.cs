@@ -353,7 +353,7 @@ namespace OpenSim.Services.FSAssetService
                     int totalTicks = System.Environment.TickCount - tickCount;
                     if (totalTicks > 0) // Wrap?
                     {
-                        m_log.DebugFormat("[FSASSETS]: Write cycle complete, {0} files, {1} ticks, avg {2:F2}", files.Length, totalTicks, (double)totalTicks / (double)files.Length);
+                        m_log.InfoFormat("[FSASSETS]: Write cycle complete, {0} files, {1} ticks, avg {2:F2}", files.Length, totalTicks, (double)totalTicks / (double)files.Length);
                     }
                 }
 

@@ -41,6 +41,8 @@ using OpenSim.Framework;
 using OpenSim.Region.Framework.Interfaces;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Services.Interfaces;
+using System.Net.Http;
+using System.Threading;
 
 namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
 {
@@ -79,8 +81,7 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
                 {
                     m_channelNotify = m_config.GetInt("channel_notify", m_channelNotify);
                     m_disable_logins = m_config.GetBoolean("login_disable", false);
-                    m_uri = m_config.GetString("alert_uri",string.Empty); 
-                    m_log.InfoFormat("[RegionReady]: URL={0}", m_uri );
+                    m_uri = m_config.GetString("alert_uri",string.Empty);
                 }
             }
         }
@@ -100,7 +101,7 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
 
             m_scene.EventManager.OnOarFileLoaded += OnOarFileLoaded;
 
-            m_log.InfoFormat("[RegionReady]: Enabled for region {0}", scene.RegionInfo.RegionName);
+            m_log.DebugFormat("[RegionReady]: Enabled for region {0}", scene.RegionInfo.RegionName);
 
             if (m_disable_logins)
             {
@@ -156,7 +157,7 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
 
             if (m_firstEmptyCompileQueue || m_oarFileLoading)
             {
-                OSChatMessage c = new OSChatMessage
+                OSChatMessage c = new()
                 {
                     From = "RegionReady",
                     Message = (m_firstEmptyCompileQueue ? "server_startup," : ("oar_file_load," + (m_lastOarLoadedOk ? "1," : "0,"))) +
@@ -170,7 +171,7 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
                 m_oarFileLoading = false;
                 m_scene.Backup(false);
 
-                m_log.InfoFormat("[RegionReady]: Region \"{0}\" is ready: \"{1}\" on channel {2}",
+                m_log.DebugFormat("[RegionReady]: Region \"{0}\" is ready: \"{1}\" on channel {2}",
                                  m_scene.RegionInfo.RegionName, c.Message, m_channelNotify);
 
                 m_scene.EventManager.TriggerOnChatBroadcast(this, c);
@@ -183,17 +184,14 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
         {
             m_oarFileLoading = true;
 
-
             if (message.Length == 0)
             {
                 m_lastOarLoadedOk = true;
-                RRAlert("load");
             }
             else
             {
                 m_log.WarnFormat("[RegionReady]: Oar file load errors: {0}", message);
                 m_lastOarLoadedOk = false;
-                RRAlert("notloaded");
             }
         }
 
@@ -217,8 +215,8 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
             {
                 m_scene.LoginsEnabled = true;
 
-                 m_log.InfoFormat("[RegionReady]: Logins enabled for {0}, Oar {1}",
-                                 m_scene.RegionInfo.RegionName, m_oarFileLoading.ToString());
+                // m_log.InfoFormat("[RegionReady]: Logins enabled for {0}, Oar {1}",
+                //                 m_scene.RegionInfo.RegionName, m_oarFileLoading.ToString());
 
                 // Putting this out to console to make it eye-catching for people who are running OpenSimulator
                 // without info log messages enabled.  Making this a warning is arguably misleading since it isn't a
@@ -264,39 +262,43 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
 
         public void RRAlert(string status)
         {
-            string request_method = "POST";
-            string content_type = "application/json";
-            OSDMap RRAlert = new OSDMap();
+            OSDMap RRAlert = new()
+            {
+                ["alert"] = "region_ready",
+                ["login"] = status,
+                ["region_name"] = m_scene.RegionInfo.RegionName,
+                ["region_id"] = m_scene.RegionInfo.RegionID
+            };
 
-            RRAlert["alert"] = "region_ready";
-            RRAlert["login"] = status;
-            RRAlert["region_name"] = m_scene.RegionInfo.RegionName;
-            RRAlert["region_id"] = m_scene.RegionInfo.RegionID;
-
-            string strBuffer = "";
-            byte[] buffer = new byte[1];
+            byte[] buffer;
             try
             {
-                strBuffer = OSDParser.SerializeJsonString(RRAlert);
-                Encoding str = Util.UTF8;
-                buffer = str.GetBytes(strBuffer);
-                m_log.DebugFormat("[RegionReady]: Alert: {0}", strBuffer);
+                buffer = OSDParser.SerializeJsonToBytes(RRAlert); ;
             }
             catch (Exception e)
             {
                 m_log.WarnFormat("[RegionReady]: Exception thrown on alert: {0}", e.Message);
+                return;
             }
 
-            WebRequest request = WebRequest.Create(m_uri);
-            request.Method = request_method;
-            request.ContentType = content_type;
-
-            Stream os = null;
+            HttpResponseMessage responseMessage = null;
+            HttpRequestMessage request = null;
+            HttpClient client = null;
             try
             {
-                request.ContentLength = buffer.Length;
-                os = request.GetRequestStream();
-                os.Write(buffer, 0, strBuffer.Length);
+                client = WebUtil.GetNewGlobalHttpClient(-1);
+
+                request = new(HttpMethod.Post, m_uri);
+                request.Headers.ExpectContinue = false;
+                request.Headers.TransferEncodingChunked = false;
+                request.Headers.TryAddWithoutValidation("Connection", "close");
+
+                request.Content = new ByteArrayContent(buffer);
+                request.Content.Headers.TryAddWithoutValidation("Content-Type", "application/json");
+                request.Content.Headers.TryAddWithoutValidation("Content-Length", buffer.Length.ToString());
+
+                responseMessage = client.Send(request, HttpCompletionOption.ResponseContentRead);
+                responseMessage.EnsureSuccessStatusCode();
             }
             catch(Exception e)
             {
@@ -304,8 +306,9 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
             }
             finally
             {
-                if (os != null)
-                    os.Dispose();
+                request?.Dispose();
+                responseMessage?.Dispose();
+                client?.Dispose();
             }
         }
     }

@@ -67,7 +67,7 @@ namespace OpenSim.Region.Framework.Scenes
             //m_log.Info("[INTER]: " + debugRegionName + ": SceneCommunicationService: Sending InterRegion Notification that region is up " + region.RegionName);
             if (neighbourService == null)
             {
-                m_log.ErrorFormat("{0} No neighbour service provided for region {1} to inform neighbours of status", LogHeader, m_scene.Name);
+                m_log.ErrorFormat("{0} No neighbour service provided for region {1} to inform neigbhours of status", LogHeader, m_scene.Name);
                 return;
             }
 

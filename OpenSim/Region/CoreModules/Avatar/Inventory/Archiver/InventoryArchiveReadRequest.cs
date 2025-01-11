@@ -44,15 +44,11 @@ using OpenSim.Region.Framework.Scenes;
 using OpenSim.Region.Framework.Scenes.Serialization;
 using OpenSim.Region.Framework.Interfaces;
 using OpenSim.Services.Interfaces;
-using Nini.Config;
 
 namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
 {
     public class InventoryArchiveReadRequest
     {
-
-        
-
         private static readonly ILog m_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
@@ -129,7 +125,6 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
         protected Dictionary<UUID, UUID> m_itemIDs = new Dictionary<UUID, UUID>();
         protected List<InventoryItemBase> m_invLinks = new List<InventoryItemBase>();
         protected Dictionary<UUID, InventoryNodeBase> m_invLinksFolders = new Dictionary<UUID, InventoryNodeBase>();
-
 
         public InventoryArchiveReadRequest(
             IInventoryService inv, IAssetService assets, IUserAccountService uacc, UserAccount userInfo, string invPath, string loadPath, bool merge)
@@ -240,7 +235,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
                 //Alicia: When this is called by LibraryModule or Tests, m_module will be null as event is not required
                 if(m_module != null)
                     m_module.TriggerInventoryArchiveLoaded(m_id, true, m_userInfo, m_invPath, m_loadStream, reportedException, m_successfulItemRestores);
-                
+
                 return m_loadedNodes;
             }
             catch(Exception Ex)
@@ -437,8 +432,6 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
             }
         }
 
-
-
         /// <summary>
         /// Load an item from the archive
         /// </summary>
@@ -509,7 +502,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
         {
             //IRegionSerialiser serialiser = scene.RequestModuleInterface<IRegionSerialiser>();
             // Right now we're nastily obtaining the UUID from the filename
-            string filename = assetPath.Remove(0, ArchiveConstants.ASSETS_PATH.Length);
+            string filename = assetPath[ArchiveConstants.ASSETS_PATH.Length..];
             int indx = filename.LastIndexOf(ArchiveConstants.ASSET_EXTENSION_SEPARATOR);
 
             if (indx < 32)
@@ -521,7 +514,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
                 return false;
             }
 
-            string extension = filename.Substring(indx);
+            string extension = filename[indx..];
             if (!ArchiveConstants.EXTENSION_TO_ASSET_TYPE.TryGetValue(extension, out sbyte assetType))
             {
                 m_log.ErrorFormat(
@@ -647,7 +640,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
                         m_loadedNodes[foundFolder.ID] = item;
                 }
             }
-            
+
             m_inventoryNodesLoaded = true;
         }
 

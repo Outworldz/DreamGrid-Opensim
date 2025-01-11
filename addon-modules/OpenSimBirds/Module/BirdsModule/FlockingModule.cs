@@ -397,21 +397,7 @@ namespace Flocking
             AddCommand("framerate", "num", "[debugging] only update birds every <num> frames", HandleSetFrameRateCmd);
         }
 
-        private void RegisterScriptFunctions()
-        {
-            IScriptModuleComms comms = m_scene.RequestModuleInterface<IScriptModuleComms>();
-            if (comms != null)
-            {
-                comms.RegisterScriptInvocation(this, "birdsGetStats");
-
-            }
-        }
-
-        private string birdsGetStats(UUID host, UUID script, string stat)
-        {
-            return ""; //currently a placeholder
-        }
-		
+      
 		private bool ShouldHandleCmd ()
 		{
             if (!(m_console.ConsoleScene == null || m_console.ConsoleScene == m_scene)) {

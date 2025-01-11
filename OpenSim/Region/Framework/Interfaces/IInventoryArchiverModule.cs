@@ -81,7 +81,7 @@ namespace OpenSim.Region.Framework.Interfaces
         /// <param name="invPath">The inventory path in which to place the loaded folders and items</param>
         /// <param name="loadStream">The stream from which the inventory archive will be loaded</param>
         /// <returns>true if the first stage of the operation succeeded, false otherwise</returns>
-        bool DearchiveInventory(UUID id, string firstName, string lastName, string invPath,  Stream loadStream);
+        bool DearchiveInventory(UUID id, string firstName, string lastName, string invPath, Stream loadStream);
 
         /// <summary>
         /// Dearchive a user's inventory folder from the given stream
@@ -94,7 +94,7 @@ namespace OpenSim.Region.Framework.Interfaces
         /// the loaded IAR with existing folders where possible.</param>
         /// <returns>true if the first stage of the operation succeeded, false otherwise</returns>
         bool DearchiveInventory(
-            UUID id, string firstName, string lastName, string invPath,  Stream loadStream,
+            UUID id, string firstName, string lastName, string invPath, Stream loadStream,
             Dictionary<string, object> options);
 
         /// <summary>

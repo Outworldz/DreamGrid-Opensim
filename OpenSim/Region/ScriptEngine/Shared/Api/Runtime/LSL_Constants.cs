@@ -35,7 +35,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
     public partial class ScriptBaseClass
     {
         // SCRIPTS CONSTANTS
-        public static readonly LSLInteger OS_APIVERSION = 22;
+        public static readonly LSLInteger OS_APIVERSION = 23;
 
         public static readonly LSLInteger TRUE = 1;
         public static readonly LSLInteger FALSE = 0;
@@ -221,6 +221,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int INVENTORY_ANIMATION = 20;
         public const int INVENTORY_GESTURE = 21;
         public const int INVENTORY_SETTING = 56;
+        public const int INVENTORY_MATERIAL = 57;
 
         public const int ATTACH_CHEST = 1;
         public const int ATTACH_HEAD = 2;
@@ -379,6 +380,8 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int CHANGED_REGION_RESTART = 1024;
         public const int CHANGED_REGION_START = 1024; //LL Changed the constant from CHANGED_REGION_RESTART
         public const int CHANGED_MEDIA = 2048;
+        public const int CHANGED_RENDER_MATERIAL = 0x1000; //4096
+
         //ApiDesc opensim specific
         public const int CHANGED_ANIMATION = 16384;
         //ApiDesc opensim specific
@@ -433,7 +436,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int PRIM_FULLBRIGHT = 20;
         public const int PRIM_FLEXIBLE = 21;
         public const int PRIM_TEXGEN = 22;
-        public const int PRIM_POINT_LIGHT = 23; // Huh?
+        public const int PRIM_POINT_LIGHT = 23;
         //ApiDesc not supported
         public const int PRIM_CAST_SHADOWS = 24; // Not implemented, here for completeness sake
         public const int PRIM_GLOW = 25;
@@ -457,6 +460,13 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int PRIM_SIT_TARGET = 41;
         public const int PRIM_PROJECTOR = 42;
 
+        public const int PRIM_REFLECTION_PROBE = 44;
+
+        public const int PRIM_GLTF_NORMAL = 45;
+        public const int PRIM_GLTF_EMISSIVE = 46;
+        public const int PRIM_GLTF_METALLIC_ROUGHNESS = 47;
+        public const int PRIM_GLTF_BASE_COLOR = 48;
+        public const int PRIM_RENDER_MATERIAL = 49;
 
         // parameters
 
@@ -518,6 +528,8 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int PRIM_SCULPT_TYPE_TORUS = 2;
         public const int PRIM_SCULPT_TYPE_PLANE = 3;
         public const int PRIM_SCULPT_TYPE_CYLINDER = 4;
+        public const int PRIM_SCULPT_TYPE_MESH = 5;
+        public const int PRIM_SCULPT_FLAG_ANIMESH = 0x20;
         public const int PRIM_SCULPT_FLAG_INVERT = 0x40;
         public const int PRIM_SCULPT_FLAG_MIRROR = 0x80;
         //ApiDesc Auxiliar to clear flags keeping scultp type
@@ -526,6 +538,11 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int PRIM_PHYSICS_SHAPE_PRIM = 0;
         public const int PRIM_PHYSICS_SHAPE_NONE = 1;
         public const int PRIM_PHYSICS_SHAPE_CONVEX = 2;
+
+        // PRIM_REFLECTION_PROBE flags
+        public const int PRIM_REFLECTION_PROBE_BOX = 1; // 1
+        public const int PRIM_REFLECTION_PROBE_DYNAMIC = 2; // 2
+        public const int PRIM_REFLECTION_PROBE_MIRROR = 4; // 2
 
         public const int PROFILE_NONE = 0;
         public const int PROFILE_SCRIPT_MEMORY = 1;
@@ -596,6 +613,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
 
         public const string NULL_KEY = "00000000-0000-0000-0000-000000000000";
         public const string EOF = "\n\n\n";
+        public const string NAK = "\n\u0015\n";
         public const double PI = 3.14159274f;
         public const double TWO_PI = 6.28318548f;
         public const double PI_BY_TWO = 1.57079637f;
@@ -742,12 +760,22 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int PARCEL_DETAILS_AREA = 4;
         public const int PARCEL_DETAILS_ID = 5;
         public const int PARCEL_DETAILS_SEE_AVATARS = 6;
-        public const int PARCEL_DETAILS_ANY_AVATAR_SOUNDS = 7;
-        public const int PARCEL_DETAILS_GROUP_SOUNDS = 8;
+        public const int PARCEL_DETAILS_PRIM_CAPACITY = 7;
+        public const int PARCEL_DETAILS_PRIM_USED = 8;
+        public const int PARCEL_DETAILS_LANDING_POINT = 9;
+        public const int PARCEL_DETAILS_LANDING_LOOKAT = 10;
+        public const int PARCEL_DETAILS_TP_ROUTING = 11;
+        public const int PARCEL_DETAILS_FLAGS = 12;
+        public const int PARCEL_DETAILS_SCRIPT_DANGER = 13;
+
         // constants for llGetParcelDetails os specific
         public const int PARCEL_DETAILS_DWELL = 64;
+        public const int PARCEL_DETAILS_GETCLAIMDATE = 65;
+        public const int PARCEL_DETAILS_GEOMETRICCENTER = 66;
 
         //osSetParcelDetails
+        public const int PARCEL_DETAILS_ANY_AVATAR_SOUNDS = 7;
+        public const int PARCEL_DETAILS_GROUP_SOUNDS = 8;
         public const int PARCEL_DETAILS_CLAIMDATE = 10;
 
         // constants for llSetClickAction
@@ -760,6 +788,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int CLICK_ACTION_PLAY = 5;
         public const int CLICK_ACTION_OPEN_MEDIA = 6;
         public const int CLICK_ACTION_ZOOM = 7;
+        public const int CLICK_ACTION_DISABLED = 8;
 
         // constants for the llDetectedTouch* functions
         public const int TOUCH_INVALID_FACE = -1;
@@ -1001,5 +1030,50 @@ namespace OpenSim.Region.ScriptEngine.Shared.ScriptBase
         public const int NPCLOOKAT_FOCUS = 8;
         public const int NPCLOOKAT_MOUSELOOK = 9;
         public const int NPCLOOKAT_CLEAR = 10;
+
+        // future ?? linkset_data event
+        public const int LINKSETDATA_RESET = 0;
+        public const int LINKSETDATA_UPDATE = 1;
+        public const int LINKSETDATA_DELETE = 2;
+        public const int LINKSETDATA_MULTIDELETE = 3;
+
+        public const int LINKSETDATA_OK = 0;
+        public const int LINKSETDATA_EMEMORY = 1;
+        public const int LINKSETDATA_ENOKEY = 2;
+        public const int LINKSETDATA_EPROTECTED = 3;
+        public const int LINKSETDATA_NOTFOUND = 4;
+        public const int LINKSETDATA_NOUPDATE = 5;
+
+        //llLinkPlaySound flags
+        public const int SOUND_PLAY = 0;
+        public const int SOUND_LOOP = 1;
+        public const int SOUND_TRIGGER = 2;
+        public const int SOUND_SYNC = 4;
+
+        //llRezObjectWithParams Parameters
+        public const int REZ_PARAM = 0;
+        public const int REZ_FLAGS = 1;
+
+        //rez flags vlaues
+        public const int REZ_FLAG_TEMP = 0x0001;
+        public const int REZ_FLAG_PHYSICAL = 0x0002;
+        public const int REZ_FLAG_PHANTOM = 0x0004;
+        public const int REZ_FLAG_DIE_ON_COLLIDE = 0x0008;
+        public const int REZ_FLAG_DIE_ON_NOENTRY = 0x0010;
+        public const int REZ_FLAG_NO_COLLIDE_OWNER = 0x0020;
+        public const int REZ_FLAG_NO_COLLIDE_FAMILY = 0x0040;
+        public const int REZ_FLAG_BLOCK_GRAB_OBJECT = 0x0080;
+
+        public const int REZ_POS = 2;
+        public const int REZ_ROT = 3;
+        public const int REZ_VEL = 4;
+        public const int REZ_ACCEL = 5;
+        public const int REZ_OMEGA = 7;
+        public const int REZ_DAMAGE = 8;
+        public const int REZ_SOUND = 9;
+        public const int REZ_SOUND_COLLIDE = 10;
+        public const int REZ_LOCK_AXES = 11;
+        public const int REZ_DAMAGE_TYPE = 12;
+        public const int REZ_PARAM_STRING = 13;
     }
 }

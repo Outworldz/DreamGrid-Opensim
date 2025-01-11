@@ -197,8 +197,8 @@ namespace OpenSim.Framework.Monitoring
                     // m_log.DebugFormat(
                     //    "[WATCHDOG]: Stop: Removing thread {0}, ID {1}", twi.Thread.Name, twi.Thread.ManagedThreadId);
 
-                    if(t.IsAlive)
-                        t.Abort();
+                    //if(t.IsAlive)
+                    //    t.Abort();
                 }
                 m_threads.Clear();
             }
@@ -269,18 +269,13 @@ namespace OpenSim.Framework.Monitoring
         {
             lock (m_threads)
             {
-                if (m_threads.ContainsKey(threadID))
+                if(RemoveThread(threadID))
                 {
-                    ThreadWatchdogInfo twi = m_threads[threadID];
-                    twi.Thread.Abort();
-                    RemoveThread(threadID);
-
+                    //ThreadWatchdogInfo twi = m_threads[threadID];
+                    //twi.Thread.Abort();
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
         }
 
@@ -325,11 +320,8 @@ namespace OpenSim.Framework.Monitoring
         {
             lock (m_threads)
             {
-                if (m_threads.ContainsKey(Thread.CurrentThread.ManagedThreadId))
-                    return m_threads[Thread.CurrentThread.ManagedThreadId];
+                return m_threads.TryGetValue(Thread.CurrentThread.ManagedThreadId, out ThreadWatchdogInfo twi) ? twi : null;
             }
-
-            return null;
         }
 
         /// <summary>
@@ -345,12 +337,9 @@ namespace OpenSim.Framework.Monitoring
             int msElapsed = now - LastWatchdogThreadTick;
 
             if (msElapsed > WATCHDOG_INTERVAL_MS * 2)
-            {
-                // SmartStart suspends so this is a Debug message, not an error or warn
-                m_log.DebugFormat(
+                m_log.WarnFormat(
                     "[WATCHDOG]: {0} ms since Watchdog last ran.  Interval should be approximately {1} ms",
                     msElapsed, WATCHDOG_INTERVAL_MS);
-            }
 
             LastWatchdogThreadTick = Environment.TickCount & Int32.MaxValue;
 

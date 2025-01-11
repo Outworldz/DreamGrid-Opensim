@@ -94,7 +94,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver.Tests
         public void TestSaveRootFolderToIar()
         {
             TestHelpers.InMethod();
-            //            TestHelpers.EnableLogging();
+//            TestHelpers.EnableLogging();
 
             string userFirstName = "Jock";
             string userLastName = "Stirrup";
@@ -108,7 +108,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver.Tests
 
             mre.Reset();
             m_archiverModule.ArchiveInventory(
-                UUID.Random(), userFirstName, userLastName, "/",  archiveWriteStream);
+                UUID.Random(), userFirstName, userLastName, "/", userPassword, archiveWriteStream);
             mre.WaitOne(60000, false);
 
             // Test created iar
@@ -177,7 +177,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver.Tests
 
             mre.Reset();
             m_archiverModule.ArchiveInventory(
-                UUID.Random(), userFirstName, userLastName, "f1", archiveWriteStream);
+                UUID.Random(), userFirstName, userLastName, "f1", userPassword, archiveWriteStream);
             mre.WaitOne(60000, false);
 
             // Test created iar
@@ -265,7 +265,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver.Tests
 
             mre.Reset();
             m_archiverModule.ArchiveInventory(
-                UUID.Random(), userFirstName, userLastName, "Objects/" + item1Name,  archiveWriteStream);
+                UUID.Random(), userFirstName, userLastName, "Objects/" + item1Name, userPassword, archiveWriteStream);
             mre.WaitOne(60000, false);
 
             byte[] archive = archiveWriteStream.ToArray();
@@ -362,7 +362,7 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver.Tests
 
             // When we're not saving assets, archiving is being done synchronously.
             m_archiverModule.ArchiveInventory(
-                UUID.Random(), userFirstName, userLastName, "Objects/" + item1Name, archiveWriteStream, options);
+                UUID.Random(), userFirstName, userLastName, "Objects/" + item1Name, userPassword, archiveWriteStream, options);
 
             byte[] archive = archiveWriteStream.ToArray();
             MemoryStream archiveReadStream = new MemoryStream(archive);

@@ -16,7 +16,7 @@ namespace OpenSim
         private string m_SmartStartUrl = "http://localhost:8001";
 
         private System.Guid regionID;
-        private Scene scene;        
+        private Scene scene;
 
         public void SmartStartNotify(Scene scene, System.Guid regionID, string msg, string uid)
         {
@@ -30,7 +30,7 @@ namespace OpenSim
             }
 
             IConfig SmartStartConfig = scene.Config.Configs["SmartStart"];
-            // fkb DreamGrid Smart Start sends Region UUID to Dreamgrid
+            // Done DreamGrid Smart Start sends Region UUID to Dreamgrid
             m_SmartStartUrl = SmartStartConfig.GetString("URL", m_SmartStartUrl);
 
             string url = $"{m_SmartStartUrl}?type={msg}&UUID={uid}";

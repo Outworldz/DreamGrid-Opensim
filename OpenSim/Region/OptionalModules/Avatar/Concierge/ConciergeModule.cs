@@ -45,7 +45,6 @@ using OpenSim.Framework.Servers;
 using OpenSim.Region.Framework.Interfaces;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Region.CoreModules.Avatar.Chat;
-using System.Security.Policy;
 
 namespace OpenSim.Region.OptionalModules.Avatar.Concierge
 {
@@ -320,9 +319,8 @@ namespace OpenSim.Region.OptionalModules.Avatar.Concierge
         {
             if (m_conciergedScenes.Contains(agent.Scene))
             {
-                if (agent.IsNPC) { return; } /* fkb */
+                if (agent.IsNPC) { return; } /* Smart Start */
                 Scene scene = agent.Scene;
-             
                 m_log.DebugFormat("[Concierge]: {0} enters {1}", agent.Name, scene.RegionInfo.RegionName);
                 WelcomeAvatar(agent, scene);
                 AnnounceToAgentsRegion(scene, String.Format(m_announceEntering, agent.Name,
@@ -477,23 +475,17 @@ namespace OpenSim.Region.OptionalModules.Avatar.Concierge
             if (!String.IsNullOrEmpty(m_welcomes))
             {
                 string[] welcomes = new string[] {
-                    Path.Combine(m_welcomes, agent.Scene.RegionInfo.RegionName) + ".txt" ,
+                    Path.Combine(m_welcomes, agent.Scene.RegionInfo.RegionName),
                     Path.Combine(m_welcomes, "DEFAULT")};
-
-                
                 foreach (string welcome in welcomes)
                 {
-                    m_log.InfoFormat("[Concierge] Filename {0}", welcome);
                     if (File.Exists(welcome))
                     {
-
-                        m_log.InfoFormat("[Concierge] Filename exists");
                         try
                         {
                             string[] welcomeLines = File.ReadAllLines(welcome);
                             foreach (string l in welcomeLines)
                             {
-                                m_log.InfoFormat("[Concierge] {0}",l);
                                 AnnounceToAgent(agent, String.Format(l, agent.Name, scene.RegionInfo.RegionName, m_whoami));
                             }
                         }

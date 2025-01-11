@@ -845,7 +845,7 @@ namespace OpenSim.Region.CoreModules.World.WorldMap
                 m_blacklistedregions.Add(regionhandle, expireBlackListTime);
                 m_cachedRegionMapItemsResponses.Remove(regionhandle);
 
-                // fkb m_log.WarnFormat("[WORLD MAP]: Blacklisted url {0}", httpserver);
+                m_log.WarnFormat("[WORLD MAP]: Blacklisted url {0}", httpserver);
                 Interlocked.Decrement(ref nAsyncRequests);
                 return;
             }
@@ -1513,7 +1513,7 @@ namespace OpenSim.Region.CoreModules.World.WorldMap
                     if(m_scene.RegionInfo.RegionSettings.Maturity == 2)
                         responsemap["10"] = responsearr;
                     else
-                    responsemap["7"] = responsearr;
+                        responsemap["7"] = responsearr;
                 }
             }
 

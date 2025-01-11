@@ -218,6 +218,7 @@ namespace OpenSim.Region.Framework.Interfaces
         /// </returns>
         TaskInventoryItem GetInventoryItem(string name);
         TaskInventoryItem GetInventoryItem(string name, int assetType);
+
         /// <summary>
         /// Get inventory items by name.
         /// </summary>
@@ -251,6 +252,8 @@ namespace OpenSim.Region.Framework.Interfaces
         /// <returns>true = success, false = the scene object asset couldn't be found</returns>
         bool GetRezReadySceneObjects(TaskInventoryItem item, out List<SceneObjectGroup> objlist, out List<Vector3> veclist, out Vector3 bbox, out float offsetHeight);
         bool GetRezReadySceneObjects(TaskInventoryItem item, UUID newOwner, UUID NewGroup, out List<SceneObjectGroup> objlist, out List<Vector3> veclist, out Vector3 bbox, out float offsetHeight);
+
+        SceneObjectGroup GetSingleRezReadySceneObject(TaskInventoryItem item, UUID NewOwner, UUID NewGroup);
 
         /// <summary>
         /// Update an existing inventory item.

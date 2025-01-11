@@ -1,0 +1,5 @@
+*** STATS REPORT AT 1/24/2022 5:26:23 PM ***
+httpserver.8002.HTTPRequestsServed : 0 requests, 0 requests/s, 0 requests/s
+httpserver.8003.HTTPRequestsServed : 0 requests, 0 requests/s, 0 requests/s
+server.jobengine.JobsWaiting : 0
+server.thread.PollServiceWatcherThread : 8193 ms

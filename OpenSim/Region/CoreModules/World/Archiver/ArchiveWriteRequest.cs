@@ -48,10 +48,6 @@ using CompressionMode = Ionic.Zlib.CompressionMode;
 using CompressionLevel = Ionic.Zlib.CompressionLevel;
 using OpenSim.Framework.Serialization.External;
 using PermissionMask = OpenSim.Framework.PermissionMask;
-using OpenSim.Region.CoreModules.World.Archiver;
-using Nini.Config;
-using System.Security.Cryptography;
-using CSJ2K.j2k.util;
 
 namespace OpenSim.Region.CoreModules.World.Archiver
 {
@@ -60,25 +56,40 @@ namespace OpenSim.Region.CoreModules.World.Archiver
     /// </summary>
     public class ArchiveWriteRequest
     {
-        /// <summary>
-        /// The maximum major version of OAR that we can write.
-        /// </summary>
-        public static int MAX_MAJOR_VERSION = 1;
+        private static readonly ILog m_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>
         /// The minimum major version of OAR that we can write.
         /// </summary>
         public static int MIN_MAJOR_VERSION = 0;
 
-        protected TarArchiveWriter m_archiveWriter;
-        protected Dictionary<string, object> m_options;
-        protected Guid m_requestId;
+        /// <summary>
+        /// The maximum major version of OAR that we can write.
+        /// </summary>
+        public static int MAX_MAJOR_VERSION = 1;
+
+        /// <summary>
+        /// Whether we're saving a multi-region archive.
+        /// </summary>
+        public bool MultiRegionFormat { get; set; }
+
+        /// <summary>
+        /// Determine whether this archive will save assets.  Default is true.
+        /// </summary>
+        public bool SaveAssets { get; set; }
+
+        /// <summary>
+        /// Determines which objects will be included in the archive, according to their permissions.
+        /// Default is null, meaning no permission checks.
+        /// </summary>
+        public string FilterContent { get; set; }
+
         protected Scene m_rootScene;
         protected Stream m_saveStream;
-        protected string m_SmartStartUrl = string.Empty;
-        private static readonly ILog m_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        protected TarArchiveWriter m_archiveWriter;
+        protected Guid m_requestId;
+        protected Dictionary<string, object> m_options;
 
-        // fkb
         /// <summary>
         /// Constructor
         /// </summary>
@@ -126,22 +137,6 @@ namespace OpenSim.Region.CoreModules.World.Archiver
         }
 
         /// <summary>
-        /// Determines which objects will be included in the archive, according to their permissions.
-        /// Default is null, meaning no permission checks.
-        /// </summary>
-        public string FilterContent { get; set; }
-
-        /// <summary>
-        /// Whether we're saving a multi-region archive.
-        /// </summary>
-        public bool MultiRegionFormat { get; set; }
-
-        /// <summary>
-        /// Determine whether this archive will save assets.  Default is true.
-        /// </summary>
-        public bool SaveAssets { get; set; }
-
-        /// <summary>
         /// Archive the region requested.
         /// </summary>
         /// <exception cref="System.IO.IOException">if there was an io problem with creating the file</exception>
@@ -158,12 +153,13 @@ namespace OpenSim.Region.CoreModules.World.Archiver
             if (options.TryGetValue("checkPermissions", out Object temp))
                 FilterContent = (string)temp;
 
+
             // Find the regions to archive
             ArchiveScenesGroup scenesGroup = new ArchiveScenesGroup();
             if (MultiRegionFormat)
             {
                 m_log.InfoFormat("[ARCHIVER]: Saving {0} regions", SceneManager.Instance.Scenes.Count);
-                SceneManager.Instance.ForEachScene(delegate (Scene scene)
+                SceneManager.Instance.ForEachScene(delegate(Scene scene)
                 {
                     scenesGroup.AddScene(scene);
                 });
@@ -188,7 +184,7 @@ namespace OpenSim.Region.CoreModules.World.Archiver
                 HashSet<UUID> failedIDs = new HashSet<UUID>();
                 HashSet<UUID> uncertainAssetsUUIDs = new HashSet<UUID>();
 
-                scenesGroup.ForEachScene(delegate (Scene scene)
+                scenesGroup.ForEachScene(delegate(Scene scene)
                 {
                     string regionDir = MultiRegionFormat ? scenesGroup.GetRegionDir(scene.RegionInfo.RegionID) : "";
                     ArchiveOneRegion(scene, regionDir, assetUuids, failedIDs, uncertainAssetsUUIDs);
@@ -199,7 +195,7 @@ namespace OpenSim.Region.CoreModules.World.Archiver
                 if (SaveAssets)
                 {
                     m_log.DebugFormat("[ARCHIVER]: Saving {0} assets", assetUuids.Count);
-
+                    
                     AssetsRequest ar = new AssetsRequest(
                             new AssetsArchiver(m_archiveWriter), assetUuids,
                             failedIDs.Count,
@@ -211,17 +207,16 @@ namespace OpenSim.Region.CoreModules.World.Archiver
                 else
                 {
                     m_log.DebugFormat("[ARCHIVER]: Not saving assets since --noassets was specified");
-                    //                    CloseArchive(string.Empty);
+//                    CloseArchive(string.Empty);
                 }
-
-                // fkb SmartStartNotify
+                
+                //  Smart Start Notify
                 new SmartStartNotify("saveoar", m_rootScene.RegionInfo.RegionID.Guid);
 
                 CloseArchive(string.Empty);
             }
             catch (Exception e)
             {
-                // fkb SmartStart
                 new SmartStartNotify("saveoar", m_rootScene.RegionInfo.RegionID.Guid);
                 CloseArchive(e.Message);
                 throw;
@@ -232,6 +227,207 @@ namespace OpenSim.Region.CoreModules.World.Archiver
             GC.WaitForPendingFinalizers();
             GC.Collect();
             GCSettings.LargeObjectHeapCompactionMode = GCLargeObjectHeapCompactionMode.Default;
+        }
+
+        private void ArchiveOneRegion(Scene scene, string regionDir, Dictionary<UUID, sbyte> assetUuids,
+            HashSet<UUID> failedIDs, HashSet<UUID>  uncertainAssetsUUIDs)
+        {
+            m_log.InfoFormat("[ARCHIVER]: Writing region {0}", scene.Name);
+
+            EntityBase[] entities = scene.GetEntities();
+            List<SceneObjectGroup> sceneObjects = new List<SceneObjectGroup>();
+
+            int numObjectsSkippedPermissions = 0;
+
+            // Filter entities so that we only have scene objects.
+            // FIXME: Would be nicer to have this as a proper list in SceneGraph, since lots of methods
+            // end up having to do this
+            IPermissionsModule permissionsModule = scene.RequestModuleInterface<IPermissionsModule>();
+            foreach (EntityBase entity in entities)
+            {
+                if (entity is SceneObjectGroup)
+                {
+                    SceneObjectGroup sceneObject = entity as SceneObjectGroup;
+
+                    if (!sceneObject.IsDeleted && !sceneObject.IsAttachment && !sceneObject.IsTemporary && !sceneObject.inTransit)
+                    {
+                        if (!CanUserArchiveObject(scene.RegionInfo.EstateSettings.EstateOwner, sceneObject, FilterContent, permissionsModule))
+                        {
+                            // The user isn't allowed to copy/transfer this object, so it will not be included in the OAR.
+                            ++numObjectsSkippedPermissions;
+                        }
+                        else
+                        {
+                            sceneObjects.Add(sceneObject);
+                        }
+                    }
+                }
+            }
+
+            if (SaveAssets)
+            {
+                UuidGatherer assetGatherer = new UuidGatherer(scene.AssetService, assetUuids, failedIDs, uncertainAssetsUUIDs);
+                int prevAssets = assetUuids.Count;
+
+                foreach (SceneObjectGroup sceneObject in sceneObjects)
+                {
+                    int curErrorCntr = assetGatherer.ErrorCount;
+                    int possible = assetGatherer.possibleNotAssetCount;
+                    assetGatherer.AddForInspection(sceneObject);
+                    assetGatherer.GatherAll();
+                    curErrorCntr =  assetGatherer.ErrorCount - curErrorCntr;
+                    possible = assetGatherer.possibleNotAssetCount - possible;
+                    if(curErrorCntr > 0)
+                    {
+                        m_log.DebugFormat("[ARCHIVER]: object {0} '{1}', at {2}, contains {3} references to missing or damaged assets",
+                            sceneObject.UUID, sceneObject.Name ,sceneObject.AbsolutePosition.ToString(), curErrorCntr);
+                        if(possible > 0)
+                            m_log.WarnFormat("[ARCHIVER Warning]: object also contains {0} references that may not be assets or are missing", possible);
+                    }
+                    else if(possible > 0)
+                    {
+                        m_log.DebugFormat("[ARCHIVER Warning]: object {0} '{1}', at {2}, contains {3} references that may not be assets or are missing",
+                            sceneObject.UUID, sceneObject.Name ,sceneObject.AbsolutePosition.ToString(), possible);
+                    }
+                }
+
+                assetGatherer.GatherAll();
+
+                GC.Collect();
+
+                int errors = assetGatherer.FailedUUIDs.Count;
+                m_log.DebugFormat(
+                    "[ARCHIVER]: {0} region scene objects to save reference {1} possible assets",
+                    sceneObjects.Count, assetUuids.Count - prevAssets + errors);
+                if(errors > 0)
+                    m_log.DebugFormat("[ARCHIVER]: {0} of these have problems or are not assets and will be ignored", errors);
+            }
+
+            if (numObjectsSkippedPermissions > 0)
+            {
+                m_log.DebugFormat(
+                    "[ARCHIVER]: {0} scene objects skipped due to lack of permissions",
+                    numObjectsSkippedPermissions);
+            }
+
+            // Make sure that we also request terrain texture assets
+            RegionSettings regionSettings = scene.RegionInfo.RegionSettings;
+
+            if (regionSettings.TerrainTexture1 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_1)
+                assetUuids[regionSettings.TerrainTexture1] = (sbyte)AssetType.Texture;
+
+            if (regionSettings.TerrainTexture2 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_2)
+                assetUuids[regionSettings.TerrainTexture2] = (sbyte)AssetType.Texture;
+
+            if (regionSettings.TerrainTexture3 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_3)
+                assetUuids[regionSettings.TerrainTexture3] = (sbyte)AssetType.Texture;
+
+            if (regionSettings.TerrainTexture4 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_4)
+                assetUuids[regionSettings.TerrainTexture4] = (sbyte)AssetType.Texture;
+
+            if (regionSettings.TerrainPBR1 != RegionSettings.DEFAULT_TERRAIN_PBR_1)
+                assetUuids[regionSettings.TerrainPBR1] = (sbyte)AssetType.Texture; // it can be both tex or material
+
+            if (regionSettings.TerrainPBR2 != RegionSettings.DEFAULT_TERRAIN_PBR_2)
+                assetUuids[regionSettings.TerrainPBR2] = (sbyte)AssetType.Texture;
+
+            if (regionSettings.TerrainPBR3 != RegionSettings.DEFAULT_TERRAIN_PBR_3)
+                assetUuids[regionSettings.TerrainPBR3] = (sbyte)AssetType.Texture;
+
+            if (regionSettings.TerrainPBR4 != RegionSettings.DEFAULT_TERRAIN_PBR_4)
+                assetUuids[regionSettings.TerrainPBR4] = (sbyte)AssetType.Texture;
+
+            if (scene.RegionEnvironment != null)
+                scene.RegionEnvironment.GatherAssets(assetUuids);
+
+            List<ILandObject> landObjects = scene.LandChannel.AllParcels();
+            foreach (ILandObject lo in landObjects)
+            {
+                if(lo.LandData != null && lo.LandData.Environment != null)
+                    lo.LandData.Environment.GatherAssets(assetUuids);
+            }
+
+            Save(scene, sceneObjects, regionDir);
+            GC.Collect();
+        }
+
+        /// <summary>
+        /// Checks whether the user has permission to export an object group to an OAR.
+        /// </summary>
+        /// <param name="user">The user</param>
+        /// <param name="objGroup">The object group</param>
+        /// <param name="filterContent">Which permissions to check: "C" = Copy, "T" = Transfer</param>
+        /// <param name="permissionsModule">The scene's permissions module</param>
+        /// <returns>Whether the user is allowed to export the object to an OAR</returns>
+        private bool CanUserArchiveObject(UUID user, SceneObjectGroup objGroup, string filterContent, IPermissionsModule permissionsModule)
+        {
+            if (filterContent == null)
+                return true;
+
+            if (permissionsModule == null)
+                return true;    // this shouldn't happen
+
+            // Check whether the user is permitted to export all of the parts in the SOG. If any
+            // part can't be exported then the entire SOG can't be exported.
+
+            bool permitted = true;
+            //int primNumber = 1;
+
+            foreach (SceneObjectPart obj in objGroup.Parts)
+            {
+                uint perm;
+                PermissionClass permissionClass = permissionsModule.GetPermissionClass(user, obj);
+                switch (permissionClass)
+                {
+                    case PermissionClass.Owner:
+                        perm = obj.BaseMask;
+                        break;
+                    case PermissionClass.Group:
+                        perm = obj.GroupMask | obj.EveryoneMask;
+                        break;
+                    case PermissionClass.Everyone:
+                    default:
+                        perm = obj.EveryoneMask;
+                        break;
+                }
+
+                bool canCopy = (perm & (uint)PermissionMask.Copy) != 0;
+                bool canTransfer = (perm & (uint)PermissionMask.Transfer) != 0;
+
+                // Special case: if Everyone can copy the object then this implies it can also be
+                // Transferred.
+                // However, if the user is the Owner then we don't check EveryoneMask, because it seems that the mask
+                // always (incorrectly) includes the Copy bit set in this case. But that's a mistake: the viewer
+                // does NOT show that the object has Everyone-Copy permissions, and doesn't allow it to be copied.
+                if (permissionClass != PermissionClass.Owner)
+                    canTransfer |= (obj.EveryoneMask & (uint)PermissionMask.Copy) != 0;
+
+                bool partPermitted = true;
+                if (filterContent.Contains("C") && !canCopy)
+                    partPermitted = false;
+                if (filterContent.Contains("T") && !canTransfer)
+                    partPermitted = false;
+
+                // If the user is the Creator of the object then it can always be included in the OAR
+                bool creator = (obj.CreatorID.Guid == user.Guid);
+                if (creator)
+                    partPermitted = true;
+
+                //string name = (objGroup.PrimCount == 1) ? objGroup.Name : string.Format("{0} ({1}/{2})", obj.Name, primNumber, objGroup.PrimCount);
+                //m_log.DebugFormat("[ARCHIVER]: Object permissions: {0}: Base={1:X4}, Owner={2:X4}, Everyone={3:X4}, permissionClass={4}, checkPermissions={5}, canCopy={6}, canTransfer={7}, creator={8}, permitted={9}",
+                //    name, obj.BaseMask, obj.OwnerMask, obj.EveryoneMask,
+                //    permissionClass, checkPermissions, canCopy, canTransfer, creator, partPermitted);
+
+                if (!partPermitted)
+                {
+                    permitted = false;
+                    break;
+                }
+
+                //++primNumber;
+            }
+
+            return permitted;
         }
 
         /// <summary>
@@ -255,36 +451,36 @@ namespace OpenSim.Region.CoreModules.World.Archiver
                 majorVersion = 0;
                 minorVersion = 8;
             }
-            //
-            //            if (m_options.ContainsKey("version"))
-            //            {
-            //                string[] parts = m_options["version"].ToString().Split('.');
-            //                if (parts.Length >= 1)
-            //                {
-            //                    majorVersion = Int32.Parse(parts[0]);
-            //
-            //                    if (parts.Length >= 2)
-            //                        minorVersion = Int32.Parse(parts[1]);
-            //                }
-            //            }
-            //
-            //            if (majorVersion < MIN_MAJOR_VERSION || majorVersion > MAX_MAJOR_VERSION)
-            //            {
-            //                throw new Exception(
-            //                    string.Format(
-            //                        "OAR version number for save must be between {0} and {1}",
-            //                        MIN_MAJOR_VERSION, MAX_MAJOR_VERSION));
-            //            }
-            //            else if (majorVersion == MAX_MAJOR_VERSION)
-            //            {
-            //                // Force 1.0
-            //                minorVersion = 0;
-            //            }
-            //            else if (majorVersion == MIN_MAJOR_VERSION)
-            //            {
-            //                // Force 0.4
-            //                minorVersion = 4;
-            //            }
+//
+//            if (m_options.ContainsKey("version"))
+//            {
+//                string[] parts = m_options["version"].ToString().Split('.');
+//                if (parts.Length >= 1)
+//                {
+//                    majorVersion = Int32.Parse(parts[0]);
+//
+//                    if (parts.Length >= 2)
+//                        minorVersion = Int32.Parse(parts[1]);
+//                }
+//            }
+//
+//            if (majorVersion < MIN_MAJOR_VERSION || majorVersion > MAX_MAJOR_VERSION)
+//            {
+//                throw new Exception(
+//                    string.Format(
+//                        "OAR version number for save must be between {0} and {1}",
+//                        MIN_MAJOR_VERSION, MAX_MAJOR_VERSION));
+//            }
+//            else if (majorVersion == MAX_MAJOR_VERSION)
+//            {
+//                // Force 1.0
+//                minorVersion = 0;
+//            }
+//            else if (majorVersion == MIN_MAJOR_VERSION)
+//            {
+//                // Force 0.4
+//                minorVersion = 4;
+//            }
 
             m_log.InfoFormat("[ARCHIVER]: Creating version {0}.{1} OAR", majorVersion, minorVersion);
             if (majorVersion == 1)
@@ -336,115 +532,6 @@ namespace OpenSim.Region.CoreModules.World.Archiver
             return s;
         }
 
-        protected static void WriteRegionInfo(Scene scene, XmlTextWriter xtw)
-        {
-            Vector2 size;
-
-            size = new Vector2((float)scene.RegionInfo.RegionSizeX, (float)scene.RegionInfo.RegionSizeY);
-
-            xtw.WriteElementString("size_in_meters", string.Format("{0},{1}", size.X, size.Y));
-        }
-
-        /// <summary>
-        /// Closes the archive and notifies that we're done.
-        /// </summary>
-        /// <param name="errorMessage">The error that occurred, or empty for success</param>
-        protected void CloseArchive(string errorMessage)
-        {
-            try
-            {
-                if (m_archiveWriter != null)
-                    m_archiveWriter.Close();
-                m_saveStream.Close();
-            }
-            catch (Exception e)
-            {
-                m_log.Error(string.Format("[ARCHIVER]: Error closing archive: {0} ", e.Message), e);
-                if (errorMessage.Length == 0)
-                    errorMessage = e.Message;
-            }
-
-            m_log.InfoFormat("[ARCHIVER]: Finished writing out OAR for {0}", m_rootScene.RegionInfo.RegionName);
-
-            m_rootScene.EventManager.TriggerOarFileSaved(m_requestId, errorMessage);
-        }
-
-        protected void ReceivedAllAssets(ICollection<UUID> assetsFoundUuids, ICollection<UUID> assetsNotFoundUuids, bool timedOut)
-        {
-            string errorMessage;
-
-            if (timedOut)
-            {
-                errorMessage = "Loading assets timed out";
-            }
-            else
-            {
-                foreach (UUID uuid in assetsNotFoundUuids)
-                {
-                    m_log.DebugFormat("[ARCHIVER]: Could not find asset {0}", uuid);
-                }
-
-                //            m_log.InfoFormat(
-                //                "[ARCHIVER]: Received {0} of {1} assets requested",
-                //                assetsFoundUuids.Count, assetsFoundUuids.Count + assetsNotFoundUuids.Count);
-
-                errorMessage = String.Empty;
-            }
-
-            CloseArchive(errorMessage);
-        }
-
-        protected void Save(Scene scene, List<SceneObjectGroup> sceneObjects, string regionDir)
-        {
-            if (regionDir != string.Empty)
-                regionDir = ArchiveConstants.REGIONS_PATH + regionDir + "/";
-
-            m_log.InfoFormat("[ARCHIVER]: Adding region settings to archive.");
-
-            // Write out region settings
-            string settingsPath = String.Format("{0}{1}{2}.xml",
-                regionDir, ArchiveConstants.SETTINGS_PATH, scene.RegionInfo.RegionName);
-            m_archiveWriter.WriteFile(settingsPath, RegionSettingsSerializer.Serialize(scene.RegionInfo.RegionSettings, scene.RegionEnvironment, scene.RegionInfo.EstateSettings));
-
-            m_log.InfoFormat("[ARCHIVER]: Adding parcel settings to archive.");
-
-            // Write out land data (aka parcel) settings
-            List<ILandObject> landObjects = scene.LandChannel.AllParcels();
-            foreach (ILandObject lo in landObjects)
-            {
-                LandData landData = lo.LandData;
-                string landDataPath
-                    = String.Format("{0}{1}", regionDir, ArchiveConstants.CreateOarLandDataPath(landData));
-                m_archiveWriter.WriteFile(landDataPath, LandDataSerializer.Serialize(landData, m_options));
-            }
-
-            m_log.InfoFormat("[ARCHIVER]: Adding terrain information to archive.");
-
-            // Write out terrain
-            string terrainPath = String.Format("{0}{1}{2}.r32",
-                regionDir, ArchiveConstants.TERRAINS_PATH, scene.RegionInfo.RegionName);
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                scene.RequestModuleInterface<ITerrainModule>().SaveToStream(terrainPath, ms);
-                m_archiveWriter.WriteFile(terrainPath, ms.ToArray());
-            }
-
-            m_log.InfoFormat("[ARCHIVER]: Adding scene objects to archive.");
-
-            // Write out scene object metadata
-            IRegionSerialiserModule serializer = scene.RequestModuleInterface<IRegionSerialiserModule>();
-            foreach (SceneObjectGroup sceneObject in sceneObjects)
-            {
-                //m_log.DebugFormat("[ARCHIVER]: Saving {0} {1}, {2}", entity.Name, entity.UUID, entity.GetType());
-                if (sceneObject.IsDeleted || sceneObject.inTransit)
-                    continue;
-                string serializedObject = serializer.SerializeGroupToXml2(sceneObject, m_options);
-                string objectPath = string.Format("{0}{1}", regionDir, ArchiveHelpers.CreateObjectPath(sceneObject));
-                m_archiveWriter.WriteFile(objectPath, serializedObject);
-            }
-        }
-
         /// <summary>
         /// Writes the list of regions included in a multi-region OAR.
         /// </summary>
@@ -490,204 +577,121 @@ namespace OpenSim.Region.CoreModules.World.Archiver
             xtw.WriteEndElement();  // "regions"
         }
 
-        private void ArchiveOneRegion(Scene scene, string regionDir, Dictionary<UUID, sbyte> assetUuids,
-                                                    HashSet<UUID> failedIDs, HashSet<UUID> uncertainAssetsUUIDs)
+        protected static void WriteRegionInfo(Scene scene, XmlTextWriter xtw)
         {
-            m_log.InfoFormat("[ARCHIVER]: Writing region {0}", scene.Name);
+            Vector2 size;
 
-            EntityBase[] entities = scene.GetEntities();
-            List<SceneObjectGroup> sceneObjects = new List<SceneObjectGroup>();
+            size = new Vector2((float)scene.RegionInfo.RegionSizeX, (float)scene.RegionInfo.RegionSizeY);
 
-            int numObjectsSkippedPermissions = 0;
+            xtw.WriteElementString("size_in_meters", string.Format("{0},{1}", size.X, size.Y));
+        }
 
-            // Filter entities so that we only have scene objects.
-            // FIXME: Would be nicer to have this as a proper list in SceneGraph, since lots of methods
-            // end up having to do this
-            IPermissionsModule permissionsModule = scene.RequestModuleInterface<IPermissionsModule>();
-            foreach (EntityBase entity in entities)
-            {
-                if (entity is SceneObjectGroup)
-                {
-                    SceneObjectGroup sceneObject = entity as SceneObjectGroup;
+        protected void Save(Scene scene, List<SceneObjectGroup> sceneObjects, string regionDir)
+        {
+            if (regionDir != string.Empty)
+                regionDir = ArchiveConstants.REGIONS_PATH + regionDir + "/";
 
-                    if (!sceneObject.IsDeleted && !sceneObject.IsAttachment && !sceneObject.IsTemporary && !sceneObject.inTransit)
-                    {
-                        if (!CanUserArchiveObject(scene.RegionInfo.EstateSettings.EstateOwner, sceneObject, FilterContent, permissionsModule))
-                        {
-                            // The user isn't allowed to copy/transfer this object, so it will not be included in the OAR.
-                            ++numObjectsSkippedPermissions;
-                        }
-                        else
-                        {
-                            sceneObjects.Add(sceneObject);
-                        }
-                    }
-                }
-            }
+            m_log.InfoFormat("[ARCHIVER]: Adding region settings to archive.");
 
-            if (SaveAssets)
-            {
-                UuidGatherer assetGatherer = new UuidGatherer(scene.AssetService, assetUuids, failedIDs, uncertainAssetsUUIDs);
-                int prevAssets = assetUuids.Count;
+            // Write out region settings
+            string settingsPath = String.Format("{0}{1}{2}.xml",
+                regionDir, ArchiveConstants.SETTINGS_PATH, scene.RegionInfo.RegionName);
+            m_archiveWriter.WriteFile(settingsPath, RegionSettingsSerializer.Serialize(scene.RegionInfo.RegionSettings, scene.RegionEnvironment, scene.RegionInfo.EstateSettings));
 
-                foreach (SceneObjectGroup sceneObject in sceneObjects)
-                {
-                    int curErrorCntr = assetGatherer.ErrorCount;
-                    int possible = assetGatherer.possibleNotAssetCount;
-                    assetGatherer.AddForInspection(sceneObject);
-                    assetGatherer.GatherAll();
-                    curErrorCntr = assetGatherer.ErrorCount - curErrorCntr;
-                    possible = assetGatherer.possibleNotAssetCount - possible;
-                    if (curErrorCntr > 0)
-                    {
-                        //fkb
-                        m_log.DebugFormat("[ARCHIVER]: object {0} '{1}', at {2}, contains {3} references to missing or damaged assets",
-                            sceneObject.UUID, sceneObject.Name, sceneObject.AbsolutePosition.ToString(), curErrorCntr);
-                        if (possible > 0)
-                            m_log.DebugFormat("[ARCHIVER Warning]: object also contains {0} references that may not be assets or are missing", possible);
-                    }
-                    else if (possible > 0)
-                    {
-                        //fkb
-                        m_log.DebugFormat("[ARCHIVER Warning]: object {0} '{1}', at {2}, contains {3} references that may not be assets or are missing",
-                            sceneObject.UUID, sceneObject.Name, sceneObject.AbsolutePosition.ToString(), possible);
-                    }
-                }
+            m_log.InfoFormat("[ARCHIVER]: Adding parcel settings to archive.");
 
-                assetGatherer.GatherAll();
-
-                GC.Collect();
-
-                int errors = assetGatherer.FailedUUIDs.Count;
-                m_log.DebugFormat(
-                    "[ARCHIVER]: {0} region scene objects to save reference {1} possible assets",
-                    sceneObjects.Count, assetUuids.Count - prevAssets + errors);
-                if (errors > 0)
-                    m_log.DebugFormat("[ARCHIVER]: {0} of these have problems or are not assets and will be ignored", errors);
-            }
-
-            if (numObjectsSkippedPermissions > 0)
-            {
-                m_log.DebugFormat(
-                    "[ARCHIVER]: {0} scene objects skipped due to lack of permissions",
-                    numObjectsSkippedPermissions);
-            }
-
-            // Make sure that we also request terrain texture assets
-            RegionSettings regionSettings = scene.RegionInfo.RegionSettings;
-
-            if (regionSettings.TerrainTexture1 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_1)
-                assetUuids[regionSettings.TerrainTexture1] = (sbyte)AssetType.Texture;
-
-            if (regionSettings.TerrainTexture2 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_2)
-                assetUuids[regionSettings.TerrainTexture2] = (sbyte)AssetType.Texture;
-
-            if (regionSettings.TerrainTexture3 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_3)
-                assetUuids[regionSettings.TerrainTexture3] = (sbyte)AssetType.Texture;
-
-            if (regionSettings.TerrainTexture4 != RegionSettings.DEFAULT_TERRAIN_TEXTURE_4)
-                assetUuids[regionSettings.TerrainTexture4] = (sbyte)AssetType.Texture;
-
-            if (scene.RegionEnvironment != null)
-                scene.RegionEnvironment.GatherAssets(assetUuids);
-
+            // Write out land data (aka parcel) settings
             List<ILandObject> landObjects = scene.LandChannel.AllParcels();
             foreach (ILandObject lo in landObjects)
             {
-                if (lo.LandData != null && lo.LandData.Environment != null)
-                    lo.LandData.Environment.GatherAssets(assetUuids);
+                LandData landData = lo.LandData;
+                string landDataPath
+                    = String.Format("{0}{1}", regionDir, ArchiveConstants.CreateOarLandDataPath(landData));
+                m_archiveWriter.WriteFile(landDataPath, LandDataSerializer.Serialize(landData, m_options));
             }
 
-            Save(scene, sceneObjects, regionDir);
-            GC.Collect();
+            m_log.InfoFormat("[ARCHIVER]: Adding terrain information to archive.");
+
+            // Write out terrain
+            string terrainPath = String.Format("{0}{1}{2}.r32",
+                regionDir, ArchiveConstants.TERRAINS_PATH, scene.RegionInfo.RegionName);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                scene.RequestModuleInterface<ITerrainModule>().SaveToStream(terrainPath, ms);
+                m_archiveWriter.WriteFile(terrainPath, ms.ToArray());
+            }
+
+            m_log.InfoFormat("[ARCHIVER]: Adding scene objects to archive.");
+
+            // Write out scene object metadata
+            IRegionSerialiserModule serializer = scene.RequestModuleInterface<IRegionSerialiserModule>();
+            foreach (SceneObjectGroup sceneObject in sceneObjects)
+            {
+                //m_log.DebugFormat("[ARCHIVER]: Saving {0} {1}, {2}", entity.Name, entity.UUID, entity.GetType());
+                if(sceneObject.IsDeleted || sceneObject.inTransit)
+                    continue;
+                string serializedObject = serializer.SerializeGroupToXml2(sceneObject, m_options);
+                string objectPath = string.Format("{0}{1}", regionDir, ArchiveHelpers.CreateObjectPath(sceneObject));
+                m_archiveWriter.WriteFile(objectPath, serializedObject);
+            }
+        }
+
+        protected void ReceivedAllAssets(ICollection<UUID> assetsFoundUuids, ICollection<UUID> assetsNotFoundUuids, bool timedOut)
+        {
+            string errorMessage;
+
+            if (timedOut)
+            {
+                errorMessage = "Loading assets timed out";
+            }
+            else
+            {
+                foreach (UUID uuid in assetsNotFoundUuids)
+                {
+                    m_log.DebugFormat("[ARCHIVER]: Could not find asset {0}", uuid);
+                }
+
+                //            m_log.InfoFormat(
+                //                "[ARCHIVER]: Received {0} of {1} assets requested",
+                //                assetsFoundUuids.Count, assetsFoundUuids.Count + assetsNotFoundUuids.Count);
+
+                errorMessage = String.Empty;
+            }
+
+            CloseArchive(errorMessage);
         }
 
         /// <summary>
-        /// Checks whether the user has permission to export an object group to an OAR.
+        /// Closes the archive and notifies that we're done.
         /// </summary>
-        /// <param name="user">The user</param>
-        /// <param name="objGroup">The object group</param>
-        /// <param name="filterContent">Which permissions to check: "C" = Copy, "T" = Transfer</param>
-        /// <param name="permissionsModule">The scene's permissions module</param>
-        /// <returns>Whether the user is allowed to export the object to an OAR</returns>
-        private bool CanUserArchiveObject(UUID user, SceneObjectGroup objGroup, string filterContent, IPermissionsModule permissionsModule)
+        /// <param name="errorMessage">The error that occurred, or empty for success</param>
+        protected void CloseArchive(string errorMessage)
         {
-            if (filterContent == null)
-                return true;
-
-            if (permissionsModule == null)
-                return true;    // this shouldn't happen
-
-            // Check whether the user is permitted to export all of the parts in the SOG. If any
-            // part can't be exported then the entire SOG can't be exported.
-
-            bool permitted = true;
-            //int primNumber = 1;
-
-            foreach (SceneObjectPart obj in objGroup.Parts)
+            try
             {
-                uint perm;
-                PermissionClass permissionClass = permissionsModule.GetPermissionClass(user, obj);
-                switch (permissionClass)
-                {
-                    case PermissionClass.Owner:
-                        perm = obj.BaseMask;
-                        break;
-
-                    case PermissionClass.Group:
-                        perm = obj.GroupMask | obj.EveryoneMask;
-                        break;
-
-                    case PermissionClass.Everyone:
-                    default:
-                        perm = obj.EveryoneMask;
-                        break;
-                }
-
-                bool canCopy = (perm & (uint)PermissionMask.Copy) != 0;
-                bool canTransfer = (perm & (uint)PermissionMask.Transfer) != 0;
-
-                // Special case: if Everyone can copy the object then this implies it can also be
-                // Transferred.
-                // However, if the user is the Owner then we don't check EveryoneMask, because it seems that the mask
-                // always (incorrectly) includes the Copy bit set in this case. But that's a mistake: the viewer
-                // does NOT show that the object has Everyone-Copy permissions, and doesn't allow it to be copied.
-                if (permissionClass != PermissionClass.Owner)
-                    canTransfer |= (obj.EveryoneMask & (uint)PermissionMask.Copy) != 0;
-
-                bool partPermitted = true;
-                if (filterContent.Contains("C") && !canCopy)
-                    partPermitted = false;
-                if (filterContent.Contains("T") && !canTransfer)
-                    partPermitted = false;
-
-                // If the user is the Creator of the object then it can always be included in the OAR
-                bool creator = (obj.CreatorID.Guid == user.Guid);
-                if (creator)
-                    partPermitted = true;
-
-                //string name = (objGroup.PrimCount == 1) ? objGroup.Name : string.Format("{0} ({1}/{2})", obj.Name, primNumber, objGroup.PrimCount);
-                //m_log.DebugFormat("[ARCHIVER]: Object permissions: {0}: Base={1:X4}, Owner={2:X4}, Everyone={3:X4}, permissionClass={4}, checkPermissions={5}, canCopy={6}, canTransfer={7}, creator={8}, permitted={9}",
-                //    name, obj.BaseMask, obj.OwnerMask, obj.EveryoneMask,
-                //    permissionClass, checkPermissions, canCopy, canTransfer, creator, partPermitted);
-
-                if (!partPermitted)
-                {
-                    permitted = false;
-                    break;
-                }
-
-                //++primNumber;
+                if (m_archiveWriter != null)
+                    m_archiveWriter.Close();
+                m_saveStream.Close();
+            }
+            catch (Exception e)
+            {
+                m_log.Error(string.Format("[ARCHIVER]: Error closing archive: {0} ", e.Message), e);
+                if (errorMessage.Length == 0)
+                    errorMessage = e.Message;
             }
 
-            return permitted;
+            m_log.InfoFormat("[ARCHIVER]: Finished writing out OAR for {0}", m_rootScene.RegionInfo.RegionName);
+
+            m_rootScene.EventManager.TriggerOarFileSaved(m_requestId, errorMessage);
         }
     }
 
+    // Done Smart Start
     internal class SmartStartNotify
     {
-        private string m_SmartStartUrl = "";              
-        
+        private string m_SmartStartUrl = "";
+
         public SmartStartNotify(string msg, System.Guid regionID)
         {
             var line = File.ReadAllLines("SmartStartUrl.txt");

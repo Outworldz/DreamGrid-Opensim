@@ -1,33 +1,32 @@
 <?xml version="1.0" ?>
 <Project frameworkVersion="v4_6" name="OpenSimBirds.Module" path="addon-modules/OpenSimBirds/Module" type="Library">
-     <Configuration name="Debug">
-       <Options>
-         <OutputPath>../../../bin/</OutputPath>
-       </Options>
-     </Configuration>
-     <Configuration name="Release">
-       <Options>
-         <OutputPath>../../../bin/</OutputPath>
-       </Options>
-     </Configuration>
+	<Configuration name="Debug">
+		<Options>
+			<OutputPath>../../../bin/</OutputPath>
+		</Options>
+	</Configuration>
+	<Configuration name="Release">
+		<Options>
+			<OutputPath>../../../bin/</OutputPath>
+		</Options>
+	</Configuration>
 
-     <ReferencePath>../../../bin/</ReferencePath>
-     <Reference name="System"/>
-     <Reference name="System.Net"/>
-     <Reference name="OpenMetaverse"/>
-     <Reference name="OpenMetaverseTypes"/>
-     <Reference name="OpenMetaverse.StructuredData"/>
-     <Reference name="OpenSim.Framework"/>
-     <Reference name="OpenSim.Framework.Console"/>
-     <Reference name="OpenSim.Region.Framework"/>
-     <Reference name="OpenSim.Region.ScriptEngine.Shared"/>
-     <Reference name="Nini"/>
-     <Reference name="log4net"/>
-     <Reference name="Mono.Addins"/>
+	<ReferencePath>../../../bin/</ReferencePath>
 
-     <Files>
-       <Match pattern="*.cs" recurse="true">
-          <Exclude name="obj" pattern="obj"/>
-       </Match>
-     </Files>
+	<Reference name="OpenMetaverse" />
+	<Reference name="OpenMetaverseTypes" />
+	<Reference name="OpenMetaverse.StructuredData" />
+	<Reference name="OpenSim.Framework" />
+	<Reference name="OpenSim.Framework.Console" />
+	<Reference name="OpenSim.Region.Framework" />
+	<Reference name="OpenSim.Region.ScriptEngine.Shared" />
+	<Reference name="Nini" />
+	<Reference name="log4net" />
+	<Reference name="Mono.Addins" />
+
+	<Files>
+		<Match pattern="*.cs" recurse="true">
+			<Exclude name="obj" pattern="obj" />
+		</Match>
+	</Files>
 </Project>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OpenSim": {
+      "commandName": "Project",
+      "commandLineArgs": " -inidirectory=./Regions/Sandbox"
+    }
+  }
+}
