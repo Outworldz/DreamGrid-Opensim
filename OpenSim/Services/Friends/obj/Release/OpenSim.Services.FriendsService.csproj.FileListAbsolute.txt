@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\Op
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim..A2C85508.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.FriendsService.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.FriendsService.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim..A2C85508.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Friends\obj\Release\OpenSim.Services.FriendsService.pdb

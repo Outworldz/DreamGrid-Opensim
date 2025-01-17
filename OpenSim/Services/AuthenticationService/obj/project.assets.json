@@ -330,11 +330,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\AuthenticationService\\OpenSim.Services.AuthenticationService.csproj",
+      "projectUniqueName": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\AuthenticationService\\OpenSim.Services.AuthenticationService.csproj",
       "projectName": "OpenSim.Services.AuthenticationService",
-      "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\AuthenticationService\\OpenSim.Services.AuthenticationService.csproj",
+      "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\AuthenticationService\\OpenSim.Services.AuthenticationService.csproj",
       "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-      "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\AuthenticationService\\obj\\",
+      "outputPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\AuthenticationService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -351,29 +351,29 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Server\\Base\\OpenSim.Server.Base.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Base\\OpenSim.Services.Base.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Base\\OpenSim.Services.Base.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Base\\OpenSim.Services.Base.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Base\\OpenSim.Services.Base.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Connectors\\OpenSim.Services.Connectors.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Connectors\\OpenSim.Services.Connectors.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Connectors\\OpenSim.Services.Connectors.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Connectors\\OpenSim.Services.Connectors.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj"
             }
           }
         }

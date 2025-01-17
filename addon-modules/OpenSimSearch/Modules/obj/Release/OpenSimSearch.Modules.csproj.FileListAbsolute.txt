@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimS.62EF2F53.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSimSearch.Modules.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSimSearch.Modules.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimS.62EF2F53.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\OpenSimSearch\Modules\obj\Release\OpenSimSearch.Modules.pdb

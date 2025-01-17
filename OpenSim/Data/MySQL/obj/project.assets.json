@@ -257,11 +257,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\MySQL\\OpenSim.Data.MySQL.csproj",
+      "projectUniqueName": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Data\\MySQL\\OpenSim.Data.MySQL.csproj",
       "projectName": "OpenSim.Data.MySQL",
-      "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\MySQL\\OpenSim.Data.MySQL.csproj",
+      "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Data\\MySQL\\OpenSim.Data.MySQL.csproj",
       "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-      "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\MySQL\\obj\\",
+      "outputPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Data\\MySQL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -278,17 +278,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Data\\OpenSim.Data.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Region\\Framework\\OpenSim.Region.Framework.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Region\\Framework\\OpenSim.Region.Framework.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Region\\Framework\\OpenSim.Region.Framework.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Region\\Framework\\OpenSim.Region.Framework.csproj"
             }
           }
         }

@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim..FB2CF3B9.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.Connectors.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.Connectors.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim..FB2CF3B9.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Connectors\obj\Release\OpenSim.Services.Connectors.pdb

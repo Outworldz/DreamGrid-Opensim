@@ -89,11 +89,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj",
+      "projectUniqueName": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj",
       "projectName": "OpenSim.Framework.Console",
-      "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj",
+      "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj",
       "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-      "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\obj\\",
+      "outputPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -110,11 +110,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
             }
           }
         }

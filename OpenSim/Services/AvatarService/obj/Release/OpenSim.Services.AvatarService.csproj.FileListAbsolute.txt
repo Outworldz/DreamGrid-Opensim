@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Rele
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim..4D11EFEC.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.AvatarService.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.AvatarService.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim..4D11EFEC.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AvatarService\obj\Release\OpenSim.Services.AvatarService.pdb

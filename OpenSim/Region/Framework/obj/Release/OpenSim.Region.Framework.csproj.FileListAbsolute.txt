@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\Op
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim..CECE3EE7.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Region.Framework.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Region.Framework.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim..CECE3EE7.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Framework\obj\Release\OpenSim.Region.Framework.pdb

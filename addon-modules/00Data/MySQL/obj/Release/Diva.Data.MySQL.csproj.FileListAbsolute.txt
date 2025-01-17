@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Dat.9444CF63.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\Diva.Data.MySQL.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\Diva.Data.MySQL.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Dat.9444CF63.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\00Data\MySQL\obj\Release\Diva.Data.MySQL.pdb
