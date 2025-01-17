@@ -259,9 +259,9 @@ namespace OpenSim.Region.CoreModules.Agent.TextureSender
                             }
                         }
                     }
-                    catch 
+                    catch (Exception ex)
                     {
-                       //fkb  m_log.Warn("[J2KDecoderModule]: CSJ2K threw an exception decoding texture " + assetID + ": " + ex.Message);
+                       m_log.Debug("[J2KDecoderModule]: CSJ2K threw an exception decoding texture " + assetID + ": " + ex.Message);
                         decodedSuccessfully = false;
                     }
                 }
@@ -269,14 +269,14 @@ namespace OpenSim.Region.CoreModules.Agent.TextureSender
                 {
                     if (!OpenJPEG.DecodeLayerBoundaries(j2kData, out layers, out components))
                     {
-                        // fkb m_log.Warn("[J2KDecoderModule]: OpenJPEG failed to decode texture " + assetID);
+                       m_log.Debug("[J2KDecoderModule]: OpenJPEG failed to decode texture " + assetID);
                         decodedSuccessfully = false;
                     }
                 }
 
                 if (layers == null || layers.Length == 0)
                 {
-                    //fkb  m_log.Warn("[J2KDecoderModule]: Failed to decode layer data for texture " + assetID + ", guessing sane defaults");
+                       m_log.Debug("[J2KDecoderModule]: Failed to decode layer data for texture " + assetID + ", guessing sane defaults");
                     // Layer decoding completely failed. Guess at sane defaults for the layer boundaries
                     layers = CreateDefaultLayers(j2kData.Length);
                     decodedSuccessfully = false;
