@@ -43,8 +43,6 @@ using OpenSim.Services.Interfaces;
 using TeleportFlags = OpenSim.Framework.Constants.TeleportFlags;
 
 using ACFlags = OpenMetaverse.AgentManager.ControlFlags;
-using System.IO;
-using System.Net;
 
 namespace OpenSim.Region.Framework.Scenes
 {
@@ -80,7 +78,6 @@ namespace OpenSim.Region.Framework.Scenes
         MuteCollisions = 0x80
     }
 
-
     public delegate void SendCoarseLocationsMethod(UUID scene, ScenePresence presence, List<Vector3> coarseLocations, List<UUID> avatarUUIDs);
 
     public class ScenePresence : EntityBase, IScenePresence, IDisposable
@@ -95,8 +92,6 @@ namespace OpenSim.Region.Framework.Scenes
         public bool GotAttachmentsData = false;
         public int EnvironmentVersion = -1;
         private ViewerEnvironment m_environment = null;
-
-
         public ViewerEnvironment Environment
         {
             get
@@ -123,9 +118,6 @@ namespace OpenSim.Region.Framework.Scenes
         {
             m_scene?.EventManager.TriggerScenePresenceUpdated(this);
         }
-
-
-
 
         public bool IsNPC { get; private set; }
 
@@ -6904,6 +6896,4 @@ namespace OpenSim.Region.Framework.Scenes
         }
 
     }
-
-
 }

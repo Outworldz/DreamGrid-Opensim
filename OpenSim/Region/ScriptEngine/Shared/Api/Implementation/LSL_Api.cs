@@ -117,7 +117,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
         protected float m_recoilScaleFactor = 0.0f;
         protected bool m_AllowGodFunctions;
 
-        protected double m_timer = Util.GetTimeStampMS();
+        protected double m_timer = Util.GetTimeStamp();
         protected bool m_waitingForScriptAnswer = false;
         protected bool m_automaticLinkPermission = false;
         protected int m_notecardLineReadCharsMax = 255;
@@ -724,7 +724,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
         {
             if (linknum == ScriptBaseClass.LINK_THIS)
                return part;
- 
+
             if (linknum <= part.ParentGroup.PrimCount)
                 return part.ParentGroup.GetLinkNumPart(linknum);
 
@@ -2821,21 +2821,21 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
 
         public LSL_Float llGetTime()
         {
-            double ScriptTime = Util.GetTimeStampMS() - m_timer;
-            return (float)Math.Round((ScriptTime / 1000.0), 3);
+            double ScriptTime = Util.GetTimeStamp() - m_timer;
+            return Math.Round(ScriptTime, 3);
         }
 
         public void llResetTime()
         {
-            m_timer = Util.GetTimeStampMS();
+            m_timer = Util.GetTimeStamp();
         }
 
         public LSL_Float llGetAndResetTime()
         {
-            double now = Util.GetTimeStampMS();
+            double now = Util.GetTimeStamp();
             double ScriptTime = now - m_timer;
             m_timer = now;
-            return (float)Math.Round((ScriptTime / 1000.0), 3);
+            return Math.Round(ScriptTime, 3);
         }
 
         public void llSound(string sound, double volume, int queue, int loop)
@@ -3492,7 +3492,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
                                         return LSL_Key.NullKey;
                                     pos += m_host.GetWorldPosition();
                                 }
-                                else if ((pos + m_host.GetWorldPosition()).LengthSquared() > m_Script10mDistanceSquare)
+                                else if ((pos - m_host.GetWorldPosition()).LengthSquared() > m_Script10mDistanceSquare)
                                     return LSL_Key.NullKey;
 
                                 break;
@@ -3526,7 +3526,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
                             case ScriptBaseClass.REZ_VEL:
                                 try
                                 {
-                                    pos = lparam.GetVector3Item(idx);
+                                    vel = lparam.GetVector3Item(idx);
                                 }
                                 catch (InvalidCastException)
                                 {
@@ -3771,7 +3771,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
                     sog.RootPart.Shape.LastAttachPoint = (byte)sog.AttachmentPoint;
                 }
 
-                sog.RezzerID = m_host.UUID;
+                sog.RezzerID = m_host.ParentGroup.RootPart.UUID;
                 sog.UUID = newID;
 
                 // We can only call this after adding the scene object, since the scene object references the scene
