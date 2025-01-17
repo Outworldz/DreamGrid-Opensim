@@ -11090,3 +11090,202 @@
 2025-01-16 22:50:10,559 INFO  [OPENSIM] Enabling remote managed stats fetch. URL = /ManagedStats/
 2025-01-16 22:50:10,567 INFO  [SERVER BASE]: Running startup_commands.txt
 2025-01-16 22:50:10,568 INFO  [SERVER BASE]: Running 'show stats'
+2025-01-17 09:42:47,541 INFO  [OPENSIM MAIN]: configured log4net using default OpenSim.exe.config
+2025-01-17 09:42:47,552 INFO  [OPENSIM MAIN]: System Locale is en-US
+2025-01-17 09:42:47,552 INFO  [OPENSIM MAIN]: Runtime gave us 16 min worker threads and 1 min IOCP threads
+2025-01-17 09:42:47,552 INFO  [OPENSIM MAIN]: Runtime gave us 32767 max worker threads and 1000 max IOCP threads
+2025-01-17 09:42:47,553 INFO  [OPENSIM MAIN]: Limiting max worker threads to 1000
+2025-01-17 09:42:47,553 INFO  [OPENSIM MAIN]: Threadpool set to 1000 max worker threads and 1000 max IOCP threads
+2025-01-17 09:42:47,553 INFO  [OPENSIM MAIN]: Environment is supported by OpenSimulator.
+2025-01-17 09:42:47,553 INFO  Default culture changed to English (United States)
+2025-01-17 09:42:47,567 INFO  [CONFIG]: Reading configuration settings
+2025-01-17 09:42:47,568 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSimDefaults.ini
+2025-01-17 09:42:47,582 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\addon-modules\OpenSimBirds\config\OpenSimBirds.ini
+2025-01-17 09:42:47,582 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\addon-modules\OpenSimTide\config\OpenSimTide.ini
+2025-01-17 09:42:47,583 INFO  [CONFIG]: Searching folder .\./Regions/Welcome for config ini files
+2025-01-17 09:42:47,583 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\Opensim.ini
+2025-01-17 09:42:47,586 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\osslEnable.ini
+2025-01-17 09:42:47,588 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\GridHypergrid.ini
+2025-01-17 09:42:47,589 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\GridCommon.ini
+2025-01-17 09:42:47,591 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\FlotsamCache.ini
+2025-01-17 09:42:47,593 INFO  [CONFIG]: Loading environment variables for Config
+2025-01-17 09:42:47,604 INFO  [OPENSIM MAIN]: Using async_call_method SmartThreadPool
+2025-01-17 09:42:47,604 INFO  [OPENSIM MAIN] Running GC in workstation mode
+2025-01-17 09:42:47,606 INFO  [STARTUP]: Beginning startup processing
+2025-01-17 09:42:47,607 INFO  [STARTUP]: version: OpenSim 0.9.3.1 Nessie Dev 97d54bb
+2025-01-17 09:42:47,607 INFO  [STARTUP]: Operating system version: Microsoft Windows NT 10.0.22631.0, .NET platform Win/DotNet, Runtime 8.0.12
+2025-01-17 09:42:47,608 INFO  [STARTUP]: Processor Architecture: X64(le 64bit)
+2025-01-17 09:42:47,611 INFO  ====================================================================
+2025-01-17 09:42:47,612 INFO  ========================= STARTING OPENSIM =========================
+2025-01-17 09:42:47,612 INFO  ====================================================================
+2025-01-17 09:42:47,618 INFO  [LOCAL CONSOLE]: Persistent command line history is Enabled, up to 100 lines from file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSimConsoleHistory.txt without timestamps
+2025-01-17 09:42:47,626 INFO  [LOCAL CONSOLE]: Read 3 lines of command line history from file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSimConsoleHistory.txt
+2025-01-17 09:42:47,629 INFO  [SERVER BASE]: Logging started to file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSim.log
+2025-01-17 09:42:47,633 INFO  [SERVER BASE]: Stats Logging started to file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSimStats.log
+2025-01-17 09:42:47,635 INFO  [SERVER BASE]: Starting in O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin
+2025-01-17 09:42:47,635 INFO  [SERVER BASE]: OpenSimulator version: OpenSim 0.9.3.1 Nessie Dev 97d54bb
+2025-01-17 09:42:47,636 INFO  [SERVER BASE]: Operating system version: Microsoft Windows NT 10.0.22631.0, .NET platform Win/DotNet, 64-bit
+2025-01-17 09:42:47,640 INFO  [SERVER BASE]: Created pid file ./Regions/Welcome/PID.pid
+2025-01-17 09:42:47,914 INFO  [REGION DB]: MySql - connecting: Data Source=127.0.0.1;Database=opensim;Port=3306;User ID=opensimuser;Password=***;Old Guids=true;Allow Zero Datetime=true;Convert Zero Datetime=True;charset=utf8;Connect Timeout=28800;Command Timeout=28800;
+2025-01-17 09:42:47,929 INFO  [BASE HTTP SERVER]: Starting HTTP server on port 7004
+2025-01-17 09:42:47,944 INFO  [PLUGINS]: Initializing addin manager
+2025-01-17 09:42:47,965 INFO  [PLUGINS]: Plugin Loaded: OpenSim
+2025-01-17 09:42:47,967 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.Framework
+2025-01-17 09:42:47,967 INFO  [PLUGINS]: Plugin Loaded: Robust
+2025-01-17 09:42:47,968 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Data
+2025-01-17 09:42:48,103 INFO  [PLUGINS]: Loading extension point /OpenSim/Startup
+2025-01-17 09:42:48,109 INFO  [PLUGINS]: Trying plugin /OpenSim/Startup/LoadRegions
+2025-01-17 09:42:48,110 INFO  [PLUGINS]: Plugin Loaded: OpenSim.ApplicationPlugins.RegionModulesController
+2025-01-17 09:42:48,111 INFO  [PLUGINS]: Trying plugin /OpenSim/Startup/LoadRegions
+2025-01-17 09:42:48,111 INFO  [PLUGINS]: Plugin Loaded: OpenSim.ApplicationPlugins.RemoteController
+2025-01-17 09:42:48,112 INFO  [PLUGINS]: Trying plugin /OpenSim/Startup/LoadRegions
+2025-01-17 09:42:48,112 INFO  [PLUGINS]: Plugin Loaded: OpenSim.ApplicationPlugins.LoadRegions
+2025-01-17 09:42:48,118 INFO  [PLUGINS]: Plugin Loaded: LindenCaps
+2025-01-17 09:42:48,120 INFO  [PLUGINS]: Plugin Loaded: Diva.AddinExample
+2025-01-17 09:42:48,120 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.CoreModules
+2025-01-17 09:42:48,126 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Groups
+2025-01-17 09:42:48,128 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.BulletS
+2025-01-17 09:42:48,129 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.POS
+2025-01-17 09:42:48,129 INFO  [PLUGINS]: Plugin Loaded: LindenUDP
+2025-01-17 09:42:48,130 INFO  [PLUGINS]: Plugin Loaded: OpenSimBirds
+2025-01-17 09:42:48,130 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.ubOde
+2025-01-17 09:42:48,131 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.Meshing
+2025-01-17 09:42:48,131 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.OptionalModules
+2025-01-17 09:42:48,133 INFO  [PLUGINS]: Plugin Loaded: OpenSim.OfflineIM
+2025-01-17 09:42:48,134 INFO  [PLUGINS]: Plugin Loaded: Diva.Interfaces
+2025-01-17 09:42:48,134 INFO  [PLUGINS]: Plugin Loaded: Diva.Wifi
+2025-01-17 09:42:48,137 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.ubOdeMeshing
+2025-01-17 09:42:48,138 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.BasicPhysics
+2025-01-17 09:42:48,138 INFO  [PLUGINS]: Plugin Loaded: OpenSimTide
+2025-01-17 09:42:48,139 INFO  [PLUGINS]: Plugin Loaded: YEngine
+2025-01-17 09:42:48,141 INFO  [REGIONMODULES]: From plugin LindenCaps, (version 0.9.3.1), loaded 17 modules, 5 shared, 12 non-shared 0 unknown
+2025-01-17 09:42:48,142 INFO  [REGIONMODULES]: From plugin Diva.AddinExample, (version 0.9.3.1.2), loaded 1 modules, 1 shared, 0 non-shared 0 unknown
+2025-01-17 09:42:48,142 INFO  [REGIONMODULES]: From plugin OpenSim.Region.CoreModules, (version 0.9.3.1), loaded 113 modules, 74 shared, 39 non-shared 0 unknown
+2025-01-17 09:42:48,143 INFO  [REGIONMODULES]: From plugin OpenSim.Groups, (version 0.9.3.1), loaded 5 modules, 5 shared, 0 non-shared 0 unknown
+2025-01-17 09:42:48,144 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.BulletS, (version 0.9.3.1), loaded 2 modules, 0 shared, 2 non-shared 0 unknown
+2025-01-17 09:42:48,145 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.POS, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,147 INFO  [REGIONMODULES]: From plugin LindenUDP, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,148 INFO  [REGIONMODULES]: From plugin OpenSimBirds, (version 0.2), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,148 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.ubOde, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,149 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.Meshing, (version 0.9.3.1), loaded 2 modules, 0 shared, 2 non-shared 0 unknown
+2025-01-17 09:42:48,150 INFO  [REGIONMODULES]: From plugin OpenSim.Region.OptionalModules, (version 0.9.3.1), loaded 39 modules, 20 shared, 19 non-shared 0 unknown
+2025-01-17 09:42:48,153 INFO  [REGIONMODULES]: From plugin OpenSim.OfflineIM, (version 0.9.3.1), loaded 1 modules, 1 shared, 0 non-shared 0 unknown
+2025-01-17 09:42:48,154 INFO  [REGIONMODULES]: From plugin Diva.Wifi, (version 0.9.3.1.13), loaded 1 modules, 1 shared, 0 non-shared 0 unknown
+2025-01-17 09:42:48,155 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.ubOdeMeshing, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,156 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.BasicPhysics, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,157 INFO  [REGIONMODULES]: From plugin OpenSimTide, (version 0.2), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,158 INFO  [REGIONMODULES]: From plugin YEngine, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 09:42:48,166 INFO  [Diva.AddinExample]: AddinExample is on. File is O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Names.csv
+2025-01-17 09:42:48,169 INFO  [Serialiser] Enabled, using save dir "exports"
+2025-01-17 09:42:48,175 INFO  [USER CONNECTOR]: Remote users enabled
+2025-01-17 09:42:48,177 INFO  [REMOTE SIMULATION CONNECTOR]: Remote simulation enabled.
+2025-01-17 09:42:48,178 INFO  [REMOTE PRESENCE CONNECTOR]: Remote presence enabled
+2025-01-17 09:42:48,179 INFO  [NEIGHBOUR CONNECTOR]: Neighbour out connector enabled
+2025-01-17 09:42:48,183 INFO  [MAP IMAGE SERVICE MODULE]: enabled with no refresh and service object OpenSim.Services.Connectors.dll:MapImageServicesConnector
+2025-01-17 09:42:48,186 INFO  [LAND CONNECTOR]: Remote Land connector enabled
+2025-01-17 09:42:48,190 INFO  [HG INVENTORY CONNECTOR]: HG inventory broker enabled with inner connector of type OpenSim.Region.CoreModules.ServiceConnectorsOut.Inventory.RemoteXInventoryServicesConnector
+2025-01-17 09:42:48,193 INFO  [REMOTE GRID USER CONNECTOR]: Remote grid user enabled
+2025-01-17 09:42:48,197 INFO  [LLOGIN SERVICE]: SmartStart Url http://192.168.2.151:7001
+2025-01-17 09:42:48,197 INFO  [LLOGIN SERVICE]: SmartStart Enabled
+2025-01-17 09:42:48,227 INFO  [REGION GRID CONNECTOR]: enabled in Grid mode
+2025-01-17 09:42:48,229 INFO  [AVATAR CONNECTOR]: Remote avatars enabled
+2025-01-17 09:42:48,231 INFO  [AUTH CONNECTOR]: Remote Authentication enabled
+2025-01-17 09:42:48,233 INFO  [HG ASSET SERVICE]: HG asset service enabled
+2025-01-17 09:42:48,236 INFO  [REGIONASSETCONNECTOR]: enabled
+2025-01-17 09:42:48,238 INFO  [AGENT PREFERENCES CONNECTOR]: Remote agent preferences enabled
+2025-01-17 09:42:48,239 INFO  [SIM SERVICE]: SimulationService IN connector enabled
+2025-01-17 09:42:48,239 INFO  [NEIGHBOUR IN CONNECTOR]: NeighbourServiceInConnector enabled
+2025-01-17 09:42:48,241 INFO  [LAND IN CONNECTOR]: LandServiceInConnector enabled
+2025-01-17 09:42:48,270 INFO  [LIBRARY INVENTORY]: Loading library control file ./inventory/Libraries.xml
+2025-01-17 09:42:48,299 INFO  [FLOTSAM ASSET CACHE]: FlotsamAssetCache enabled
+2025-01-17 09:42:48,303 INFO  [FLOTSAM ASSET CACHE]: Cache Directory O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assetcache
+2025-01-17 09:42:48,317 INFO  [Groups.Messaging]: GroupsMessagingModule enabled with MessageOnlineOnly = True, DebugEnabled = False
+2025-01-17 09:42:48,318 INFO  [Groups]: Initializing Groups Module V2
+2025-01-17 09:42:48,328 INFO  [GODNAMES]: Enabled
+2025-01-17 09:42:48,380 INFO  [Wifi Module]: Initializing...
+2025-01-17 09:42:48,754 INFO  [LLOGIN SERVICE]: SmartStart Url http://192.168.2.151:7001
+2025-01-17 09:42:48,754 INFO  [LLOGIN SERVICE]: SmartStart Enabled
+2025-01-17 09:42:48,787 INFO  [Wifi]: Serving local path data via resource path /bin/data
+2025-01-17 09:42:48,834 INFO  [RADMIN]: Default avatars not loaded
+2025-01-17 09:42:48,836 INFO  [LOAD REGIONS PLUGIN]: Loading region configurations from filesystem
+2025-01-17 09:42:48,839 INFO  [ESTATE LOADER FILE SYSTEM]: Loading estate config files from .\Estates
+2025-01-17 09:42:48,845 INFO  [ESTATE LOADER FILE SYSTEM]: Loading config file .\Estates\Estates.ini
+2025-01-17 09:42:48,848 INFO  [REGION LOADER FILE SYSTEM]: Loading config files from ./Regions/Welcome/Region/
+2025-01-17 09:42:48,848 INFO  [REGION LOADER FILE SYSTEM]: Loading config file ./Regions/Welcome/Region/Welcome.ini
+2025-01-17 09:42:48,857 INFO  [REGION LOADER FILE SYSTEM]: Loaded config for region Welcome
+2025-01-17 09:42:48,857 INFO  [LOAD REGIONS PLUGIN]: Loading specific shared modules...
+2025-01-17 09:42:48,858 INFO  [LOAD REGIONS PLUGIN]: Done.
+2025-01-17 09:42:48,910 INFO  [SCENE]: Default script engine YEngine
+2025-01-17 09:42:48,911 INFO  [SCENE]: Region Welcome, maptile set to 00000000-0000-0000-0000-000000000000
+2025-01-17 09:42:48,913 INFO  [SCENE]: SmartStart Url http://192.168.2.151:7001
+2025-01-17 09:42:48,913 INFO  [SCENE]: SmartStart Enabled
+2025-01-17 09:42:48,927 INFO  [TERRAIN DATA] VD2Gzip 70392 bytes input
+2025-01-17 09:42:48,933 INFO  [TERRAIN DATA] VD2Gzip 70392 bytes input
+2025-01-17 09:42:48,934 INFO  [REGIONMODULES]: Loading Region's modules
+2025-01-17 09:42:48,990 INFO  [BASE PRESENCE SERVICE CONNECTOR]: Enabled for region Welcome
+2025-01-17 09:42:48,995 INFO  [REMOTE GRID USER CONNECTOR]: Enabled remote grid user for region Welcome
+2025-01-17 09:42:49,017 INFO  [CHAT]: Initialized for Welcome w:10 s:20 S:100
+2025-01-17 09:42:49,025 INFO  [DATASNAPSHOT]: Response and fragment cache directory already exists.
+2025-01-17 09:42:49,063 INFO  [WIND] Enabled with an update rate of 150 frames.
+2025-01-17 09:42:49,071 INFO  [EnvironmentModule]: Module is enabled.
+2025-01-17 09:42:49,075 INFO  [AUTHORIZATION CONNECTOR]: Initialise
+2025-01-17 09:42:49,075 INFO  [AUTHORIZATION CONNECTOR]: Local authorization connector enabled
+2025-01-17 09:42:49,084 INFO  [HG INVENTORY ACCESS MODULE]: HGInventoryAccessModule enabled.
+2025-01-17 09:42:49,100 INFO  [EXTENDED PHYSICS] module is not enabled
+2025-01-17 09:42:49,124 INFO  [YEngine]: config enabled=False
+2025-01-17 09:42:49,130 INFO  [WIND] Found Plugin: ConfigurableWind
+2025-01-17 09:42:49,130 INFO  [WIND] Found Plugin: SimpleRandomWind
+2025-01-17 09:42:49,131 INFO  [WIND] SimpleRandomWind plugin found, initializing.
+2025-01-17 09:42:49,136 INFO  [WORLD MAP]: JPEG Map location: http://192.168.2.151:7004/index.php?method=regionImage634f6ce9713849abaa9ec80f85a3eaa6
+2025-01-17 09:42:49,144 INFO  L ... GenericSystemDrawing
+2025-01-17 09:42:49,145 INFO  L ... JPEG
+2025-01-17 09:42:49,145 INFO  L ... LLRAW
+2025-01-17 09:42:49,146 INFO  L ... RAW32
+2025-01-17 09:42:49,147 INFO  E ... ChannelDigger
+2025-01-17 09:42:49,148 INFO  E ... DefaultTerrainGenerator
+2025-01-17 09:42:49,228 INFO  [BULLETS SCENE] Selected bullet engine bulletunmanaged -> BulletUnmanaged/
+2025-01-17 09:42:49,241 INFO  [BULLETS SCENE] Linksets implemented with Compound
+2025-01-17 09:42:49,403 INFO  [LLUDPSERVER]: Average Environment.TickCount resolution: 15.7ms
+2025-01-17 09:42:49,404 INFO  [LLUDPSERVER]: Average Util.GetTimeStampMS resolution: 0.000101ms
+2025-01-17 09:42:49,411 INFO  [OpenSimBirds]: Adding region Welcome to this module
+2025-01-17 09:42:49,413 INFO  [OpenSimBirds]: No region section [Welcome] found in addon-modules/OpenSimBirds/config/*.ini configuration files.
+2025-01-17 09:42:49,414 INFO  [OpenSimBirds]: Checking ./Regions/Welcome/Region/Regions.ini for [Welcome] section containing valid config keys
+2025-01-17 09:42:49,415 INFO  [OpenSimBirds]: No region section [Welcome] found in configuration ./Regions/Welcome/Region/Regions.ini. Birds in this region are set to Disabled
+2025-01-17 09:42:49,441 INFO  [OpenSimTide]: Adding region 'Welcome' to this module
+2025-01-17 09:42:49,441 INFO  [OpenSimTide]: No region section [Welcome] found in addon-modules/OpenSimTide/config/*.ini configuration files.
+2025-01-17 09:42:49,443 INFO  [OpenSimTide]: Checking ./Regions/Welcome/Region/Regions.ini for [Welcome] section containing valid config keys
+2025-01-17 09:42:49,444 INFO  [OpenSimTide]: No region section [Welcome] found in configuration ./Regions/Welcome/Region/Regions.ini. Tide in this region is set to Disabled
+2025-01-17 09:42:49,455 INFO  [NEIGHBOUR CONNECTOR]: Enabled out neighbours for region Welcome
+2025-01-17 09:42:49,456 INFO  [HG INVENTORY CONNECTOR]: Enabled HG inventory for region Welcome
+2025-01-17 09:42:49,458 INFO  [REGIONASSETCONNECTOR]: active with HG and cache for region Welcome
+2025-01-17 09:42:49,458 INFO  [SIM SERVICE]: Starting...
+2025-01-17 09:42:49,508 INFO  [DATASNAPSHOT]: Set up snapshot service
+2025-01-17 09:42:49,622 INFO  [DATASNAPSHOT]: data service https://outworldz.com/Search/register.php notified. Secret: a75855d6-17af-48eb-8b78-8cd07483fdc6
+2025-01-17 09:42:49,708 INFO  [AUTHORIZATION CONNECTOR]: Enabled local authorization for region Welcome
+2025-01-17 09:42:49,717 INFO  [LLUDPSERVER]: Starting inbound packet processing for the LLUDP server
+2025-01-17 09:42:49,721 INFO  [LLUDPSERVER]: Starting outbound packet processing for the LLUDP server
+2025-01-17 09:42:49,732 INFO  [SCENE]: Secure permissions loading enabled, modules loaded: DefaultPermissionsModule
+2025-01-17 09:42:49,734 INFO  [SCENE]: Loading land objects from storage
+2025-01-17 09:42:49,804 INFO  [SCENE]: Loading objects from datastore
+2025-01-17 09:42:50,161 INFO  [SCENE]: Loaded 564 objects from the datastore
+2025-01-17 09:42:50,243 INFO  [SCENE]: Initializing script instances in Welcome
+2025-01-17 09:42:50,268 INFO  [SCENE]: Initialized 3 script instances in Welcome
+2025-01-17 09:42:50,288 INFO  [OPENSIM] Enabling remote managed stats fetch. URL = /ManagedStats/
+2025-01-17 09:42:50,296 INFO  [SERVER BASE]: Running startup_commands.txt
+2025-01-17 09:42:50,297 INFO  [SERVER BASE]: Running 'show stats'
+2025-01-17 09:42:50,668 WARN  [BULLETSIM SHAPE] Fetched asset would not mesh. prim=Primitive/510f3f6c-6c02-470b-8592-b8872c69d3c2/pos=<130.634, 116.545, 28.671>/rgn=BulletSim/Welcome, texture=0b59994d-8165-4251-b94d-6f5272e0f13a
+2025-01-17 09:42:50,669 WARN  [BULLETSIM SHAPE] Fetched asset would not mesh. prim=Palm tree/6d3a1be8-39cd-4132-b955-3b7deff7f3ad/pos=<141.176, 67.6497, 26.2665>/rgn=BulletSim/Welcome, texture=522d4576-c206-452f-8f7e-a302acfcf282
+2025-01-17 09:42:50,670 WARN  [BULLETSIM SHAPE] Fetched asset would not mesh. prim=Hedge corner left/cc5ace7a-b928-45a1-8d65-191aaa6bdc4a/pos=<157.921, 187.106, 22.7351>/rgn=BulletSim/Welcome, texture=ab42fb23-55fc-4a05-870d-857c2a417c9a
+2025-01-17 09:42:56,742 INFO  [SERVER BASE]: Running shutdown_commands.txt
+2025-01-17 09:42:56,743 INFO  [SHUTDOWN]: Closing all threads
+2025-01-17 09:42:56,743 INFO  [SHUTDOWN]: Killing listener thread
+2025-01-17 09:42:56,744 INFO  [SHUTDOWN]: Killing clients
+2025-01-17 09:42:56,744 INFO  [SHUTDOWN]: Closing console and terminating
+2025-01-17 09:42:56,746 INFO  [SCENE]: Closing down the single simulator: Welcome
+2025-01-17 09:42:57,269 INFO  [EVENT MANAGER]: TriggerSceneShuttingDown done
+2025-01-17 09:42:57,300 INFO  [DATASNAPSHOT]: Region Welcome is being removed, removing from indexing
+2025-01-17 09:42:57,333 INFO  [LLUDPSERVER]: Shutting down the LLUDP server for Welcome
+2025-01-17 09:42:57,334 INFO  [OpenSimBirds]: Removing region Welcome from this module
+2025-01-17 09:42:57,343 INFO  [OpenSimTide]: Removing region 'Welcome' from this module
+2025-01-17 09:42:57,396 INFO  [DATASNAPSHOT]: data service https://outworldz.com/Search/register.php notified. Secret: a75855d6-17af-48eb-8b78-8cd07483fdc6
+2025-01-17 09:42:58,016 INFO  [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
