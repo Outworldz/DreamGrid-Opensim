@@ -14219,3 +14219,689 @@
 2025-01-17 15:17:55,585 DEBUG [JobEngine] Stopping ServiceThrottle
 2025-01-17 15:17:56,199 DEBUG [JobEngine] Stopping Non-blocking non-critical job engine
 2025-01-17 15:17:56,200 INFO  [SHUTDOWN]: Shutdown processing on main thread complete.  Exiting...
+2025-01-17 15:28:10,912 INFO  [OPENSIM MAIN]: configured log4net using default OpenSim.exe.config
+2025-01-17 15:28:10,922 INFO  [OPENSIM MAIN]: System Locale is en-US
+2025-01-17 15:28:10,922 INFO  [OPENSIM MAIN]: Runtime gave us 16 min worker threads and 1 min IOCP threads
+2025-01-17 15:28:10,922 INFO  [OPENSIM MAIN]: Runtime gave us 32767 max worker threads and 1000 max IOCP threads
+2025-01-17 15:28:10,922 INFO  [OPENSIM MAIN]: Limiting max worker threads to 1000
+2025-01-17 15:28:10,922 INFO  [OPENSIM MAIN]: Threadpool set to 1000 max worker threads and 1000 max IOCP threads
+2025-01-17 15:28:10,922 INFO  [OPENSIM MAIN]: Environment is supported by OpenSimulator.
+2025-01-17 15:28:10,923 INFO  Default culture changed to English (United States)
+2025-01-17 15:28:10,934 INFO  [CONFIG]: Reading configuration settings
+2025-01-17 15:28:10,935 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\OpenSimDefaults.ini
+2025-01-17 15:28:10,946 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\addon-modules\OpenSimBirds\config\OpenSimBirds.ini
+2025-01-17 15:28:10,947 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\addon-modules\OpenSimTide\config\OpenSimTide.ini
+2025-01-17 15:28:10,947 INFO  [CONFIG]: Searching folder .\./Regions/Welcome for config ini files
+2025-01-17 15:28:10,947 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\Opensim.ini
+2025-01-17 15:28:10,950 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\osslEnable.ini
+2025-01-17 15:28:10,951 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\GridHypergrid.ini
+2025-01-17 15:28:10,953 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\GridCommon.ini
+2025-01-17 15:28:10,954 INFO  [CONFIG]: Reading configuration file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\config-include\FlotsamCache.ini
+2025-01-17 15:28:10,956 INFO  [CONFIG]: Loading environment variables for Config
+2025-01-17 15:28:10,964 INFO  [OPENSIM MAIN]: Using async_call_method SmartThreadPool
+2025-01-17 15:28:10,964 INFO  [OPENSIM MAIN] Running GC in workstation mode
+2025-01-17 15:28:10,966 INFO  [STARTUP]: Beginning startup processing
+2025-01-17 15:28:10,966 INFO  [STARTUP]: version: OpenSim 0.9.3.1 Nessie Dev 456db2f
+2025-01-17 15:28:10,966 INFO  [STARTUP]: Operating system version: Microsoft Windows NT 10.0.22631.0, .NET platform Win/DotNet, Runtime 8.0.12
+2025-01-17 15:28:10,967 INFO  [STARTUP]: Processor Architecture: X64(le 64bit)
+2025-01-17 15:28:10,972 INFO  ====================================================================
+2025-01-17 15:28:10,972 INFO  ========================= STARTING OPENSIM =========================
+2025-01-17 15:28:10,973 INFO  ====================================================================
+2025-01-17 15:28:10,978 INFO  [LOCAL CONSOLE]: Persistent command line history is Enabled, up to 100 lines from file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSimConsoleHistory.txt without timestamps
+2025-01-17 15:28:10,978 INFO  [LOCAL CONSOLE]: Read 3 lines of command line history from file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSimConsoleHistory.txt
+2025-01-17 15:28:10,982 INFO  [SERVER BASE]: Logging started to file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSim.log
+2025-01-17 15:28:10,987 INFO  [SERVER BASE]: Stats Logging started to file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Regions\Welcome\OpenSimStats.log
+2025-01-17 15:28:10,989 INFO  [SERVER BASE]: Starting in O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin
+2025-01-17 15:28:10,990 INFO  [SERVER BASE]: OpenSimulator version: OpenSim 0.9.3.1 Nessie Dev 456db2f
+2025-01-17 15:28:10,990 INFO  [SERVER BASE]: Operating system version: Microsoft Windows NT 10.0.22631.0, .NET platform Win/DotNet, 64-bit
+2025-01-17 15:28:10,994 INFO  [SERVER BASE]: Created pid file ./Regions/Welcome/PID.pid
+2025-01-17 15:28:11,235 DEBUG [MIGRATIONS]: RegionStore data tables already up to date at revision 67
+2025-01-17 15:28:11,244 INFO  [REGION DB]: MySql - connecting: Data Source=127.0.0.1;Database=opensim;Port=3306;User ID=opensimuser;Password=***;Old Guids=true;Allow Zero Datetime=true;Convert Zero Datetime=True;charset=utf8;Connect Timeout=28800;Command Timeout=28800;
+2025-01-17 15:28:11,250 DEBUG [MIGRATIONS]: EstateStore data tables already up to date at revision 36
+2025-01-17 15:28:11,261 INFO  [BASE HTTP SERVER]: Starting HTTP server on port 7004
+2025-01-17 15:28:11,267 DEBUG [WATCHDOG]: Started tracking thread PollServiceWatcherThread, ID 14
+2025-01-17 15:28:11,277 INFO  [PLUGINS]: Initializing addin manager
+2025-01-17 15:28:11,297 INFO  [PLUGINS]: Plugin Loaded: OpenSim
+2025-01-17 15:28:11,299 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.Framework
+2025-01-17 15:28:11,299 INFO  [PLUGINS]: Plugin Loaded: Robust
+2025-01-17 15:28:11,404 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Data
+2025-01-17 15:28:11,408 INFO  [PLUGINS]: Loading extension point /OpenSim/Startup
+2025-01-17 15:28:11,414 INFO  [PLUGINS]: Trying plugin /OpenSim/Startup/LoadRegions
+2025-01-17 15:28:11,415 INFO  [PLUGINS]: Plugin Loaded: OpenSim.ApplicationPlugins.RegionModulesController
+2025-01-17 15:28:11,416 INFO  [PLUGINS]: Trying plugin /OpenSim/Startup/LoadRegions
+2025-01-17 15:28:11,416 INFO  [PLUGINS]: Plugin Loaded: OpenSim.ApplicationPlugins.RemoteController
+2025-01-17 15:28:11,417 INFO  [PLUGINS]: Trying plugin /OpenSim/Startup/LoadRegions
+2025-01-17 15:28:11,417 INFO  [PLUGINS]: Plugin Loaded: OpenSim.ApplicationPlugins.LoadRegions
+2025-01-17 15:28:11,421 DEBUG [REGIONMODULES]: Initializing...
+2025-01-17 15:28:11,424 INFO  [PLUGINS]: Plugin Loaded: OpenSim.OfflineIM
+2025-01-17 15:28:11,425 DEBUG [REGIONMODULES]: Found shared region module OfflineIMConnectorModule, class OpenSim.OfflineIM.OfflineIMRegionModule
+2025-01-17 15:28:11,426 INFO  [PLUGINS]: Plugin Loaded: Diva.AddinExample
+2025-01-17 15:28:11,427 DEBUG [REGIONMODULES]: Found shared region module AddinsExampleModule, class Diva.AddinExample.AddinExampleModule
+2025-01-17 15:28:11,427 INFO  [PLUGINS]: Plugin Loaded: OpenSimTide
+2025-01-17 15:28:11,428 DEBUG [REGIONMODULES]: Found non-shared region module OpenSimTide, class TideModule.OpenSimTide
+2025-01-17 15:28:11,429 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.ubOdeMeshing
+2025-01-17 15:28:11,430 DEBUG [REGIONMODULES]: Found non-shared region module ubODEMeshmerizer, class OpenSim.Region.PhysicsModule.ubODEMeshing.ubMeshmerizer
+2025-01-17 15:28:11,430 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.BasicPhysics
+2025-01-17 15:28:11,431 DEBUG [REGIONMODULES]: Found non-shared region module BasicPhysicsScene, class OpenSim.Region.PhysicsModule.BasicPhysics.BasicScene
+2025-01-17 15:28:11,432 INFO  [PLUGINS]: Plugin Loaded: OpenSimBirds
+2025-01-17 15:28:11,433 DEBUG [REGIONMODULES]: Found non-shared region module OpenSimBirds, class Flocking.FlockingModule
+2025-01-17 15:28:11,433 INFO  [PLUGINS]: Plugin Loaded: WhoGotWhat
+2025-01-17 15:28:11,434 DEBUG [REGIONMODULES]: Found shared region module WhoGotWhatModule, class WhoGotWhat.WhoGotWhatModule
+2025-01-17 15:28:11,435 INFO  [PLUGINS]: Plugin Loaded: Diva.Interfaces
+2025-01-17 15:28:11,437 INFO  [PLUGINS]: Plugin Loaded: Diva.Wifi
+2025-01-17 15:28:11,438 DEBUG [REGIONMODULES]: Found shared region module WifiModule, class Diva.Wifi.WifiModule
+2025-01-17 15:28:11,439 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Groups
+2025-01-17 15:28:11,440 DEBUG [REGIONMODULES]: Found shared region module GroupsMessagingModule, class OpenSim.Groups.GroupsMessagingModule
+2025-01-17 15:28:11,440 DEBUG [REGIONMODULES]: Found shared region module GroupsModule, class OpenSim.Groups.GroupsModule
+2025-01-17 15:28:11,441 DEBUG [REGIONMODULES]: Found shared region module GroupsServiceHGConnectorModule, class OpenSim.Groups.GroupsServiceHGConnectorModule
+2025-01-17 15:28:11,442 DEBUG [REGIONMODULES]: Found shared region module GroupsServiceLocalConnectorModule, class OpenSim.Groups.GroupsServiceLocalConnectorModule
+2025-01-17 15:28:11,443 DEBUG [REGIONMODULES]: Found shared region module GroupsServiceRemoteConnectorModule, class OpenSim.Groups.GroupsServiceRemoteConnectorModule
+2025-01-17 15:28:11,443 INFO  [PLUGINS]: Plugin Loaded: LindenUDP
+2025-01-17 15:28:11,444 DEBUG [REGIONMODULES]: Found non-shared region module LLUDPServerShim, class OpenSim.Region.ClientStack.LindenUDP.LLUDPServerShim
+2025-01-17 15:28:11,445 INFO  [PLUGINS]: Plugin Loaded: LindenCaps
+2025-01-17 15:28:11,446 DEBUG [REGIONMODULES]: Found shared region module AvatarPickerSearchModule, class OpenSim.Region.ClientStack.Linden.AvatarPickerSearchModule
+2025-01-17 15:28:11,447 DEBUG [REGIONMODULES]: Found non-shared region module EstateAcessCapModule, class OpenSim.Region.ClientStack.Linden.EstateAccessCapModule
+2025-01-17 15:28:11,447 DEBUG [REGIONMODULES]: Found non-shared region module EstateChangeInfoCapModule, class OpenSim.Region.ClientStack.Linden.EstateChangeInfoCapModule
+2025-01-17 15:28:11,448 DEBUG [REGIONMODULES]: Found shared region module FetchInventory2Module, class OpenSim.Region.ClientStack.Linden.FetchInventory2Module
+2025-01-17 15:28:11,449 DEBUG [REGIONMODULES]: Found non-shared region module FetchLibDescModule, class OpenSim.Region.ClientStack.Linden.FetchLibDescModule
+2025-01-17 15:28:11,452 DEBUG [REGIONMODULES]: Found non-shared region module GetAssetsModule, class OpenSim.Region.ClientStack.Linden.GetAssetsModule
+2025-01-17 15:28:11,455 DEBUG [REGIONMODULES]: Found non-shared region module MeshUploadFlagModule, class OpenSim.Region.ClientStack.Linden.MeshUploadFlagModule
+2025-01-17 15:28:11,456 DEBUG [REGIONMODULES]: Found non-shared region module RegionConsoleModule, class OpenSim.Region.ClientStack.Linden.RegionConsoleModule
+2025-01-17 15:28:11,457 DEBUG [REGIONMODULES]: Found non-shared region module SimulatorFeaturesModule, class OpenSim.Region.ClientStack.Linden.SimulatorFeaturesModule
+2025-01-17 15:28:11,458 DEBUG [REGIONMODULES]: Found shared region module UploadBakedTextureModule, class OpenSim.Region.ClientStack.Linden.UploadBakedTextureModule
+2025-01-17 15:28:11,459 DEBUG [REGIONMODULES]: Found non-shared region module WebFetchInvDescModule, class OpenSim.Region.ClientStack.Linden.WebFetchInvDescModule
+2025-01-17 15:28:11,460 DEBUG [REGIONMODULES]: Found non-shared region module BunchOfCapsModule, class OpenSim.Region.ClientStack.Linden.BunchOfCapsModule
+2025-01-17 15:28:11,461 DEBUG [REGIONMODULES]: Found non-shared region module EventQueueGetModule, class OpenSim.Region.ClientStack.Linden.EventQueueGetModule
+2025-01-17 15:28:11,461 DEBUG [REGIONMODULES]: Found non-shared region module ObjectAdd, class OpenSim.Region.ClientStack.Linden.ObjectAdd
+2025-01-17 15:28:11,462 DEBUG [REGIONMODULES]: Found non-shared region module UploadObjectAssetModule, class OpenSim.Region.ClientStack.Linden.UploadObjectAssetModule
+2025-01-17 15:28:11,463 DEBUG [REGIONMODULES]: Found shared region module AgentPreferencesModule, class OpenSim.Region.ClientStack.LindenCaps.AgentPreferencesModule
+2025-01-17 15:28:11,464 DEBUG [REGIONMODULES]: Found shared region module ServerReleaseNotesModule, class OpenSim.Region.ClientStack.LindenCaps.ServerReleaseNotesModule
+2025-01-17 15:28:11,465 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.CoreModules
+2025-01-17 15:28:11,466 DEBUG [REGIONMODULES]: Found non-shared region module DOExampleModule, class OpenSim.Region.Framework.DynamicAttributes.DOExampleModule.DOExampleModule
+2025-01-17 15:28:11,468 DEBUG [REGIONMODULES]: Found non-shared region module WindModule, class OpenSim.Region.CoreModules.WindModule
+2025-01-17 15:28:11,469 DEBUG [REGIONMODULES]: Found non-shared region module HGWorldMapModule, class OpenSim.Region.CoreModules.Hypergrid.HGWorldMapModule
+2025-01-17 15:28:11,470 DEBUG [REGIONMODULES]: Found shared region module AccessModule, class OpenSim.Region.CoreModules.World.AccessModule
+2025-01-17 15:28:11,472 DEBUG [REGIONMODULES]: Found shared region module MapSearchModule, class OpenSim.Region.CoreModules.World.WorldMap.MapSearchModule
+2025-01-17 15:28:11,473 DEBUG [REGIONMODULES]: Found non-shared region module Warp3DImageModule, class OpenSim.Region.CoreModules.World.Warp3DMap.Warp3DImageModule
+2025-01-17 15:28:11,474 DEBUG [REGIONMODULES]: Found non-shared region module VegetationModule, class OpenSim.Region.CoreModules.World.Vegetation.VegetationModule
+2025-01-17 15:28:11,476 DEBUG [REGIONMODULES]: Found non-shared region module TerrainModule, class OpenSim.Region.CoreModules.World.Terrain.TerrainModule
+2025-01-17 15:28:11,477 DEBUG [REGIONMODULES]: Found non-shared region module SoundModule, class OpenSim.Region.CoreModules.World.Sound.SoundModule
+2025-01-17 15:28:11,478 DEBUG [REGIONMODULES]: Found shared region module SerialiserModule, class OpenSim.Region.CoreModules.World.Serialiser.SerialiserModule
+2025-01-17 15:28:11,479 DEBUG [REGIONMODULES]: Found non-shared region module RestartModule, class OpenSim.Region.CoreModules.World.Region.RestartModule
+2025-01-17 15:28:11,480 DEBUG [REGIONMODULES]: Found non-shared region module DefaultPermissionsModule, class OpenSim.Region.CoreModules.World.Permissions.DefaultPermissionsModule
+2025-01-17 15:28:11,480 DEBUG [REGIONMODULES]: Found non-shared region module ObjectCommandsModule, class OpenSim.Region.CoreModules.World.Objects.Commands.ObjectCommandsModule
+2025-01-17 15:28:11,481 DEBUG [REGIONMODULES]: Found non-shared region module RegionCommandsModule, class OpenSim.Region.CoreModules.World.Objects.Commands.RegionCommandsModule
+2025-01-17 15:28:11,484 DEBUG [REGIONMODULES]: Found non-shared region module BuySellModule, class OpenSim.Region.CoreModules.World.Objects.BuySell.BuySellModule
+2025-01-17 15:28:11,486 DEBUG [REGIONMODULES]: Found non-shared region module MoapModule, class OpenSim.Region.CoreModules.World.Media.Moap.MoapModule
+2025-01-17 15:28:11,487 DEBUG [REGIONMODULES]: Found non-shared region module EnvironmentModule, class OpenSim.Region.CoreModules.World.LightShare.EnvironmentModule
+2025-01-17 15:28:11,488 DEBUG [REGIONMODULES]: Found non-shared region module MapImageModule, class OpenSim.Region.CoreModules.World.LegacyMap.MapImageModule
+2025-01-17 15:28:11,488 DEBUG [REGIONMODULES]: Found non-shared region module DefaultDwellModule, class OpenSim.Region.CoreModules.World.Land.DefaultDwellModule
+2025-01-17 15:28:11,489 DEBUG [REGIONMODULES]: Found non-shared region module LandManagementModule, class OpenSim.Region.CoreModules.World.Land.LandManagementModule
+2025-01-17 15:28:11,490 DEBUG [REGIONMODULES]: Found non-shared region module PrimCountModule, class OpenSim.Region.CoreModules.World.Land.PrimCountModule
+2025-01-17 15:28:11,491 DEBUG [REGIONMODULES]: Found non-shared region module EstateManagementModule, class OpenSim.Region.CoreModules.World.Estate.EstateManagementModule
+2025-01-17 15:28:11,491 DEBUG [REGIONMODULES]: Found shared region module EstateModule, class OpenSim.Region.CoreModules.World.Estate.EstateModule
+2025-01-17 15:28:11,492 DEBUG [REGIONMODULES]: Found non-shared region module ArchiverModule, class OpenSim.Region.CoreModules.World.Archiver.ArchiverModule
+2025-01-17 15:28:11,493 DEBUG [REGIONMODULES]: Found shared region module LocalUserAccountServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.UserAccounts.LocalUserAccountServicesConnector
+2025-01-17 15:28:11,495 DEBUG [REGIONMODULES]: Found shared region module RemoteUserAccountServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.UserAccounts.RemoteUserAccountServicesConnector
+2025-01-17 15:28:11,495 DEBUG [REGIONMODULES]: Found shared region module LocalSimulationConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Simulation.LocalSimulationConnectorModule
+2025-01-17 15:28:11,496 DEBUG [REGIONMODULES]: Found shared region module RemoteSimulationConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Simulation.RemoteSimulationConnectorModule
+2025-01-17 15:28:11,497 DEBUG [REGIONMODULES]: Found shared region module LocalPresenceServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Presence.LocalPresenceServicesConnector
+2025-01-17 15:28:11,498 DEBUG [REGIONMODULES]: Found shared region module RemotePresenceServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Presence.RemotePresenceServicesConnector
+2025-01-17 15:28:11,501 DEBUG [REGIONMODULES]: Found shared region module NeighbourServicesOutConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Neighbour.NeighbourServicesOutConnector
+2025-01-17 15:28:11,502 DEBUG [REGIONMODULES]: Found shared region module LocalMuteListServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.MuteList.LocalMuteListServicesConnector
+2025-01-17 15:28:11,502 DEBUG [REGIONMODULES]: Found shared region module RemoteMuteListServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.MuteList.RemoteMuteListServicesConnector
+2025-01-17 15:28:11,503 DEBUG [REGIONMODULES]: Found shared region module MapImageServiceModule, class OpenSim.Region.CoreModules.ServiceConnectorsOut.MapImage.MapImageServiceModule
+2025-01-17 15:28:11,504 DEBUG [REGIONMODULES]: Found shared region module LocalLandServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Land.LocalLandServicesConnector
+2025-01-17 15:28:11,505 DEBUG [REGIONMODULES]: Found shared region module RemoteLandServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Land.RemoteLandServicesConnector
+2025-01-17 15:28:11,506 DEBUG [REGIONMODULES]: Found shared region module HGInventoryBroker, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Inventory.HGInventoryBroker
+2025-01-17 15:28:11,507 DEBUG [REGIONMODULES]: Found shared region module LocalInventoryServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Inventory.LocalInventoryServicesConnector
+2025-01-17 15:28:11,509 DEBUG [REGIONMODULES]: Found shared region module RemoteXInventoryServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Inventory.RemoteXInventoryServicesConnector
+2025-01-17 15:28:11,510 DEBUG [REGIONMODULES]: Found shared region module LocalGridUserServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.GridUser.LocalGridUserServicesConnector
+2025-01-17 15:28:11,512 DEBUG [REGIONMODULES]: Found shared region module RemoteGridUserServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.GridUser.RemoteGridUserServicesConnector
+2025-01-17 15:28:11,512 DEBUG [REGIONMODULES]: Found shared region module RegionGridServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Grid.RegionGridServicesConnector
+2025-01-17 15:28:11,514 DEBUG [REGIONMODULES]: Found shared region module LocalAvatarServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Avatar.LocalAvatarServicesConnector
+2025-01-17 15:28:11,515 DEBUG [REGIONMODULES]: Found shared region module RemoteAvatarServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Avatar.RemoteAvatarServicesConnector
+2025-01-17 15:28:11,516 DEBUG [REGIONMODULES]: Found non-shared region module LocalAuthorizationServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Authorization.LocalAuthorizationServicesConnector
+2025-01-17 15:28:11,517 DEBUG [REGIONMODULES]: Found shared region module RemoteAuthorizationServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Authorization.RemoteAuthorizationServicesConnector
+2025-01-17 15:28:11,518 DEBUG [REGIONMODULES]: Found shared region module LocalAuthenticationServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Authentication.LocalAuthenticationServicesConnector
+2025-01-17 15:28:11,519 DEBUG [REGIONMODULES]: Found shared region module RemoteAuthenticationServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Authentication.RemoteAuthenticationServicesConnector
+2025-01-17 15:28:11,519 DEBUG [REGIONMODULES]: Found shared region module LocalAssetServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Asset.LocalAssetServicesConnector
+2025-01-17 15:28:11,520 DEBUG [REGIONMODULES]: Found shared region module RegionAssetConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Asset.RegionAssetConnector
+2025-01-17 15:28:11,521 DEBUG [REGIONMODULES]: Found shared region module LocalAgentPreferencesServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.AgentPreferences.LocalAgentPreferencesServicesConnector
+2025-01-17 15:28:11,522 DEBUG [REGIONMODULES]: Found shared region module RemoteAgentPreferencesServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.AgentPreferences.RemoteAgentPreferencesServicesConnector
+2025-01-17 15:28:11,524 DEBUG [REGIONMODULES]: Found shared region module LocalUserProfilesServicesConnector, class OpenSim.Region.CoreModules.ServiceConnectorsOut.Profile.LocalUserProfilesServicesConnector
+2025-01-17 15:28:11,526 DEBUG [REGIONMODULES]: Found shared region module SimulationServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Simulation.SimulationServiceInConnectorModule
+2025-01-17 15:28:11,527 DEBUG [REGIONMODULES]: Found shared region module NeighbourServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Neighbour.NeighbourServiceInConnectorModule
+2025-01-17 15:28:11,530 DEBUG [REGIONMODULES]: Found shared region module MapImageServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.MapImage.MapImageServiceInConnectorModule
+2025-01-17 15:28:11,531 DEBUG [REGIONMODULES]: Found shared region module LLLoginServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Login.LLLoginServiceInConnectorModule
+2025-01-17 15:28:11,532 DEBUG [REGIONMODULES]: Found shared region module LandServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Land.LandServiceInConnectorModule
+2025-01-17 15:28:11,533 DEBUG [REGIONMODULES]: Found shared region module InventoryServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Inventory.InventoryServiceInConnectorModule
+2025-01-17 15:28:11,534 DEBUG [REGIONMODULES]: Found shared region module HypergridServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Hypergrid.HypergridServiceInConnectorModule
+2025-01-17 15:28:11,535 DEBUG [REGIONMODULES]: Found shared region module GridInfoServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Grid.GridInfoServiceInConnectorModule
+2025-01-17 15:28:11,536 DEBUG [REGIONMODULES]: Found shared region module AuthenticationServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Authentication.AuthenticationServiceInConnectorModule
+2025-01-17 15:28:11,537 DEBUG [REGIONMODULES]: Found shared region module AssetServiceInConnectorModule, class OpenSim.Region.CoreModules.ServiceConnectorsIn.Asset.AssetServiceInConnectorModule
+2025-01-17 15:28:11,538 DEBUG [REGIONMODULES]: Found shared region module XMLRPCModule, class OpenSim.Region.CoreModules.Scripting.XMLRPC.XMLRPCModule
+2025-01-17 15:28:11,538 DEBUG [REGIONMODULES]: Found non-shared region module WorldCommModule, class OpenSim.Region.CoreModules.Scripting.WorldComm.WorldCommModule
+2025-01-17 15:28:11,539 DEBUG [REGIONMODULES]: Found shared region module VectorRenderModule, class OpenSim.Region.CoreModules.Scripting.VectorRender.VectorRenderModule
+2025-01-17 15:28:11,540 DEBUG [REGIONMODULES]: Found non-shared region module ScriptModuleCommsModule, class OpenSim.Region.CoreModules.Scripting.ScriptModuleComms.ScriptModuleCommsModule
+2025-01-17 15:28:11,542 DEBUG [REGIONMODULES]: Found shared region module UrlModule, class OpenSim.Region.CoreModules.Scripting.LSLHttp.UrlModule
+2025-01-17 15:28:11,542 DEBUG [REGIONMODULES]: Found shared region module LoadImageURLModule, class OpenSim.Region.CoreModules.Scripting.LoadImageURL.LoadImageURLModule
+2025-01-17 15:28:11,545 DEBUG [REGIONMODULES]: Found non-shared region module HttpRequestModule, class OpenSim.Region.CoreModules.Scripting.HttpRequest.HttpRequestModule
+2025-01-17 15:28:11,546 DEBUG [REGIONMODULES]: Found shared region module EmailModule, class OpenSim.Region.CoreModules.Scripting.EmailModules.EmailModule
+2025-01-17 15:28:11,546 DEBUG [REGIONMODULES]: Found shared region module DynamicTextureModule, class OpenSim.Region.CoreModules.Scripting.DynamicTexture.DynamicTextureModule
+2025-01-17 15:28:11,549 DEBUG [REGIONMODULES]: Found non-shared region module CapabilitiesModule, class OpenSim.Region.CoreModules.Framework.CapabilitiesModule
+2025-01-17 15:28:11,550 DEBUG [REGIONMODULES]: Found shared region module GridServiceThrottleModule, class OpenSim.Region.CoreModules.Framework.ServiceThrottleModule
+2025-01-17 15:28:11,551 DEBUG [REGIONMODULES]: Found shared region module HGUserManagementModule, class OpenSim.Region.CoreModules.Framework.UserManagement.HGUserManagementModule
+2025-01-17 15:28:11,551 DEBUG [REGIONMODULES]: Found shared region module UserManagementModule, class OpenSim.Region.CoreModules.Framework.UserManagement.UserManagementModule
+2025-01-17 15:28:11,552 DEBUG [REGIONMODULES]: Found shared region module BasicSearchModule, class OpenSim.Region.CoreModules.Framework.Search.BasicSearchModule
+2025-01-17 15:28:11,554 DEBUG [REGIONMODULES]: Found non-shared region module MonitorModule, class OpenSim.Region.CoreModules.Framework.Monitoring.MonitorModule
+2025-01-17 15:28:11,555 DEBUG [REGIONMODULES]: Found shared region module LibraryModule, class OpenSim.Region.CoreModules.Framework.Library.LibraryModule
+2025-01-17 15:28:11,556 DEBUG [REGIONMODULES]: Found non-shared region module HGInventoryAccessModule, class OpenSim.Region.CoreModules.Framework.InventoryAccess.HGInventoryAccessModule
+2025-01-17 15:28:11,558 DEBUG [REGIONMODULES]: Found non-shared region module BasicInventoryAccessModule, class OpenSim.Region.CoreModules.Framework.InventoryAccess.BasicInventoryAccessModule
+2025-01-17 15:28:11,561 DEBUG [REGIONMODULES]: Found non-shared region module HGEntityTransferModule, class OpenSim.Region.CoreModules.Framework.EntityTransfer.HGEntityTransferModule
+2025-01-17 15:28:11,562 DEBUG [REGIONMODULES]: Found non-shared region module DAExampleModule, class OpenSim.Region.CoreModules.Framework.DynamicAttributes.DAExampleModule.DAExampleModule
+2025-01-17 15:28:11,562 DEBUG [REGIONMODULES]: Found shared region module UserCommandsModule, class OpenSim.Region.CoreModules.Avatars.Commands.UserCommandsModule
+2025-01-17 15:28:11,563 DEBUG [REGIONMODULES]: Found non-shared region module UserProfilesModule, class OpenSim.Region.CoreModules.Avatar.UserProfiles.UserProfileModule
+2025-01-17 15:28:11,564 DEBUG [REGIONMODULES]: Found shared region module BasicProfileModule, class OpenSim.Region.CoreModules.Avatar.Profile.BasicProfileModule
+2025-01-17 15:28:11,565 DEBUG [REGIONMODULES]: Found shared region module HGLureModule, class OpenSim.Region.CoreModules.Avatar.Lure.HGLureModule
+2025-01-17 15:28:11,566 DEBUG [REGIONMODULES]: Found shared region module LureModule, class OpenSim.Region.CoreModules.Avatar.Lure.LureModule
+2025-01-17 15:28:11,567 DEBUG [REGIONMODULES]: Found shared region module InventoryTransferModule, class OpenSim.Region.CoreModules.Avatar.Inventory.Transfer.InventoryTransferModule
+2025-01-17 15:28:11,568 DEBUG [REGIONMODULES]: Found shared region module InventoryArchiverModule, class OpenSim.Region.CoreModules.Avatar.Inventory.Archiver.InventoryArchiverModule
+2025-01-17 15:28:11,569 DEBUG [REGIONMODULES]: Found shared region module HGMessageTransferModule, class OpenSim.Region.CoreModules.Avatar.InstantMessage.HGMessageTransferModule
+2025-01-17 15:28:11,570 DEBUG [REGIONMODULES]: Found shared region module InstantMessageModule, class OpenSim.Region.CoreModules.Avatar.InstantMessage.InstantMessageModule
+2025-01-17 15:28:11,571 DEBUG [REGIONMODULES]: Found shared region module MessageTransferModule, class OpenSim.Region.CoreModules.Avatar.InstantMessage.MessageTransferModule
+2025-01-17 15:28:11,572 DEBUG [REGIONMODULES]: Found shared region module MuteListModule, class OpenSim.Region.CoreModules.Avatar.InstantMessage.MuteListModule
+2025-01-17 15:28:11,573 DEBUG [REGIONMODULES]: Found shared region module OfflineMessageModule, class OpenSim.Region.CoreModules.Avatar.InstantMessage.OfflineMessageModule
+2025-01-17 15:28:11,575 DEBUG [REGIONMODULES]: Found shared region module PresenceModule, class OpenSim.Region.CoreModules.Avatar.InstantMessage.PresenceModule
+2025-01-17 15:28:11,576 DEBUG [REGIONMODULES]: Found shared region module GroupsModule, class OpenSim.Region.CoreModules.Avatar.Groups.GroupsModule
+2025-01-17 15:28:11,576 DEBUG [REGIONMODULES]: Found non-shared region module GodsModule, class OpenSim.Region.CoreModules.Avatar.Gods.GodsModule
+2025-01-17 15:28:11,577 DEBUG [REGIONMODULES]: Found non-shared region module GesturesModule, class OpenSim.Region.CoreModules.Avatar.Gestures.GesturesModule
+2025-01-17 15:28:11,578 DEBUG [REGIONMODULES]: Found shared region module XCallingCard, class OpenSim.Region.CoreModules.Avatar.Friends.CallingCardModule
+2025-01-17 15:28:11,579 DEBUG [REGIONMODULES]: Found shared region module FriendsModule, class OpenSim.Region.CoreModules.Avatar.Friends.FriendsModule
+2025-01-17 15:28:11,580 DEBUG [REGIONMODULES]: Found shared region module HGFriendsModule, class OpenSim.Region.CoreModules.Avatar.Friends.HGFriendsModule
+2025-01-17 15:28:11,581 DEBUG [REGIONMODULES]: Found non-shared region module DialogModule, class OpenSim.Region.CoreModules.Avatar.Dialog.DialogModule
+2025-01-17 15:28:11,582 DEBUG [REGIONMODULES]: Found shared region module CombatModule, class OpenSim.Region.CoreModules.Avatar.Combat.CombatModule.CombatModule
+2025-01-17 15:28:11,582 DEBUG [REGIONMODULES]: Found shared region module ChatModule, class OpenSim.Region.CoreModules.Avatar.Chat.ChatModule
+2025-01-17 15:28:11,583 DEBUG [REGIONMODULES]: Found non-shared region module XBakes.Module, class OpenSim.Region.CoreModules.Avatar.BakedTextures.XBakesModule
+2025-01-17 15:28:11,584 DEBUG [REGIONMODULES]: Found non-shared region module AvatarFactoryModule, class OpenSim.Region.CoreModules.Avatar.AvatarFactory.AvatarFactoryModule
+2025-01-17 15:28:11,587 DEBUG [REGIONMODULES]: Found non-shared region module AttachmentsModule, class OpenSim.Region.CoreModules.Avatar.Attachments.AttachmentsModule
+2025-01-17 15:28:11,588 DEBUG [REGIONMODULES]: Found shared region module FlotsamAssetCache, class OpenSim.Region.CoreModules.Asset.FlotsamAssetCache
+2025-01-17 15:28:11,593 DEBUG [REGIONMODULES]: Found non-shared region module XferModule, class OpenSim.Region.CoreModules.Agent.Xfer.XferModule
+2025-01-17 15:28:11,595 DEBUG [REGIONMODULES]: Found shared region module J2KDecoderModule, class OpenSim.Region.CoreModules.Agent.TextureSender.J2KDecoderModule
+2025-01-17 15:28:11,596 DEBUG [REGIONMODULES]: Found shared region module IPBanModule, class OpenSim.Region.CoreModules.Agent.IPBan.IPBanModule
+2025-01-17 15:28:11,597 DEBUG [REGIONMODULES]: Found non-shared region module AssetTransactionModule, class OpenSim.Region.CoreModules.Agent.AssetTransaction.AssetTransactionModule
+2025-01-17 15:28:11,598 INFO  [PLUGINS]: Plugin Loaded: YEngine
+2025-01-17 15:28:11,599 DEBUG [REGIONMODULES]: Found non-shared region module YEngine, class OpenSim.Region.ScriptEngine.Yengine.Yengine
+2025-01-17 15:28:11,599 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.POS
+2025-01-17 15:28:11,600 DEBUG [REGIONMODULES]: Found non-shared region module POSPhysicsScene, class OpenSim.Region.PhysicsModule.POS.POSScene
+2025-01-17 15:28:11,601 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.OptionalModules
+2025-01-17 15:28:11,602 DEBUG [REGIONMODULES]: Found shared region module WebStatsModule, class OpenSim.Region.UserStatistics.WebStatsModule
+2025-01-17 15:28:11,602 DEBUG [REGIONMODULES]: Found shared region module DataSnapshotManager, class OpenSim.Region.DataSnapshot.DataSnapshotManager
+2025-01-17 15:28:11,603 DEBUG [REGIONMODULES]: Found non-shared region module PrimLimitsModule, class OpenSim.Region.OptionalModules.PrimLimitsModule
+2025-01-17 15:28:11,605 DEBUG [REGIONMODULES]: Found non-shared region module WorldViewModule, class OpenSim.Region.OptionalModules.World.WorldView.WorldViewModule
+2025-01-17 15:28:11,607 DEBUG [REGIONMODULES]: Found non-shared region module TreePopulatorModule, class OpenSim.Region.OptionalModules.World.TreePopulator.TreePopulatorModule
+2025-01-17 15:28:11,608 DEBUG [REGIONMODULES]: Found shared region module NPCModule, class OpenSim.Region.OptionalModules.World.NPC.NPCModule
+2025-01-17 15:28:11,609 DEBUG [REGIONMODULES]: Found shared region module SampleMoneyModule, class OpenSim.Region.OptionalModules.World.MoneyModule.SampleMoneyModule
+2025-01-17 15:28:11,610 DEBUG [REGIONMODULES]: Found shared region module AutoBackupModule, class OpenSim.Region.OptionalModules.World.AutoBackup.AutoBackupModule
+2025-01-17 15:28:11,610 DEBUG [REGIONMODULES]: Found non-shared region module CameraOnlyMode, class OpenSim.Region.OptionalModules.ViewerSupport.CameraOnlyModeModule
+2025-01-17 15:28:11,611 DEBUG [REGIONMODULES]: Found non-shared region module DynamicFloater, class OpenSim.Region.OptionalModules.ViewerSupport.DynamicFloaterModule
+2025-01-17 15:28:11,612 DEBUG [REGIONMODULES]: Found non-shared region module DynamicMenu, class OpenSim.Region.OptionalModules.ViewerSupport.DynamicMenuModule
+2025-01-17 15:28:11,613 DEBUG [REGIONMODULES]: Found shared region module GodNamesModule, class OpenSim.Region.OptionalModules.ViewerSupport.GodNamesModule
+2025-01-17 15:28:11,614 DEBUG [REGIONMODULES]: Found non-shared region module SpecialUI, class OpenSim.Region.OptionalModules.ViewerSupport.SpecialUIModule
+2025-01-17 15:28:11,615 DEBUG [REGIONMODULES]: Found non-shared region module XmlRpcRouter, class OpenSim.Region.OptionalModules.Scripting.XmlRpcRouterModule.XmlRpcRouter
+2025-01-17 15:28:11,616 DEBUG [REGIONMODULES]: Found non-shared region module XmlRpcGridRouter, class OpenSim.Region.OptionalModules.Scripting.XmlRpcGridRouterModule.XmlRpcGridRouter
+2025-01-17 15:28:11,617 DEBUG [REGIONMODULES]: Found non-shared region module RegionReadyModule, class OpenSim.Region.OptionalModules.Scripting.RegionReady.RegionReadyModule
+2025-01-17 15:28:11,617 DEBUG [REGIONMODULES]: Found non-shared region module JsonStoreCommandsModule, class OpenSim.Region.OptionalModules.Scripting.JsonStore.JsonStoreCommandsModule
+2025-01-17 15:28:11,618 DEBUG [REGIONMODULES]: Found non-shared region module JsonStoreModule, class OpenSim.Region.OptionalModules.Scripting.JsonStore.JsonStoreModule
+2025-01-17 15:28:11,619 DEBUG [REGIONMODULES]: Found non-shared region module JsonStoreScriptModule, class OpenSim.Region.OptionalModules.Scripting.JsonStore.JsonStoreScriptModule
+2025-01-17 15:28:11,623 DEBUG [REGIONMODULES]: Found shared region module PhysicsParameters, class OpenSim.Region.OptionalModules.PhysicsParameters.PhysicsParameters
+2025-01-17 15:28:11,624 DEBUG [REGIONMODULES]: Found non-shared region module MaterialsModule, class OpenSim.Region.OptionalModules.Materials.MaterialsModule
+2025-01-17 15:28:11,624 DEBUG [REGIONMODULES]: Found non-shared region module EtcdMonitoringModule, class OpenSim.Region.OptionalModules.Framework.Monitoring.EtcdMonitoringModule
+2025-01-17 15:28:11,625 DEBUG [REGIONMODULES]: Found shared region module WebSocketEchoModule, class OpenSim.Region.OptionalModules.WebSocketEchoModule.WebSocketEchoModule
+2025-01-17 15:28:11,626 DEBUG [REGIONMODULES]: Found non-shared region module SceneCommandsModule, class OpenSim.Region.OptionalModules.Avatar.Attachments.SceneCommandsModule
+2025-01-17 15:28:11,627 DEBUG [REGIONMODULES]: Found shared region module GroupsMessagingModule, class OpenSim.Region.OptionalModules.Avatar.XmlRpcGroups.GroupsMessagingModule
+2025-01-17 15:28:11,628 DEBUG [REGIONMODULES]: Found shared region module GroupsModule, class OpenSim.Region.OptionalModules.Avatar.XmlRpcGroups.GroupsModule
+2025-01-17 15:28:11,629 DEBUG [REGIONMODULES]: Found shared region module XmlRpcGroupsServicesConnectorModule, class OpenSim.Region.OptionalModules.Avatar.XmlRpcGroups.XmlRpcGroupsServicesConnectorModule
+2025-01-17 15:28:11,630 DEBUG [REGIONMODULES]: Found shared region module VivoxVoiceModule, class OpenSim.Region.OptionalModules.Avatar.Voice.VivoxVoice.VivoxVoiceModule
+2025-01-17 15:28:11,631 DEBUG [REGIONMODULES]: Found shared region module FreeSwitchVoiceModule, class OpenSim.Region.OptionalModules.Avatar.Voice.FreeSwitchVoice.FreeSwitchVoiceModule
+2025-01-17 15:28:11,632 DEBUG [REGIONMODULES]: Found non-shared region module AnimationsCommandModule, class OpenSim.Region.OptionalModules.Avatar.SitStand.SitStandCommandModule
+2025-01-17 15:28:11,633 DEBUG [REGIONMODULES]: Found shared region module FriendsCommandModule, class OpenSim.Region.OptionalModules.Avatar.Friends.FriendsCommandsModule
+2025-01-17 15:28:11,635 DEBUG [REGIONMODULES]: Found shared region module ConciergeModule, class OpenSim.Region.OptionalModules.Avatar.Concierge.ConciergeModule
+2025-01-17 15:28:11,639 DEBUG [REGIONMODULES]: Found non-shared region module IRCBridgeModule, class OpenSim.Region.OptionalModules.Avatar.Chat.IRCBridgeModule
+2025-01-17 15:28:11,641 DEBUG [REGIONMODULES]: Found shared region module AppearanceInfoModule, class OpenSim.Region.OptionalModules.Avatar.Appearance.AppearanceInfoModule
+2025-01-17 15:28:11,642 DEBUG [REGIONMODULES]: Found shared region module AnimationsCommandModule, class OpenSim.Region.OptionalModules.Avatar.Animations.AnimationsCommandModule
+2025-01-17 15:28:11,642 DEBUG [REGIONMODULES]: Found shared region module AssetInfoModule, class OpenSim.Region.OptionalModules.Asset.AssetInfoModule
+2025-01-17 15:28:11,643 DEBUG [REGIONMODULES]: Found shared region module LindenUDPInfoModule, class OpenSim.Region.OptionalModules.UDP.Linden.LindenUDPInfoModule
+2025-01-17 15:28:11,644 DEBUG [REGIONMODULES]: Found shared region module J2KDecoderCommandModule, class OpenSim.Region.OptionalModules.Agent.TextureSender.J2KDecoderCommandModule
+2025-01-17 15:28:11,645 DEBUG [REGIONMODULES]: Found non-shared region module IRCStackModule, class OpenSim.Region.OptionalModules.Agent.InternetRelayClientView.IRCStackModule
+2025-01-17 15:28:11,646 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.ubOde
+2025-01-17 15:28:11,647 DEBUG [REGIONMODULES]: Found non-shared region module ubODEPhysicsScene, class OpenSim.Region.PhysicsModule.ubOde.ubOdeModule
+2025-01-17 15:28:11,648 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.Meshing
+2025-01-17 15:28:11,649 DEBUG [REGIONMODULES]: Found non-shared region module Meshmerizer, class OpenSim.Region.PhysicsModule.Meshing.Meshmerizer
+2025-01-17 15:28:11,650 DEBUG [REGIONMODULES]: Found non-shared region module ZeroMesher, class OpenSim.Region.PhysicsModule.Meshing.ZeroMesher
+2025-01-17 15:28:11,652 INFO  [PLUGINS]: Plugin Loaded: OpenSim.Region.PhysicsModule.BulletS
+2025-01-17 15:28:11,653 DEBUG [REGIONMODULES]: Found non-shared region module BulletSPhysicsScene, class OpenSim.Region.PhysicsModule.BulletS.BSScene
+2025-01-17 15:28:11,654 DEBUG [REGIONMODULES]: Found non-shared region module OpenSim.Region.PhysicsModule.BulletS.ExtendedPhysics, class OpenSim.Region.PhysicsModule.BulletS.ExtendedPhysics
+2025-01-17 15:28:11,655 INFO  [REGIONMODULES]: From plugin OpenSim.OfflineIM, (version 0.9.3.1), loaded 1 modules, 1 shared, 0 non-shared 0 unknown
+2025-01-17 15:28:11,656 INFO  [REGIONMODULES]: From plugin Diva.AddinExample, (version 0.9.3.1.2), loaded 1 modules, 1 shared, 0 non-shared 0 unknown
+2025-01-17 15:28:11,657 INFO  [REGIONMODULES]: From plugin OpenSimTide, (version 0.2), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,657 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.ubOdeMeshing, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,658 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.BasicPhysics, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,659 INFO  [REGIONMODULES]: From plugin OpenSimBirds, (version 0.2), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,660 INFO  [REGIONMODULES]: From plugin WhoGotWhat, (version 0.9.3.1.2), loaded 1 modules, 1 shared, 0 non-shared 0 unknown
+2025-01-17 15:28:11,661 INFO  [REGIONMODULES]: From plugin Diva.Wifi, (version 0.9.3.1.13), loaded 1 modules, 1 shared, 0 non-shared 0 unknown
+2025-01-17 15:28:11,661 INFO  [REGIONMODULES]: From plugin OpenSim.Groups, (version 0.9.3.1), loaded 5 modules, 5 shared, 0 non-shared 0 unknown
+2025-01-17 15:28:11,662 INFO  [REGIONMODULES]: From plugin LindenUDP, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,663 INFO  [REGIONMODULES]: From plugin LindenCaps, (version 0.9.3.1), loaded 17 modules, 5 shared, 12 non-shared 0 unknown
+2025-01-17 15:28:11,664 INFO  [REGIONMODULES]: From plugin OpenSim.Region.CoreModules, (version 0.9.3.1), loaded 113 modules, 74 shared, 39 non-shared 0 unknown
+2025-01-17 15:28:11,668 INFO  [REGIONMODULES]: From plugin YEngine, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,669 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.POS, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,670 INFO  [REGIONMODULES]: From plugin OpenSim.Region.OptionalModules, (version 0.9.3.1), loaded 39 modules, 20 shared, 19 non-shared 0 unknown
+2025-01-17 15:28:11,671 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.ubOde, (version 0.9.3.1), loaded 1 modules, 0 shared, 1 non-shared 0 unknown
+2025-01-17 15:28:11,671 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.Meshing, (version 0.9.3.1), loaded 2 modules, 0 shared, 2 non-shared 0 unknown
+2025-01-17 15:28:11,672 INFO  [REGIONMODULES]: From plugin OpenSim.Region.PhysicsModule.BulletS, (version 0.9.3.1), loaded 2 modules, 0 shared, 2 non-shared 0 unknown
+2025-01-17 15:28:11,678 INFO  [MIGRATIONS]: Upgrading IM_Store to latest revision 5.
+2025-01-17 15:28:11,679 INFO  [MIGRATIONS]: NOTE - this may take a while, don't interrupt this process!
+2025-01-17 15:28:11,708 INFO  [MIGRATIONS]: Creating IM_Store at version 5
+2025-01-17 15:28:11,726 DEBUG [OfflineIM.V2]: Offline messages enabled by Offline Message Module V2
+2025-01-17 15:28:11,731 INFO  [Diva.AddinExample]: AddinExample is on. File is O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\Names.csv
+2025-01-17 15:28:11,736 INFO  [WhoGotWhat]: WhoGotWhat is on. File is O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\WhoGotWhat.csv
+2025-01-17 15:28:11,737 INFO  [Wifi Module]: Initializing...
+2025-01-17 15:28:11,739 DEBUG [Wifi]: WifiMain starting with config WifiService
+2025-01-17 15:28:11,745 DEBUG [Wifi]: Initializing. Server at port 7004.
+2025-01-17 15:28:11,748 DEBUG [Wifi]: WebApp configs loaded. Admin account is Wifi Admin. Localization is disabled.
+2025-01-17 15:28:11,757 DEBUG [Wifi]: Services Starting...
+2025-01-17 15:28:11,773 DEBUG [MIGRATIONS]: UserAccount data tables already up to date at revision 6
+2025-01-17 15:28:11,776 DEBUG [MIGRATIONS]: UserAccount data tables already up to date at revision 6
+2025-01-17 15:28:11,809 DEBUG [MIGRATIONS]: AuthStore data tables already up to date at revision 4
+2025-01-17 15:28:11,811 DEBUG [MIGRATIONS]: InventoryStore data tables already up to date at revision 7
+2025-01-17 15:28:11,814 DEBUG [MIGRATIONS]: AssetStore data tables already up to date at revision 10
+2025-01-17 15:28:11,815 DEBUG [ASSET SERVICE]: Loading default asset set from assets/AssetSets.xml
+2025-01-17 15:28:11,818 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\MyAssetSet/MyAssetSet.xml does not exist!
+2025-01-17 15:28:11,819 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\AnimationsAssetSet/index.xml does not exist!
+2025-01-17 15:28:11,820 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\BodyPartsAssetSet/BodyPartsAssetSet.xml does not exist!
+2025-01-17 15:28:11,823 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\ClothingAssetSet/ClothingAssetSet.xml does not exist!
+2025-01-17 15:28:11,824 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\GesturesAssetSet/GesturesAssetSet.xml does not exist!
+2025-01-17 15:28:11,825 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\LandmarksAssetSet/LandmarksAssetSet.xml does not exist!
+2025-01-17 15:28:11,828 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\NotecardsAssetSet/NotecardsAssetSet.xml does not exist!
+2025-01-17 15:28:11,828 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\ObjectsAssetSet/ObjectsAssetSet.xml does not exist!
+2025-01-17 15:28:11,830 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\PhotosAssetSet/PhotosAssetSet.xml does not exist!
+2025-01-17 15:28:11,833 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\SoundsAssetSet/SoundsAssetSet.xml does not exist!
+2025-01-17 15:28:11,833 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\CollisionSoundsAssetSet/CollisionSoundsAssetSet.xml does not exist!
+2025-01-17 15:28:12,009 DEBUG [ASSET SERVICE]: Local asset service enabled
+2025-01-17 15:28:12,012 DEBUG [GRID SERVICE]: Starting...
+2025-01-17 15:28:12,013 INFO  [LLOGIN SERVICE]: SmartStart Url http://192.168.2.151:7001
+2025-01-17 15:28:12,014 INFO  [LLOGIN SERVICE]: SmartStart Enabled
+2025-01-17 15:28:12,015 DEBUG [HYPERGRID LINKER]: Starting with db OpenSim.Data.Null.NullRegionData
+2025-01-17 15:28:12,025 DEBUG [HYPERGRID LINKER]: Local Gatekeeper: http://192.168.2.151:7002/
+2025-01-17 15:28:12,027 DEBUG [HYPERGRID LINKER]: Loaded all services...
+2025-01-17 15:28:12,030 DEBUG [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2025-01-17 15:28:12,031 DEBUG [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2025-01-17 15:28:12,031 DEBUG [GRID USER SERVICE]: Starting user grid service
+2025-01-17 15:28:12,037 DEBUG [MIGRATIONS]: Avatar data tables already up to date at revision 3
+2025-01-17 15:28:12,038 DEBUG [AVATAR SERVICE]: Starting avatar service
+2025-01-17 15:28:12,042 DEBUG [MIGRATIONS]: Presence data tables already up to date at revision 4
+2025-01-17 15:28:12,043 DEBUG [PRESENCE SERVICE]: Starting presence service
+2025-01-17 15:28:12,046 DEBUG [MIGRATIONS]: os_groups_Store data tables already up to date at revision 3
+2025-01-17 15:28:12,047 DEBUG [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2025-01-17 15:28:12,048 DEBUG [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2025-01-17 15:28:12,050 DEBUG [Wifi]: Administrator account Wifi Admin exists.
+2025-01-17 15:28:12,060 DEBUG [WifiScriptFace]: Starting...
+2025-01-17 15:28:12,061 DEBUG [Wifi]: Starting with extension methods type Diva.Wifi.ExtensionMethods
+2025-01-17 15:28:12,061 INFO  [Wifi]: Serving local path data via resource path /bin/data
+2025-01-17 15:28:12,063 DEBUG [Wifi Module]: Wifi enabled.
+2025-01-17 15:28:12,065 INFO  [Groups.Messaging]: GroupsMessagingModule enabled with MessageOnlineOnly = True, DebugEnabled = False
+2025-01-17 15:28:12,066 INFO  [Groups]: Initializing Groups Module V2
+2025-01-17 15:28:12,067 DEBUG [Groups]: Initializing Groups HG Service Connector with LocalService remote
+2025-01-17 15:28:12,070 INFO  [Serialiser] Enabled, using save dir "exports"
+2025-01-17 15:28:12,074 INFO  [USER CONNECTOR]: Remote users enabled
+2025-01-17 15:28:12,075 INFO  [REMOTE SIMULATION CONNECTOR]: Remote simulation enabled.
+2025-01-17 15:28:12,077 INFO  [REMOTE PRESENCE CONNECTOR]: Remote presence enabled
+2025-01-17 15:28:12,078 INFO  [NEIGHBOUR CONNECTOR]: Neighbour out connector enabled
+2025-01-17 15:28:12,081 INFO  [MAP IMAGE SERVICE MODULE]: enabled with no refresh and service object OpenSim.Services.Connectors.dll:MapImageServicesConnector
+2025-01-17 15:28:12,083 INFO  [LAND CONNECTOR]: Remote Land connector enabled
+2025-01-17 15:28:12,088 INFO  [HG INVENTORY CONNECTOR]: HG inventory broker enabled with inner connector of type OpenSim.Region.CoreModules.ServiceConnectorsOut.Inventory.RemoteXInventoryServicesConnector
+2025-01-17 15:28:12,091 DEBUG [ACTIVITY DETECTOR]: starting 
+2025-01-17 15:28:12,092 INFO  [REMOTE GRID USER CONNECTOR]: Remote grid user enabled
+2025-01-17 15:28:12,093 DEBUG [GRID SERVICE]: Starting...
+2025-01-17 15:28:12,094 INFO  [LLOGIN SERVICE]: SmartStart Url http://192.168.2.151:7001
+2025-01-17 15:28:12,094 INFO  [LLOGIN SERVICE]: SmartStart Enabled
+2025-01-17 15:28:12,097 INFO  [REGION GRID CONNECTOR]: enabled in Grid mode
+2025-01-17 15:28:12,098 INFO  [AVATAR CONNECTOR]: Remote avatars enabled
+2025-01-17 15:28:12,101 INFO  [AUTH CONNECTOR]: Remote Authentication enabled
+2025-01-17 15:28:12,105 INFO  [HG ASSET SERVICE]: HG asset service enabled
+2025-01-17 15:28:12,108 INFO  [REGIONASSETCONNECTOR]: enabled
+2025-01-17 15:28:12,110 INFO  [AGENT PREFERENCES CONNECTOR]: Remote agent preferences enabled
+2025-01-17 15:28:12,111 INFO  [SIM SERVICE]: SimulationService IN connector enabled
+2025-01-17 15:28:12,112 INFO  [NEIGHBOUR IN CONNECTOR]: NeighbourServiceInConnector enabled
+2025-01-17 15:28:12,113 INFO  [LAND IN CONNECTOR]: LandServiceInConnector enabled
+2025-01-17 15:28:12,116 DEBUG [VECTORRENDERMODULE]: using font "Arial" for text rendering.
+2025-01-17 15:28:12,124 DEBUG [OUTBOUND URL FILTER]: OutboundDisallowForUserScripts for Script dynamic texture image module is [0.0.0.0/8|10.0.0.0/8|100.64.0.0/10|127.0.0.0/8|169.254.0.0/16|172.16.0.0/12|192.0.0.0/24|192.0.2.0/24|192.88.99.0/24|192.168.0.0/16|198.18.0.0/15|198.51.100.0/24|203.0.113.0/24|224.0.0.0/4|240.0.0.0/4|255.255.255.255/32]
+2025-01-17 15:28:12,124 DEBUG [OUTBOUND URL FILTER]: OutboundDisallowForUserScriptsExcept for Script dynamic texture image module is [192.168.2.151:7001|127.0.0.1:7001|localhost:7001|192.168.2.151:7001|192.168.2.151:7002|192.168.2.151:7001]
+2025-01-17 15:28:12,140 DEBUG [USER MANAGEMENT MODULE]: HGUserManagementModule is enabled
+2025-01-17 15:28:12,142 DEBUG [BASIC SEARCH MODULE]: BasicSearchModule is enabled
+2025-01-17 15:28:12,143 DEBUG [LIBRARY MODULE]: Library service dll is OpenSim.Services.InventoryService.dll:LibraryService
+2025-01-17 15:28:12,145 DEBUG [LIBRARY]: Starting library service...
+2025-01-17 15:28:12,147 INFO  [LIBRARY INVENTORY]: Loading library control file ./inventory/Libraries.xml
+2025-01-17 15:28:12,148 ERROR [LIBRARY INVENTORY]: Libraries control file ./inventory/Libraries.xml does not exist!
+2025-01-17 15:28:12,154 DEBUG [HG IM SERVICE]: Starting
+2025-01-17 15:28:12,160 DEBUG [FRIENDS MODULE]: HGFriendsModule enabled.
+2025-01-17 15:28:12,163 INFO  [FLOTSAM ASSET CACHE]: FlotsamAssetCache enabled
+2025-01-17 15:28:12,167 INFO  [FLOTSAM ASSET CACHE]: Cache Directory O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assetcache
+2025-01-17 15:28:12,175 INFO  [GODNAMES]: Enabled
+2025-01-17 15:28:12,186 DEBUG [RADMIN]: Remote Admin Plugin Enabled
+2025-01-17 15:28:12,188 DEBUG [REGIONMODULES]: PostInitializing...
+2025-01-17 15:28:12,227 DEBUG [RADMIN]: Creating default avatar entries
+2025-01-17 15:28:12,227 DEBUG [RADMIN]: No default avatar information available
+2025-01-17 15:28:12,228 INFO  [RADMIN]: Default avatars not loaded
+2025-01-17 15:28:12,231 INFO  [LOAD REGIONS PLUGIN]: Loading region configurations from filesystem
+2025-01-17 15:28:12,233 INFO  [ESTATE LOADER FILE SYSTEM]: Loading estate config files from .\Estates
+2025-01-17 15:28:12,238 INFO  [ESTATE LOADER FILE SYSTEM]: Loading config file .\Estates\Estates.ini
+2025-01-17 15:28:12,241 INFO  [REGION LOADER FILE SYSTEM]: Loading config files from ./Regions/Welcome/Region/
+2025-01-17 15:28:12,242 INFO  [REGION LOADER FILE SYSTEM]: Loading config file ./Regions/Welcome/Region/Welcome.ini
+2025-01-17 15:28:12,248 INFO  [REGION LOADER FILE SYSTEM]: Loaded config for region Welcome
+2025-01-17 15:28:12,248 INFO  [LOAD REGIONS PLUGIN]: Loading specific shared modules...
+2025-01-17 15:28:12,249 INFO  [LOAD REGIONS PLUGIN]: Done.
+2025-01-17 15:28:12,251 DEBUG [LOAD REGIONS PLUGIN]: Creating Region: Welcome (ThreadID: 1)
+2025-01-17 15:28:12,301 INFO  [SCENE]: Default script engine YEngine
+2025-01-17 15:28:12,302 INFO  [SCENE]: Region Welcome, maptile set to 00000000-0000-0000-0000-000000000000
+2025-01-17 15:28:12,304 INFO  [SCENE]: SmartStart Url http://192.168.2.151:7001
+2025-01-17 15:28:12,305 INFO  [SCENE]: SmartStart Enabled
+2025-01-17 15:28:12,306 DEBUG [SCENE]: Using the BestAvatarResponsiveness prioritization scheme
+2025-01-17 15:28:12,315 INFO  [TERRAIN DATA] VD2Gzip 1315 bytes input
+2025-01-17 15:28:12,318 DEBUG [TERRAIN DATA] V2DGzip. Heightmap size=<256,256>. Region size=<256,256>
+2025-01-17 15:28:12,320 DEBUG [TERRAIN DATA] HeightmapTerrainData create from Variable2DGzip serialization. Size=<256,256>
+2025-01-17 15:28:12,323 INFO  [TERRAIN DATA] VD2Gzip 1315 bytes input
+2025-01-17 15:28:12,324 DEBUG [TERRAIN DATA] V2DGzip. Heightmap size=<256,256>. Region size=<256,256>
+2025-01-17 15:28:12,325 DEBUG [TERRAIN DATA] HeightmapTerrainData create from Variable2DGzip serialization. Size=<256,256>
+2025-01-17 15:28:12,325 INFO  [REGIONMODULES]: Loading Region's modules
+2025-01-17 15:28:12,330 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Offline Message Module V2
+2025-01-17 15:28:12,333 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Diva Addin Example
+2025-01-17 15:28:12,333 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module WhoGotWhat
+2025-01-17 15:28:12,335 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Wifi Service Module
+2025-01-17 15:28:12,335 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Groups Messaging Module V2
+2025-01-17 15:28:12,337 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Groups Module V2
+2025-01-17 15:28:12,338 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Groups HG Service Connector
+2025-01-17 15:28:12,339 DEBUG [Groups]: Registering Groups HG Service Connector with Welcome
+2025-01-17 15:28:12,339 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Groups Local Service Connector
+2025-01-17 15:28:12,340 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Groups Remote Service Connector
+2025-01-17 15:28:12,341 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module AvatarPickerSearchModule
+2025-01-17 15:28:12,341 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module FetchInventory2Module
+2025-01-17 15:28:12,342 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module UploadBakedTextureModule
+2025-01-17 15:28:12,342 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module AgentPreferencesModule
+2025-01-17 15:28:12,343 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module ServerReleaseNotesModule
+2025-01-17 15:28:12,344 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module AccessModule
+2025-01-17 15:28:12,345 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module MapSearchModule
+2025-01-17 15:28:12,345 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module ExportSerialisationModule
+2025-01-17 15:28:12,346 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module EstateModule
+2025-01-17 15:28:12,346 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalUserAccountServicesConnector
+2025-01-17 15:28:12,347 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteUserAccountServicesConnector
+2025-01-17 15:28:12,347 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalSimulationConnectorModule
+2025-01-17 15:28:12,348 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteSimulationConnectorModule
+2025-01-17 15:28:12,350 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalPresenceServicesConnector
+2025-01-17 15:28:12,351 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemotePresenceServicesConnector
+2025-01-17 15:28:12,394 INFO  [BASE PRESENCE SERVICE CONNECTOR]: Enabled for region Welcome
+2025-01-17 15:28:12,395 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module NeighbourServicesOutConnector
+2025-01-17 15:28:12,396 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalMuteListServicesConnector
+2025-01-17 15:28:12,397 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteMuteListServicesConnector
+2025-01-17 15:28:12,398 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module MapImageServiceModule
+2025-01-17 15:28:12,398 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalLandServicesConnector
+2025-01-17 15:28:12,399 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteLandServicesConnector
+2025-01-17 15:28:12,400 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module HGInventoryBroker
+2025-01-17 15:28:12,401 DEBUG [HG INVENTORY BROKER]: Manually setting scene in RemoteXInventoryServicesConnector to Welcome
+2025-01-17 15:28:12,401 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalInventoryServicesConnector
+2025-01-17 15:28:12,402 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteXInventoryServicesConnector
+2025-01-17 15:28:12,402 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalGridUserServicesConnector
+2025-01-17 15:28:12,403 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteGridUserServicesConnector
+2025-01-17 15:28:12,404 INFO  [REMOTE GRID USER CONNECTOR]: Enabled remote grid user for region Welcome
+2025-01-17 15:28:12,404 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RegionGridServicesConnector
+2025-01-17 15:28:12,408 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalAvatarServicesConnector
+2025-01-17 15:28:12,409 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteAvatarServicesConnector
+2025-01-17 15:28:12,410 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteAuthorizationServicesConnector
+2025-01-17 15:28:12,411 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalAuthenticationServicesConnector
+2025-01-17 15:28:12,411 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteAuthenticationServicesConnector
+2025-01-17 15:28:12,412 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalAssetServicesConnector
+2025-01-17 15:28:12,414 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RegionAssetConnector
+2025-01-17 15:28:12,415 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalAgentPreferencesServicesConnector
+2025-01-17 15:28:12,416 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RemoteAgentPreferencesServicesConnector
+2025-01-17 15:28:12,416 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LocalUserProfilesServicesConnector
+2025-01-17 15:28:12,417 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module SimulationServiceInConnectorModule
+2025-01-17 15:28:12,418 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module NeighbourServiceInConnectorModule
+2025-01-17 15:28:12,420 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module MapImageServiceIn
+2025-01-17 15:28:12,420 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LLLoginServiceInConnectorModule
+2025-01-17 15:28:12,421 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LandServiceInConnectorModule
+2025-01-17 15:28:12,422 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RegionInventoryService
+2025-01-17 15:28:12,423 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module HypergridService
+2025-01-17 15:28:12,423 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module GridInfoService
+2025-01-17 15:28:12,424 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module AuthenticationServiceInConnectorModule
+2025-01-17 15:28:12,424 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module RegionAssetService
+2025-01-17 15:28:12,425 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module XMLRPCModule
+2025-01-17 15:28:12,426 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module VectorRenderModule
+2025-01-17 15:28:12,426 DEBUG [REGIONMODULE]: Deferred load of UrlModule
+2025-01-17 15:28:12,426 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LoadImageURL
+2025-01-17 15:28:12,427 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module DefaultEmailModule
+2025-01-17 15:28:12,428 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module DynamicTextureModule
+2025-01-17 15:28:12,432 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module ServiceThrottleModule
+2025-01-17 15:28:12,433 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module HGUserManagementModule
+2025-01-17 15:28:12,434 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module BasicUserManagementModule
+2025-01-17 15:28:12,434 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module BasicSearchModule
+2025-01-17 15:28:12,435 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Library Module
+2025-01-17 15:28:12,436 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module User Commands Module
+2025-01-17 15:28:12,437 DEBUG [REGIONMODULE]: Deferred load of BasicProfileModule
+2025-01-17 15:28:12,437 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module HGLureModule
+2025-01-17 15:28:12,438 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module LureModule
+2025-01-17 15:28:12,438 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module InventoryModule
+2025-01-17 15:28:12,439 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Inventory Archiver Module
+2025-01-17 15:28:12,441 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module HGMessageTransferModule
+2025-01-17 15:28:12,441 DEBUG [HG MESSAGE TRANSFER]: Message transfer module HGMessageTransferModule active
+2025-01-17 15:28:12,442 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module InstantMessageModule
+2025-01-17 15:28:12,442 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module MessageTransferModule
+2025-01-17 15:28:12,443 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module MuteListModule
+2025-01-17 15:28:12,446 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module OfflineMessageModule
+2025-01-17 15:28:12,446 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module PresenceModule
+2025-01-17 15:28:12,447 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module GroupsModule
+2025-01-17 15:28:12,448 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module XCallingCardModule
+2025-01-17 15:28:12,448 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module FriendsModule
+2025-01-17 15:28:12,449 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module HGFriendsModule
+2025-01-17 15:28:12,450 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module CombatModule
+2025-01-17 15:28:12,450 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module ChatModule
+2025-01-17 15:28:12,451 INFO  [CHAT]: Initialized for Welcome w:10 s:20 S:100
+2025-01-17 15:28:12,452 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module FlotsamAssetCache
+2025-01-17 15:28:12,453 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module J2KDecoderModule
+2025-01-17 15:28:12,453 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module IPBanModule
+2025-01-17 15:28:12,455 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module ViewerStatsModule
+2025-01-17 15:28:12,456 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module External Data Generator
+2025-01-17 15:28:12,458 INFO  [DATASNAPSHOT]: Response and fragment cache directory already exists.
+2025-01-17 15:28:12,461 DEBUG [DATASNAPSHOT]: Added new data provider type: EstateSnapshot
+2025-01-17 15:28:12,462 DEBUG [DATASNAPSHOT]: Added new data provider type: LandSnapshot
+2025-01-17 15:28:12,463 DEBUG [DATASNAPSHOT]: Added new data provider type: ObjectSnapshot
+2025-01-17 15:28:12,463 DEBUG [DATASNAPSHOT]: Module added to Scene Welcome.
+2025-01-17 15:28:12,464 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module NPCModule
+2025-01-17 15:28:12,465 DEBUG [REGIONMODULE]: Deferred load of BetaGridLikeMoneyModule
+2025-01-17 15:28:12,465 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module AutoBackupModule
+2025-01-17 15:28:12,466 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Godnames
+2025-01-17 15:28:12,467 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Runtime Physics Parameter Module
+2025-01-17 15:28:12,467 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module WebSocketEchoModule
+2025-01-17 15:28:12,468 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module GroupsMessagingModule
+2025-01-17 15:28:12,468 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module GroupsModule
+2025-01-17 15:28:12,469 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module XmlRpcGroupsServicesConnector
+2025-01-17 15:28:12,470 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module VivoxVoiceModule
+2025-01-17 15:28:12,471 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module FreeSwitchVoiceModule
+2025-01-17 15:28:12,472 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Appearance Information Module
+2025-01-17 15:28:12,472 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module ConciergeModule
+2025-01-17 15:28:12,474 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Appearance Information Module
+2025-01-17 15:28:12,474 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Animations Command Module
+2025-01-17 15:28:12,477 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Asset Information Module
+2025-01-17 15:28:12,477 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Linden UDP Module
+2025-01-17 15:28:12,479 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module Asset Information Module
+2025-01-17 15:28:12,479 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module OpenSimTide
+2025-01-17 15:28:12,480 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module ubODEMeshmerizer
+2025-01-17 15:28:12,482 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module basicphysics
+2025-01-17 15:28:12,482 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module OpenSimBirds
+2025-01-17 15:28:12,483 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module LLUDPServerShim
+2025-01-17 15:28:12,483 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module EstateAccessCapModule
+2025-01-17 15:28:12,484 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module EstateChangeInfoCapModule
+2025-01-17 15:28:12,485 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module FetchLibDescModule
+2025-01-17 15:28:12,485 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module GetAssetsModule
+2025-01-17 15:28:12,486 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module MeshUploadFlagModule
+2025-01-17 15:28:12,487 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module RegionConsoleModule
+2025-01-17 15:28:12,487 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module SimulatorFeaturesModule
+2025-01-17 15:28:12,494 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module WebFetchInvDescModule
+2025-01-17 15:28:12,495 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module BunchOfCapsModule
+2025-01-17 15:28:12,496 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module EventQueueGetModule
+2025-01-17 15:28:12,496 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module ObjectAddModule
+2025-01-17 15:28:12,497 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module UploadObjectAssetModuleModule
+2025-01-17 15:28:12,498 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module DO
+2025-01-17 15:28:12,498 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module WindModule
+2025-01-17 15:28:12,499 INFO  [WIND] Enabled with an update rate of 150 frames.
+2025-01-17 15:28:12,500 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module HGWorldMap
+2025-01-17 15:28:12,502 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Warp3DImageModule
+2025-01-17 15:28:12,502 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Vegetation Module
+2025-01-17 15:28:12,504 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module TerrainModule
+2025-01-17 15:28:12,505 DEBUG [REGIONMODULE]: Deferred load of Sound Module
+2025-01-17 15:28:12,505 DEBUG [REGIONMODULE]: Deferred load of RestartModule
+2025-01-17 15:28:12,506 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module DefaultPermissionsModule
+2025-01-17 15:28:12,511 DEBUG [PERMISSIONS]: allowed_script_creators All
+2025-01-17 15:28:12,512 DEBUG [PERMISSIONS]: allowed_script_editors All
+2025-01-17 15:28:12,513 DEBUG [PERMISSIONS]: Enabling all region service permission checks
+2025-01-17 15:28:12,515 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Object Commands Module
+2025-01-17 15:28:12,515 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Region Commands Module
+2025-01-17 15:28:12,516 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Object BuySell Module
+2025-01-17 15:28:12,517 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module MoapModule
+2025-01-17 15:28:12,518 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module EnvironmentModule
+2025-01-17 15:28:12,519 INFO  [EnvironmentModule]: Module is enabled.
+2025-01-17 15:28:12,519 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module MapImageModule
+2025-01-17 15:28:12,520 DEBUG [REGIONMODULE]: Deferred load of DefaultDwellModule
+2025-01-17 15:28:12,521 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module LandManagementModule
+2025-01-17 15:28:12,522 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module PrimCountModule
+2025-01-17 15:28:12,524 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module EstateManagementModule
+2025-01-17 15:28:12,524 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module RegionArchiverModule
+2025-01-17 15:28:12,525 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module LocalAuthorizationServicesConnector
+2025-01-17 15:28:12,526 INFO  [AUTHORIZATION CONNECTOR]: Initialise
+2025-01-17 15:28:12,527 INFO  [AUTHORIZATION CONNECTOR]: Local authorization connector enabled
+2025-01-17 15:28:12,528 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module WorldCommModule
+2025-01-17 15:28:12,529 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module ScriptModuleCommsModule
+2025-01-17 15:28:12,531 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module HttpScriptRequests
+2025-01-17 15:28:12,533 DEBUG [OUTBOUND URL FILTER]: OutboundDisallowForUserScripts for Script HTTP request module is [0.0.0.0/8|10.0.0.0/8|100.64.0.0/10|127.0.0.0/8|169.254.0.0/16|172.16.0.0/12|192.0.0.0/24|192.0.2.0/24|192.88.99.0/24|192.168.0.0/16|198.18.0.0/15|198.51.100.0/24|203.0.113.0/24|224.0.0.0/4|240.0.0.0/4|255.255.255.255/32]
+2025-01-17 15:28:12,534 DEBUG [OUTBOUND URL FILTER]: OutboundDisallowForUserScriptsExcept for Script HTTP request module is [192.168.2.151:7001|127.0.0.1:7001|localhost:7001|192.168.2.151:7001|192.168.2.151:7002|192.168.2.151:7001]
+2025-01-17 15:28:12,536 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Capabilities Module
+2025-01-17 15:28:12,538 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Region Health Monitoring Module
+2025-01-17 15:28:12,540 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module HGInventoryAccessModule
+2025-01-17 15:28:12,542 INFO  [HG INVENTORY ACCESS MODULE]: HGInventoryAccessModule enabled.
+2025-01-17 15:28:12,543 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module BasicInventoryAccessModule
+2025-01-17 15:28:12,544 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module HGEntityTransferModule
+2025-01-17 15:28:12,545 DEBUG [HG ENTITY TRANSFER MODULE]: HGEntityTransferModule enabled.
+2025-01-17 15:28:12,546 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module DAExample Module
+2025-01-17 15:28:12,547 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module UserProfileModule
+2025-01-17 15:28:12,547 DEBUG [UserProfileModule]: Full Profiles Enabled
+2025-01-17 15:28:12,548 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Gods Module
+2025-01-17 15:28:12,548 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Gestures Module
+2025-01-17 15:28:12,549 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Dialog Module
+2025-01-17 15:28:12,550 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module XBakes.Module
+2025-01-17 15:28:12,557 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Default Avatar Factory
+2025-01-17 15:28:12,558 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Attachments Module
+2025-01-17 15:28:12,559 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module XferModule
+2025-01-17 15:28:12,560 DEBUG [REGIONMODULE]: Deferred load of AgentTransactionModule
+2025-01-17 15:28:12,562 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module YEngine
+2025-01-17 15:28:12,565 INFO  [YEngine]: config enabled=False
+2025-01-17 15:28:12,566 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module POS
+2025-01-17 15:28:12,567 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module PrimLimitsModule
+2025-01-17 15:28:12,568 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module WorldViewModule
+2025-01-17 15:28:12,571 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module TreePopulatorModule
+2025-01-17 15:28:12,573 DEBUG [TREES]: Initialised tree populator module
+2025-01-17 15:28:12,574 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module CameraOnlyModeModule
+2025-01-17 15:28:12,575 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module DynamicFloaterModule
+2025-01-17 15:28:12,575 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module DynamicMenuModule
+2025-01-17 15:28:12,576 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module SpecialUIModule
+2025-01-17 15:28:12,576 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module XmlRpcRouterModule
+2025-01-17 15:28:12,577 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module XmlRpcGridRouterModule
+2025-01-17 15:28:12,577 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module RegionReadyModule
+2025-01-17 15:28:12,578 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module JsonStoreCommandsModule
+2025-01-17 15:28:12,578 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module JsonStoreModule
+2025-01-17 15:28:12,579 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module JsonStoreScriptModule
+2025-01-17 15:28:12,581 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module MaterialsModule
+2025-01-17 15:28:12,581 DEBUG [Materials]: Initialized
+2025-01-17 15:28:12,582 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module EtcdMonitoringModule
+2025-01-17 15:28:12,583 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Scene Commands Module
+2025-01-17 15:28:12,585 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module SitStand Command Module
+2025-01-17 15:28:12,586 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module IRCBridgeModule
+2025-01-17 15:28:12,587 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module IRCClientStackModule
+2025-01-17 15:28:12,588 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module ubODE
+2025-01-17 15:28:12,589 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Meshmerizer
+2025-01-17 15:28:12,590 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module ZeroMesher
+2025-01-17 15:28:12,591 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module BulletSim
+2025-01-17 15:28:12,592 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module ExtendedPhysics
+2025-01-17 15:28:12,593 INFO  [EXTENDED PHYSICS] module is not enabled
+2025-01-17 15:28:12,595 INFO  [OpenSimTide]: Adding region 'Welcome' to this module
+2025-01-17 15:28:12,596 INFO  [OpenSimTide]: No region section [Welcome] found in addon-modules/OpenSimTide/config/*.ini configuration files.
+2025-01-17 15:28:12,596 INFO  [OpenSimTide]: Checking ./Regions/Welcome/Region/Regions.ini for [Welcome] section containing valid config keys
+2025-01-17 15:28:12,597 INFO  [OpenSimTide]: No region section [Welcome] found in configuration ./Regions/Welcome/Region/Regions.ini. Tide in this region is set to Disabled
+2025-01-17 15:28:12,603 INFO  [OpenSimBirds]: Adding region Welcome to this module
+2025-01-17 15:28:12,604 INFO  [OpenSimBirds]: No region section [Welcome] found in addon-modules/OpenSimBirds/config/*.ini configuration files.
+2025-01-17 15:28:12,605 INFO  [OpenSimBirds]: Checking ./Regions/Welcome/Region/Regions.ini for [Welcome] section containing valid config keys
+2025-01-17 15:28:12,606 INFO  [OpenSimBirds]: No region section [Welcome] found in configuration ./Regions/Welcome/Region/Regions.ini. Birds in this region are set to Disabled
+2025-01-17 15:28:12,762 INFO  [LLUDPSERVER]: Average Environment.TickCount resolution: 15.6ms
+2025-01-17 15:28:12,763 INFO  [LLUDPSERVER]: Average Util.GetTimeStampMS resolution: 0.000101ms
+2025-01-17 15:28:12,773 INFO  [WIND] Found Plugin: ConfigurableWind
+2025-01-17 15:28:12,773 INFO  [WIND] Found Plugin: SimpleRandomWind
+2025-01-17 15:28:12,774 INFO  [WIND] SimpleRandomWind plugin found, initializing.
+2025-01-17 15:28:12,778 INFO  [WORLD MAP]: JPEG Map location: http://192.168.2.151:7004/index.php?method=regionImage634f6ce9713849abaa9ec80f85a3eaa6
+2025-01-17 15:28:12,780 DEBUG [WATCHDOG]: Started tracking thread MapBlocks (Welcome), ID 18
+2025-01-17 15:28:12,786 INFO  L ... GenericSystemDrawing
+2025-01-17 15:28:12,788 INFO  L ... JPEG
+2025-01-17 15:28:12,788 INFO  L ... LLRAW
+2025-01-17 15:28:12,789 INFO  L ... RAW32
+2025-01-17 15:28:12,789 INFO  E ... ChannelDigger
+2025-01-17 15:28:12,789 INFO  E ... DefaultTerrainGenerator
+2025-01-17 15:28:12,825 DEBUG [RegionReady]: Enabled for region Welcome
+2025-01-17 15:28:12,895 INFO  [BULLETS SCENE] Selected bullet engine bulletunmanaged -> BulletUnmanaged/
+2025-01-17 15:28:12,897 DEBUG [BULLETS SCENE]: Initialize: GetVersionInfo returned 1.3,3.26
+2025-01-17 15:28:12,907 INFO  [BULLETS SCENE] Linksets implemented with Compound
+2025-01-17 15:28:12,907 DEBUG [WATCHDOG]: Started tracking thread bulletunmanaged (Welcome), ID 19
+2025-01-17 15:28:12,911 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module UrlModule (deferred)
+2025-01-17 15:28:12,912 DEBUG [REGIONMODULE]: Not loading BasicProfileModule because another module has registered OpenSim.Framework.IProfileModule
+2025-01-17 15:28:12,913 DEBUG [REGIONMODULE]: Adding scene Welcome to shared module BetaGridLikeMoneyModule (deferred)
+2025-01-17 15:28:12,915 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module Sound Module (deferred)
+2025-01-17 15:28:12,916 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module RestartModule (deferred)
+2025-01-17 15:28:12,916 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module DefaultDwellModule (deferred)
+2025-01-17 15:28:12,917 DEBUG [REGIONMODULE]: Adding scene Welcome to non-shared module AgentTransactionModule (deferred)
+2025-01-17 15:28:12,921 DEBUG [Groups.RemoteConnector]: Groups server at http://192.168.2.151:7003/, authentication None
+2025-01-17 15:28:12,927 INFO  [NEIGHBOUR CONNECTOR]: Enabled out neighbours for region Welcome
+2025-01-17 15:28:12,928 INFO  [HG INVENTORY CONNECTOR]: Enabled HG inventory for region Welcome
+2025-01-17 15:28:12,930 INFO  [REGIONASSETCONNECTOR]: active with HG and cache for region Welcome
+2025-01-17 15:28:12,931 INFO  [SIM SERVICE]: Starting...
+2025-01-17 15:28:12,941 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\MyAssetSet/MyAssetSet.xml does not exist!
+2025-01-17 15:28:12,942 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\AnimationsAssetSet/index.xml does not exist!
+2025-01-17 15:28:12,943 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\BodyPartsAssetSet/BodyPartsAssetSet.xml does not exist!
+2025-01-17 15:28:12,944 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\ClothingAssetSet/ClothingAssetSet.xml does not exist!
+2025-01-17 15:28:12,945 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\GesturesAssetSet/GesturesAssetSet.xml does not exist!
+2025-01-17 15:28:12,946 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\LandmarksAssetSet/LandmarksAssetSet.xml does not exist!
+2025-01-17 15:28:12,947 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\NotecardsAssetSet/NotecardsAssetSet.xml does not exist!
+2025-01-17 15:28:12,947 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\ObjectsAssetSet/ObjectsAssetSet.xml does not exist!
+2025-01-17 15:28:12,948 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\PhotosAssetSet/PhotosAssetSet.xml does not exist!
+2025-01-17 15:28:12,951 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\SoundsAssetSet/SoundsAssetSet.xml does not exist!
+2025-01-17 15:28:12,952 ERROR [ASSETS]: Asset set file O:\Opensim\!Tandy\OutworldzFiles\Opensim\bin\assets\CollisionSoundsAssetSet/CollisionSoundsAssetSet.xml does not exist!
+2025-01-17 15:28:12,976 INFO  [DATASNAPSHOT]: Set up snapshot service
+2025-01-17 15:28:13,082 INFO  [DATASNAPSHOT]: data service https://outworldz.com/Search/register.php notified. Secret: d20076fb-7e41-4e26-8246-6669b466911d
+2025-01-17 15:28:13,095 INFO  [LLUDPSERVER]: Starting inbound packet processing for the LLUDP server
+2025-01-17 15:28:13,097 DEBUG [UDPBASE]: Starting inbound UDP loop
+2025-01-17 15:28:13,099 DEBUG [WATCHDOG]: Started tracking thread Incoming Packets (Welcome), ID 21
+2025-01-17 15:28:13,100 INFO  [LLUDPSERVER]: Starting outbound packet processing for the LLUDP server
+2025-01-17 15:28:13,100 DEBUG [UDPBASE]: Starting outbound UDP loop
+2025-01-17 15:28:13,101 DEBUG [WATCHDOG]: Started tracking thread Outgoing Packets (Welcome), ID 22
+2025-01-17 15:28:13,139 DEBUG [AuthorizationService]: Region Welcome access restrictions: None
+2025-01-17 15:28:13,140 INFO  [AUTHORIZATION CONNECTOR]: Enabled local authorization for region Welcome
+2025-01-17 15:28:13,150 INFO  [SCENE]: Secure permissions loading enabled, modules loaded: DefaultPermissionsModule
+2025-01-17 15:28:13,151 INFO  [SCENE]: Loading land objects from storage
+2025-01-17 15:28:13,198 DEBUG [BULLETSIM TERRAIN MANAGER] Terrain for Welcome/<0, 0, 0> created with Heightmap
+2025-01-17 15:28:13,199 INFO  [SCENE]: Loading objects from datastore
+2025-01-17 15:28:13,208 DEBUG [REGION DB]: Loaded 0 objects using 0 prims
+2025-01-17 15:28:13,215 DEBUG [REGION DB]: Loaded inventory from 0 objects
+2025-01-17 15:28:13,215 INFO  [SCENE]: Loaded 0 objects from the datastore
+2025-01-17 15:28:13,216 DEBUG [USER MANAGEMENT MODULE]: Caching creators' data from Welcome (0 objects)...
+2025-01-17 15:28:13,227 DEBUG [GRID SERVICE]: Region Welcome (634f6ce9-7138-49ab-aa9e-c80f85a3eaa6, 256x256) registered at 993,1241 with flags RegionOnline
+2025-01-17 15:28:14,242 INFO  [SCENE]: Initializing script instances in Welcome
+2025-01-17 15:28:14,242 INFO  [SCENE]: Initialized 0 script instances in Welcome
+2025-01-17 15:28:14,259 INFO  [OPENSIM] Enabling remote managed stats fetch. URL = /ManagedStats/
+2025-01-17 15:28:14,269 INFO  [SERVER BASE]: Running startup_commands.txt
+2025-01-17 15:28:14,269 INFO  [SERVER BASE]: Running 'show stats'
