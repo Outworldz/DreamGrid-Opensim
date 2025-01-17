@@ -109,11 +109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\pCampBot\\pCampBot.csproj",
+      "projectUniqueName": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\pCampBot\\pCampBot.csproj",
       "projectName": "pCampBot",
-      "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\pCampBot\\pCampBot.csproj",
+      "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\pCampBot\\pCampBot.csproj",
       "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-      "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\pCampBot\\obj\\",
+      "outputPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\pCampBot\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -130,14 +130,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Monitoring\\OpenSim.Framework.Monitoring.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+            "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+              "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
             }
           }
         }

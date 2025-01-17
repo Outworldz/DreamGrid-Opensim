@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj": {}
+    "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj": {}
   },
   "projects": {
-    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+    "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj",
+        "projectUniqueName": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj",
         "projectName": "OpenSim.Framework",
-        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj",
+        "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj",
         "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\obj\\",
+        "outputPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj": {
-                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj"
+              "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj": {
+    "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj",
+        "projectUniqueName": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj",
         "projectName": "OpenSim.Tools.Configger",
-        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj",
+        "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\OpenSim.Tools.Configger.csproj",
         "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\obj\\",
+        "outputPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Tools\\Configger\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
-                "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+              "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+                "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
               }
             }
           }
@@ -134,14 +134,14 @@
         }
       }
     },
-    "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj": {
+    "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj",
+        "projectUniqueName": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj",
         "projectName": "SmartThreadPool",
-        "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj",
+        "projectPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\SmartThreadPool.csproj",
         "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-        "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\obj\\",
+        "outputPath": "O:\\Opensim\\!Tandy V6\\OutworldzFiles\\Opensim\\ThirdParty\\SmartThreadPool\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fred\\AppData\\Roaming\\NuGet\\NuGet.Config",

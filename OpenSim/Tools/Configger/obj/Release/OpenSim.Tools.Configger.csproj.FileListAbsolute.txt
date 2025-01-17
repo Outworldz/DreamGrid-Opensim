@@ -10,3 +10,15 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\Ope
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.pdb
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.genruntimeconfig.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Tools.Configger.exe
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Tools.Configger.runtimeconfig.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Tools.Configger.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Tools.Configger.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim..18F7232B.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\Configger\obj\Release\OpenSim.Tools.Configger.genruntimeconfig.cache

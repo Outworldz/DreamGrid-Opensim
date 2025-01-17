@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModul
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.csproj.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\Gloebit.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\Gloebit.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.csproj.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\addon-modules\Gloebit\GloebitMoneyModule\obj\Release\Gloebit.pdb

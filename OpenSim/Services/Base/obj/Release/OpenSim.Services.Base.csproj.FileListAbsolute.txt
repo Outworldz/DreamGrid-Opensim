@@ -7,3 +7,12 @@ O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenS
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim..C60BE7C8.Up2Date
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.dll
 O:\Opensim\!Tandy\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.Base.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\bin\OpenSim.Services.Base.pdb
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.csproj.AssemblyReference.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.csproj.CoreCompileInputs.cache
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.sourcelink.json
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim..C60BE7C8.Up2Date
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.dll
+O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\Base\obj\Release\OpenSim.Services.Base.pdb
