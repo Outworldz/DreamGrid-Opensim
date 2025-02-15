@@ -1949,6 +1949,69 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
 
+            CheckStringParameters(requestData, responseData, new string[] { "command" });
+
+            try
+            {
+                string command = requestData["command"].ToString();
+
+                // Create a StringWriter to capture the console output
+                using (var writer = new StringWriter())
+                {
+                    var originalOut = Console.Out;
+                    try
+                    {
+                        Console.SetOut(writer);
+
+                        // Execute the command
+                        MainConsole.Instance.RunCommand(command);
+                    }
+                    finally
+                    {
+                        // Restore the original console output
+                        Console.SetOut(originalOut);
+                    }
+
+                    // Capturing console output
+                    string consoleOutput = writer.ToString();
+
+                    // Display the captured output in the console
+                    Console.WriteLine(consoleOutput);
+
+                    responseData["success"] = true;
+                    responseData["message"] = consoleOutput;
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                responseData["success"] = false;
+                responseData["error"] = $"ArgumentNullException: {ex.Message}";
+            }
+            catch (ArgumentException ex)
+            {
+                responseData["success"] = false;
+                responseData["error"] = $"ArgumentException: {ex.Message}";
+            }
+            catch (InvalidOperationException ex)
+            {
+                responseData["success"] = false;
+                responseData["error"] = $"InvalidOperationException: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                responseData["success"] = false;
+                responseData["error"] = $"Exception: {ex.Message}";
+            }
+
+            m_log.Info("[RADMIN]: Command XML Administrator Request complete");
+        }
+        private void XmlRpcConsoleCommandMethodOLD(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
+        {
+            m_log.Info("[RADMIN]: Received Command XML Administrator Request");
+
+            Hashtable responseData = (Hashtable)response.Value;
+            Hashtable requestData = (Hashtable)request.Params[0];
+
             CheckStringParameters(requestData, responseData, new string[] {"command"});
 
             MainConsole.Instance.RunCommand(requestData["command"].ToString());
