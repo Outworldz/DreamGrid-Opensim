@@ -374,6 +374,7 @@ AssetService="OpenSim.Services.AssetService.dll:AssetService"
 ;; Set by Dreamgrid
 ;;
 ; START  <= Leave this line
+Region_Sandbox=Persistent,FallbackRegion
 Region_Welcome=DefaultRegion,DefaultHGRegion
 
 ; END  <= Leave this line
