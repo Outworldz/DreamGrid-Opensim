@@ -1944,7 +1944,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
         private void XmlRpcConsoleCommandMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-            m_log.Info("[RADMIN]: Received Command XML Administrator Request");
+            m_log.Debug("[RADMIN]: Received Command XML Administrator Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
