@@ -550,7 +550,7 @@ namespace OpenSim.Region.CoreModules.World.Archiver
             }
 
             m_log.InfoFormat("[ARCHIVER]: Successfully loaded archive");
-
+            new SmartStartNotify("loadoar", m_rootScene.RegionInfo.RegionID.Guid);
             m_rootScene.EventManager.TriggerOarFileLoaded(m_requestId, dearchivedScenes.GetLoadedScenes(), m_errorMessage);
         }
 

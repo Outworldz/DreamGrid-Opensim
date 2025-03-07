@@ -1199,7 +1199,7 @@ namespace OpenSim.Framework
             }
             catch (Exception e)
             {
-                m_log.Info($"[FORMS]: Error receiving response from {requestUrl}: {e.Message}");
+                m_log.Debug($"[FORMS]: Error receiving response from {requestUrl}: {e.Message}");
                 throw;
             }
             finally
@@ -1283,7 +1283,7 @@ namespace OpenSim.Framework
             }
             catch (Exception e)
             {
-                m_log.Info($"[FORMS]: Error receiving response from {requestUrl}: {e.Message}");
+                m_log.Debug($"[FORMS]: Error receiving response from {requestUrl}: {e.Message}");
                 throw;
             }
             finally

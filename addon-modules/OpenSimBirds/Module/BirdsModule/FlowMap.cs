@@ -68,20 +68,20 @@ namespace Flocking
 			//fill in the boundaries
 			for( int x = 0; x < regionX; x++ ) {
 				for( int y = 0; y < regionY; y++ ) {
-					m_flowMap[x,y,0] = 100f;
-					m_flowMap[x,y, regionZ-1] = 100f;
+					m_flowMap[x,y,0] = 100f;					
+					m_flowMap[x, y, regionZ - 1] = 100f;					
 				}
 			}
 			for( int x = 0; x < regionX; x++ ) {
 				for( int z = 0; z < regionZ; z++ ) {
 					m_flowMap[x,0,z] = 100f;
-					m_flowMap[x,regionY-1,z] = 100f;
+					m_flowMap[x, regionY - 1, z] = 100f;
 				}
 			}
 			for( int y = 0; y < regionY; y++ ) {
 				for( int z = 0; z < regionZ; z++ ) {
-					m_flowMap[0,y,z] = 100f;
-					m_flowMap[regionX-1,y,z] = 100f;
+					m_flowMap[0,y,z] = 100f;					
+					m_flowMap[regionX - 1, y, z] = 100f;									
 				}
 			}
 			
@@ -90,7 +90,10 @@ namespace Flocking
 				for( int y = 0; y < regionY; y++ ) {
 					int zMax = Convert.ToInt32(m_scene.GetGroundHeight( x, y ));
 					for( int z = 1; z < zMax; z++ ) {
-						m_flowMap[x,y,z] = 100f;
+						if (z < regionZ )
+                        {
+							m_flowMap[x, y, z] = 100f;
+						}
 					}
 				}
 			}

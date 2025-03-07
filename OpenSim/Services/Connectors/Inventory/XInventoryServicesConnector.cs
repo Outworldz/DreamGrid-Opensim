@@ -800,7 +800,7 @@ namespace OpenSim.Services.Connectors
             }
             catch (Exception e)
             {
-                m_log.Info($"[XInventory]: Error receiving response from {m_InventoryURL}: {e.Message}");
+                m_log.Debug($"[XInventory]: Error receiving response from {m_InventoryURL}: {e.Message}");
                 throw;
             }
             finally

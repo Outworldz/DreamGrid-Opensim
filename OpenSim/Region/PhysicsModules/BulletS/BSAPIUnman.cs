@@ -34,6 +34,7 @@ using System.Text;
 using OpenSim.Framework;
 
 using OpenMetaverse;
+using System.Threading;
 
 namespace OpenSim.Region.PhysicsModule.BulletS
 {
@@ -172,6 +173,7 @@ namespace OpenSim.Region.PhysicsModule.BulletS
 
             // Get the version of the Physics Engine
             BulletEngineVersion = "";
+            bool okay = false;
             try
             {
 
@@ -186,11 +188,34 @@ namespace OpenSim.Region.PhysicsModule.BulletS
                     BSScene.m_log.DebugFormat("{0}: Initialize: BulletSim version converted from legacy {1} to {2}",
                         BSScene.LogHeader, legacyValue, BulletEngineVersion);
                 }
+                okay = true;
             }
             catch (Exception e) {
                 BSScene.m_log.DebugFormat("{0}: Initialize: Could not fetch Bullet version info. Exception: {1}", BSScene.LogHeader, e);
             }
+            if (!okay)
+            {
+                Thread.Sleep(1000);
+                try
+                {
 
+                    BulletEngineVersion = Marshal.PtrToStringAnsi(BSAPICPP.GetVersion2());
+                    BSScene.m_log.DebugFormat("{0}: Initialize: GetVersionInfo returned {1}", BSScene.LogHeader, BulletEngineVersion);
+                    string legacyValue = BSParam.VersionLegacyValue;
+                    if (BulletEngineVersion.Equals(legacyValue))
+                    {
+                        // The old version of BulletSim returned a static string for the version.
+                        // Convert that old static string into what is probably the correct version information.
+                        BulletEngineVersion = BSParam.VersionLegacyReplacement;
+                        BSScene.m_log.DebugFormat("{0}: Initialize: BulletSim version converted from legacy {1} to {2}",
+                            BSScene.LogHeader, legacyValue, BulletEngineVersion);
+                    }                    
+                }
+                catch (Exception e)
+                {
+                    BSScene.m_log.DebugFormat("{0}: Initialize: Could not fetch Bullet version info. Exception: {1}", BSScene.LogHeader, e);
+                }
+            }
             // Call the unmanaged code with the buffers and other information
             return new BulletWorldUnman(0, PhysicsScene, BSAPICPP.Initialize2(maxPosition, m_paramsHandle.AddrOfPinnedObject(),
                                             maxCollisions, m_collisionArrayPinnedHandle.AddrOfPinnedObject(),

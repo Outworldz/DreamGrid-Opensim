@@ -366,7 +366,7 @@ namespace Gloebit.GloebitMoneyModule
                 // but many other money modules can not be enabled/disabled by region.
                 string economyModule; 
                 if (String.IsNullOrEmpty(m_startupEconomyModule) && String.IsNullOrEmpty(m_economyEconomyModule)) {
-                    m_log.Warn("[GLOEBITMONEYMODULE] no sim-wide economymodule is set.  Defaulting to Gloebit since dll is present.");
+                    m_log.Debug("[GLOEBITMONEYMODULE] no sim-wide economymodule is set.  Defaulting to Gloebit since dll is present.");
                     economyModule = "Gloebit";
                 } else if (!String.IsNullOrEmpty(m_startupEconomyModule) && !String.IsNullOrEmpty(m_economyEconomyModule)) {
                     m_log.Warn("[GLOEBITMONEYMODULE] economymodule is set in 2 places.  Should only be defined once.");
