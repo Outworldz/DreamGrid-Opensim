@@ -41,6 +41,42 @@ namespace Flocking
         private uint regionZ;
         private float regionBorder;
 		
+		public bool GetThings  ()
+		{
+
+            // fill in the things
+            foreach (EntityBase entity in m_scene.GetEntities())
+            {
+                if (entity is SceneObjectGroup)
+                {
+                    SceneObjectGroup sog = (SceneObjectGroup)entity;
+
+                    //todo: ignore phantom
+                    float fmaxX, fminX, fmaxY, fminY, fmaxZ, fminZ;
+                    int maxX, minX, maxY, minY, maxZ, minZ;
+                    sog.GetAxisAlignedBoundingBoxRaw(out fminX, out fmaxX, out fminY, out fmaxY, out fminZ, out fmaxZ);
+
+                    minX = Convert.ToInt32(fminX);
+                    maxX = Convert.ToInt32(fmaxX);
+                    minY = Convert.ToInt32(fminY);
+                    maxY = Convert.ToInt32(fmaxX);
+                    minZ = Convert.ToInt32(fminZ);
+                    maxZ = Convert.ToInt32(fmaxZ);
+
+                    for (int x = minX; x < maxX; x++)
+                    {
+                        for (int y = minY; y < maxY; y++)
+                        {
+                            for (int z = minZ; z < maxZ; z++)
+                            {
+                                m_flowMap[x, y, z] = 100f;
+                            }
+                        }
+                    }
+                }
+            }
+			return true;
+        }
 		public FlowMap (Scene scene, int maxHeight, float borderSize)
 		{
 			m_scene = scene;
@@ -66,118 +102,44 @@ namespace Flocking
 		
 		public void Initialise() {
 			//fill in the boundaries
-            try
-            {
-                for (int x = 0; x < regionX; x++)
-                {
-                    for (int y = 0; y < regionY; y++)
-                    {
-                        m_flowMap[x, y, 0] = 100f;
-                        m_flowMap[x, y, regionZ - 1] = 100f;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-
-            try
-            {
-                for (int x = 0; x < regionX; x++)
-                {
-                    for (int z = 0; z < regionZ; z++)
-                    {
-                        m_flowMap[x, 0, z] = 100f;
-                        m_flowMap[x, regionY - 1, z] = 100f;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            try {
-                for (int y = 0; y < regionY; y++)
-                {
-                    for (int z = 0; z < regionZ; z++)
-                    {
-                        m_flowMap[0, y, z] = 100f;
+			for( int x = 0; x < regionX; x++ ) {
+				for( int y = 0; y < regionY; y++ ) {
+					m_flowMap[x,y,0] = 100f;
+					m_flowMap[x,y, regionZ-1] = 100f;
+				}
+			}
+			for( int x = 0; x < regionX; x++ ) {
+				for( int z = 0; z < regionZ; z++ ) {
+					m_flowMap[x,0,z] = 100f;
+					m_flowMap[x,regionY-1,z] = 100f;
+				}
+			}
+			for( int y = 0; y < regionY; y++ ) {
+				for( int z = 0; z < regionZ; z++ ) {
+					m_flowMap[0,y,z] = 100f;
                         if (z > LengthZ)
                         {
                             z = LengthZ;
                         }
                         m_flowMap[regionX - 1, y, z] = 100f;
-                    }
-                }
-            }
-            catch (Exception )
-            {
-
-            }
-
-            try
-            {
-                //fill in the terrain
-                for (int x = 0; x < regionX; x++)
-                {
-                    for (int y = 0; y < regionY; y++)
-                    {
-                        int zMax = Convert.ToInt32(m_scene.GetGroundHeight(x, y));
-                        for (int z = 1; z < zMax; z++)
-                        {
-                            Console.WriteLine("{0} {1} {2}",x,y,z);
-                            m_flowMap[x, y, z] = 100f;
-                        }
-                    }
-                }
-            }
-            catch (IndexOutOfRangeException)
-            {
-                
-            }
-
-            try
-            {
-                // fill in the things
-                foreach (EntityBase entity in m_scene.GetEntities())
-                {
-                    if (entity is SceneObjectGroup)
-                    {
-                        SceneObjectGroup sog = (SceneObjectGroup)entity;
-
-                        //todo: ignore phantom
-                        float fmaxX, fminX, fmaxY, fminY, fmaxZ, fminZ;
-                        int maxX, minX, maxY, minY, maxZ, minZ;
-                        sog.GetAxisAlignedBoundingBoxRaw(out fminX, out fmaxX, out fminY, out fmaxY, out fminZ,
-                            out fmaxZ);
-
-                        minX = Convert.ToInt32(fminX);
-                        maxX = Convert.ToInt32(fmaxX);
-                        minY = Convert.ToInt32(fminY);
-                        maxY = Convert.ToInt32(fmaxX);
-                        minZ = Convert.ToInt32(fminZ);
-                        maxZ = Convert.ToInt32(fmaxZ);
-
-                        for (int x = minX; x < maxX; x++)
-                        {
-                            for (int y = minY; y < maxY; y++)
-                            {
-                                for (int z = minZ; z < maxZ; z++)
-                                {
-                                    m_flowMap[x, y, z] = 100f;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception)
-            {
-            }
-
-        }
+				}
+			}
+			
+			//fill in the terrain
+			for( int x = 0; x < regionX; x++ ) {
+				for( int y = 0; y < regionY; y++ ) {
+					int zMax = Convert.ToInt32(m_scene.GetGroundHeight( x, y ));
+					if (zMax < regionZ)
+					{
+						for (int z = 1; z < zMax; z++)
+						{
+							m_flowMap[x, y, z] = 100f;
+						}
+					}
+				}
+			}
+			
+		}
 
 		public bool WouldHitObstacle (Vector3 currPos, Vector3 targetPos)
 		{

@@ -1,4 +1,0 @@
-﻿[*.cs]
-
-# CS2002: Source file specified multiple times
-dotnet_diagnostic.CS2002.severity = none
