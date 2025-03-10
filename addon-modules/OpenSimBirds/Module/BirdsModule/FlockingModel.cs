@@ -120,7 +120,10 @@ namespace Flocking
   			for (int i = 0; i < num; i++) {
 				AddBird (m_name + i );
   			}
-		}
+
+            m_flowMap.GetThings();
+
+        }
 
 		public List<Bird> UpdateFlockPos ()
 		{
