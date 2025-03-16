@@ -803,7 +803,7 @@ namespace OpenSim.Region.Framework.Scenes
 
             // !!! DreamGrid Smart Start sends requested Region UUID to Dreamgrid.
             // If region is on line, returns same UUID. If Offline, returns UUID for Welcome, brings up the region and teleports you to it.
-            if (m_SmartStartEnabled)
+            if (m_SmartStartEnabled && agentID != UUID.Zero)
             {
                 string url = $"{m_SmartStartUrl}?alt={regionID}&agent=UUI&agentid={agentID}&password={m_SmartStartMachineID}";
                 m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
