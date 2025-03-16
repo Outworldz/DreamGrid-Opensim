@@ -41,11 +41,12 @@ namespace Flocking
         private uint regionZ;
         private float regionBorder;
 		
-		public bool GetThings  ()
+		// move here to be called later when prims exists
+		public bool GetThings  (Scene m)
 		{
 
             // fill in the things
-            foreach (EntityBase entity in m_scene.GetEntities())
+            foreach (EntityBase entity in m.GetEntities())
             {
                 if (entity is SceneObjectGroup)
                 {
@@ -66,10 +67,11 @@ namespace Flocking
                     for (int x = minX; x < maxX; x++)
                     {
                         for (int y = minY; y < maxY; y++)
-                        {
+                        {						
                             for (int z = minZ; z < maxZ; z++)
                             {
-                                m_flowMap[x, y, z] = 100f;
+								if (z < regionZ && z >= 0)	// prim can be below 0!
+									m_flowMap[x, y, z] = 100f;
                             }
                         }
                     }
@@ -84,7 +86,7 @@ namespace Flocking
             regionY = m_scene.RegionInfo.RegionSizeY;
             regionZ = (uint)maxHeight;
             regionBorder = borderSize;
-            m_flowMap = new float[regionX, regionY, regionZ];
+            m_flowMap = new float[regionX, regionY, regionZ + 1];
 		}
 		
 		public int LengthX {
@@ -99,7 +101,10 @@ namespace Flocking
         public int Border  {
             get {return (int)regionBorder;}
         }
-		
+		public void map(int x, int y, int  z)
+		{
+            m_flowMap[x, y, 0] = 100f;
+        }
 		public void Initialise() {
 			//fill in the boundaries
 			for( int x = 0; x < regionX; x++ ) {
@@ -117,7 +122,11 @@ namespace Flocking
 			for( int y = 0; y < regionY; y++ ) {
 				for( int z = 0; z < regionZ; z++ ) {
 					m_flowMap[0,y,z] = 100f;
-					m_flowMap[regionX-1,y,z] = 100f;
+                        if (z > LengthZ)
+                        {
+                            z = LengthZ;
+                        }
+                        m_flowMap[regionX - 1, y, z] = 100f;
 				}
 			}
 			
@@ -127,17 +136,16 @@ namespace Flocking
 					int zMax = Convert.ToInt32(m_scene.GetGroundHeight( x, y ));
 					if (zMax < regionZ)
 					{
-						for (int z = 1; z < zMax; z++)
+						for (int z = 1; z <= zMax; z++)	// possible crash fred
 						{
 							m_flowMap[x, y, z] = 100f;
 						}
 					}
 				}
-			}
-			
+			}        
 		}
 
-		public bool WouldHitObstacle (Vector3 currPos, Vector3 targetPos)
+        public bool WouldHitObstacle (Vector3 currPos, Vector3 targetPos)
 		{
 			bool retVal = false;
 			//fail fast

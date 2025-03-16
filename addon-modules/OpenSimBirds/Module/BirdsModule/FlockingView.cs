@@ -42,6 +42,7 @@ namespace Flocking
         private String m_name;
 		private String m_birdPrim;
 		
+		
 		private Dictionary<string, SceneObjectGroup> m_sogMap = new Dictionary<string, SceneObjectGroup> ();
 				
 		public FlockingView (String moduleName, Scene scene)
@@ -84,7 +85,6 @@ namespace Flocking
 		{
 			SceneObjectPart existing = m_scene.GetSceneObjectPart (bird.Id);
 
-
 			SceneObjectGroup sog;
             SceneObjectPart rootPart;
 
@@ -103,8 +103,8 @@ namespace Flocking
                 sog.CreateScriptInstances(0, true, m_scene.DefaultScriptEngine, 1);
                 rootPart.ParentGroup.ResumeScripts();
                 rootPart.ScheduleFullUpdate();
-                sog.DetachFromBackup();
-			} else {
+                sog.DetachFromBackup();            
+            } else {
 				sog = existing.ParentGroup;
                 m_sogMap[bird.Id] = sog;
                 //rootPart = sog.RootPart;
