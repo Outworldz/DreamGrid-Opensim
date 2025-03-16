@@ -1,4 +1,5 @@
-
+WifiPages/*
+bin/WifiPages/*
 .project
 .settings
 *.csproj
