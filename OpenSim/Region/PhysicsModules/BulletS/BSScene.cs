@@ -312,7 +312,7 @@ namespace OpenSim.Region.PhysicsModule.BulletS
             // Only use heightmap terrain implementation if terrain larger than legacy size
             if ((uint)regionExtent.X > Constants.RegionSize || (uint)regionExtent.Y > Constants.RegionSize)
             {
-                // Smart Start m_log.WarnFormat("{0} Forcing terrain implementation to heightmap for large region", LogHeader);
+                m_log.WarnFormat("{0} Forcing terrain implementation to heightmap for large region", LogHeader);
                 BSParam.TerrainImplementation = (float)BSTerrainPhys.TerrainImplementation.Heightmap;
             }
 
