@@ -73,21 +73,27 @@ namespace Flocking
 			Bird Bird = new Bird (name, this, m_flowMap);
 			
 			// find an initial random location for this Bird
-			// somewhere not within an obstacle
-			int xInit = m_rnd.Next(m_flowMap.LengthX);
-			int yInit = m_rnd.Next(m_flowMap.LengthY);
-			int zInit = m_rnd.Next(m_flowMap.LengthZ);
+			// somewhere not within an obstacle, and inside the border
+			// random between 0 + border, max is 256 - border
+			// height is just above water to Max height
+			int xInit = m_flowMap.LengthX - randBetween((int) m_border, m_flowMap.LengthX- (int)m_border);
+			int yInit = m_flowMap.LengthY - randBetween((int) m_border, m_flowMap.LengthY - (int) m_border);
+            int zInit =  randBetween(21, m_flowMap.LengthZ);
 			
 			while( m_flowMap.IsWithinObstacle( xInit, yInit, zInit ) ){
-				xInit = m_rnd.Next(m_flowMap.LengthX);
-				yInit = m_rnd.Next(m_flowMap.LengthY);
-				zInit = m_rnd.Next(m_flowMap.LengthZ);
-			}
+				xInit = m_flowMap.LengthX - randBetween((int) m_border, m_flowMap.LengthX- (int)m_border);
+                yInit = m_flowMap.LengthY - randBetween((int)m_border, m_flowMap.LengthY - (int)m_border);
+                zInit = randBetween(21,m_flowMap.LengthZ);
+            }
 				
 			Bird.Location = new Vector3 (Convert.ToSingle(xInit), Convert.ToSingle(yInit), Convert.ToSingle(zInit));
 			m_flock.Add (Bird);
 		}
-						
+
+		private int randBetween(int min, int max)
+		{
+            return(min + m_rnd.Next((int) max - (int) min + 1));
+        }
 		public float MaxSpeed {
 			get {return m_maxSpeed;}
             set { m_maxSpeed = value; }
