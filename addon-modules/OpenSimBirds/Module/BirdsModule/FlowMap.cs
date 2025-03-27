@@ -71,12 +71,14 @@ namespace Flocking
                     for (int x = minX; x < maxX; x++)
                     {
                         for (int y = minY; y < maxY; y++)
-                        {						
-                            for (int z = minZ; z < maxZ; z++)
-                            {								
+                        {
+							for (int z = minZ; z < maxZ; z++)
+							{
 								if (x >= 0 && x < regionX && y > 0 && y < regionY && z < regionZ && z >= 0)  // prim can be below 0!
-									m_flowMap[x, y, z] = 100f;								
-                            }
+								{									
+									m_flowMap[x, y, z] = 100f;									
+								}
+							}
                         }
                     }
                 }
