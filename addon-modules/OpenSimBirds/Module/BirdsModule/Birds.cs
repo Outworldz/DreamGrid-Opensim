@@ -330,6 +330,7 @@ namespace Flocking
 			}
 
 			// As long as the vector is greater than 0
+			
 			if (steer.Length () > 0) {
 				// Implement Reynolds: Steering = Desired - Velocity
 				steer.Normalize ();

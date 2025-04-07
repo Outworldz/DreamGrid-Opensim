@@ -52,8 +52,6 @@ namespace Flocking
                 {
                     SceneObjectGroup sog = (SceneObjectGroup)entity;
 
-
-
 					var s = sog.AbsolutePosition;
 
                     //todo: ignore phantom
@@ -61,18 +59,18 @@ namespace Flocking
                     int maxX, minX, maxY, minY, maxZ, minZ;
                     sog.GetAxisAlignedBoundingBoxRaw(out fminX, out fmaxX, out fminY, out fmaxY, out fminZ, out fmaxZ);
 					
-                    minX = Convert.ToInt32(fminX) + (int) s.X;
-                    maxX = Convert.ToInt32(fmaxX) + (int) s.X;
-                    minY = Convert.ToInt32(fminY) + (int) s.Y;
-                    maxY = Convert.ToInt32(fmaxX) + (int) s.Y;
-                    minZ = Convert.ToInt32(fminZ) + (int) s.Z;
-                    maxZ = Convert.ToInt32(fmaxZ) + (int) s.Z;
+                    minX = Convert.ToInt32(fminX) + (int) s.X + 2;
+                    maxX = Convert.ToInt32(fmaxX) + (int) s.X + 2;
+                    minY = Convert.ToInt32(fminY) + (int) s.Y + 2;
+                    maxY = Convert.ToInt32(fmaxX) + (int) s.Y + 2;
+                    minZ = Convert.ToInt32(fminZ) + (int) s.Z + 2;
+                    maxZ = Convert.ToInt32(fmaxZ) + (int) s.Z + 2;
 
                     for (int x = minX; x < maxX; x++)
                     {
                         for (int y = minY; y < maxY; y++)
                         {
-							for (int z = minZ; z < maxZ; z++)
+							for (int z = minZ; z <= maxZ; z++)
 							{
 								if (x >= 0 && x < regionX && y > 0 && y < regionY && z < regionZ && z >= 0)  // prim can be below 0!
 								{									
@@ -138,7 +136,7 @@ namespace Flocking
 			for( int x = 0; x < regionX; x++ ) {
 				for (int y = 0; y < regionY; y++)
 				{
-					int zMax = Convert.ToInt32(m_scene.GetGroundHeight(x, y));				
+					int zMax = Convert.ToInt32(m_scene.GetGroundHeight(x, y)) + 2;	// need room to turn	
 					if (zMax < regionZ)
 					{
 						for (int z = 0; z <= zMax; z++)

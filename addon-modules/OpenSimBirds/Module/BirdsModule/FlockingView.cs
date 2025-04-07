@@ -158,7 +158,7 @@ namespace Flocking
 		private SceneObjectGroup MakeDefaultPrim (string name)
 		{
 			PrimitiveBaseShape shape = PrimitiveBaseShape.CreateSphere ();
-  			shape.Scale = new Vector3 (0.5f, 0.5f, 0.5f);
+  			shape.Scale = new Vector3 (2.0f, 2.0f, 2.0f);
 
             SceneObjectGroup prim = new SceneObjectGroup(m_owner, new Vector3((float)m_scene.RegionInfo.RegionSizeX / 2, (float)m_scene.RegionInfo.RegionSizeY / 2, 25f), shape);
 			prim.Name = name;
