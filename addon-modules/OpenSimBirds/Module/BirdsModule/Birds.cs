@@ -229,7 +229,6 @@ namespace Flocking
 			Vector3 inFront = m_loc + Vector3.Multiply(normVel, m_model.Tolerance);
 			if( m_flowMap.WouldHitObstacle( m_loc, inFront ) ) {
 				AdjustVelocityToAvoidObstacles ();
-	
 			}
 		}
 

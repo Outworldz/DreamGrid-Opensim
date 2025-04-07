@@ -28,6 +28,7 @@
 
 using System;
 using OpenMetaverse;
+using OpenSim.Framework;
 using OpenSim.Region.Framework.Scenes;
 
 namespace Flocking
@@ -40,8 +41,6 @@ namespace Flocking
         private uint regionY;
         private uint regionZ;
         private float regionBorder;
-		
-		// move here to be called later when prims exists
 		public bool GetThings  (Scene m)
 		{			
 
@@ -142,7 +141,7 @@ namespace Flocking
 						for (int z = 0; z <= zMax; z++)
 						{
 							m_flowMap[x, y, z] = 100f;
-						}
+                        }
 					}					
 				}
 			}        

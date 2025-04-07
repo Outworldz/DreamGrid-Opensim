@@ -152,7 +152,7 @@ namespace Flocking
 				retVal = MakeDefaultPrim (name);
 			}
 
-			return retVal;
+            return retVal;
 		}
 
 		private SceneObjectGroup MakeDefaultPrim (string name)
@@ -168,6 +168,19 @@ namespace Flocking
 			return prim;
 		}
 
-	}
+
+        public SceneObjectGroup MakeDefaultBox(string name, Vector3 pos)
+        {
+            PrimitiveBaseShape shape = PrimitiveBaseShape.CreateBox();
+            shape.Scale = new Vector3(1.0f, 1.0f, 1.0f);
+
+            SceneObjectGroup prim = new SceneObjectGroup(m_owner, new Vector3(), shape);
+            prim.Name = name;
+            prim.DetachFromBackup();
+            m_scene.AddNewSceneObject(prim, false);
+
+            return prim;
+        }
+    }
 }
 

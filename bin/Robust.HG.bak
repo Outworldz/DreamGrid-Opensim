@@ -18,28 +18,28 @@
 
 ;; Set by Dreamgrid
 ; ${Const|GridName}
-GridName=Alienware
-http_listener_port=7002
+GridName=Nitro
+http_listener_port=5002
 
 ;; Set by Dreamgrid
 ; The URL of the Robust server
-BaseURL=http://alienware.outworldz.net
+BaseURL=http://192.168.2.151
 
 ; The URL of the Robust server, if PublicPort and PrivatePort must be
 ; accessed via different hostnames as in the case of a NAT gateway
-PrivURL=http://192.168.2.100
+PrivURL=http://192.168.2.151
 
 ;; Set by Dreamgrid
 ; The public port of the Robust server
-PublicPort=7002
+PublicPort=5002
 
 ;; Set by Dreamgrid
 ; The private port of the Robust server
-PrivatePort=7003
+PrivatePort=5003
 
 ;; Set by Dreamgrid
 ; port used for icons, teleports and other tasks when communicating to/from opensim
-DiagnosticsPort=7001
+DiagnosticsPort=5001
 
 ;; Set by Dreamgrid
 ;Apache Port for Jopensim and others,
@@ -47,7 +47,7 @@ ApachePort=80
 
 ;
 ;Password from DYN DNS
-MachineID=Ferd
+MachineID=Fred
 
 ;
 jOpensimURL=
@@ -209,7 +209,7 @@ AllowllHTTPRequestIn=true
 ; * Leave commented to diable logins to the console
 ConsoleUser=Wifi Admin
 ConsolePass=BFJkKXnG2b8R5aYab64dvlP9i
-ConsolePort=7002
+ConsolePort=5002
 
 [Hypergrid]
 
@@ -1033,7 +1033,7 @@ gridnick=${Const|GridName}
 ;                       this as splash page
 ;; Set by Dreamgrid
 ;welcome = ${Const|BaseURL}:${Const|PublicPort}/JOpensim/index.php?option=com_opensim
-welcome=http://localhist:7002
+welcome=http://l192.168.2.151:5002
 
 ; helper uri: optional: if it exists it will be used to tell the client to use
 ;                       this for all economy related things
@@ -1303,14 +1303,14 @@ MailsToSMTPAddressPerHour=10
 email_pause_time=20
 email_max_size=4096
 SMTP_SERVER_TLS=Password
-host_domain_header_from=alienware.outworldz.net
+host_domain_header_from=192.168.2.151
 
 ;; Set to True to enable Smart Start
 ;; Set by Dreamgrid
 [SmartStart]
-Enabled=True
-URL=http://192.168.2.100:7001
-MachineID=Ferd
+Enabled=False
+URL=
+MachineID=
 
 ;; For Joomla/jOpensim
 [CapsService]
