@@ -229,7 +229,6 @@ namespace Flocking
 			Vector3 inFront = m_loc + Vector3.Multiply(normVel, m_model.Tolerance);
 			if( m_flowMap.WouldHitObstacle( m_loc, inFront ) ) {
 				AdjustVelocityToAvoidObstacles ();
-	
 			}
 		}
 
@@ -330,6 +329,7 @@ namespace Flocking
 			}
 
 			// As long as the vector is greater than 0
+			
 			if (steer.Length () > 0) {
 				// Implement Reynolds: Steering = Desired - Velocity
 				steer.Normalize ();

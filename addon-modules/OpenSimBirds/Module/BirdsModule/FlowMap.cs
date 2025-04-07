@@ -28,6 +28,7 @@
 
 using System;
 using OpenMetaverse;
+using OpenSim.Framework;
 using OpenSim.Region.Framework.Scenes;
 
 namespace Flocking
@@ -40,37 +41,41 @@ namespace Flocking
         private uint regionY;
         private uint regionZ;
         private float regionBorder;
-		
-		public bool GetThings  ()
-		{
+		public bool GetThings  (Scene m)
+		{			
 
             // fill in the things
-            foreach (EntityBase entity in m_scene.GetEntities())
+            foreach (EntityBase entity in m.GetEntities())
             {
                 if (entity is SceneObjectGroup)
                 {
                     SceneObjectGroup sog = (SceneObjectGroup)entity;
 
+					var s = sog.AbsolutePosition;
+
                     //todo: ignore phantom
                     float fmaxX, fminX, fmaxY, fminY, fmaxZ, fminZ;
                     int maxX, minX, maxY, minY, maxZ, minZ;
                     sog.GetAxisAlignedBoundingBoxRaw(out fminX, out fmaxX, out fminY, out fmaxY, out fminZ, out fmaxZ);
-
-                    minX = Convert.ToInt32(fminX);
-                    maxX = Convert.ToInt32(fmaxX);
-                    minY = Convert.ToInt32(fminY);
-                    maxY = Convert.ToInt32(fmaxX);
-                    minZ = Convert.ToInt32(fminZ);
-                    maxZ = Convert.ToInt32(fmaxZ);
+					
+                    minX = Convert.ToInt32(fminX) + (int) s.X + 2;
+                    maxX = Convert.ToInt32(fmaxX) + (int) s.X + 2;
+                    minY = Convert.ToInt32(fminY) + (int) s.Y + 2;
+                    maxY = Convert.ToInt32(fmaxX) + (int) s.Y + 2;
+                    minZ = Convert.ToInt32(fminZ) + (int) s.Z + 2;
+                    maxZ = Convert.ToInt32(fmaxZ) + (int) s.Z + 2;
 
                     for (int x = minX; x < maxX; x++)
                     {
                         for (int y = minY; y < maxY; y++)
                         {
-                            for (int z = minZ; z < maxZ; z++)
-                            {
-                                m_flowMap[x, y, z] = 100f;
-                            }
+							for (int z = minZ; z <= maxZ; z++)
+							{
+								if (x >= 0 && x < regionX && y > 0 && y < regionY && z < regionZ && z >= 0)  // prim can be below 0!
+								{									
+									m_flowMap[x, y, z] = 100f;									
+								}
+							}
                         }
                     }
                 }
@@ -84,7 +89,7 @@ namespace Flocking
             regionY = m_scene.RegionInfo.RegionSizeY;
             regionZ = (uint)maxHeight;
             regionBorder = borderSize;
-            m_flowMap = new float[regionX, regionY, regionZ];
+            m_flowMap = new float[regionX, regionY, regionZ + 1];
 		}
 		
 		public int LengthX {
@@ -99,13 +104,18 @@ namespace Flocking
         public int Border  {
             get {return (int)regionBorder;}
         }
-		
+		public void map(int x, int y, int  z)
+		{
+            m_flowMap[x, y, 0] = 100f;
+        }
 		public void Initialise() {
 			//fill in the boundaries
 			for( int x = 0; x < regionX; x++ ) {
 				for( int y = 0; y < regionY; y++ ) {
-					m_flowMap[x,y,0] = 100f;
-					m_flowMap[x,y, regionZ-1] = 100f;
+					for (int z = 0; z <= 21; z++)		// include water
+					{
+						m_flowMap[x, y, z] = 100f;
+					}
 				}
 			}
 			for( int x = 0; x < regionX; x++ ) {
@@ -116,64 +126,60 @@ namespace Flocking
 			}
 			for( int y = 0; y < regionY; y++ ) {
 				for( int z = 0; z < regionZ; z++ ) {
-					m_flowMap[0,y,z] = 100f;
-                        if (z > LengthZ)
-                        {
-                            z = LengthZ;
-                        }
-                        m_flowMap[regionX - 1, y, z] = 100f;
+					m_flowMap[0,y,z] = 100f;                    
+                    m_flowMap[regionX - 1, y, z] = 100f;
 				}
 			}
 			
 			//fill in the terrain
 			for( int x = 0; x < regionX; x++ ) {
-				for( int y = 0; y < regionY; y++ ) {
-					int zMax = Convert.ToInt32(m_scene.GetGroundHeight( x, y ));
+				for (int y = 0; y < regionY; y++)
+				{
+					int zMax = Convert.ToInt32(m_scene.GetGroundHeight(x, y)) + 2;	// need room to turn	
 					if (zMax < regionZ)
 					{
-						for (int z = 1; z < zMax; z++)
+						for (int z = 0; z <= zMax; z++)
 						{
 							m_flowMap[x, y, z] = 100f;
-						}
-					}
+                        }
+					}					
 				}
-			}
-			
+			}        
 		}
 
-		public bool WouldHitObstacle (Vector3 currPos, Vector3 targetPos)
+        public bool WouldHitObstacle (Vector3 currPos, Vector3 targetPos)
 		{
-			bool retVal = false;
+			
 			//fail fast
 			if( IsOutOfBounds(targetPos) ) {
-				retVal = true;
+				return true;
 			} else if( IsWithinObstacle(targetPos) ) {
-				retVal = true;
+                return true;
 			} else if( IntersectsObstacle (currPos, targetPos) ) {
-				retVal = true;
+                return true;
 			}
 			
-			return retVal;
+			return false;
 		}
 		
 		public bool IsOutOfBounds(Vector3 targetPos) {
-			bool retVal = false;
+			
 			if( targetPos.X < regionBorder ||
 				targetPos.X > regionX - regionBorder ||
                 targetPos.Y < regionBorder ||
 				targetPos.Y > regionY - regionBorder ||
 				targetPos.Z < regionBorder ||
-				targetPos.Z > regionZ - regionBorder ) {
-				
-				retVal = true;
+				targetPos.Z > regionZ ) {
+
+				return true;
 			}
 			
-			return retVal;
+			return false;
 		}
 
 		public bool IntersectsObstacle (Vector3 currPos, Vector3 targetPos)
 		{
-			bool retVal = false;
+			
 			// Ray trace the Vector and fail as soon as we hit something
 			Vector3 direction = targetPos - currPos;
 			float length = direction.Length();
@@ -182,16 +188,14 @@ namespace Flocking
 				Vector3 rayPos = currPos + ( direction * i );
 				//give up if we go OOB on this ray
 				if( IsOutOfBounds( rayPos ) ){ 
-					retVal = true;
-					break;
+					return true;
 				}
 				else if( IsWithinObstacle( rayPos ) ) {
-					retVal = true;
-					break;
+					return true;					
 				}
 			}
 			
-			return retVal;
+			return false;
 		}
 		
 		public bool IsWithinObstacle( Vector3 targetPos ) {
@@ -199,18 +203,18 @@ namespace Flocking
 		}
 		
 		public bool IsWithinObstacle( int x, int y, int z ) {
-			bool retVal = false;
+			
             if (x >= LengthX || y >= LengthY || z >= LengthZ)
             {
-				retVal = true;
+				return  true;
             }
-            else if (x < 0 || y < 0 || z < 0)
+            else if (x < 0 || y < 0 || z < 20)		// water
             {
-				retVal = true;
+				return  true;
 			} else if (m_flowMap[x,y,z] > 50f) {
-				retVal = true;
+				return true;
 			}
-			return retVal;	
+			return false;
 		}
 	}
 	

@@ -52,13 +52,16 @@ namespace Flocking
     public class FlockingModule : INonSharedRegionModule
     {
         #region Fields
+
+        public FlowMap flowMap;
+
         private static readonly ILog m_log = LogManager.GetLogger (System.Reflection.MethodBase.GetCurrentMethod ().DeclaringType);
 
         public string m_name = "OpenSimBirds";
         private string m_regionConfigDir = "";
         private Scene m_scene;
         private ICommandConsole m_console;
-		private FlockingModel m_model;
+		public  FlockingModel m_model;
 		private FlockingView m_view;
         private bool m_startup = true;
 		private bool m_enabled = false;
@@ -191,6 +194,8 @@ namespace Flocking
                 //register commands with the scene
                 RegisterCommands();
 
+
+
                 //register handlers
                 m_scene.EventManager.OnFrame += FlockUpdate;
                 m_scene.EventManager.OnChatFromClient += SimChatSent; //listen for commands sent from the client
@@ -223,6 +228,7 @@ namespace Flocking
         {
             m_scene = scene;
             ClearPersisted();
+            flowMap.GetThings(m_scene);  // moved by Fred as prims must exist
         }
 
 		public void RemoveRegion (Scene scene)
@@ -259,8 +265,7 @@ namespace Flocking
 
         public void FlockInitialise()
         {
-            //make a flow map for this scene
-            FlowMap flowMap = new FlowMap(m_scene, m_maxHeight, m_borderSize);
+            flowMap = new FlowMap(m_scene, m_maxHeight, m_borderSize);
             flowMap.Initialise();
 
             // Generate initial flock values
@@ -397,21 +402,7 @@ namespace Flocking
             AddCommand("framerate", "num", "[debugging] only update birds every <num> frames", HandleSetFrameRateCmd);
         }
 
-        private void RegisterScriptFunctions()
-        {
-            IScriptModuleComms comms = m_scene.RequestModuleInterface<IScriptModuleComms>();
-            if (comms != null)
-            {
-                comms.RegisterScriptInvocation(this, "birdsGetStats");
-
-            }
-        }
-
-        private string birdsGetStats(UUID host, UUID script, string stat)
-        {
-            return ""; //currently a placeholder
-        }
-		
+      
 		private bool ShouldHandleCmd ()
 		{
             if (!(m_console.ConsoleScene == null || m_console.ConsoleScene == m_scene)) {
