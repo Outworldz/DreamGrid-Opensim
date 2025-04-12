@@ -167,13 +167,6 @@ namespace OpenSim.Region.Framework.Scenes
         }
         private bool m_scripts_enabled;
 
-        public bool ClampNegativeZ
-        {
-            get { return m_clampNegativeZ; }
-        }
-
-        private readonly bool m_clampNegativeZ = false;
-
         /// <summary>
         /// Used to prevent simultaneous calls to code that adds and removes agents.
         /// </summary>
@@ -1053,8 +1046,6 @@ namespace OpenSim.Region.Framework.Scenes
                 {
                     m_clampPrimSize = true;
                 }
-
-                m_clampNegativeZ = startupConfig.GetBoolean("ClampNegativeZ", m_clampNegativeZ);
 
                 m_useTrashOnDelete = startupConfig.GetBoolean("UseTrashOnDelete",m_useTrashOnDelete);
                 m_trustBinaries = startupConfig.GetBoolean("TrustBinaries", m_trustBinaries);
@@ -1994,7 +1985,7 @@ namespace OpenSim.Region.Framework.Scenes
                 StatsReporter.AddFrameStats(TimeDilation, physicsFPS, agentMS,
                              physicsMS + physicsMS2, otherMS , sleepMS, frameMS, scriptTimeMS);
 
-          // Optionally warn if a frame takes double the amount of time that it should.
+                // Optionally warn if a frame takes double the amount of time that it should.
                 if (DebugUpdates
                     && Util.EnvironmentTickCountSubtract(
                         m_lastFrameTick, previousFrameTick) > (int)(FrameTime * 1000 * 2))
@@ -2469,7 +2460,7 @@ namespace OpenSim.Region.Framework.Scenes
             Vector3 dir = RayEnd - RayStart;
 
             float wheight = (float)RegionInfo.RegionSettings.WaterHeight;
-            Vector3 wpos = Vector3.Zero;
+            Vector3 wpos = new(0.0f, 0.0f, Constants.MinSimulationHeight);
             // Check for water surface intersection from above
             if ((RayStart.Z > wheight) && (RayEnd.Z < wheight))
             {
@@ -2645,9 +2636,6 @@ namespace OpenSim.Region.Framework.Scenes
 
             if (Permissions.CanRezObject(1, ownerID, pos))
             {
-                // rez ON the ground, not IN the ground
-                // pos.Z += 0.25F; The rez point should now be correct so that its not in the ground
-
                 AddNewPrim(ownerID, groupID, pos, rot, shape, addFlags);
             }
             else

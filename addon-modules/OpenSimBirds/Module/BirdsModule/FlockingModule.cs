@@ -139,6 +139,9 @@ namespace Flocking
             {
                 m_scene = scene;
                 m_enabled = cnf.GetBoolean("BirdsEnabled", false);
+
+                if (!m_enabled) { return; }
+
                 m_chatChannel = cnf.GetInt("BirdsChatChannel", 118);
                 m_birdPrim = cnf.GetString("BirdsPrim", "birdPrim");
                 m_flockSize = cnf.GetInt("BirdsFlockSize", 20);

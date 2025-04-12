@@ -2302,13 +2302,6 @@ namespace OpenSim.Framework.Servers.HttpServer
                 httpResponse.Redirect("http://opensimulator.org/wiki/0.9.3.1_Release");
                 return;
             }
-            // Smart start
-            if (httpRequest.QueryFlags.Contains("version"))
-            {
-                httpResponse.StatusCode = (int)HttpStatusCode.OK;
-                httpResponse.RawBuffer = Encoding.ASCII.GetBytes(VersionInfo.Version);
-                return;
-            }
             if (!httpRequest.QueryAsDictionary.TryGetValue("method", out string method) || string.IsNullOrWhiteSpace(method))
             {
                 httpResponse.StatusCode = (int)HttpStatusCode.NotFound;

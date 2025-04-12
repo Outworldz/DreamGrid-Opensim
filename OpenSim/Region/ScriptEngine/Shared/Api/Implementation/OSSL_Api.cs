@@ -6639,5 +6639,110 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
             green = Math.Clamp(green, 0, 1.0f);
             return new LSL_Vector(red, green, 1.0f);
         }
+
+        public LSL_Integer osListFindListNext(LSL_List lsrc, LSL_List ltest, LSL_Integer lstart, LSL_Integer lend, LSL_Integer linstance)
+        {
+            int srclen = lsrc.Length;
+            int testlen = ltest.Length;
+            if (srclen == 0)
+                return testlen == 0 ? 0 : -1;
+
+            int instance = linstance.value;
+            if (testlen == 0)
+            {
+                if(instance >= 0)
+                    return instance < srclen ? instance : -1;
+
+                instance += srclen;
+                return instance >= 0 ? instance : -1;
+            }
+
+            if (testlen > srclen)
+                return -1;
+
+
+            int start = lstart.value;
+            if (start < 0)
+            {
+                start += srclen;
+                if (start < 0)
+                    return -1;
+            }
+            else if (start >= srclen)
+                return -1;
+
+            int end = lend.value;
+            if (end < 0)
+            {
+                end += srclen;
+                if (end < 0)
+                    return -1;
+                end -= testlen - 1;
+            }
+            else if (end > srclen - testlen)
+                end = srclen - testlen;
+
+            object[] src = lsrc.Data;
+            object[] test = ltest.Data;
+
+            object test0 = test[0];
+            int nmatchs = 0;
+
+            if(instance >= 0)
+            {
+                for (int i = start; i <= end; i++)
+                {
+                    if (LSL_List.ListFind_areEqual(test0, src[i]))
+                    {
+                        int k = i + 1;
+                        int j = 1;
+                        while(j < testlen)
+                        {
+                            if (!LSL_List.ListFind_areEqual(test[j], src[k]))
+                                break;
+                            ++j;
+                            ++k;
+                        }
+
+                        if (j == testlen)
+                        {
+                            if(nmatchs == instance)
+                                return i;
+
+                            nmatchs++;
+                        }
+                     }
+                }
+            }
+            else
+            {
+                instance++;
+                instance = -instance;
+                for (int i = end; i >= start; i--)
+                {
+                    if (LSL_List.ListFind_areEqual(test0, src[i]))
+                    {
+                        int k = i + 1;
+                        int j = 1;
+                        while(j < testlen)
+                        {
+                            if (!LSL_List.ListFind_areEqual(test[j], src[k]))
+                                break;
+                            ++j;
+                            ++k;
+                        }
+
+                        if (j == testlen)
+                        {
+                            if(nmatchs == instance)
+                                return i;
+
+                            nmatchs++;
+                        }
+                     }
+                }
+            }
+            return -1;
+        }
     }
 }
