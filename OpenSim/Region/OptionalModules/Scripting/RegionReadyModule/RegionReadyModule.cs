@@ -187,11 +187,13 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
             if (message.Length == 0)
             {
                 m_lastOarLoadedOk = true;
+                RRAlert("load");//fkb
             }
             else
             {
                 m_log.WarnFormat("[RegionReady]: Oar file load errors: {0}", message);
                 m_lastOarLoadedOk = false;
+                RRAlert("notloaded");//fkb
             }
         }
 

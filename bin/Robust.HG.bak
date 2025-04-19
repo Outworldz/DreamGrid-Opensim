@@ -378,6 +378,7 @@ AssetService="OpenSim.Services.AssetService.dll:AssetService"
 ;; Set by Dreamgrid
 ;;
 ; START  <= Leave this line
+Region_2=Persistent,FallbackRegion
 Region_2worlds_City=DefaultRegion,DefaultHGRegion
 
 ; END  <= Leave this line

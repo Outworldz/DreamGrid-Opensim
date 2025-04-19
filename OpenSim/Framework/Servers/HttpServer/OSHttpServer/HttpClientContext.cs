@@ -44,7 +44,7 @@ namespace OSHttpServer
         public int MonitorKeepaliveStartMS = 0;
         public bool TriggerKeepalive = false;
         public int TimeoutFirstLine = 10000; // 10 seconds
-        public int TimeoutRequestReceived = 30000; // 30 seconds
+        public int TimeoutRequestReceived = 10000; // 10 seconds  FKB
 
         public int TimeoutMaxIdle = 180000; // 3 minutes
         public int m_TimeoutKeepAlive = 30000;
