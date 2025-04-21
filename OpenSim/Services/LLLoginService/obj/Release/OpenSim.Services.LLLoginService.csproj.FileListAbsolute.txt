@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim..19904874.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.LLLoginService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.LLLoginService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim..19904874.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\LLLoginService\obj\Release\OpenSim.Services.LLLoginService.pdb

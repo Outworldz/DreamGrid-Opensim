@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim..F4185243.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.FSAssetService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.FSAssetService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim..F4185243.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FSAssetService\obj\Release\OpenSim.Services.FSAssetService.pdb

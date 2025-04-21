@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Releas
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim..5649C0F1.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Framework.Servers.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Framework.Servers.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim..5649C0F1.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Servers\obj\Release\OpenSim.Framework.Servers.pdb

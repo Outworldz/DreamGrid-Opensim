@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim..81252A9B.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.MapImageService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.MapImageService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim..81252A9B.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MapImageService\obj\Release\OpenSim.Services.MapImageService.pdb

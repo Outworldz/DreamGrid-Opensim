@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\ob
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim..BAB23D88.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.InventoryService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.InventoryService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim..BAB23D88.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\InventoryService\obj\Release\OpenSim.Services.InventoryService.pdb

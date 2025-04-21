@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\o
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim..03A72AFF.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.FreeswitchService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.FreeswitchService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim..03A72AFF.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\FreeswitchService\obj\Release\OpenSim.Services.FreeswitchService.pdb

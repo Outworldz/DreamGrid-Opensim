@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenS
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim..8E6B01D5.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Data.PGSQL.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Data.PGSQL.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim..8E6B01D5.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Data\PGSQL\obj\Release\OpenSim.Data.PGSQL.pdb

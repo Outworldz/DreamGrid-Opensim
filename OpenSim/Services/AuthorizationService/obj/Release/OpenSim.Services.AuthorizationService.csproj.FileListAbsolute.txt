@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationServic
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim..FD7D2B93.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.AuthorizationService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.AuthorizationService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim..FD7D2B93.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\AuthorizationService\obj\Release\OpenSim.Services.AuthorizationService.pdb

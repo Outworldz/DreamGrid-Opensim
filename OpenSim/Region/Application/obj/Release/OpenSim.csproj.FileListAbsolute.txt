@@ -22,3 +22,15 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Relea
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.pdb
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.genruntimeconfig.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.exe
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.runtimeconfig.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.csproj.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\Application\obj\Release\OpenSim.genruntimeconfig.cache

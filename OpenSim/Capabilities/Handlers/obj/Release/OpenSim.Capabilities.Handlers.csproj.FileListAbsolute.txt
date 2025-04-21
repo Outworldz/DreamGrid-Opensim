@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Re
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim..EA4F2E19.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Capabilities.Handlers.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Capabilities.Handlers.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim..EA4F2E19.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Capabilities\Handlers\obj\Release\OpenSim.Capabilities.Handlers.pdb

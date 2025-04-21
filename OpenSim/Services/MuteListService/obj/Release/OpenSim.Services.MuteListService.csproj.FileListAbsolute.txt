@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim..4CCA1723.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.MuteListService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.MuteListService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim..4CCA1723.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\MuteListService\obj\Release\OpenSim.Services.MuteListService.pdb

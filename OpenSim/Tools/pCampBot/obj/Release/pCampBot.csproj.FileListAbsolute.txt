@@ -22,3 +22,15 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\p
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.pdb
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.genruntimeconfig.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\pCampBot.exe
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\pCampBot.runtimeconfig.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\pCampBot.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\pCampBot.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.csproj.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Tools\pCampBot\obj\Release\pCampBot.genruntimeconfig.cache

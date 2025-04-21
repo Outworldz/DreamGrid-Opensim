@@ -110,11 +110,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj",
+      "projectUniqueName": "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj",
       "projectName": "OpenSim.Services.Interfaces",
-      "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj",
+      "projectPath": "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\OpenSim.Services.Interfaces.csproj",
       "packagesPath": "C:\\Users\\Fred\\.nuget\\packages\\",
-      "outputPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\obj\\",
+      "outputPath": "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Services\\Interfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -135,14 +135,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
+            "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj": {
+              "projectPath": "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Console\\OpenSim.Framework.Console.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
+            "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj": {
+              "projectPath": "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\OpenSim.Framework.csproj"
             },
-            "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
-              "projectPath": "O:\\Opensim\\!Tandy\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
+            "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj": {
+              "projectPath": "O:\\Opensim\\!TandyV6\\OutworldzFiles\\Opensim\\OpenSim\\Framework\\Servers\\HttpServer\\OpenSim.Framework.Servers.HttpServer.csproj"
             }
           }
         }
@@ -157,7 +157,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -178,7 +178,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

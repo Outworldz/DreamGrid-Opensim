@@ -1,4 +1,4 @@
-﻿; *
+; *
 ; * $ Robust.exe -inifile Robust.HG.ini
 ; *
 ; * The Const section allows us to define some basic information that we
@@ -13,44 +13,45 @@
 ; *
 ; *   Dreamgrid allows you to override these settings by making a new line with _override at trhe end of the key
 ; *  Example:  ApachePort_override = 8080
+' * The above setting wil override the DreamGrid setting for Apaches port.
 ; *
+
 [Const]
 
 ;; Set by Dreamgrid
 ; ${Const|GridName}
 GridName=DreamGrid
-http_listener_port=7002
+http_listener_port=8002
 
 ;; Set by Dreamgrid
 ; The URL of the Robust server
-BaseURL=http://192.168.2.151
+BaseURL=http://10.6.1.103
 
 ; The URL of the Robust server, if PublicPort and PrivatePort must be
 ; accessed via different hostnames as in the case of a NAT gateway
-PrivURL=http://192.168.2.151
+PrivURL=http://10.6.1.103
 
 ;; Set by Dreamgrid
 ; The public port of the Robust server
-PublicPort=7002
+PublicPort=8002
 
 ;; Set by Dreamgrid
 ; The private port of the Robust server
-PrivatePort=7003
+PrivatePort=8003
 
 ;; Set by Dreamgrid
 ; port used for icons, teleports and other tasks when communicating to/from opensim
-DiagnosticsPort=7001
+DiagnosticsPort=8001
 
 ;; Set by Dreamgrid
-;Apache Port for Jopensim and others,
+;Apache Port for Jopensim and others, 
 ApachePort=80
-
 ;
 ;Password from DYN DNS
-MachineID=123
-
+MachineID=
 ;
-jOpensimURL=
+jOpensimURL= 
+
 
 ; * The startup section lists all the connectors to start up in this server
 ; * instance. This may be only one, or it may be the entire server suite.
@@ -65,7 +66,7 @@ jOpensimURL=
 [Startup]
 
 ; RegionOnline is Set when a region comes online, unset when it unregisters and DeleteOnUnregister is false
-DeleteOnUnregister=True
+DeleteOnUnregister = True
 
 ; Place to create a PID file
 ; If no path if specified then a PID file is not created.
@@ -109,6 +110,7 @@ NoVerifyCertHostname=true
 AssetServiceConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:AssetServiceConnector"
 InventoryInConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:XInventoryInConnector"
 
+
 ;; Uncomment if you have set up Freeswitch (see [FreeswitchService] below)
 ;VoiceConnector = "8004/OpenSim.Server.Handlers.dll:FreeswitchServerConnector"
 GridServiceConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:GridServiceConnector"
@@ -134,9 +136,10 @@ GroupsServiceConnector="${Const|PrivatePort}/OpenSim.Addons.Groups.dll:GroupsSer
 ;; Uncomment to provide bakes caching
 BakedTextureService="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:XBakesConnector"
 
+
 ; set by Dreamgrid for jOpensim and others
 ;; Uncomment for UserProfiles see [UserProfilesService] to configure...
-UserProfilesServiceConnector=${Const|PublicPort}/OpenSim.Server.Handlers.dll:UserProfilesConnector
+UserProfilesServiceConnector="${Const|PublicPort}/OpenSim.Server.Handlers.dll:UserProfilesConnector"
 
 ;; Uncomment if you want to have centralized estate data
 EstateDataService="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:EstateDataRobustConnector"
@@ -155,7 +158,7 @@ HGAssetServiceConnector="HGAssetService@${Const|PublicPort}/OpenSim.Server.Handl
 HGGroupsServiceConnector="${Const|PublicPort}/OpenSim.Addons.Groups.dll:HGGroupsServiceRobustConnector"
 
 ;; needed for JOpensim profile pictures
-GetTextureConnector="${Const|PublicPort}/Opensim.Capabilities.Handlers.dll:GetTextureServerConnector"
+GetTextureConnector="${Const|PublicPort}/Opensim.Capabilities.Handlers.dll:GetTextureSeverConnector"
 
 ; * This is common for all services, it's the network setup for the entire
 ; * server instance, if none is specified above
@@ -204,12 +207,13 @@ port=${Const|PrivatePort}
 ;; This can be overriden in individual private service sections if necessary
 AllowllHTTPRequestIn=true
 
+
 ; * The following are for the remote console
 ; * They have no effect for the local or basic console types
 ; * Leave commented to diable logins to the console
-ConsoleUser=Wifi Admin
-ConsolePass=pYopJ2ZVigwUxgzC28tcdK9YN
-ConsolePort=7002
+ConsoleUser=
+ConsolePass=
+ConsolePort=0
 
 [Hypergrid]
 
@@ -275,7 +279,7 @@ DeniedClients=
 ; Change the connection string to your db details
 ;; Set by Dreamgrid
 StorageProvider="OpenSim.Data.MySQL.dll"
-ConnectionString="Data Source=127.0.0.1;Database=Robust;Port=3306;User ID=robustuser;Password=robustpassword;Old Guids=true;Allow Zero Datetime=true;Convert Zero Datetime=True;charset=utf8;Connect Timeout=28800;Command Timeout=28800;"
+ConnectionString="Data Source=127.0.0.1;Database=robust;Port=3306;User ID=robustuser;Password=robustpassword;Old Guids=true;Allow Zero Datetime=true;;Connect Timeout=28800;Command Timeout=28800;"
 
 ; * As an example, the below configuration precisely mimicks the legacy
 ; * asset server. It is read by the asset IN connector (defined above)
@@ -290,8 +294,8 @@ LocalServiceModule=OpenSim.Services.FSAssetService.dll:FSAssetConnector
 ;LocalServiceModule="OpenSim.Services.FSAssetService.dll:FSAssetConnector"
 ;; FSAsset Directories. Base directory, where final asset files are stored and Spool directory for temp files
 ;; These directories must be on the same physical filesystem
-BaseDirectory=./fsassets/data
-SpoolDirectory=./fsassets/tmp
+BaseDirectory=C:\tmp\fsassets/data
+SpoolDirectory=C:\tmp\fsassets/tmp
 
 ;; Original service can be checked if FSAssets can not find an asset
 FallbackService=OpenSim.Services.AssetService.dll:AssetService
@@ -374,7 +378,276 @@ AssetService="OpenSim.Services.AssetService.dll:AssetService"
 ;; Set by Dreamgrid
 ;;
 ; START  <= Leave this line
-Region_Welcome=DefaultRegion,DefaultHGRegion
+Region_1=DefaultRegion,DefaultHGRegion
+Region_1616=Persistent,FallbackRegion
+Region_2=Persistent,FallbackRegion
+Region_2worlds_City=Persistent,FallbackRegion
+Region_3=Persistent,FallbackRegion
+Region_4=Persistent,FallbackRegion
+Region_4_Freedom=Persistent,FallbackRegion
+Region_5=Persistent,FallbackRegion
+Region_A_Vintage_Welcome=Persistent,FallbackRegion
+Region_ADULT-DragonFyre_2023_Update=Persistent,FallbackRegion
+Region_ADULT-WhiteWood=Persistent,FallbackRegion
+Region_Air_Force_Research_Lab=Persistent,FallbackRegion
+Region_Airport=Persistent,FallbackRegion
+Region_Alpha_Centauri_Trek=Persistent,FallbackRegion
+Region_Alpha_Station=Persistent,FallbackRegion
+Region_Alternate_UI_Center=Persistent,FallbackRegion
+Region_Amvis=Persistent,FallbackRegion
+Region_Anawigi_garden=Persistent,FallbackRegion
+Region_Angkor=Persistent,FallbackRegion
+Region_Arabia=Persistent,FallbackRegion
+Region_Arcadia_Slum=Persistent,FallbackRegion
+Region_ArcadiaAsylumstuff=Persistent,FallbackRegion
+Region_Arena=Persistent,FallbackRegion
+Region_Arrakis=Persistent,FallbackRegion
+Region_Athens-Acropolis=Persistent,FallbackRegion
+Region_Atropia_Military_Metaverse=Persistent,FallbackRegion
+Region_AuroraFreeFurniture=Persistent,FallbackRegion
+Region_Auto_Salone=Persistent,FallbackRegion
+Region_Autumn_Castle=Persistent,FallbackRegion
+Region_Avatar_Center=Persistent,FallbackRegion
+Region_Avatars_Warehouse_2022=Persistent,FallbackRegion
+Region_Back-in-time=Persistent,FallbackRegion
+Region_Barrier_Reef=Persistent,FallbackRegion
+Region_Basilica=Persistent,FallbackRegion
+Region_Beorns_House=Persistent,FallbackRegion
+Region_BlackBeards_Island=Persistent,FallbackRegion
+Region_BlankSim=Persistent,FallbackRegion
+Region_Block1=Persistent,FallbackRegion
+Region_Block2=Persistent,FallbackRegion
+Region_Block3=Persistent,FallbackRegion
+Region_Boardwalk=Persistent,FallbackRegion
+Region_Break_the_Matrix=Persistent,FallbackRegion
+Region_Breakout_Zone_OSCC13_2013=Persistent,FallbackRegion
+Region_BuildingSupply=Persistent,FallbackRegion
+Region_Bullet_physics_arena=Persistent,FallbackRegion
+Region_BusinessDistrictV7_3=Persistent,FallbackRegion
+Region_Cantada_Project=Persistent,FallbackRegion
+Region_Castle=Persistent,FallbackRegion
+Region_Castle_Collection=Persistent,FallbackRegion
+Region_Castle_and_Guesthouse=Persistent,FallbackRegion
+Region_Castle_LoveGlo=Persistent,FallbackRegion
+Region_Celtic_Sim=Persistent,FallbackRegion
+Region_Chateau=Persistent,FallbackRegion
+Region_Chinese=Persistent,FallbackRegion
+Region_CleverZebra=Persistent,FallbackRegion
+Region_Clutterfly_Shopping=Persistent,FallbackRegion
+Region_Combat_Zone=Persistent,FallbackRegion
+Region_CondensationLandClub=Persistent,FallbackRegion
+Region_Conference_Center=Persistent,FallbackRegion
+Region_Conference_center-OSCC-2015=Persistent,FallbackRegion
+Region_Country_Cabin=Persistent,FallbackRegion
+Region_CrazyHouse=Persistent,FallbackRegion
+Region_Danger!=Persistent,FallbackRegion
+Region_Dark_Neon_City=Persistent,FallbackRegion
+Region_Darkwood=Persistent,FallbackRegion
+Region_Deathrace=Persistent,FallbackRegion
+Region_Deep_Forest=Persistent,FallbackRegion
+Region_Deliverance=Persistent,FallbackRegion
+Region_Desert=Persistent,FallbackRegion
+Region_Desert_Dreams=Persistent,FallbackRegion
+Region_Designs=Persistent,FallbackRegion
+Region_Devils_Island=Persistent,FallbackRegion
+Region_Disability_awareness_government_town=Persistent,FallbackRegion
+Region_Doomed_City=Persistent,FallbackRegion
+Region_DreamGrid_Test_Region=Persistent,FallbackRegion
+Region_DreamTrack=Persistent,FallbackRegion
+Region_Eden=Persistent,FallbackRegion
+Region_Educasim=Persistent,FallbackRegion
+Region_Elven_Temple=Persistent,FallbackRegion
+Region_English_Garden=Persistent,FallbackRegion
+Region_Epic_Citadel=Persistent,FallbackRegion
+Region_Fairy_Island=Persistent,FallbackRegion
+Region_Fantasy_Island=Persistent,FallbackRegion
+Region_Faraway=Persistent,FallbackRegion
+Region_Federal_Consortium_Virtual_Worlds=Persistent,FallbackRegion
+Region_Federalist_Mansion=Persistent,FallbackRegion
+Region_FirestormOrientation_Island=Persistent,FallbackRegion
+Region_Frankie=Persistent,FallbackRegion
+Region_Free_House_Gallery_I=Persistent,FallbackRegion
+Region_Free_House_Gallery_II=Persistent,FallbackRegion
+Region_Free_Isle=Persistent,FallbackRegion
+Region_FreebieMall=Persistent,FallbackRegion
+Region_FreebieMall_Part_2=Persistent,FallbackRegion
+Region_Freya=Persistent,FallbackRegion
+Region_Furniture_Vault=Persistent,FallbackRegion
+Region_Future_Cities=Persistent,FallbackRegion
+Region_Future_Sim=Persistent,FallbackRegion
+Region_Futuristic-Presentation-Center=Persistent,FallbackRegion
+Region_Garden_By_The_Sea=Persistent,FallbackRegion
+Region_GardenCenter=Persistent,FallbackRegion
+Region_Gateway_to_Africa=Persistent,FallbackRegion
+Region_Gateway_to_Dragons=Persistent,FallbackRegion
+Region_Gateway_to_Outworldz_OSCC2021=Persistent,FallbackRegion
+Region_Getho=Persistent,FallbackRegion
+Region_Giant_tree=Persistent,FallbackRegion
+Region_G-n113009b=Persistent,FallbackRegion
+Region_GoKart_Track=Persistent,FallbackRegion
+Region_Gone_castle=Persistent,FallbackRegion
+Region_GoneCity=Persistent,FallbackRegion
+Region_Gravity=Persistent,FallbackRegion
+Region_Green_Valley=Persistent,FallbackRegion
+Region_GreenSim=Persistent,FallbackRegion
+Region_Hafenstadt-Seaport=Persistent,FallbackRegion
+Region_Hall_of_Stone=Persistent,FallbackRegion
+Region_Hang_gliding=Persistent,FallbackRegion
+Region_Hax_nuit=Persistent,FallbackRegion
+Region_Haxor_outpost=Persistent,FallbackRegion
+Region_Heartland=Persistent,FallbackRegion
+Region_Hobbiton=Persistent,FallbackRegion
+Region_Home_by_Taintedangel=Persistent,FallbackRegion
+Region_HyperMall_by_Outworldz=Persistent,FallbackRegion
+Region_Ideal_Community=Persistent,FallbackRegion
+Region_IMAOutpostAlphaForest=Persistent,FallbackRegion
+Region_IMESH=Persistent,FallbackRegion
+Region_Inner_Child=Persistent,FallbackRegion
+Region_Institute_for_Simulation_Technology=Persistent,FallbackRegion
+Region_Island_of_Peace=Persistent,FallbackRegion
+Region_Jack_and_Sally=Persistent,FallbackRegion
+Region_Jewelry_Store=Persistent,FallbackRegion
+Region_Johnny_Castaway=Persistent,FallbackRegion
+Region_Kart-Racing=Persistent,FallbackRegion
+Region_Keynote_2014-NE=Persistent,FallbackRegion
+Region_Keynote_2014-NW=Persistent,FallbackRegion
+Region_Keynote_2014-SE=Persistent,FallbackRegion
+Region_Keynote_2014-SW=Persistent,FallbackRegion
+Region_KidsPlace=Persistent,FallbackRegion
+Region_Kliederaar=Persistent,FallbackRegion
+Region_Knowledge_Transfer_Center=Persistent,FallbackRegion
+Region_Lakehouse=Persistent,FallbackRegion
+Region_Laketown=Persistent,FallbackRegion
+Region_Land_of_Giants=Persistent,FallbackRegion
+Region_Landing_zone_OSCC13=Persistent,FallbackRegion
+Region_Landing_zone_OSCC14=Persistent,FallbackRegion
+Region_Lands_End=Persistent,FallbackRegion
+Region_Legend_of_Darkport=Persistent,FallbackRegion
+Region_Lighthouse_Island=Persistent,FallbackRegion
+Region_Little_Venice=Persistent,FallbackRegion
+Region_Lonely_Island=Persistent,FallbackRegion
+Region_Lost_City=Persistent,FallbackRegion
+Region_Love_Island=Persistent,FallbackRegion
+Region_Lux_centre=Persistent,FallbackRegion
+Region_Luxury_Homes=Persistent,FallbackRegion
+Region_Magic_Diamond_Cave=Persistent,FallbackRegion
+Region_Mars_Base_Alpha=Persistent,FallbackRegion
+Region_Mars_Tharsis_Crater=Persistent,FallbackRegion
+Region_MashUp_Photo_Studio=Persistent,FallbackRegion
+Region_Maya=Persistent,FallbackRegion
+Region_Medieval=Persistent,FallbackRegion
+Region_Medieval_collection=Persistent,FallbackRegion
+Region_Medieval_Houses=Persistent,FallbackRegion
+Region_Megapack=Persistent,FallbackRegion
+Region_MermaidV2=Persistent,FallbackRegion
+Region_Merry_Christmas_Starter_Oar=Persistent,FallbackRegion
+Region_Metropolis_City=Persistent,FallbackRegion
+Region_Military_Metaverse=Persistent,FallbackRegion
+Region_Mind_Odyssey_Gateway=Persistent,FallbackRegion
+Region_Mirkwood=Persistent,FallbackRegion
+Region_MountainRetreat=Persistent,FallbackRegion
+Region_MushroomIsland=Persistent,FallbackRegion
+Region_Naval-Station=Persistent,FallbackRegion
+Region_Nebadon_large_structures=Persistent,FallbackRegion
+Region_Nebadon_okc_sandbox_1000_prims_test=Persistent,FallbackRegion
+Region_Neverhood=Persistent,FallbackRegion
+Region_NightFort=Persistent,FallbackRegion
+Region_NightRaven=Persistent,FallbackRegion
+Region_Nile_Goddess=Persistent,FallbackRegion
+Region_Nostalgia_2011=Persistent,FallbackRegion
+Region_NuAthens_OAR=Persistent,FallbackRegion
+Region_Nursery=Persistent,FallbackRegion
+Region_Oblivion=Persistent,FallbackRegion
+Region_Olafsworld=Persistent,FallbackRegion
+Region_OMI-Collaboration=Persistent,FallbackRegion
+Region_OpenSimFreeFurniture=Persistent,FallbackRegion
+Region_OpenVCE=Persistent,FallbackRegion
+Region_OpenVue=Persistent,FallbackRegion
+Region_OSCC_2014_Breakout=Persistent,FallbackRegion
+Region_OSGHUG-cyberlandia=Persistent,FallbackRegion
+Region_OSSC_Breakout_Region=Persistent,FallbackRegion
+Region_Over_the_River_and_Through_the_Woods=Persistent,FallbackRegion
+Region_Palace_Getaway=Persistent,FallbackRegion
+Region_Palm_Island=Persistent,FallbackRegion
+Region_Pandora-Club=Persistent,FallbackRegion
+Region_Parking=Persistent,FallbackRegion
+Region_Permanent_vacation=Persistent,FallbackRegion
+Region_Pirates_Island=Persistent,FallbackRegion
+Region_Plane_mega_region_TokyoU=Persistent,FallbackRegion
+Region_Plenary_1=Persistent,FallbackRegion
+Region_Primland=Persistent,FallbackRegion
+Region_Quest_for_Illumination=Persistent,FallbackRegion
+Region_RB_Farm=Persistent,FallbackRegion
+Region_Reticulation=Persistent,FallbackRegion
+Region_Retreat=Persistent,FallbackRegion
+Region_Rivendell=Persistent,FallbackRegion
+Region_Salle_Games=Persistent,FallbackRegion
+Region_Sample_Oar=Persistent,FallbackRegion
+Region_Sandal_Castle=Persistent,FallbackRegion
+Region_Sandbox=Persistent,FallbackRegion
+Region_Sanitarium=Persistent,FallbackRegion
+Region_Script_Library=Persistent,FallbackRegion
+Region_Sculpted_island=Persistent,FallbackRegion
+Region_ShoppingCenter=Persistent,FallbackRegion
+Region_Shutdown_Region_One=Persistent,FallbackRegion
+Region_Shutdown_Region_Two=Persistent,FallbackRegion
+Region_Sierpinski_triangle=Persistent,FallbackRegion
+Region_Silent_Refueling_Base=Persistent,FallbackRegion
+Region_SingularityOrientation_Island=Persistent,FallbackRegion
+Region_SKULL_TOWN=Persistent,FallbackRegion
+Region_Space_base_2=Persistent,FallbackRegion
+Region_SpaceWelcomeCenter=Persistent,FallbackRegion
+Region_Starter_Town_Complete=Persistent,FallbackRegion
+Region_Starters_Hub=Persistent,FallbackRegion
+Region_Steam_Factory=Persistent,FallbackRegion
+Region_Steampunk=Persistent,FallbackRegion
+Region_Stormhaven_Port_Aurora=Persistent,FallbackRegion
+Region_Suspend=Persistent,FallbackRegion
+Region_Swamp=Persistent,FallbackRegion
+Region_Swamp_oar=Persistent,FallbackRegion
+Region_Swanlake=Persistent,FallbackRegion
+Region_Sweet_Paradise=Persistent,FallbackRegion
+Region_Technical_Campus=Persistent,FallbackRegion
+Region_Temple_Island=Persistent,FallbackRegion
+Region_The_Abyss=Persistent,FallbackRegion
+Region_The_Lost_Woods=Persistent,FallbackRegion
+Region_The_Shirlz_Gateway=Persistent,FallbackRegion
+Region_Themepark=Persistent,FallbackRegion
+Region_Tibetan_Classroom=Persistent,FallbackRegion
+Region_TikiSummer=Persistent,FallbackRegion
+Region_Time_of_Year=Persistent,FallbackRegion
+Region_Tombraider=Persistent,FallbackRegion
+Region_Totalsim=Persistent,FallbackRegion
+Region_Town-Center=Persistent,FallbackRegion
+Region_Toxic=Persistent,FallbackRegion
+Region_Travelguide_To_Outworldz=Persistent,FallbackRegion
+Region_Tropical=Persistent,FallbackRegion
+Region_Tropical_Island=Persistent,FallbackRegion
+Region_Tropical_Paradise=Persistent,FallbackRegion
+Region_Uberflux=Persistent,FallbackRegion
+Region_Undersea_Observatory=Persistent,FallbackRegion
+Region_Underwater_life=Persistent,FallbackRegion
+Region_Universal_Campus=Persistent,FallbackRegion
+Region_Urban_Neighborhood=Persistent,FallbackRegion
+Region_UrbanCity=Persistent,FallbackRegion
+Region_Uzuri_Incarnation=Persistent,FallbackRegion
+Region_VR_Airport=Persistent,FallbackRegion
+Region_Waiting_to_be_rescued=Persistent,FallbackRegion
+Region_WaldPark=Persistent,FallbackRegion
+Region_Waterlillies=Persistent,FallbackRegion
+Region_We_Are_Borg=Persistent,FallbackRegion
+Region_Wedding=Persistent,FallbackRegion
+Region_WeddingWoodz=Persistent,FallbackRegion
+Region_Welcome_Station=Persistent,FallbackRegion
+Region_WelcomeCenter=Persistent,FallbackRegion
+Region_WesternTown=Persistent,FallbackRegion
+Region_Winter=Persistent,FallbackRegion
+Region_WinterLand=Persistent,FallbackRegion
+Region_WinterWorld=Persistent,FallbackRegion
+Region_Winx=Persistent,FallbackRegion
+Region_WonderPark=Persistent,FallbackRegion
+Region_Wurlitzer-Garage=Persistent,FallbackRegion
+Region_ZonjaKleinBottle=Persistent,FallbackRegion
 
 ; END  <= Leave this line
 ;; Allow Hyperlinks to be created at the console
@@ -531,13 +804,13 @@ HGInventoryServicePlugin="HGInventoryService@OpenSim.Services.HypergridService.d
 ;; end hypergrid
 ; Ask co-operative viewers to use a different currency name
 ;; Set by Dreamgrid
-Currency=-
+Currency="G$"
 
 ;; Set minimum fee to publish classified
 ClassifiedFee=0
 
 ;;
-WelcomeMessage=Welcome To DreamGrid, <USERNAME>
+WelcomeMessage=Welcome to DreamGrid
 
 ;;
 AllowRemoteSetLoginLevel="false"
@@ -548,12 +821,12 @@ MapTileURL="${Const|BaseURL}:${Const|PublicPort}/"
 ; Url to search service
 ;SearchURL = "${Const|BaseURL}:${Const|PublicPort}/JOpensim/index.php?option=com_opensim&view=inworldsearch&task=viewersearch&tmpl=component&"
 ;SearchURL=http://www.outworldz.com/Search/query.php
-SearchURL=https://outworldz.com/Search/query.php
+SearchURL=http://www.outworldz.com/Search/query.php
 
 ; For V3 destination guide
 ;DestinationGuide = "${Const|BaseURL}:${Const|PublicPort}/JOpensim//index.php?option=com_opensim&view=guide&tmpl=component"
 ;DestinationGuideURI="http://www.outworldz.com/destination-guide/"
-DestinationGuide=https://outworldz.com/destination-guide
+DestinationGuide="http://www.outworldz.com/destination-guide/"
 
 ; For V3 avatar picker (( work in progress ))
 ; AvatarPicker = "${Const|BaseURL}/avatars"
@@ -592,15 +865,12 @@ DOSAllowXForwardedForHeader=false
 ;;
 ;; The protector adds up requests during this rolling period of time, default 10 seconds
 DOSRequestTimeFrameMS=10000
-
 ;;
 ;; The amount of requests in the above timeframe from the same endpoint that triggers protection
 DOSMaxRequestsInTimeFrame=50
-
 ;;
 ;; The amount of time that a specific endpoint is blocked.    Default 2 minutes.
 DOSForgiveClientAfterMS=120000
-
 ;;
 ;; To turn off basic dos protection, set the DOSMaxRequestsInTimeFrame to 0.
 ;
@@ -652,13 +922,13 @@ gridnick=${Const|GridName}
 ;                       this as splash page
 ;; Set by Dreamgrid
 ;welcome = ${Const|BaseURL}:${Const|PublicPort}/JOpensim/index.php?option=com_opensim
-welcome=https://outworldz.com/Outworldz_installer/Welcome.htm
+welcome=http://www.outworldz.com/Outworldz_installer/Welcome.htm
 
 ; helper uri: optional: if it exists it will be used to tell the client to use
 ;                       this for all economy related things
 ;economy = ${Const|BaseURL}:${Const|PublicPort}/JOpensim/components/com_opensim/
 ;economy = ${Const|BaseURL):${Const|PublicPort}
-economy=${Const|BaseURL}:${Const|ApachePort}/Land
+economy=${Const|BaseURL}:${Const|PublicPort}
 
 ; web page of grid: optional: page providing further information about your grid
 ;about = ${Const|BaseURL}/about
@@ -698,7 +968,7 @@ SimulationService="OpenSim.Services.Connectors.dll:SimulationServiceConnector"
 ;
 ; Does this grid allow incoming links to any region in it?
 ; If false, HG TPs happen only to the Default regions specified in [GridService] section
-AllowTeleportsToAnyRegion=True
+AllowTeleportsToAnyRegion=true
 
 ; If you run this gatekeeper server behind a proxy, set this to true
 ; HasProxy = false
@@ -725,10 +995,8 @@ AllowExcept=
 ;Attempt to login or hypergrid in to the grid, teleport should timeout and login should fail.
 ;
 DeniedMacs=
-
 ;
 DeniedID0s=
-
 ;
 [UserAgentService]
 LocalServiceModule="OpenSim.Services.HypergridService.dll:UserAgentService"
@@ -836,7 +1104,6 @@ AuthType=None
 ; DisallowImport ="LSLBytecode"
 ;;
 DisallowExport=
-
 ;;
 [HGFriendsService]
 LocalServiceModule="OpenSim.Services.HypergridService.dll:HGFriendsService"
@@ -861,7 +1128,8 @@ InGatekeeper=True
 OfflineIMService="OpenSim.Addons.OfflineIM.dll:OfflineIMService"
 
 ; Avatar UUID to message teleports to, perhaps a prim
-MessageKey=""
+MessageKey = ""
+    
 
 [Groups]
 
@@ -872,27 +1140,30 @@ UserAccountService="OpenSim.Services.UserAccountService.dll:UserAccountService"
 ;; What is the HomeURI of users associated with this grid?
 ;; Can overwrite the default in [Hypergrid], but probably shouldn't
 ;HomeURI="${Const|BaseURL}:${Const|PublicPort}"
+
 ;; Sets the maximum number of groups an agent may join
 ; MaxAgentGroups = 42
-Enabled=true
-Module=GroupsModule
-ServicesConnectorModule=XmlRpcGroupsServicesConnector
-GroupsServerURI="${Const|jOpensimURL}/index.php?option=com_opensim&view=interface"
 
+Enabled = true
+Module = GroupsModule
+ServicesConnectorModule = XmlRpcGroupsServicesConnector
+GroupsServerURI = "${Const|jOpensimURL}/index.php?option=com_opensim&view=interface"
 ; Optional:
 ;MessagingEnabled = true
 ;MessagingModule = GroupsMessagingModule
 ;NoticesEnabled = true
 ;DebugEnabled = false
+
 [UserProfilesService]
 LocalServiceModule="OpenSim.Services.UserProfilesService.dll:UserProfilesService"
-
 ;;
-Enabled=True
+Enabled=true
 
 ;; Configure this for separate profiles database
 ;; ConnectionString = "Data Source=localhost;Database=opensim;User ID=opensim;Password=*****;Old Guids=true;"
+
 ;; Realm = UserProfiles
+
 UserAccountService=OpenSim.Services.UserAccountService.dll:UserAccountService
 AuthenticationServiceModule="OpenSim.Services.AuthenticationService.dll:PasswordAuthenticationService"
 
@@ -906,34 +1177,23 @@ BaseDirectory="./bakes"
 LocalServiceModule="OpenSim.Services.MuteListService.dll:MuteListService"
 
 [SMTP]
-SMTP_SERVER_HOSTNAME=smtp.titan.email
+SMTP_SERVER_HOSTNAME=smtp.gmail.com
 SMTP_SERVER_PORT=587
-SMTP_SERVER_LOGIN=fred@outworldz.com
-SMTP_SERVER_PASSWORD=4a<$moreM
-SMTP_SERVER_FROM=not@set.yet
-SMTP_VerifyCertNames=True
-SMTP_VerifyCertChain=True
-enableEmailToExternalObjects=False
-enableEmailToSMTP=True
-MailsFromOwnerPerHour=500
-MailsToPrimAddressPerHour=20
-SMTP_MailsPerDay=100
-MailsToSMTPAddressPerHour=10
-email_pause_time=20
-email_max_size=4096
-SMTP_SERVER_TLS=4a<$moreM
-host_domain_header_from=192.168.2.151
+SMTP_SERVER_LOGIN=
+SMTP_SERVER_PASSWORD=Gmail password
 
 ;; Set to True to enable Smart Start
 ;; Set by Dreamgrid
 [SmartStart]
-Enabled=True
-URL=http://192.168.2.151:7001
-MachineID=123
+Enabled=False
+URL=
+MachineID=
 
 ;; For Joomla/jOpensim
 [CapsService]
-AssetService="OpenSim.Services.FSAssetService.dll:FSAssetConnector"
+AssetService = "OpenSim.Services.FSAssetService.dll:FSAssetConnector"
 
-[UserProfiles]
-ProfileServiceURL=${Const|BaseURL}:${Const|PublicPort}
+
+
+
+

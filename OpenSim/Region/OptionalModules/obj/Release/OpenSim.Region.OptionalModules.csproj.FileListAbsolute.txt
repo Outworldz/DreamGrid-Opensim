@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\R
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim..DED735A4.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Region.OptionalModules.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Region.OptionalModules.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim..DED735A4.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Region\OptionalModules\obj\Release\OpenSim.Region.OptionalModules.pdb

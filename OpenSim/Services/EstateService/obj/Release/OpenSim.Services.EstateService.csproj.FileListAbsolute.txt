@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\R
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim..69D880EA.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.EstateService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Services.EstateService.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim..69D880EA.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Services\EstateService\obj\Release\OpenSim.Services.EstateService.pdb

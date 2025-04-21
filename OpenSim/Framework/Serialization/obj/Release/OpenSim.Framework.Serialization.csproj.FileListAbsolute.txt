@@ -16,3 +16,12 @@ O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim..D432B73A.Up2Date
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.dll
 O:\Opensim\!Tandy V6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Framework.Serialization.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\bin\OpenSim.Framework.Serialization.pdb
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.csproj.AssemblyReference.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.GeneratedMSBuildEditorConfig.editorconfig
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.csproj.CoreCompileInputs.cache
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.sourcelink.json
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim..D432B73A.Up2Date
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.dll
+O:\Opensim\!TandyV6\OutworldzFiles\Opensim\OpenSim\Framework\Serialization\obj\Release\OpenSim.Framework.Serialization.pdb

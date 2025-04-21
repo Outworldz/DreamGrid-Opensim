@@ -42,6 +42,7 @@ namespace Flocking
         private String m_name;
 		private String m_birdPrim;
 		
+		
 		private Dictionary<string, SceneObjectGroup> m_sogMap = new Dictionary<string, SceneObjectGroup> ();
 				
 		public FlockingView (String moduleName, Scene scene)
@@ -84,7 +85,6 @@ namespace Flocking
 		{
 			SceneObjectPart existing = m_scene.GetSceneObjectPart (bird.Id);
 
-
 			SceneObjectGroup sog;
             SceneObjectPart rootPart;
 
@@ -103,8 +103,8 @@ namespace Flocking
                 sog.CreateScriptInstances(0, true, m_scene.DefaultScriptEngine, 1);
                 rootPart.ParentGroup.ResumeScripts();
                 rootPart.ScheduleFullUpdate();
-                sog.DetachFromBackup();
-			} else {
+                sog.DetachFromBackup();            
+            } else {
 				sog = existing.ParentGroup;
                 m_sogMap[bird.Id] = sog;
                 //rootPart = sog.RootPart;
@@ -152,13 +152,13 @@ namespace Flocking
 				retVal = MakeDefaultPrim (name);
 			}
 
-			return retVal;
+            return retVal;
 		}
 
 		private SceneObjectGroup MakeDefaultPrim (string name)
 		{
 			PrimitiveBaseShape shape = PrimitiveBaseShape.CreateSphere ();
-  			shape.Scale = new Vector3 (0.5f, 0.5f, 0.5f);
+  			shape.Scale = new Vector3 (2.0f, 2.0f, 2.0f);
 
             SceneObjectGroup prim = new SceneObjectGroup(m_owner, new Vector3((float)m_scene.RegionInfo.RegionSizeX / 2, (float)m_scene.RegionInfo.RegionSizeY / 2, 25f), shape);
 			prim.Name = name;
@@ -168,6 +168,19 @@ namespace Flocking
 			return prim;
 		}
 
-	}
+
+        public SceneObjectGroup MakeDefaultBox(string name, Vector3 pos)
+        {
+            PrimitiveBaseShape shape = PrimitiveBaseShape.CreateBox();
+            shape.Scale = new Vector3(1.0f, 1.0f, 1.0f);
+
+            SceneObjectGroup prim = new SceneObjectGroup(m_owner, new Vector3(), shape);
+            prim.Name = name;
+            prim.DetachFromBackup();
+            m_scene.AddNewSceneObject(prim, false);
+
+            return prim;
+        }
+    }
 }
 
