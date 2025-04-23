@@ -756,11 +756,11 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                 }
                 catch (Exception e)
                 {
-                    m_log.WarnFormat("[Warp3D]: Failed to decode texture {0} for prim {1} at {2}, exception {3}", id.ToString(), sop.Name, sop.GetWorldPosition().ToString(), e.Message);
+                    m_log.DebugFormat("[Warp3D]: Failed to decode texture {0} for prim {1} at {2}, exception {3}", id.ToString(), sop.Name, sop.GetWorldPosition().ToString(), e.Message);
                 }
             }
             else
-                m_log.WarnFormat("[Warp3D]: missing texture {0} data for prim {1} at {2}",
+                m_log.DebugFormat("[Warp3D]: missing texture {0} data for prim {1} at {2}",
                     id.ToString(), sop.Name, sop.GetWorldPosition().ToString());
 
             m_warpTextures[id] = ret;
