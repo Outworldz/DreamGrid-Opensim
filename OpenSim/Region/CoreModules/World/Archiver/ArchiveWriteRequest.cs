@@ -212,7 +212,7 @@ namespace OpenSim.Region.CoreModules.World.Archiver
                 }
                 
                 //  Smart Start Notify
-                new SmartStartNotify("savedoar", m_rootScene.RegionInfo.RegionID.Guid);
+                new SmartStartNotify("oarsaved", m_rootScene.RegionInfo.RegionID.Guid);
 
                 CloseArchive(string.Empty);
             }
@@ -694,7 +694,7 @@ namespace OpenSim.Region.CoreModules.World.Archiver
     {
         private string m_SmartStartUrl = "";
 
-        public SmartStartNotify(string msg, System.Guid regionID)
+        public SmartStartNotify(string msg, Guid regionID)
         {
             var line = File.ReadAllLines("SmartStartUrl.txt");
             foreach (var l in line)

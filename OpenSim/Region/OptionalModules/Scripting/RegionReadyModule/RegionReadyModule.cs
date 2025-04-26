@@ -193,7 +193,7 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
             {
                 m_log.WarnFormat("[RegionReady]: Oar file load errors: {0}", message);
                 m_lastOarLoadedOk = false;
-                RRAlert("notloaded");//fkb
+                RRAlert("oarnotloaded");//fkb
             }
         }
 

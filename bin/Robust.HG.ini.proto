@@ -1,4 +1,4 @@
-﻿; *
+﻿3; *
 ; * $ Robust.exe -inifile Robust.HG.ini
 ; *
 ; * The Const section allows us to define some basic information that we
@@ -83,7 +83,7 @@ RegistryLocation="."
 ; Set path to directory for modular ini files...
 ; The Robust.exe process must have R/W access to the location
 ;ConfigDirectory="../addins-config"
-ConfigDirectory="."
+ConfigDirectory="./config-addon-opensim"
 
 ; Console commands can be saved to a file, so the command history persists after a restart. (default is true)
 ConsoleHistoryFileEnabled=true

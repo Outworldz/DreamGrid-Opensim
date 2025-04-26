@@ -39,6 +39,7 @@ using OpenSim.Region.Framework.Interfaces;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Services.Interfaces;
 using Mono.Addins;
+using OpenSim.Region.CoreModules.World.Archiver;
 
 namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
 {
@@ -184,6 +185,10 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
             InventoryArchiveSaved handlerInventoryArchiveSaved = OnInventoryArchiveSaved;
             if (handlerInventoryArchiveSaved != null)
                 handlerInventoryArchiveSaved(id, succeeded, userInfo, invPath, saveStream, reportedException, SaveCount , FilterCount);
+
+            string result = succeeded ? "iarsaved" : "iarfailed";
+            string s = userInfo.PrincipalID.ToString();
+            var succeded = new SmartStartNotify(result, new Guid(s));
         }
 
         /// <summary>
@@ -196,6 +201,10 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
             InventoryArchiveLoaded handlerInventoryArchiveLoaded = OnInventoryArchiveLoaded;
             if (handlerInventoryArchiveLoaded != null)
                 handlerInventoryArchiveLoaded(id, succeeded, userInfo, invPath, loadStream, reportedException, LoadCount);
+
+            string result = succeeded ? "iarloaded" : "iarfailed";
+            string  s  = userInfo.PrincipalID.ToString();
+            var succeded = new SmartStartNotify(result, new Guid(s));
         }
 
         public bool ArchiveInventory(
