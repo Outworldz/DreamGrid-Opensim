@@ -113,10 +113,10 @@ namespace OpenSim.Region.OptionalModules.Scripting.RegionReady
                 // failing that, we will print out to console instead.
                 MainConsole.Instance.Output("Region {0} - LOGINS DISABLED DURING INITIALIZATION.", m_scene.Name);
 
-                if (m_uri != string.Empty)
-                {
-                    RRAlert("disabled");
-                }
+            }
+            if (m_uri != string.Empty)
+            {
+                RRAlert("disabled");
             }
         }
 
