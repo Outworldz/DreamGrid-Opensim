@@ -40,11 +40,16 @@ using OpenSim.Services.Interfaces;
 using GridRegion = OpenSim.Services.Interfaces.GridRegion;
 using OpenMetaverse;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
+using static OpenSim.Region.Framework.Scenes.EventManager;
+using System.Security.Cryptography;
 
 namespace OpenSim.Services.GridService
 {
     public class GridService : GridServiceBase, IGridService
     {
+        static readonly HttpClient client = new HttpClient();
         private static readonly ILog m_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private string LogHeader = "[GRID SERVICE]";
 
@@ -113,7 +118,7 @@ namespace OpenSim.Services.GridService
                             throw new Exception("LLOGIN SERVICE init error: SmartStart URI");
                         }
                         m_SmartStartUrl = tmpSmartStartURL.URI;
-                        m_log.Info("[LLOGIN SERVICE]: SmartStart Url " + m_SmartStartUrl);
+                        m_log.Debug("[LLOGIN SERVICE]: SmartStart Url " + m_SmartStartUrl);
 
                         m_SmartStartMachineID = SmartStartConfig.GetString("MachineID", m_SmartStartMachineID);
                     }
@@ -511,59 +516,54 @@ namespace OpenSim.Services.GridService
             return rinfos;
         }
 
+
         //DreamGrid SmartStart
+
+        static async Task<String> GetAsync(HttpClient httpClient, Uri url)
+        {
+            using HttpResponseMessage response = await httpClient.GetAsync(url);
+
+            response.EnsureSuccessStatusCode();
+
+            var Response = await response.Content.ReadAsStringAsync();
+
+            if (string.IsNullOrEmpty(Response))
+            {
+                m_log.Debug("[LLoginService]: Smart Start returned null");
+                return null;
+            }
+
+            m_log.Debug("[LLoginService]: Smart Start returned " + Response);
+            return Response;            
+            
+        }
+
         public UUID GetSmartStartALTRegion(UUID regionID, UUID agentID)
         {
             // !!! DreamGrid Smart Start sends requested Region UUID to Dreamgrid.
             // If region is on line, returns same UUID. If Offline, returns UUID for Welcome, brings up the region and teleports you to it.
-            if (m_SmartStartEnabled && agentID != UUID.Zero)
+            if (m_SmartStartEnabled)
             {
-                string url = $"{m_SmartStartUrl}?alt={regionID}&agentid={agentID}&password={m_SmartStartMachineID}";
+                Uri url = new($"{m_SmartStartUrl}?alt={regionID}&agentid={agentID}&password={m_SmartStartMachineID}");
+                
                 m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
 
-                HttpWebRequest webRequest;
-                try
+                // Call aynchronous network methods in a try/catch block to handle exceptions.
+                HttpClient sharedClient = new()
                 {
-                    webRequest = (HttpWebRequest)WebRequest.Create(url);
-                }
-                catch
+                    BaseAddress = url
+                };
+                Task<string> task1 = GetAsync(sharedClient, url);
+                if (task1.Result != null)
                 {
-                    m_log.Debug("[LLoginService]: Smart Start failed to create url");
-                    return UUID.Zero;
-                }
-
-                webRequest.Timeout = 5000; //5 Second Timeout
-                webRequest.AllowWriteStreamBuffering = false;
-
-                try
-                {
-                    string tempStr;
-                    using (HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse())
-                    {
-                        using (StreamReader reader = new StreamReader(webResponse.GetResponseStream()))
-                            tempStr = reader.ReadToEnd();
-                    }
-
-                    if (string.IsNullOrEmpty(tempStr))
-                    {
-                        m_log.Debug("[LLoginService]: Smart Start returned null");
-                        return UUID.Zero;
-                    }
-
-                    m_log.Debug("[LLoginService]: Smart Start returned " + tempStr);
-                    regionID = UUID.Parse(tempStr);
-                }
-                catch (Exception ex)
-                {
-                    m_log.Warn("[LLoginService]: Smart Start exception: " + ex.Message);
-                }
+                    regionID = new UUID(task1.Result);
+                }                
             }
             return regionID;
         }
-
         public GridRegion GetRegionByUUID(UUID scopeID, UUID regionID)
         {
-            // SmartStart ?????????? FKB
+            // SmartStart  FKB
             if (m_SmartStartEnabled)
             {
                 regionID = GetSmartStartALTRegion(regionID, UUID.Zero);

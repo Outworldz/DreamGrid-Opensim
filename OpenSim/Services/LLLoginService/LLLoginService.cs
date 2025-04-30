@@ -259,7 +259,7 @@ namespace OpenSim.Services.LLLoginService
                             throw new Exception("LLOGIN SERVICE init error: SmartStart URI");
                         }
                         m_SmartStartUrl = tmpSmartStartURL.URI;
-                        m_log.Info("[LLOGIN SERVICE]: SmartStart Url " + m_SmartStartUrl);
+                        m_log.Info("[LLOGIN SERVICE]: SmartStart Url is " + m_SmartStartUrl);
 
                         m_SmartStartMachineID = SmartStartConfig.GetString("MachineID", m_SmartStartMachineID);
                     }
