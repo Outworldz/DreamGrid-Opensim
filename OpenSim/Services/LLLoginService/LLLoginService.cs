@@ -99,10 +99,10 @@ namespace OpenSim.Services.LLLoginService
         readonly IConfig  m_LoginServerConfig;
         //        IConfig m_ClientsConfig;
 
-        // SmartStart  flb
-        protected bool m_SmartStartEnabled = false;
-        protected string m_SmartStartUrl = string.Empty;
-        protected string m_SmartStartMachineID = string.Empty;
+        // SmartStart  fkb UNNEEDED
+        //protected bool m_SmartStartEnabled = false;
+        //protected string m_SmartStartUrl = string.Empty;
+        //protected string m_SmartStartMachineID = string.Empty;
         public LLLoginService(IConfigSource config, ISimulationService simService, ILibraryService libraryService)
         {
             m_LoginServerConfig = config.Configs["LoginService"];
@@ -241,31 +241,31 @@ namespace OpenSim.Services.LLLoginService
 
 
             // Smart Start Done
-            IConfig SmartStartConfig = config.Configs["SmartStart"];
-            if (SmartStartConfig != null)
-            {
-                m_SmartStartEnabled = SmartStartConfig.GetBoolean("Enabled", m_SmartStartEnabled);
-                if (m_SmartStartEnabled)
-                {
-                    m_SmartStartUrl = SmartStartConfig.GetString("URL", m_SmartStartUrl);
-                    if (string.IsNullOrEmpty(m_SmartStartUrl))
-                        m_SmartStartEnabled = false;
-                    else
-                    {
-                        OSHHTPHost tmpSmartStartURL = new OSHHTPHost(m_SmartStartUrl, true);
-                        if (!tmpSmartStartURL.IsResolvedHost)
-                        {
-                            m_log.Error("[LLOGIN SERVICE]: Could not parse or resolve SmartStart URI");
-                            throw new Exception("LLOGIN SERVICE init error: SmartStart URI");
-                        }
-                        m_SmartStartUrl = tmpSmartStartURL.URI;
-                        m_log.Info("[LLOGIN SERVICE]: SmartStart Url is " + m_SmartStartUrl);
-
-                        m_SmartStartMachineID = SmartStartConfig.GetString("MachineID", m_SmartStartMachineID);
-                    }
-                }
-            }
-            m_log.Info("[LLOGIN SERVICE]: SmartStart " + (m_SmartStartEnabled ? "Enabled" : "Disabled"));
+            //IConfig SmartStartConfig = config.Configs["SmartStart"];
+            //if (SmartStartConfig != null)
+            //{
+            //    m_SmartStartEnabled = SmartStartConfig.GetBoolean("Enabled", m_SmartStartEnabled);
+            //    if (m_SmartStartEnabled)
+            //    {
+            //        m_SmartStartUrl = SmartStartConfig.GetString("URL", m_SmartStartUrl);
+            //        if (string.IsNullOrEmpty(m_SmartStartUrl))
+            //            m_SmartStartEnabled = false;
+            //        else
+            //        {
+            //            OSHHTPHost tmpSmartStartURL = new OSHHTPHost(m_SmartStartUrl, true);
+            //            if (!tmpSmartStartURL.IsResolvedHost)
+            //            {
+            //                m_log.Error("[LLOGIN SERVICE]: Could not parse or resolve SmartStart URI");
+            //                throw new Exception("LLOGIN SERVICE init error: SmartStart URI");
+            //            }
+            //            m_SmartStartUrl = tmpSmartStartURL.URI;
+            //            m_log.Info("[LLOGIN SERVICE]: SmartStart Url is " + m_SmartStartUrl);
+            //
+            //            m_SmartStartMachineID = SmartStartConfig.GetString("MachineID", m_SmartStartMachineID);
+            //        }
+            //    }
+            //}
+            //m_log.Info("[LLOGIN SERVICE]: SmartStart " + (m_SmartStartEnabled ? "Enabled" : "Disabled"));
 
 
 

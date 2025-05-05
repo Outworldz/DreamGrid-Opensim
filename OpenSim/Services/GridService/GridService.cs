@@ -529,11 +529,11 @@ namespace OpenSim.Services.GridService
 
             if (string.IsNullOrEmpty(Response))
             {
-                m_log.Debug("[LLoginService]: Smart Start returned null");
+                //m_log.Debug("[LLoginService]: Smart Start returned null");
                 return null;
             }
 
-            m_log.Debug("[LLoginService]: Smart Start returned " + Response);
+            //m_log.Debug("[LLoginService]: Smart Start returned " + Response);
             return Response;            
             
         }
@@ -546,7 +546,7 @@ namespace OpenSim.Services.GridService
             {
                 Uri url = new($"{m_SmartStartUrl}?alt={regionID}&agentid={agentID}&password={m_SmartStartMachineID}");
                 
-                m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
+                //m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
 
                 // Call aynchronous network methods in a try/catch block to handle exceptions.
                 HttpClient sharedClient = new()

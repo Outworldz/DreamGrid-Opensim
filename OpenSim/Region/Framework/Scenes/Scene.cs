@@ -799,7 +799,7 @@ namespace OpenSim.Region.Framework.Scenes
             if (m_SmartStartEnabled && agentID != UUID.Zero)
             {
                 string url = $"{m_SmartStartUrl}?alt={regionID}&agent=UUI&agentid={agentID}&password={m_SmartStartMachineID}";
-                m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
+                //m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
 
                 System.Net.HttpWebRequest webRequest;
                 try
@@ -826,11 +826,11 @@ namespace OpenSim.Region.Framework.Scenes
 
                     if (string.IsNullOrEmpty(tempStr))
                     {
-                        m_log.Debug("[LLoginService]: Smart Start returned null");
+                       // m_log.Debug("[LLoginService]: Smart Start returned null");
                         return UUID.Zero;
                     }
 
-                    m_log.Debug("[LLoginService]: Smart Start returned " + tempStr);
+                    //m_log.Debug("[LLoginService]: Smart Start returned " + tempStr);
                     regionID = UUID.Parse(tempStr);
                 }
                 catch (Exception ex)

@@ -360,7 +360,7 @@ namespace OpenSim.Services.HypergridService
             if (m_SmartStartEnabled && agentID != UUID.Zero)
             {
                 string url = $"{m_SmartStartUrl}?alt={regionID}&agentid={agentID}&password={m_SmartStartMachineID}";
-                m_log.DebugFormat("[GateKeeperService]: Smart Start Sending request {0}", url);
+               // m_log.DebugFormat("[GateKeeperService]: Smart Start Sending request {0}", url);
 
                 HttpWebRequest webRequest;
                 try
@@ -387,11 +387,11 @@ namespace OpenSim.Services.HypergridService
 
                     if (string.IsNullOrEmpty(tempStr))
                     {
-                        m_log.Debug("[GateKeeperService]: Smart Start returned null");
+                       // m_log.Debug("[GateKeeperService]: Smart Start returned null");
                         return UUID.Zero;
                     }
 
-                    m_log.Debug("[GateKeeperService]: Smart Start returned " + tempStr);
+                   // m_log.Debug("[GateKeeperService]: Smart Start returned " + tempStr);
                     regionID = UUID.Parse(tempStr);
                 }
                 catch (Exception ex)
