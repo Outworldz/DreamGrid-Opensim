@@ -326,7 +326,7 @@ namespace OpenSim.Services.HypergridService
                 return m_DefaultGatewayRegion;
             }
 
-            //Done  Smart Start
+            //Done  Smart Start 
             regionID = GetSmartStartALTRegion(regionID, agentID);
 
             GridRegion region = m_GridService.GetRegionByUUID(m_ScopeID, regionID);
