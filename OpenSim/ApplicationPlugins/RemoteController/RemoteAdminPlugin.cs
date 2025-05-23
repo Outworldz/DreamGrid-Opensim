@@ -107,7 +107,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 else
                 {
                     m_config = m_configSource.Configs["RemoteAdmin"];
-                    m_log.Debug("[RADMIN]: Remote Admin Plugin Enabled");
+                    //m_log.Debug("[RADMIN]: Remote Admin Plugin Enabled");
                     m_requiredPassword = m_config.GetString("access_password", String.Empty);
                     int port = m_config.GetInt("port", 0);
 
@@ -213,7 +213,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         {
             if (!CreateDefaultAvatars())
             {
-               m_log.Debug("[RADMIN]: Default avatars not loaded");
+               //m_log.Debug("[RADMIN]: Default avatars not loaded");
             }
         }
 
@@ -308,7 +308,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     string[] alertTimes = requestData["alerts"].ToString().Split(Util.SplitCommaArray);
                     if (alertTimes.Length == 1 && Convert.ToInt32(alertTimes[0]) == -1)
                     {
-                       m_log.Debug("[RADMIN]: Request to cancel restart.");
+                       //m_log.Debug("[RADMIN]: Request to cancel restart.");
 
                         if (restartModule != null)
                         {
@@ -345,7 +345,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     }
                 }
 
-               m_log.Debug("[RADMIN]: Request to restart Region.");
+               //m_log.Debug("[RADMIN]: Request to restart Region.");
 
                 message = "Region is restarting in {0}. Please save what you are doing and log out.";
 
@@ -361,7 +361,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
                 if (startupConfig.GetBoolean("SkipDelayOnEmptyRegion", false))
                 {
-                   m_log.Debug("[RADMIN]: Counting affected avatars");
+                   //m_log.Debug("[RADMIN]: Counting affected avatars");
                     int agents = 0;
 
                     if (restartAll)
@@ -388,7 +388,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
                     if (agents == 0)
                     {
-                       m_log.Debug("[RADMIN]: No avatars detected, shutting down without delay");
+                       //m_log.Debug("[RADMIN]: No avatars detected, shutting down without delay");
 
                         times.Clear();
                         times.Add(0);
@@ -418,12 +418,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 throw;
             }
 
-           m_log.Debug("[RADMIN]: Restart Region request complete");
+           //m_log.Debug("[RADMIN]: Restart Region request complete");
         }
 
         private void XmlRpcAlertMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-            m_log.Debug("[RADMIN]: Alert request started");
+            //m_log.Debug("[RADMIN]: Alert request started");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -442,14 +442,14 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                             dialogModule.SendGeneralAlert(message);
                     });
 
-            m_log.Debug("[RADMIN]: Alert request complete");
+            //m_log.Debug("[RADMIN]: Alert request complete");
         }
 
         public void XmlRpcDialogMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
             Hashtable responseData = (Hashtable)response.Value;
 
-            m_log.Debug("[RADMIN]: Dialog request started");
+            //m_log.Debug("[RADMIN]: Dialog request started");
 
             Hashtable requestData = (Hashtable)request.Params[0];
 
@@ -468,12 +468,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                         dialogModule.SendNotificationToUsersInRegion(UUID.Zero, fromuuid, message);
                 });
 
-            m_log.Debug("[RADMIN]: Dialog request complete");
+            //m_log.Debug("[RADMIN]: Dialog request complete");
         }
 
         private void XmlRpcLoadHeightmapMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-            m_log.Debug("[RADMIN]: Load height maps request started");
+            //m_log.Debug("[RADMIN]: Load height maps request started");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -506,12 +506,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["success"] = false;
             }
 
-            m_log.Debug("[RADMIN]: Load height maps request complete");
+            //m_log.Debug("[RADMIN]: Load height maps request complete");
         }
 
         private void XmlRpcSaveHeightmapMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-            m_log.Debug("[RADMIN]: Save height maps request started");
+            //m_log.Debug("[RADMIN]: Save height maps request started");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -543,12 +543,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["success"] = false;
             }
 
-           m_log.Debug("[RADMIN]: Save height maps request complete");
+           //m_log.Debug("[RADMIN]: Save height maps request complete");
         }
 
         private void XmlRpcShutdownMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Shutdown Administrator Request");
+           //m_log.Debug("[RADMIN]: Received Shutdown Administrator Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -612,7 +612,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
             responseData["success"] = true;
 
-           m_log.Debug("[RADMIN]: Shutdown Administrator Request complete");
+           //m_log.Debug("[RADMIN]: Shutdown Administrator Request complete");
         }
 
         private void shutdownTimer_Elapsed(object sender, ElapsedEventArgs e)
@@ -685,7 +685,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcCreateRegionMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: CreateRegion: new request");
+           //m_log.Debug("[RADMIN]: CreateRegion: new request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -924,7 +924,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["region_name"] = region.RegionName;
                 responseData["region_id"] = region.RegionID.ToString();
 
-               m_log.Debug("[RADMIN]: CreateRegion: request complete");
+               //m_log.Debug("[RADMIN]: CreateRegion: request complete");
             }
         }
 
@@ -956,7 +956,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcDeleteRegionMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: DeleteRegion: new request");
+           //m_log.Debug("[RADMIN]: DeleteRegion: new request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -975,7 +975,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["region_name"] = scene.RegionInfo.RegionName;
                 responseData["region_id"] = scene.RegionInfo.RegionID;
 
-               m_log.Debug("[RADMIN]: DeleteRegion: request complete");
+               //m_log.Debug("[RADMIN]: DeleteRegion: request complete");
             }
         }
 
@@ -1009,7 +1009,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcCloseRegionMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: CloseRegion: new request");
+           //m_log.Debug("[RADMIN]: CloseRegion: new request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1029,7 +1029,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
                 response.Value = responseData;
 
-               m_log.Debug("[RADMIN]: CloseRegion: request complete");
+               //m_log.Debug("[RADMIN]: CloseRegion: request complete");
             }
         }
 
@@ -1067,7 +1067,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcModifyRegionMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: ModifyRegion: new request");
+           //m_log.Debug("[RADMIN]: ModifyRegion: new request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1110,7 +1110,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["region_name"] = scene.RegionInfo.RegionName;
                 responseData["region_id"] = scene.RegionInfo.RegionID;
 
-               m_log.Debug("[RADMIN]: ModifyRegion: request complete");
+               //m_log.Debug("[RADMIN]: ModifyRegion: request complete");
             }
         }
 
@@ -1154,7 +1154,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcCreateUserMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: CreateUser: new request");
+           //m_log.Debug("[RADMIN]: CreateUser: new request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1221,7 +1221,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     throw;
                 }
 
-               m_log.Debug("[RADMIN]: CreateUser: request complete");
+               //m_log.Debug("[RADMIN]: CreateUser: request complete");
             }
         }
 
@@ -1259,7 +1259,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcUserExistsMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: UserExists: new request");
+           //m_log.Debug("[RADMIN]: UserExists: new request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1293,7 +1293,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["success"] = true;
             }
 
-           m_log.Debug("[RADMIN]: UserExists: request complete");
+           //m_log.Debug("[RADMIN]: UserExists: request complete");
         }
 
         /// <summary>
@@ -1340,7 +1340,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcUpdateUserAccountMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: UpdateUserAccount: new request");
+           //m_log.Debug("[RADMIN]: UpdateUserAccount: new request");
             m_log.Warn("[RADMIN]: This method needs update for 0.7");
 
             Hashtable responseData = (Hashtable)response.Value;
@@ -1450,7 +1450,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     throw;
                 }
 
-               m_log.Debug("[RADMIN]: UpdateUserAccount: request complete");
+               //m_log.Debug("[RADMIN]: UpdateUserAccount: request complete");
             }
         }
 
@@ -1489,7 +1489,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         private void XmlRpcAuthenticateUserMethod(XmlRpcRequest request, XmlRpcResponse response,
                                                    IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: AuthenticateUser: new request");
+           //m_log.Debug("[RADMIN]: AuthenticateUser: new request");
 
             var responseData = (Hashtable)response.Value;
             var requestData = (Hashtable)request.Params[0];
@@ -1514,7 +1514,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
                     if (scene.Equals(null))
                     {
-                        m_log.Debug("scene does not exist");
+                        //m_log.Debug("scene does not exist");
                         throw new Exception("Scene does not exist.");
                     }
 
@@ -1556,7 +1556,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     var authModule = scene.RequestModuleInterface<IAuthenticationService>();
                     if (authModule == null)
                     {
-                        m_log.Debug("[RADMIN]: AuthenticateUser: no authentication module loded");
+                        //m_log.Debug("[RADMIN]: AuthenticateUser: no authentication module loded");
                         throw new Exception("no authentication module loaded");
                     }
 
@@ -1583,7 +1583,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     throw;
                 }
 
-               m_log.Debug("[RADMIN]: AuthenticateUser: request complete");
+               //m_log.Debug("[RADMIN]: AuthenticateUser: request complete");
             }
         }
 
@@ -1625,7 +1625,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcLoadOARMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Load OAR Administrator Request");
+           //m_log.Debug("[RADMIN]: Received Load OAR Administrator Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1671,7 +1671,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     throw;
                 }
 
-               m_log.Debug("[RADMIN]: Load OAR Administrator Request complete");
+               //m_log.Debug("[RADMIN]: Load OAR Administrator Request complete");
             }
         }
 
@@ -1717,7 +1717,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         /// </remarks>
         private void XmlRpcSaveOARMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Save OAR Request");
+           //m_log.Debug("[RADMIN]: Received Save OAR Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1794,7 +1794,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 throw;
             }
 
-           m_log.Debug("[RADMIN]: Save OAR Request complete");
+           //m_log.Debug("[RADMIN]: Save OAR Request complete");
         }
 
         private void RemoteAdminOarSaveCompleted(Guid uuid, string name)
@@ -1810,7 +1810,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
         private void XmlRpcLoadXMLMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Load XML Administrator Request");
+           //m_log.Debug("[RADMIN]: Received Load XML Administrator Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1858,13 +1858,13 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     throw;
                 }
 
-               m_log.Debug("[RADMIN]: Load XML Administrator Request complete");
+               //m_log.Debug("[RADMIN]: Load XML Administrator Request complete");
             }
         }
 
         private void XmlRpcSaveXMLMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Save XML Administrator Request");
+           //m_log.Debug("[RADMIN]: Received Save XML Administrator Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -1910,7 +1910,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 throw;
             }
 
-           m_log.Debug("[RADMIN]: Save XML Administrator Request complete");
+           //m_log.Debug("[RADMIN]: Save XML Administrator Request complete");
         }
 
         private void XmlRpcRegionQueryMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
@@ -1944,7 +1944,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
         private void XmlRpcConsoleCommandMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Command XML Administrator Request");
+           //m_log.Debug("[RADMIN]: Received Command XML Administrator Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2003,11 +2003,11 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["error"] = $"Exception: {ex.Message}";
             }
 
-           m_log.Debug("[RADMIN]: Command XML Administrator Request complete");
+           //m_log.Debug("[RADMIN]: Command XML Administrator Request complete");
         }
         private void XmlRpcConsoleCommandMethodOLD(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Command XML Administrator Request");
+           //m_log.Debug("[RADMIN]: Received Command XML Administrator Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2016,12 +2016,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
             MainConsole.Instance.RunCommand(requestData["command"].ToString());
 
-           m_log.Debug("[RADMIN]: Command XML Administrator Request complete");
+           //m_log.Debug("[RADMIN]: Command XML Administrator Request complete");
         }
 
         private void XmlRpcAccessListClear(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Access List Clear Request");
+           //m_log.Debug("[RADMIN]: Received Access List Clear Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2038,12 +2038,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             if (scene.RegionInfo.Persistent)
                 m_application.EstateDataService.StoreEstateSettings(scene.RegionInfo.EstateSettings);
 
-           m_log.Debug("[RADMIN]: Access List Clear Request complete");
+           //m_log.Debug("[RADMIN]: Access List Clear Request complete");
         }
 
         private void XmlRpcAccessListAdd(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Access List Add Request");
+           //m_log.Debug("[RADMIN]: Received Access List Add Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2087,12 +2087,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
             responseData["added"] = addedUsers;
 
-           m_log.Debug("[RADMIN]: Access List Add Request complete");
+           //m_log.Debug("[RADMIN]: Access List Add Request complete");
         }
 
         private void XmlRpcAccessListRemove(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Access List Remove Request");
+           //m_log.Debug("[RADMIN]: Received Access List Remove Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2137,12 +2137,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             responseData["removed"] = removedUsers;
             responseData["success"] = true;
 
-           m_log.Debug("[RADMIN]: Access List Remove Request complete");
+           //m_log.Debug("[RADMIN]: Access List Remove Request complete");
         }
 
         private void XmlRpcAccessListList(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Access List List Request");
+           //m_log.Debug("[RADMIN]: Received Access List List Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2168,12 +2168,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             responseData["users"] = users;
             responseData["success"] = true;
 
-           m_log.Debug("[RADMIN]: Access List List Request complete");
+           //m_log.Debug("[RADMIN]: Access List List Request complete");
         }
 
         private void XmlRpcEstateReload(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Estate Reload Request");
+           //m_log.Debug("[RADMIN]: Received Estate Reload Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             //Hashtable requestData = (Hashtable)request.Params[0];
@@ -2184,7 +2184,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
             responseData["success"] = true;
 
-           m_log.Debug("[RADMIN]: Estate Reload Request complete");
+           //m_log.Debug("[RADMIN]: Estate Reload Request complete");
         }
 
         private void XmlRpcGetAgentsMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
@@ -2349,12 +2349,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             }
             );
             responseData["success"] = true;
-           m_log.Debug("[RADMIN]: Reset Land Request complete");
+           //m_log.Debug("[RADMIN]: Reset Land Request complete");
         }
 
         private void XmlRpcRefreshSearch(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Refresh Search Request");
+           //m_log.Debug("[RADMIN]: Received Refresh Search Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2375,12 +2375,12 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["success"] = false;
             }
 
-           m_log.Debug("[RADMIN]: Refresh Search Request complete");
+           //m_log.Debug("[RADMIN]: Refresh Search Request complete");
         }
 
         private void XmlRpcRefreshMap(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Refresh Map Request");
+           //m_log.Debug("[RADMIN]: Received Refresh Map Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2404,24 +2404,24 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["success"] = false;
             }
 
-           m_log.Debug("[RADMIN]: Refresh Map Request complete");
+           //m_log.Debug("[RADMIN]: Refresh Map Request complete");
         }
 
         private void XmlRpcGetOpenSimVersion(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-            m_log.Debug("[RADMIN]: Received Get OpenSim Version Request");
+            //m_log.Debug("[RADMIN]: Received Get OpenSim Version Request");
 
             Hashtable responseData = (Hashtable)response.Value;
 
             responseData["version"] = m_openSimVersion;
             responseData["success"] = true;
 
-            m_log.Debug("[RADMIN]: Get OpenSim Version Request complete");
+            //m_log.Debug("[RADMIN]: Get OpenSim Version Request complete");
         }
 
         private void XmlRpcGetAgentCount(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
         {
-           m_log.Debug("[RADMIN]: Received Get Agent Count Request");
+           //m_log.Debug("[RADMIN]: Received Get Agent Count Request");
 
             Hashtable responseData = (Hashtable)response.Value;
             Hashtable requestData = (Hashtable)request.Params[0];
@@ -2441,7 +2441,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 responseData["success"] = true;
             }
 
-           m_log.Debug("[RADMIN]: Get Agent Count Request complete");
+           //m_log.Debug("[RADMIN]: Get Agent Count Request complete");
         }
 
         /// <summary>
@@ -2722,7 +2722,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             if (null == terrainModule) throw new Exception("terrain module not available");
             if (Uri.IsWellFormedUriString(file, UriKind.Absolute))
             {
-               m_log.Debug("[RADMIN]: Terrain path is URL");
+               //m_log.Debug("[RADMIN]: Terrain path is URL");
                 Uri result;
                 if (Uri.TryCreate(file, UriKind.RelativeOrAbsolute, out result))
                 {
@@ -2736,7 +2736,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 terrainModule.LoadFromFile(file);
             }
 
-           m_log.Debug("[RADMIN]: Load height maps request complete");
+           //m_log.Debug("[RADMIN]: Load height maps request complete");
 
             return true;
         }
