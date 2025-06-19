@@ -152,8 +152,6 @@ namespace OpenSim.Region.CoreModules.Avatar.Inventory.Archiver
             try
             {
                 m_archiveWriter.Close();
-
-                
             }
             catch (Exception e)
             {

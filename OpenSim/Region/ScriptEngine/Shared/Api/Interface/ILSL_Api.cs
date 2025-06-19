@@ -43,7 +43,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api.Interfaces
     {
         void state(string newState);
 
-                   //ApiDesc Returns absolute version as val (ie as postive value)
+                   //ApiDesc Returns absolute version as val (ie as positive value)
        LSL_Integer llAbs(LSL_Integer val);
                    //ApiDesc Returns cosine of val (val in radians)
          LSL_Float llAcos(LSL_Float val);
@@ -534,5 +534,6 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api.Interfaces
         LSL_Integer llGetLinkSitFlags(LSL_Integer linknum);
                void llSetLinkSitFlags(LSL_Integer linknum, LSL_Integer flags);
          LSL_String llHMAC(LSL_String private_key, LSL_String message, LSL_String algo);
+         LSL_String llComputeHash(LSL_String message, LSL_String algo);
     }
 }
