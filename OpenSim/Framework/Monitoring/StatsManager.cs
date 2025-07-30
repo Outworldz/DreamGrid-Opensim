@@ -445,7 +445,7 @@ namespace OpenSim.Framework.Monitoring
             SortedDictionary<string, SortedDictionary<string, Stat>> category = null;
             SortedDictionary<string, Stat> container = null;
 
-            lock (RegisteredStats)
+            // fkb hangs  lock (RegisteredStats)
             {
                 if (!TryGetStatParents(stat, out category, out container))
                     return false;
