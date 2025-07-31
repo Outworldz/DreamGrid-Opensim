@@ -44,7 +44,8 @@ namespace OpenSim.Framework.Monitoring
         public const int WATCHDOG_INTERVAL_MS = 2500;
 
         /// <summary>Default timeout in milliseconds before a thread is considered dead</summary>
-        public const int DEFAULT_WATCHDOG_TIMEOUT_MS = 5000;
+        // fkb public const int DEFAULT_WATCHDOG_TIMEOUT_MS = 5000;
+        public const int DEFAULT_WATCHDOG_TIMEOUT_MS = 120 * 60 * 1000; // fkb 2 hours 
 
         [System.Diagnostics.DebuggerDisplay("{Thread.Name}")]
         public class ThreadWatchdogInfo
