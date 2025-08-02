@@ -125,9 +125,10 @@ namespace OSHttpServer
 
         private async void AcceptLoop()
         {
-            try
+
+            while (true)
             {
-                while (true)
+                try
                 {
                     if (m_shutdown)
                     {
@@ -161,16 +162,16 @@ namespace OSHttpServer
                     else
                         socket.Dispose();
                 }
-            }
-            catch (OperationCanceledException)
-            {
-                m_shutdownEvent.Set();
-            }
-            catch (Exception err)
-            {
-                m_logWriter.Write(this, LogPrio.Debug, err.Message);
-                ExceptionThrown?.Invoke(this, err);
-            }
+                // FKB moved to inner loop
+                catch (OperationCanceledException)
+                {
+                    m_shutdownEvent.Set();
+                }
+                catch 
+                {
+                    continue;
+                }
+            }            
         }
 
         /// <summary>
