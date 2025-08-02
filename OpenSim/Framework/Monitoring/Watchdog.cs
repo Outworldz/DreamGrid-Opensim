@@ -41,7 +41,8 @@ namespace OpenSim.Framework.Monitoring
         private static readonly ILog m_log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         /// <summary>Timer interval in milliseconds for the watchdog timer</summary>
-        public const int WATCHDOG_INTERVAL_MS = 2500;
+        public const int WATCHDOG_INTERVAL_MS = 120 * 60 * 1000; // fkb 2 hours 
+
 
         /// <summary>Default timeout in milliseconds before a thread is considered dead</summary>
         // fkb public const int DEFAULT_WATCHDOG_TIMEOUT_MS = 5000;
