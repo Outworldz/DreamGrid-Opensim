@@ -1,12 +1,8 @@
 WifiPages/*
 WifiPages-Custom/*
-WifiPages-Modern/*
 bin/WifiPages/*
 bin/WifiPages-Custom/*
-bin/WifiPages-Modern/*
-
 bin/fsassets/*
-bin/WifiPages/*
 .project
 .settings
 *.csproj
