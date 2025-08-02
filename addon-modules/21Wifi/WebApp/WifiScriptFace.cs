@@ -55,7 +55,7 @@ namespace Diva.Wifi
     public class WifiScriptFace : IWifiScriptFace
     {
         private static readonly ILog m_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
+        object _lockObject = new object(); // A dedicated object for locking
         private WebApp m_WebApp;
 
         public string DocsPath
@@ -114,7 +114,10 @@ namespace Diva.Wifi
             get 
             {
                 float value;
-                m_WebApp.Statistics.TryGetValue("UsersInworld", out value);
+                lock (_lockObject)
+                {
+                    m_WebApp.Statistics.TryGetValue("UsersInworld", out value);
+                }
                 return (uint)value;
             }
         }
@@ -123,7 +126,10 @@ namespace Diva.Wifi
             get
             {
                 float value;
-                m_WebApp.Statistics.TryGetValue("UsersTotal", out value);
+                lock (_lockObject)
+                {
+                    m_WebApp.Statistics.TryGetValue("UsersTotal", out value);
+                }
                 return (uint)value;
             }
         }
@@ -132,20 +138,32 @@ namespace Diva.Wifi
             get
             {
                 float value;
-                m_WebApp.Statistics.TryGetValue("UsersActive", out value);
+                lock (_lockObject)
+                {
+                    m_WebApp.Statistics.TryGetValue("UsersActive", out value);
+                }
                 return (uint)value;
             }
         }
         public uint UsersActivePeriod
         {
-            get { return (uint)m_WebApp.StatisticsActiveUsersPeriod; }
+            get 
+            {
+                lock (_lockObject)
+                {
+                    return (uint)m_WebApp.StatisticsActiveUsersPeriod;
+                }
+            }
         }
         public uint RegionsTotal
         {
             get
             {
                 float value;
-                m_WebApp.Statistics.TryGetValue("RegionsTotal", out value);
+                lock (_lockObject)
+                {
+                    m_WebApp.Statistics.TryGetValue("RegionsTotal", out value);
+                }
                 return (uint)value;
             }
         }
