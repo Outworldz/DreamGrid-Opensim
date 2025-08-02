@@ -167,9 +167,19 @@ namespace OSHttpServer
                 {
                     m_shutdownEvent.Set();
                 }
-                catch 
+                catch (SocketException ex)
                 {
-                    continue;
+                    if (ex.ErrorCode == 10054 || ex.ErrorCode== 10052)
+                    {
+                        // Handle the connection reset 10054 or timeout 10052r                        
+                        continue;                       
+                    }
+                   
+                }
+                catch (Exception err)
+                {
+                    m_logWriter.Write(this, LogPrio.Debug, err.Message);
+                    ExceptionThrown?.Invoke(this, err);
                 }
             }            
         }
