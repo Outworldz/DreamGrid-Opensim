@@ -123,33 +123,60 @@ namespace OSHttpServer
         /// </summary>
         public bool UseTraceLogs { get; set; }
 
+
         private async void AcceptLoop()
         {
-
             while (true)
             {
+                if (m_shutdown)
+                {
+                    m_shutdownEvent?.Set();
+                    break;
+                }
+
+                Socket socket = null;
                 try
                 {
-                    if (m_shutdown)
-                    {
-                        m_shutdownEvent.Set();
-                        break;
-                    }
-
-                    Socket socket = await m_listener.AcceptSocketAsync(m_CancellationSource.Token).ConfigureAwait(false); ;
+                    socket = await m_listener.AcceptSocketAsync(m_CancellationSource.Token).ConfigureAwait(false);
                     if (!socket.Connected)
                     {
                         socket.Dispose();
                         continue;
                     }
+                }
+                catch (OperationCanceledException)
+                {
+                    m_shutdownEvent?.Set();
+                    break;
+                }
+                catch (SocketException snssErr)
+                {
+                    m_logWriter.Write(this, LogPrio.Debug, "OSHTTP Accept wait ignoring error: " + snssErr.Message);
+                    socket?.Dispose();
+                    continue;
+                }
+                catch (Exception err)
+                {
+                    m_logWriter.Write(this, LogPrio.Debug, "OSHTTP Accept wait fatal error: " + err.Message);
+                    ExceptionThrown?.Invoke(this, err);
+                }
 
-                    socket.NoDelay = true;
+                if (m_shutdown)
+                {
+                    m_shutdownEvent?.Set();
+                    socket?.Dispose();
+                    break;
+                }
 
+                socket.NoDelay = true;
+                try
+                {
                     if (!OnAcceptingSocket(socket))
                     {
                         socket.Disconnect(true);
                         continue;
                     }
+
                     if (socket.Connected)
                     {
                         m_logWriter.Write(this, LogPrio.Debug, $"Accepted connection from: {socket.RemoteEndPoint}");
@@ -160,28 +187,25 @@ namespace OSHttpServer
                             m_contextFactory.CreateContext(socket);
                     }
                     else
-                        socket.Dispose();
+                        socket?.Dispose();
                 }
-                // FKB moved to inner loop
                 catch (OperationCanceledException)
                 {
-                    m_shutdownEvent.Set();
+                    m_shutdownEvent?.Set();
+                    break;
                 }
-                catch (SocketException ex)
+                catch (SocketException snssErr)
                 {
-                    if (ex.ErrorCode == 10054 || ex.ErrorCode== 10052)
-                    {
-                        // Handle the connection reset 10054 or timeout 10052r                        
-                        continue;                       
-                    }
-                   
+                    m_logWriter.Write(this, LogPrio.Debug, "OSHTTP Accept processing ignoring error: " + snssErr.Message);
+                    socket?.Dispose();
+                    continue;
                 }
                 catch (Exception err)
                 {
-                    m_logWriter.Write(this, LogPrio.Debug, err.Message);
+                    m_logWriter.Write(this, LogPrio.Debug, "OSHTTP Accept processing fatal error: " + err.Message);
                     ExceptionThrown?.Invoke(this, err);
                 }
-            }            
+            }
         }
 
         /// <summary>
