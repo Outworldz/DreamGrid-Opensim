@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "OpenSim": {
-      "commandName": "Project",
-      "commandLineArgs": "-inidirectory=\"Regions\\2worlds_City\"\r\n"
-    }
-  }
-}

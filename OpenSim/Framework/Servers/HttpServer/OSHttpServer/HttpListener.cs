@@ -123,7 +123,6 @@ namespace OSHttpServer
         /// </summary>
         public bool UseTraceLogs { get; set; }
 
-
         private async void AcceptLoop()
         {
             while (true)

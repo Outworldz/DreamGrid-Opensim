@@ -414,7 +414,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
         public int viewHeight { get; set; } = 480;
         public int viewWidth { get; set; } = 640;
 
-
         public UUID AgentId { get { return m_agentId; } }
         public UUID ScopeId { get { return m_scopeId; } }
         public ISceneAgent SceneAgent { get; set; }
@@ -875,7 +874,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
                 //0xff, 0xff, 0, 148 // ID 148 (low frequency bigendian)
                 0xff, 0xff, 0, 1, 148 // ID 148 (low frequency bigendian) zero encoded
                 };
-
 
         public void SendRegionHandshake()
         {
@@ -3196,8 +3194,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
             OutPacket(viewertime, ThrottleOutPacketType.Task);
         }
 
-
-
         public void SendViewerEffect(ViewerEffectPacket.EffectBlock[] effectBlocks)
         {
             ViewerEffectPacket packet = (ViewerEffectPacket)PacketPool.Instance.GetPacket(PacketType.ViewerEffect);
@@ -3410,7 +3406,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
             eq.Enqueue(BuildEvent("ObjectPhysicsProperties", llsdBody),m_agentId);
             */
         }
-
 
         public void SendPartPhysicsProprieties(ISceneEntity entity)
         {
@@ -3688,14 +3683,15 @@ namespace OpenSim.Region.ClientStack.LindenUDP
             OutPacket(reply, ThrottleOutPacketType.Land);
         }
 
-        public void SendScriptTeleportRequest(string objName, string simName, Vector3 pos, Vector3 lookAt)
+        public void SendScriptTeleportRequest(string objName, string simName, Vector3 pos, int options)
         {
             ScriptTeleportRequestPacket packet = (ScriptTeleportRequestPacket)PacketPool.Instance.GetPacket(PacketType.ScriptTeleportRequest);
-
+            packet.Header.Zerocoded = true;
             packet.Data.ObjectName = Utils.StringToBytes(objName);
             packet.Data.SimName = Utils.StringToBytes(simName);
             packet.Data.SimPosition = pos;
-            packet.Data.LookAt = lookAt;
+            packet.Data.LookAt = Vector3.Zero;
+            packet.Options = options == 3 ? [] : [ new(){Flags = (uint)options } ];
 
             OutPacket(packet, ThrottleOutPacketType.Task);
         }
@@ -8057,7 +8053,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
                     pathScaleY = 150;
             }
 
-
             // first is primFlags
             zc.AddUInt((uint)primflags);
 
@@ -8533,7 +8528,7 @@ namespace OpenSim.Region.ClientStack.LindenUDP
                 )
                 return true;
 
-            float qdelta = MathF.Abs(x.BodyRotation.Dot(m_thisAgentUpdateArgs.BodyRotation));
+            float qdelta = MathF.Abs(x.BodyRotation.Dot(ref m_thisAgentUpdateArgs.BodyRotation));
             return qdelta < QDELTABody; // significant if body rotation above(below cos) threshold
         }
 
@@ -9317,7 +9312,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
                         avSetStartLocationRequestPacket.StartLocationData.LocationPos.Y = avatar.AbsolutePosition.Y;
                     }
                 }
-
             }
             c.OnSetStartLocationRequest?.Invoke(c, 0, avSetStartLocationRequestPacket.StartLocationData.LocationPos,
                                                 avSetStartLocationRequestPacket.StartLocationData.LocationLookAt,
@@ -9562,7 +9556,7 @@ namespace OpenSim.Region.ClientStack.LindenUDP
                             bool IsPhantom = (data[48] != 0) ? true : false;
                             handlerUpdatePrimFlags(flags.AgentData.ObjectLocalID, UsePhysics, IsTemporary, IsPhantom, this);
                 */
-        bool UsePhysics = flags.AgentData.UsePhysics;
+            bool UsePhysics = flags.AgentData.UsePhysics;
             bool IsPhantom = flags.AgentData.IsPhantom;
             bool IsTemporary = flags.AgentData.IsTemporary;
             ObjectFlagUpdatePacket.ExtraPhysicsBlock[] blocks = flags.ExtraPhysics;
@@ -11202,7 +11196,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
         private static void HandleGetScriptRunning(LLClientView c, Packet Pack)
         {
             GetScriptRunningPacket scriptRunning = (GetScriptRunningPacket)Pack;
-
             c.OnGetScriptRunning?.Invoke(c, scriptRunning.Script.ObjectID, scriptRunning.Script.ItemID);
         }
 
