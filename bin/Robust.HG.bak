@@ -699,7 +699,6 @@ Region_Salle_Games=Persistent,FallbackRegion
 Region_Sample_Oar=Persistent,FallbackRegion
 Region_Sandbox=Persistent,FallbackRegion
 Region_Sanitarium=Persistent,FallbackRegion
-Region_sashiya=Persistent,FallbackRegion
 Region_Script_Library=Persistent,FallbackRegion
 Region_Sculpted_island=Persistent,FallbackRegion
 Region_ShoppingCenter=Persistent,FallbackRegion
