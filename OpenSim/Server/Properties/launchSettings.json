@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Robust": {
+      "commandName": "Project",
+      "commandLineArgs": "-inifile Robust.HG.ini"
+    }
+  }
+}
