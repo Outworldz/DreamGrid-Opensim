@@ -1,4 +1,5 @@
-﻿; * $ Robust.exe -inifile Robust.HG.ini
+3; *
+; * $ Robust.exe -inifile Robust.HG.ini
 ; *
 ; * The Const section allows us to define some basic information that we
 ; * will use throughout our configuration. We will provide examples for
@@ -12,44 +13,45 @@
 ; *
 ; *   Dreamgrid allows you to override these settings by making a new line with _override at trhe end of the key
 ; *  Example:  ApachePort_override = 8080
+' * The above setting wil override the DreamGrid setting for Apaches port.
 ; *
+
 [Const]
 
 ;; Set by Dreamgrid
 ; ${Const|GridName}
-GridName=Nitro
-http_listener_port=5002
+GridName=DreamGrid
+http_listener_port=8002
 
 ;; Set by Dreamgrid
 ; The URL of the Robust server
-BaseURL=http://192.168.2.151
+BaseURL=http://10.6.1.103
 
 ; The URL of the Robust server, if PublicPort and PrivatePort must be
 ; accessed via different hostnames as in the case of a NAT gateway
-PrivURL=http://192.168.2.151
+PrivURL=http://10.6.1.103
 
 ;; Set by Dreamgrid
 ; The public port of the Robust server
-PublicPort=5002
+PublicPort=8002
 
 ;; Set by Dreamgrid
 ; The private port of the Robust server
-PrivatePort=5003
+PrivatePort=8003
 
 ;; Set by Dreamgrid
 ; port used for icons, teleports and other tasks when communicating to/from opensim
-DiagnosticsPort=5001
+DiagnosticsPort=8001
 
 ;; Set by Dreamgrid
-;Apache Port for Jopensim and others,
-ApachePort=8000
-
+;Apache Port for Jopensim and others, 
+ApachePort=80
 ;
 ;Password from DYN DNS
-MachineID=f2cb32166f77f33e80311be40c97466e
-
+MachineID=
 ;
-jOpensimURL=
+jOpensimURL= 
+
 
 ; * The startup section lists all the connectors to start up in this server
 ; * instance. This may be only one, or it may be the entire server suite.
@@ -64,7 +66,7 @@ jOpensimURL=
 [Startup]
 
 ; RegionOnline is Set when a region comes online, unset when it unregisters and DeleteOnUnregister is false
-DeleteOnUnregister=True
+DeleteOnUnregister = True
 
 ; Place to create a PID file
 ; If no path if specified then a PID file is not created.
@@ -108,6 +110,7 @@ NoVerifyCertHostname=true
 AssetServiceConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:AssetServiceConnector"
 InventoryInConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:XInventoryInConnector"
 
+
 ;; Uncomment if you have set up Freeswitch (see [FreeswitchService] below)
 ;VoiceConnector = "8004/OpenSim.Server.Handlers.dll:FreeswitchServerConnector"
 GridServiceConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:GridServiceConnector"
@@ -133,9 +136,10 @@ GroupsServiceConnector="${Const|PrivatePort}/OpenSim.Addons.Groups.dll:GroupsSer
 ;; Uncomment to provide bakes caching
 BakedTextureService="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:XBakesConnector"
 
+
 ; set by Dreamgrid for jOpensim and others
 ;; Uncomment for UserProfiles see [UserProfilesService] to configure...
-UserProfilesServiceConnector=${Const|PublicPort}/OpenSim.Server.Handlers.dll:UserProfilesConnector
+UserProfilesServiceConnector="${Const|PublicPort}/OpenSim.Server.Handlers.dll:UserProfilesConnector"
 
 ;; Uncomment if you want to have centralized estate data
 EstateDataService="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:EstateDataRobustConnector"
@@ -154,7 +158,7 @@ HGAssetServiceConnector="HGAssetService@${Const|PublicPort}/OpenSim.Server.Handl
 HGGroupsServiceConnector="${Const|PublicPort}/OpenSim.Addons.Groups.dll:HGGroupsServiceRobustConnector"
 
 ;; needed for JOpensim profile pictures
-GetTextureConnector="${Const|PublicPort}/Opensim.Capabilities.Handlers.dll:GetTextureServerConnector"
+GetTextureConnector="${Const|PublicPort}/Opensim.Capabilities.Handlers.dll:GetTextureSeverConnector"
 
 ; * This is common for all services, it's the network setup for the entire
 ; * server instance, if none is specified above
@@ -203,12 +207,13 @@ port=${Const|PrivatePort}
 ;; This can be overriden in individual private service sections if necessary
 AllowllHTTPRequestIn=true
 
+
 ; * The following are for the remote console
 ; * They have no effect for the local or basic console types
 ; * Leave commented to diable logins to the console
-ConsoleUser=Wifi Admin
-ConsolePass=BFJkKXnG2b8R5aYab64dvlP9i
-ConsolePort=5002
+ConsoleUser=
+ConsolePass=
+ConsolePort=0
 
 [Hypergrid]
 
@@ -274,7 +279,7 @@ DeniedClients=
 ; Change the connection string to your db details
 ;; Set by Dreamgrid
 StorageProvider="OpenSim.Data.MySQL.dll"
-ConnectionString="Data Source=127.0.0.1;Database=Robust;Port=3306;User ID=robustuser;Password=robustpassword;Old Guids=true;Allow Zero Datetime=true;Convert Zero Datetime=True;charset=utf8;Connect Timeout=28800;Command Timeout=28800;"
+ConnectionString="Data Source=127.0.0.1;Database=robust;Port=3306;User ID=robustuser;Password=robustpassword;Old Guids=true;Allow Zero Datetime=true;;Connect Timeout=28800;Command Timeout=28800;"
 
 ; * As an example, the below configuration precisely mimicks the legacy
 ; * asset server. It is read by the asset IN connector (defined above)
@@ -289,8 +294,8 @@ LocalServiceModule=OpenSim.Services.FSAssetService.dll:FSAssetConnector
 ;LocalServiceModule="OpenSim.Services.FSAssetService.dll:FSAssetConnector"
 ;; FSAsset Directories. Base directory, where final asset files are stored and Spool directory for temp files
 ;; These directories must be on the same physical filesystem
-BaseDirectory=./fsassets/data
-SpoolDirectory=./fsassets/tmp
+BaseDirectory=C:\tmp\fsassets/data
+SpoolDirectory=C:\tmp\fsassets/tmp
 
 ;; Original service can be checked if FSAssets can not find an asset
 FallbackService=OpenSim.Services.AssetService.dll:AssetService
@@ -907,13 +912,13 @@ HGInventoryServicePlugin="HGInventoryService@OpenSim.Services.HypergridService.d
 ;; end hypergrid
 ; Ask co-operative viewers to use a different currency name
 ;; Set by Dreamgrid
-Currency=G$
+Currency="G$"
 
 ;; Set minimum fee to publish classified
 ClassifiedFee=0
 
 ;;
-WelcomeMessage=Welcome to the Alien<USERNAME>
+WelcomeMessage=Welcome to DreamGrid
 
 ;;
 AllowRemoteSetLoginLevel="false"
@@ -924,12 +929,12 @@ MapTileURL="${Const|BaseURL}:${Const|PublicPort}/"
 ; Url to search service
 ;SearchURL = "${Const|BaseURL}:${Const|PublicPort}/JOpensim/index.php?option=com_opensim&view=inworldsearch&task=viewersearch&tmpl=component&"
 ;SearchURL=http://www.outworldz.com/Search/query.php
-SearchURL=https://outworldz.com/Search/query.php
+SearchURL=http://www.outworldz.com/Search/query.php
 
 ; For V3 destination guide
 ;DestinationGuide = "${Const|BaseURL}:${Const|PublicPort}/JOpensim//index.php?option=com_opensim&view=guide&tmpl=component"
 ;DestinationGuideURI="http://www.outworldz.com/destination-guide/"
-DestinationGuide=https://outworldz.com/destination-guide
+DestinationGuide="http://www.outworldz.com/destination-guide/"
 
 ; For V3 avatar picker (( work in progress ))
 ; AvatarPicker = "${Const|BaseURL}/avatars"
@@ -968,15 +973,12 @@ DOSAllowXForwardedForHeader=false
 ;;
 ;; The protector adds up requests during this rolling period of time, default 10 seconds
 DOSRequestTimeFrameMS=10000
-
 ;;
 ;; The amount of requests in the above timeframe from the same endpoint that triggers protection
 DOSMaxRequestsInTimeFrame=50
-
 ;;
 ;; The amount of time that a specific endpoint is blocked.    Default 2 minutes.
 DOSForgiveClientAfterMS=120000
-
 ;;
 ;; To turn off basic dos protection, set the DOSMaxRequestsInTimeFrame to 0.
 ;
@@ -1028,7 +1030,7 @@ gridnick=${Const|GridName}
 ;                       this as splash page
 ;; Set by Dreamgrid
 ;welcome = ${Const|BaseURL}:${Const|PublicPort}/JOpensim/index.php?option=com_opensim
-welcome=http://l92.168.2.151:5002
+welcome=http://www.outworldz.com/Outworldz_installer/Welcome.htm
 
 ; helper uri: optional: if it exists it will be used to tell the client to use
 ;                       this for all economy related things
@@ -1074,7 +1076,7 @@ SimulationService="OpenSim.Services.Connectors.dll:SimulationServiceConnector"
 ;
 ; Does this grid allow incoming links to any region in it?
 ; If false, HG TPs happen only to the Default regions specified in [GridService] section
-AllowTeleportsToAnyRegion=True
+AllowTeleportsToAnyRegion=true
 
 ; If you run this gatekeeper server behind a proxy, set this to true
 ; HasProxy = false
@@ -1101,10 +1103,8 @@ AllowExcept=
 ;Attempt to login or hypergrid in to the grid, teleport should timeout and login should fail.
 ;
 DeniedMacs=
-
 ;
 DeniedID0s=
-
 ;
 [UserAgentService]
 LocalServiceModule="OpenSim.Services.HypergridService.dll:UserAgentService"
@@ -1212,7 +1212,6 @@ AuthType=None
 ; DisallowImport ="LSLBytecode"
 ;;
 DisallowExport=
-
 ;;
 [HGFriendsService]
 LocalServiceModule="OpenSim.Services.HypergridService.dll:HGFriendsService"
@@ -1237,7 +1236,8 @@ InGatekeeper=True
 OfflineIMService="OpenSim.Addons.OfflineIM.dll:OfflineIMService"
 
 ; Avatar UUID to message teleports to, perhaps a prim
-MessageKey=""
+MessageKey = ""
+    
 
 [Groups]
 
@@ -1248,27 +1248,30 @@ UserAccountService="OpenSim.Services.UserAccountService.dll:UserAccountService"
 ;; What is the HomeURI of users associated with this grid?
 ;; Can overwrite the default in [Hypergrid], but probably shouldn't
 ;HomeURI="${Const|BaseURL}:${Const|PublicPort}"
+
 ;; Sets the maximum number of groups an agent may join
 ; MaxAgentGroups = 42
-Enabled=true
-Module=GroupsModule
-ServicesConnectorModule=XmlRpcGroupsServicesConnector
-GroupsServerURI="${Const|jOpensimURL}/index.php?option=com_opensim&view=interface"
 
+Enabled = true
+Module = GroupsModule
+ServicesConnectorModule = XmlRpcGroupsServicesConnector
+GroupsServerURI = "${Const|jOpensimURL}/index.php?option=com_opensim&view=interface"
 ; Optional:
 ;MessagingEnabled = true
 ;MessagingModule = GroupsMessagingModule
 ;NoticesEnabled = true
 ;DebugEnabled = false
+
 [UserProfilesService]
 LocalServiceModule="OpenSim.Services.UserProfilesService.dll:UserProfilesService"
-
 ;;
-Enabled=True
+Enabled=true
 
 ;; Configure this for separate profiles database
 ;; ConnectionString = "Data Source=localhost;Database=opensim;User ID=opensim;Password=*****;Old Guids=true;"
+
 ;; Realm = UserProfiles
+
 UserAccountService=OpenSim.Services.UserAccountService.dll:UserAccountService
 AuthenticationServiceModule="OpenSim.Services.AuthenticationService.dll:PasswordAuthenticationService"
 
@@ -1282,23 +1285,10 @@ BaseDirectory="./bakes"
 LocalServiceModule="OpenSim.Services.MuteListService.dll:MuteListService"
 
 [SMTP]
-SMTP_SERVER_HOSTNAME=smtp.somewhere.net
+SMTP_SERVER_HOSTNAME=smtp.gmail.com
 SMTP_SERVER_PORT=587
-SMTP_SERVER_LOGIN=LoginName@somewhere.net
-SMTP_SERVER_PASSWORD=Password
-SMTP_SERVER_FROM=not@set.yet
-SMTP_VerifyCertNames=True
-SMTP_VerifyCertChain=True
-enableEmailToExternalObjects=False
-enableEmailToSMTP=False
-MailsFromOwnerPerHour=500
-MailsToPrimAddressPerHour=20
-SMTP_MailsPerDay=100
-MailsToSMTPAddressPerHour=10
-email_pause_time=20
-email_max_size=4096
-SMTP_SERVER_TLS=Password
-host_domain_header_from=192.168.2.151
+SMTP_SERVER_LOGIN=
+SMTP_SERVER_PASSWORD=Gmail password
 
 ;; Set to True to enable Smart Start
 ;; Set by Dreamgrid
@@ -1309,7 +1299,9 @@ MachineID=
 
 ;; For Joomla/jOpensim
 [CapsService]
-AssetService="OpenSim.Services.FSAssetService.dll:FSAssetConnector"
+AssetService = "OpenSim.Services.FSAssetService.dll:FSAssetConnector"
 
-[UserProfiles]
-ProfileServiceURL=${Const|BaseURL}:${Const|PublicPort}
+
+
+
+
