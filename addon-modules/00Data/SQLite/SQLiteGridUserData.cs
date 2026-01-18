@@ -27,25 +27,28 @@
 using System;
 using System.Reflection;
 
-using OpenSim.Data;
+
 #if CSharpSqlite
     using Community.CsharpSqlite.Sqlite;
+    using SqliteCommandType = Community.CsharpSqlite.Sqlite.SqliteCommand;
 #else
 using Mono.Data.Sqlite;
+using SqliteCommandType = Mono.Data.Sqlite.SqliteCommand;
 #endif
+using OpenSim.Data;
 
 namespace Diva.Data.SQLite
 {
     public class SQLiteGridUserData : OpenSim.Data.SQLite.SQLiteGridUserData, IGridUserData
     {
         private SQLiteGenericTableHandler<GridUserData> m_DatabaseHandler;
-        
-        protected override Assembly Assembly
+
+        protected override System.Reflection.Assembly Assembly
         {
             get { return GetType().BaseType.Assembly; }
         }
 
-        public SQLiteGridUserData(string connectionString, string realm) 
+        public SQLiteGridUserData(string connectionString, string realm)
             : base(connectionString, realm)
         {
             m_DatabaseHandler = new SQLiteGenericTableHandler<GridUserData>(connectionString, realm, "GridUserStore");
@@ -73,22 +76,29 @@ namespace Diva.Data.SQLite
 
         public void ResetTOS()
         {
-            using (SqliteCommand cmd = new SqliteCommand())
+            using (SqliteCommandType cmd = new SqliteCommandType())
             {
                 cmd.CommandText = String.Format("update {0} set TOS=?tos", m_Realm);
                 cmd.Parameters.AddWithValue("?tos", "");
+#if CSharpSqlite
                 DoQuery(cmd);
+#else
+               // DoQuery(cmd);
+#endif
             }
         }
 
         public void ResetOnline()
         {
-            using (SqliteCommand cmd = new SqliteCommand())
+            using (SqliteCommandType cmd = new SqliteCommandType())
             {
                 cmd.CommandText = String.Format("update {0} set Online='False'", m_Realm);
+#if CSharpSqlite
                 DoQuery(cmd);
+#else
+               // DoQuery(cmd);
+#endif
             }
         }
-
     }
 }

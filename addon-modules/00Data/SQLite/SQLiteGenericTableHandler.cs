@@ -26,6 +26,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Reflection;
 
 using Mono.Data.Sqlite;
@@ -92,14 +93,43 @@ namespace Diva.Data.SQLite
         {
             lock (m_Connection)
             {
-                cmd.Connection = m_Connection;
-                return cmd.ExecuteScalar();
+                // Fix: Use the correct connection type for Mono.Data.Sqlite.SqliteCommand
+                if (cmd.Connection == null)
+                {
+                    // m_Connection is likely System.Data.SQLite.SQLiteConnection, but cmd.Connection expects Mono.Data.Sqlite.SqliteConnection.
+                    // Create a new Mono.Data.Sqlite.SqliteConnection using the same connection string.
+                    var monoConn = new Mono.Data.Sqlite.SqliteConnection(m_Connection.ConnectionString);
+                    monoConn.Open();
+                    cmd.Connection = monoConn;
+                    try
+                    {
+                        return cmd.ExecuteScalar();
+                    }
+                    finally
+                    {
+                        monoConn.Close();
+                    }
+                }
+                else
+                {
+                    return cmd.ExecuteScalar();
+                }
             }
         }
 
         new public virtual T[] DoQuery(SqliteCommand cmd)
         {
-            return base.DoQuery(cmd);
+            // Convert Mono.Data.Sqlite.SqliteCommand to System.Data.SQLite.SQLiteCommand
+            using (var sqliteCmd = new System.Data.SQLite.SQLiteCommand(cmd.CommandText))
+            {
+                foreach (Mono.Data.Sqlite.SqliteParameter param in cmd.Parameters)
+                {
+                    var sqliteParam = new System.Data.SQLite.SQLiteParameter(param.ParameterName, param.Value);
+                    sqliteCmd.Parameters.Add(sqliteParam);
+                }
+                sqliteCmd.Connection = m_Connection;
+                return base.DoQuery(sqliteCmd);
+            }
         }
     }
 }

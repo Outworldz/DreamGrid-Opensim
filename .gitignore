@@ -42,6 +42,7 @@ bin/fsassets/*
 addon-modules/
 bin/Debug/*.dll
 bin/*.dll.mdb
+bin/fsassets
 bin/*.db
 bin/*.db-journal
 bin/addin-db-*

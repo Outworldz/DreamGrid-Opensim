@@ -209,7 +209,7 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
             Bitmap tile = GenImage();
             // image may be reloaded elsewhere, so no compression format
             string filename = "MAP-" + m_scene.RegionInfo.RegionID.ToString() + ".png";
-            tile.Save(filename,ImageFormat.Png);
+            // fkb tile.Save(filename,ImageFormat.Png);
             m_primMesher = null;
             return tile;
         }
@@ -433,7 +433,13 @@ namespace OpenSim.Region.CoreModules.World.Warp3DMap
                 delegate (SceneObjectGroup group)
                 {
                     foreach (SceneObjectPart child in group.Parts)
-                        CreatePrim(renderer, child);
+                    {
+                        try { CreatePrim(renderer, child); }
+                        catch (Exception e)
+                        {
+                            m_log.Warn($"[Warp3D] failed to render prim {child.Name} at {child.GetWorldPosition()}: {e.Message}");
+                        }
+                    }
                 }
             );
         }

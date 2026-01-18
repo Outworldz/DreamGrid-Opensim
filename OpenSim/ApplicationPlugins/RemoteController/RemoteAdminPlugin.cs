@@ -25,21 +25,11 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Xml;
-using System.Net;
-using System.Reflection;
-using System.Timers;
-using System.Threading;
 using log4net;
+using Mono.Addins;
 using Nini.Config;
 using Nwc.XmlRpc;
 using OpenMetaverse;
-using Mono.Addins;
 using OpenSim;
 using OpenSim.Framework;
 using OpenSim.Framework.Console;
@@ -49,9 +39,20 @@ using OpenSim.Region.CoreModules.World.Terrain;
 using OpenSim.Region.Framework.Interfaces;
 using OpenSim.Region.Framework.Scenes;
 using OpenSim.Services.Interfaces;
-using PresenceInfo = OpenSim.Services.Interfaces.PresenceInfo;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Reflection;
+using System.Threading;
+using System.Timers;
+using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
 using GridRegion = OpenSim.Services.Interfaces.GridRegion;
 using PermissionMask = OpenSim.Framework.PermissionMask;
+using PresenceInfo = OpenSim.Services.Interfaces.PresenceInfo;
 using RegionInfo = OpenSim.Framework.RegionInfo;
 
 namespace OpenSim.ApplicationPlugins.RemoteController
@@ -107,7 +108,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 else
                 {
                     m_config = m_configSource.Configs["RemoteAdmin"];
-                    //m_log.Debug("[RADMIN]: Remote Admin Plugin Enabled");
+                    m_log.Debug("[RADMIN]: Remote Admin Plugin Enabled");
                     m_requiredPassword = m_config.GetString("access_password", String.Empty);
                     int port = m_config.GetInt("port", 0);
 
@@ -131,13 +132,14 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     m_httpServer = MainServer.GetHttpServer((uint)port,ipaddr);
 
                     Dictionary<string, XmlRpcMethod> availableMethods = new Dictionary<string, XmlRpcMethod>();
+                    availableMethods["admin_alert_user"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcAlertUserMethod);
+                    availableMethods["admin_broadcast"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcAlertMethod);
                     availableMethods["admin_create_region"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcCreateRegionMethod);
                     availableMethods["admin_delete_region"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcDeleteRegionMethod);
                     availableMethods["admin_close_region"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcCloseRegionMethod);
                     availableMethods["admin_modify_region"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcModifyRegionMethod);
                     availableMethods["admin_region_query"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcRegionQueryMethod);
                     availableMethods["admin_shutdown"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcShutdownMethod);
-                    availableMethods["admin_broadcast"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcAlertMethod);
                     availableMethods["admin_dialog"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcDialogMethod);
                     availableMethods["admin_restart"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcRestartMethod);
                     availableMethods["admin_load_heightmap"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcLoadHeightmapMethod);
@@ -213,7 +215,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
         {
             if (!CreateDefaultAvatars())
             {
-               //m_log.Debug("[RADMIN]: Default avatars not loaded");
+                m_log.Info("[RADMIN]: Default avatars not loaded");
             }
         }
 
@@ -308,7 +310,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     string[] alertTimes = requestData["alerts"].ToString().Split(Util.SplitCommaArray);
                     if (alertTimes.Length == 1 && Convert.ToInt32(alertTimes[0]) == -1)
                     {
-                       //m_log.Debug("[RADMIN]: Request to cancel restart.");
+                        m_log.Info("[RADMIN]: Request to cancel restart.");
 
                         if (restartModule != null)
                         {
@@ -345,7 +347,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     }
                 }
 
-               //m_log.Debug("[RADMIN]: Request to restart Region.");
+                m_log.Info("[RADMIN]: Request to restart Region.");
 
                 message = "Region is restarting in {0}. Please save what you are doing and log out.";
 
@@ -361,7 +363,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
 
                 if (startupConfig.GetBoolean("SkipDelayOnEmptyRegion", false))
                 {
-                   //m_log.Debug("[RADMIN]: Counting affected avatars");
+                    m_log.Info("[RADMIN]: Counting affected avatars");
                     int agents = 0;
 
                     if (restartAll)
@@ -384,11 +386,11 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                         }
                     }
 
-                   m_log.DebugFormat("[RADMIN]: Avatars in region: {0}", agents);
+                    m_log.InfoFormat("[RADMIN]: Avatars in region: {0}", agents);
 
                     if (agents == 0)
                     {
-                       //m_log.Debug("[RADMIN]: No avatars detected, shutting down without delay");
+                        m_log.Info("[RADMIN]: No avatars detected, shutting down without delay");
 
                         times.Clear();
                         times.Add(0);
@@ -418,7 +420,40 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 throw;
             }
 
-           //m_log.Debug("[RADMIN]: Restart Region request complete");
+            m_log.Info("[RADMIN]: Restart Region request complete");
+        }
+
+        private void XmlRpcAlertUserMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
+        {
+            //m_log.Info("[RADMIN]: AlertUser request started");
+
+            Hashtable responseData = (Hashtable)response.Value;
+            Hashtable requestData = (Hashtable)request.Params[0];
+
+            string agentIdStr = (string)requestData["agent_id"];
+            string message = (string)requestData["message"];
+
+            responseData["accepted"] = true;
+
+            if(!UUID.TryParse(agentIdStr, out UUID agentId))
+            {
+                responseData["success"] = false;
+                responseData["error"] = "Invalid agent_id";
+                m_log.Info($"[RADMIN]: alert to agent got invalid uuid: {agentIdStr}: {message}");
+                return;
+            }
+
+            if(m_application.SceneManager.TryGetRootScenePresence(agentId, out ScenePresence sp ))
+            {
+                sp.ControllingClient.SendAlertMessage(message);
+                m_log.Info($"[RADMIN]: Sent alert to agent {agentIdStr}: {message}");
+                responseData["success"] = true;
+                return;
+            }
+
+            responseData["success"] = false;
+            responseData["error"] = "User not found or not online";
+            m_log.Info($"[RADMIN]: Fail to send alert to not found agent {agentIdStr}: {message}");
         }
 
         private void XmlRpcAlertMethod(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
@@ -464,8 +499,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                 delegate(Scene scene)
                 {
                     IDialogModule dialogModule = scene.RequestModuleInterface<IDialogModule>();
-                    if (dialogModule != null)
-                        dialogModule.SendNotificationToUsersInRegion(UUID.Zero, fromuuid, message);
+                    dialogModule?.SendNotificationToUsersInRegion(UUID.Zero, fromuuid, message);
                 });
 
             //m_log.Debug("[RADMIN]: Dialog request complete");

@@ -167,9 +167,13 @@ namespace OSHttpServer
                     break;
                 }
 
-                socket.NoDelay = true;
+                if(socket == null)
+                    continue;
+
                 try
                 {
+                    socket.NoDelay = true;
+
                     if (!OnAcceptingSocket(socket))
                     {
                         socket.Disconnect(true);

@@ -48,7 +48,6 @@ using CompressionMode = Ionic.Zlib.CompressionMode;
 using CompressionLevel = Ionic.Zlib.CompressionLevel;
 using OpenSim.Framework.Serialization.External;
 using PermissionMask = OpenSim.Framework.PermissionMask;
-using static OpenSim.Region.Framework.Scenes.EventManager;
 
 namespace OpenSim.Region.CoreModules.World.Archiver
 {
@@ -148,8 +147,10 @@ namespace OpenSim.Region.CoreModules.World.Archiver
             if (options.ContainsKey("all") && (bool)options["all"])
                 MultiRegionFormat = true;
 
+
             if (options.ContainsKey("noassets") && (bool)options["noassets"])
                 SaveAssets = false;
+
 
             if (options.TryGetValue("checkPermissions", out Object temp))
                 FilterContent = (string)temp;
@@ -687,7 +688,6 @@ namespace OpenSim.Region.CoreModules.World.Archiver
             m_log.InfoFormat("[ARCHIVER]: Finished writing out OAR for {0}", m_rootScene.RegionInfo.RegionName);
 
             m_rootScene.EventManager.TriggerOarFileSaved(m_requestId, errorMessage);
-            
         }
     }
 

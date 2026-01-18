@@ -410,7 +410,7 @@ namespace OpenSim.Region.ClientStack.LindenUDP
             set { m_startpos = value; }
         }
         public float StartFar { get; set; }
-        public float FOV { get; set; } = 1.25f;
+        public float FOV { get; set; } = 1.04f;
         public int viewHeight { get; set; } = 480;
         public int viewWidth { get; set; } = 640;
 
@@ -4180,7 +4180,7 @@ namespace OpenSim.Region.ClientStack.LindenUDP
             an.Data = new AvatarNotesReplyPacket.DataBlock
             {
                 TargetID = targetID,
-                Notes = Utils.StringToBytes(text)
+                Notes = Utils.StringToBytes(text, 1022)
             };
 
             OutPacket(an, ThrottleOutPacketType.Task);
