@@ -801,7 +801,7 @@ namespace OpenSim.Region.CoreModules.Asset
             //long heap = 0;
             //if (m_LogLevel >= 2)
             //{
-                m_log.Info($"[FLOTSAM ASSET CACHE]: Start background expiring files older than {purgeLine}");
+                m_log.Debug($"[FLOTSAM ASSET CACHE]: Start background expiring files older than {purgeLine}");
                 long heap = GC.GetTotalMemory(false);
             //}
 
@@ -811,7 +811,7 @@ namespace OpenSim.Region.CoreModules.Asset
             Dictionary<UUID,sbyte> gids = GatherSceneAssets();
 
             int cooldown = 0;
-            m_log.Info("[FLOTSAM ASSET CACHE] start asset files expire");
+            m_log.Debug("[FLOTSAM ASSET CACHE] start asset files expire");
             foreach (string subdir in Directory.GetDirectories(m_CacheDirectory))
             {
                 if(!m_cleanupRunning)
@@ -840,7 +840,7 @@ namespace OpenSim.Region.CoreModules.Asset
             {
                 heap = GC.GetTotalMemory(false) - heap;
                 double fheap = Math.Round((double)(heap / (1024 * 1024)), 3);
-                m_log.Info($"[FLOTSAM ASSET CACHE]: Finished expiring files, heap delta: {fheap}MB.");
+                m_log.Debug($"[FLOTSAM ASSET CACHE]: Finished expiring files, heap delta: {fheap}MB.");
             }
         }
 
@@ -1126,7 +1126,7 @@ namespace OpenSim.Region.CoreModules.Asset
         /// <returns>Number of distinct asset references found in the scene.</returns>
         private int TouchAllSceneAssets(bool tryGetUncached)
         {
-            m_log.Info("[FLOTSAM ASSET CACHE] start touch files of assets in use");
+            m_log.Debug("[FLOTSAM ASSET CACHE] start touch files of assets in use");
 
             Dictionary<UUID,sbyte> gatheredids = GatherSceneAssets();
 
@@ -1153,7 +1153,7 @@ namespace OpenSim.Region.CoreModules.Asset
 
         private Dictionary<UUID, sbyte> GatherSceneAssets()
         {
-            m_log.Info("[FLOTSAM ASSET CACHE] gather assets in use");
+            m_log.Debug("[FLOTSAM ASSET CACHE] gather assets in use");
 
             Dictionary<UUID, sbyte> gatheredids = new();
             UuidGatherer gatherer = new(m_AssetService, gatheredids);
@@ -1251,7 +1251,7 @@ namespace OpenSim.Region.CoreModules.Asset
             gatherer.FailedUUIDs.Clear();
             gatherer.UncertainAssetsUUIDs.Clear();
 
-            m_log.Info($"[FLOTSAM ASSET CACHE]     found {gatheredids.Count} possible assets in use)");
+            m_log.Debug($"[FLOTSAM ASSET CACHE]     found {gatheredids.Count} possible assets in use)");
             return gatheredids;
         }
 
@@ -1677,18 +1677,18 @@ namespace OpenSim.Region.CoreModules.Asset
         {
             if (string.IsNullOrWhiteSpace(m_assetLoader))
             {
-                m_log.Info("[FLOTSAM ASSET CACHE] default assets loader not defined");
+                m_log.Debug("[FLOTSAM ASSET CACHE] default assets loader not defined");
                 return;
             }
 
             IAssetLoader assetLoader = ServerUtils.LoadPlugin<IAssetLoader>(m_assetLoader, Array.Empty<object>());
             if (assetLoader == null)
             {
-                m_log.Info("[FLOTSAM ASSET CACHE] default assets loader not found");
+                m_log.Debug("[FLOTSAM ASSET CACHE] default assets loader not found");
                 return;
             }
 
-            m_log.Info("[FLOTSAM ASSET CACHE] start loading local default assets");
+            m_log.Debug("[FLOTSAM ASSET CACHE] start loading local default assets");
 
             int count = 0;
             HashSet<string> ids = new();
@@ -1701,25 +1701,25 @@ namespace OpenSim.Region.CoreModules.Asset
                         ++count;
                     });
             m_defaultAssets = ids;
-            m_log.Info($"[FLOTSAM ASSET CACHE] loaded {count} local default assets");
+            m_log.Debug($"[FLOTSAM ASSET CACHE] loaded {count} local default assets");
         }
 
         private void HandleDeleteDefaultAssets()
         {
             if (string.IsNullOrWhiteSpace(m_assetLoader))
             {
-                m_log.Info("[FLOTSAM ASSET CACHE] default assets loader not defined");
+                m_log.Debug("[FLOTSAM ASSET CACHE] default assets loader not defined");
                 return;
             }
 
             IAssetLoader assetLoader = ServerUtils.LoadPlugin<IAssetLoader>(m_assetLoader, Array.Empty<object>());
             if (assetLoader is null)
             {
-                m_log.Info("[FLOTSAM ASSET CACHE] default assets loader not found");
+                m_log.Debug("[FLOTSAM ASSET CACHE] default assets loader not found");
                 return;
             }
 
-            m_log.Info("[FLOTSAM ASSET CACHE] started deleting local default assets");
+            m_log.Debug("[FLOTSAM ASSET CACHE] started deleting local default assets");
             int count = 0;
             assetLoader.ForEachDefaultXmlAsset(
                     m_assetLoaderArgs,
@@ -1729,7 +1729,7 @@ namespace OpenSim.Region.CoreModules.Asset
                         ++count;
                     });
             m_defaultAssets = new HashSet<string>();
-            m_log.Info($"[FLOTSAM ASSET CACHE] deleted {count} local default assets");
+            m_log.Debug($"[FLOTSAM ASSET CACHE] deleted {count} local default assets");
         }
         #endregion
     }
