@@ -2,7 +2,7 @@
   "profiles": {
     "OpenSim": {
       "commandName": "Project",
-      "commandLineArgs": " -inidirectory=\"Regions\\Big N Large\""
+      "commandLineArgs": " -inidirectory=\"Regions\\Welcome\""
     }
   }
 }
