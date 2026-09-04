@@ -1535,10 +1535,7 @@ namespace OpenSim.Region.ClientStack.LindenUDP
                 catch (Exception ex)
                 {
                     m_log.Error($"Packet statistics gathering failed: {ex.Message}");
-                    if (PacketLog.Log != null)
-                    {
-                        PacketLog.Log.Close();
-                    }
+                    PacketLog?.Log?.Close();
                     PacketLog = null;
                 }
             }
@@ -1732,7 +1729,6 @@ namespace OpenSim.Region.ClientStack.LindenUDP
                 LLUDPClient udpClient = new(this, ThrottleRates, Throttle, circuitCode, agentID, remoteEndPoint, m_defaultRTO, m_maxRTO);
 
                 client = new LLClientView(Scene, this, udpClient, sessionInfo, agentID, sessionID, circuitCode);
-                client.OnLogout += LogoutHandler;
                 client.DebugPacketLevel = DefaultClientPacketDebugLevel;
 
                 ((LLClientView)client).DisableFacelights = m_disableFacelights;
@@ -1948,7 +1944,7 @@ namespace OpenSim.Region.ClientStack.LindenUDP
 
         #endregion
 
-        protected void LogoutHandler(IClientAPI client)
+        public void LogoutHandler(IClientAPI client)
         {
             client.SendLogoutPacket();
 

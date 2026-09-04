@@ -184,7 +184,7 @@ namespace OpenSim.Region.ScriptEngine.Shared.Api
         private void ReadConfig()
         {
             cmdHandlerThreadCycleSleepms = m_ScriptEngine.Config.GetInt("AsyncLLCommandLoopms", 100);
-            cmdHandlerThreadCycleSleepms = Utils.Clamp(cmdHandlerThreadCycleSleepms, 15, 250); //fkb - 15ms is about the minimum for a thread to sleep, and 250ms is about the maximum that should be needed for a responsive script engine.
+            cmdHandlerThreadCycleSleepms = Utils.Clamp(cmdHandlerThreadCycleSleepms, 25, 250);
         }
 
 /*

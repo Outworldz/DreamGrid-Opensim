@@ -44,11 +44,11 @@ namespace OpenSim.Region.Framework.Scenes
         /// <summary>
         /// Force all task inventories of prims in the scene object to persist
         /// </summary>
-        public void ForceInventoryPersistence()
+        public void ForceInventoryPersistence(bool force = true)
         {
             SceneObjectPart[] parts = m_parts.GetArray();
             for (int i = 0; i < parts.Length; i++)
-                parts[i].Inventory.ForceInventoryPersistence();
+                parts[i].Inventory.ForceInventoryPersistence(force);
         }
 
         /// <summary>
@@ -215,14 +215,8 @@ namespace OpenSim.Region.Framework.Scenes
             {
                 return part.Inventory.GetInventoryItem(itemID);
             }
-            else
-            {
-                m_log.ErrorFormat(
-                    "[PRIM INVENTORY]: " +
-                    "Couldn't find prim local ID {0} in prim {1}, {2} to get inventory item ID {3}",
-                    primID, part.Name, part.UUID, itemID);
-            }
 
+            m_log.Error($"[PRIM INVENTORY]: Couldn't find prim local ID {primID} to get inventory item ID {itemID}");
             return null;
         }
 

@@ -2,7 +2,7 @@
   "profiles": {
     "Robust": {
       "commandName": "Project",
-      "commandLineArgs": " -inidirectory=\"Regions\\Big N Large\""
+      "commandLineArgs": " -inifile=\"Robust.HG.ini\""
     }
   }
 }

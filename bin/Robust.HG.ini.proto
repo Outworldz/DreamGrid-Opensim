@@ -211,9 +211,13 @@ AllowllHTTPRequestIn=true
 ; * The following are for the remote console
 ; * They have no effect for the local or basic console types
 ; * Leave commented to diable logins to the console
-ConsoleUser=
-ConsolePass=
-ConsolePort=0
+ConsoleUser=Wifi Admin
+ConsolePass=123
+ConsolePort=5002
+https_main=false
+https_listener=false
+cert_path=""
+cert_pass=""
 
 [Hypergrid]
 
@@ -294,8 +298,8 @@ LocalServiceModule=OpenSim.Services.FSAssetService.dll:FSAssetConnector
 ;LocalServiceModule="OpenSim.Services.FSAssetService.dll:FSAssetConnector"
 ;; FSAsset Directories. Base directory, where final asset files are stored and Spool directory for temp files
 ;; These directories must be on the same physical filesystem
-BaseDirectory=C:\tmp\fsassets/data
-SpoolDirectory=C:\tmp\fsassets/tmp
+BaseDirectory=./fsassets/data
+SpoolDirectory=./fsassets/tmp
 
 ;; Original service can be checked if FSAssets can not find an asset
 FallbackService=OpenSim.Services.AssetService.dll:AssetService
@@ -533,13 +537,13 @@ HGInventoryServicePlugin="HGInventoryService@OpenSim.Services.HypergridService.d
 ;; end hypergrid
 ; Ask co-operative viewers to use a different currency name
 ;; Set by Dreamgrid
-Currency="G$"
+Currency=G$
 
 ;; Set minimum fee to publish classified
 ClassifiedFee=0
 
 ;;
-WelcomeMessage=Welcome to DreamGrid
+WelcomeMessage=Welcome to DreamGrid  <USERNAME>
 
 ;;
 AllowRemoteSetLoginLevel="false"
@@ -550,12 +554,12 @@ MapTileURL="${Const|BaseURL}:${Const|PublicPort}/"
 ; Url to search service
 ;SearchURL = "${Const|BaseURL}:${Const|PublicPort}/JOpensim/index.php?option=com_opensim&view=inworldsearch&task=viewersearch&tmpl=component&"
 ;SearchURL=http://www.outworldz.com/Search/query.php
-SearchURL=http://www.outworldz.com/Search/query.php
+SearchURL=https://outworldz.com/Search/query.php
 
 ; For V3 destination guide
 ;DestinationGuide = "${Const|BaseURL}:${Const|PublicPort}/JOpensim//index.php?option=com_opensim&view=guide&tmpl=component"
 ;DestinationGuideURI="http://www.outworldz.com/destination-guide/"
-DestinationGuide="http://www.outworldz.com/destination-guide/"
+DestinationGuide=https://outworldz.com/destination-guide
 
 ; For V3 avatar picker (( work in progress ))
 ; AvatarPicker = "${Const|BaseURL}/avatars"
@@ -597,9 +601,11 @@ DOSRequestTimeFrameMS=10000
 ;;
 ;; The amount of requests in the above timeframe from the same endpoint that triggers protection
 DOSMaxRequestsInTimeFrame=50
+
 ;;
 ;; The amount of time that a specific endpoint is blocked.    Default 2 minutes.
 DOSForgiveClientAfterMS=120000
+
 ;;
 ;; To turn off basic dos protection, set the DOSMaxRequestsInTimeFrame to 0.
 ;
@@ -833,6 +839,7 @@ AuthType=None
 ; DisallowImport ="LSLBytecode"
 ;;
 DisallowExport=
+
 ;;
 [HGFriendsService]
 LocalServiceModule="OpenSim.Services.HypergridService.dll:HGFriendsService"
@@ -872,7 +879,6 @@ UserAccountService="OpenSim.Services.UserAccountService.dll:UserAccountService"
 
 ;; Sets the maximum number of groups an agent may join
 ; MaxAgentGroups = 42
-
 Enabled = true
 Module = GroupsModule
 ServicesConnectorModule = XmlRpcGroupsServicesConnector
@@ -906,10 +912,23 @@ BaseDirectory="./bakes"
 LocalServiceModule="OpenSim.Services.MuteListService.dll:MuteListService"
 
 [SMTP]
-SMTP_SERVER_HOSTNAME=smtp.gmail.com
+SMTP_SERVER_HOSTNAME=smtp.somewhere.net
 SMTP_SERVER_PORT=587
-SMTP_SERVER_LOGIN=
-SMTP_SERVER_PASSWORD=Gmail password
+SMTP_SERVER_LOGIN=fred@outworldz.com
+SMTP_SERVER_PASSWORD=Password
+SMTP_SERVER_FROM=not@set.yet
+SMTP_VerifyCertNames=True
+SMTP_VerifyCertChain=True
+enableEmailToExternalObjects=False
+enableEmailToSMTP=True
+MailsFromOwnerPerHour=500
+MailsToPrimAddressPerHour=20
+SMTP_MailsPerDay=100
+MailsToSMTPAddressPerHour=10
+email_pause_time=20
+email_max_size=4096
+SMTP_SERVER_TLS=Password
+host_domain_header_from=outworldz.com
 
 ;; Set to True to enable Smart Start
 ;; Set by Dreamgrid
@@ -922,7 +941,5 @@ MachineID=
 [CapsService]
 AssetService = "OpenSim.Services.FSAssetService.dll:FSAssetConnector"
 
-
-
-
-
+[UserProfiles]
+ProfileServiceURL=${Const|BaseURL}:${Const|PublicPort}

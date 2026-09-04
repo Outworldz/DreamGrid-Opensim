@@ -30,7 +30,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Reflection;
 using System.Threading;
 using System.Text;
@@ -72,7 +71,7 @@ namespace OpenSim.Region.DataSnapshot
         private string m_dataServices = "noservices";
         public string m_listener_port = ConfigSettings.DefaultRegionHttpPort.ToString();
         public string m_hostname = "127.0.0.1";
-        private string m_Secret = "";
+        private UUID m_Secret = UUID.Random();
         private bool m_servicesNotified = false;
 
         //Update timers
@@ -84,9 +83,6 @@ namespace OpenSim.Region.DataSnapshot
         //Program objects
         private SnapshotStore m_snapStore = null;
 
-        //SmartStart Search        
-        protected string m_SmartStartMachineID = string.Empty;
-
         #endregion
 
         #region Properties
@@ -96,7 +92,7 @@ namespace OpenSim.Region.DataSnapshot
             get { return m_exposure_level; }
         }
 
-        public string Secret
+        public UUID Secret
         {
             get { return m_Secret; }
         }
@@ -116,13 +112,6 @@ namespace OpenSim.Region.DataSnapshot
                 {
                     try
                     {
-                        //SmartStart  Search                        
-                        IConfig SmartStartConfig = config.Configs["SmartStart"];
-                        if (SmartStartConfig != null)
-                        {                                                        
-                            m_SmartStartMachineID = SmartStartConfig.GetString("MachineID", m_SmartStartMachineID);                            
-                        }                        
-
                         m_enabled = config.Configs["DataSnapshot"].GetBoolean("index_sims", m_enabled);
                         string gatekeeper = Util.GetConfigVarFromSections<string>(config, "GatekeeperURI",
                             new string[] { "Startup", "Hypergrid", "GridService" }, String.Empty);
@@ -304,7 +293,7 @@ namespace OpenSim.Region.DataSnapshot
         private void AddDataServicesVars(IConfig config)
         {
             // Make sure the services given this way aren't in m_dataServices already
-            List<string> servs = new List<string>(m_dataServices.Split(new char[] { ';' }));
+            List<string> servs = new(m_dataServices.Split(';'));
 
             StringBuilder sb = new StringBuilder();
             string[] keys = config.GetKeys();
@@ -316,7 +305,7 @@ namespace OpenSim.Region.DataSnapshot
                 {
                     string keyValue = config.GetString(serviceKey, string.Empty).Trim();
                     if (!servs.Contains(keyValue))
-                        sb.Append(keyValue).Append(";");
+                        sb.Append(keyValue).Append(';');
                 }
             }
 
@@ -381,7 +370,6 @@ namespace OpenSim.Region.DataSnapshot
             {
                 Monitor.Exit(m_serializeGen);
             }
-            m_log.Debug("[DATASNAPSHOT]: data sent");
 
             return requestedSnap;
 
@@ -410,10 +398,8 @@ namespace OpenSim.Region.DataSnapshot
         private void NotifyDataServices(string servicesStr, string serviceName)
         {
             Stream reply = null;
-            string delimStr = ";";
-            char [] delimiter = delimStr.ToCharArray();
 
-            string[] services = servicesStr.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
+            string[] services = servicesStr.Split(';', StringSplitOptions.RemoveEmptyEntries);
 
             for (int i = 0; i < services.Length; i++)
             {
@@ -423,7 +409,7 @@ namespace OpenSim.Region.DataSnapshot
                     cli.AddQueryParameter("service", serviceName);
                     cli.AddQueryParameter("host", m_hostname);
                     cli.AddQueryParameter("port", m_listener_port);
-                    cli.AddQueryParameter("secret", m_SmartStartMachineID);
+                    cli.AddQueryParameter("secret", m_Secret.ToString());
                     cli.RequestMethod = "GET";
                     try
                     {
@@ -444,7 +430,7 @@ namespace OpenSim.Region.DataSnapshot
 
                     // This is not quite working, so...
                     // string responseStr = Util.UTF8.GetString(response);
-                    m_log.Info("[DATASNAPSHOT]: data service " + url + " notified. Secret: " + m_SmartStartMachineID);
+                    m_log.Info("[DATASNAPSHOT]: data service " + url + " notified. Secret: " + m_Secret);
                 }
             }
         }
