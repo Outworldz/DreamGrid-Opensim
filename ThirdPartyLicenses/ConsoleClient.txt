@@ -1,0 +1,3 @@
+OpennsimConsoleClient by Melanie Thielker is MIT licensed.
+
+Src: https://github.com/MelanieT/OpenSimConsoleClient
