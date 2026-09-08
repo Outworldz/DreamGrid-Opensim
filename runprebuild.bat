@@ -4,6 +4,9 @@ copy bin\System.Drawing.Common.dll.win bin\System.Drawing.Common.dll
 
 dotnet bin\prebuild.dll /target vs2022 /targetframework net8_0 /excludedir = "obj | bin" /file prebuild.xml
 
+    @echo Restoring Windows application icons (prebuild.xml has no icon support)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0SetProjectIcons.ps1"
+
     @echo Creating compile.bat
 rem To compile in release mode
     @echo dotnet build --configuration Release OpenSim.sln > compile.bat
