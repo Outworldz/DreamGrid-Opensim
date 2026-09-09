@@ -27,6 +27,7 @@
  */
 
 using System;
+using log4net;
 using OpenMetaverse;
 using OpenSim.Framework;
 using OpenSim.Region.Framework.Scenes;
@@ -35,6 +36,8 @@ namespace Flocking
 {
 	public class FlowMap
 	{
+		private static readonly ILog m_log = LogManager.GetLogger (System.Reflection.MethodBase.GetCurrentMethod ().DeclaringType);
+
 		private Scene m_scene;
         private float[, ,] m_flowMap;
         private uint regionX;
@@ -42,7 +45,8 @@ namespace Flocking
         private uint regionZ;
         private float regionBorder;
 		public bool GetThings  (Scene m)
-		{			
+		{
+			int cellsMarked = 0;
 
             // fill in the things
             foreach (EntityBase entity in m.GetEntities())
@@ -61,7 +65,7 @@ namespace Flocking
                     minX = Convert.ToInt32(fminX) + (int) s.X + 2;
                     maxX = Convert.ToInt32(fmaxX) + (int) s.X + 2;
                     minY = Convert.ToInt32(fminY) + (int) s.Y + 2;
-                    maxY = Convert.ToInt32(fmaxX) + (int) s.Y + 2;
+                    maxY = Convert.ToInt32(fmaxY) + (int) s.Y + 2;
                     minZ = Convert.ToInt32(fminZ) + (int) s.Z + 2;
                     maxZ = Convert.ToInt32(fmaxZ) + (int) s.Z + 2;
 
@@ -72,14 +76,16 @@ namespace Flocking
 							for (int z = minZ; z <= maxZ; z++)
 							{
 								if (x >= 0 && x < regionX && y > 0 && y < regionY && z < regionZ && z >= 0)  // prim can be below 0!
-								{									
-									m_flowMap[x, y, z] = 100f;									
+								{
+									m_flowMap[x, y, z] = 100f;
+									cellsMarked++;
 								}
 							}
                         }
                     }
                 }
             }
+			m_log.InfoFormat("[OpenSimBirds]: FlowMap.GetThings marked {0} obstacle cells from {1} entities", cellsMarked, m.GetEntities().Length);
 			return true;
         }
 		public FlowMap (Scene scene, int maxHeight, float borderSize)

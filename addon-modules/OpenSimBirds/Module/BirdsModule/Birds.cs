@@ -222,12 +222,17 @@ namespace Flocking
 		/// if we get too close wrap us around 
 		/// CHANGE THIS to navigate away from whatever it is we are too close to
 		/// </summary>
+		private static int s_avoidHits = 0;
+
 		void AvoidObstacles ()
 		{
 			//look tolerance metres ahead
 			Vector3 normVel = Vector3.Normalize(m_vel);
 			Vector3 inFront = m_loc + Vector3.Multiply(normVel, m_model.Tolerance);
 			if( m_flowMap.WouldHitObstacle( m_loc, inFront ) ) {
+				int hits = System.Threading.Interlocked.Increment(ref s_avoidHits);
+				if (hits <= 5 || hits % 200 == 0)
+					m_log.InfoFormat("[OpenSimBirds]: AvoidObstacles triggered (count={0}) bird={1} loc={2} inFront={3}", hits, m_id, m_loc, inFront);
 				AdjustVelocityToAvoidObstacles ();
 			}
 		}
