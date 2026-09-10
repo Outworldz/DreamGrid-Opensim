@@ -1,0 +1,3 @@
+[submodule "addon-modules/os-webrtc-janus"]
+	path = addon-modules/os-webrtc-janus
+	url = https://github.com/Misterblue/os-webrtc-janus.git

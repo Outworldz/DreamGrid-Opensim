@@ -39,7 +39,6 @@ bin/fsassets/*
 */*/*/*/*/*/bin
 */*/*/*/*/*/*/bin
 .vs/
-addon-modules/
 bin/Debug/*.dll
 bin/*.dll.mdb
 bin/fsassets
