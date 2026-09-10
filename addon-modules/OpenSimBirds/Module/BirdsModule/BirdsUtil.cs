@@ -28,7 +28,7 @@
 using System;
 using OpenMetaverse;
 
-namespace Flocking
+namespace OpenSimBirds.Module.BirdsModule
 {
 	public class BirdsUtil
 	{

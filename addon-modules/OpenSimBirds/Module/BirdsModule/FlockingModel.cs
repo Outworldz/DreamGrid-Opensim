@@ -29,7 +29,7 @@ using System;
 using System.Collections.Generic;
 using OpenMetaverse;
 
-namespace Flocking
+namespace OpenSimBirds.Module.BirdsModule
 {
 	public class FlockingModel
 	{

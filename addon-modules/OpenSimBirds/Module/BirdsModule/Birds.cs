@@ -29,27 +29,27 @@ using System.Collections.Generic;
 using log4net;
 using OpenMetaverse;
 
-namespace Flocking
+namespace OpenSimBirds.Module.BirdsModule
 {
 	public class Bird
 	{
 		private static readonly ILog m_log = LogManager.GetLogger (System.Reflection.MethodBase.GetCurrentMethod ().DeclaringType);
-		private string m_id;
-		
+		private readonly string m_id;
+
 		private Vector3 m_loc;
 		private Vector3 m_vel;
 		private Vector3 m_acc;
-		private Random m_rndnums = new Random (Environment.TickCount);
-		
-		private FlockingModel m_model;
-		private FlowMap m_flowMap;
-        private int m_regionX;
-        private int m_regionY;
-        private int m_regionZ;
-        private float m_regionBorder;
+		private readonly Random m_rndnums = new (Environment.TickCount);
+
+		private readonly FlockingModel m_model;
+		private readonly FlowMap m_flowMap;
+        private readonly int m_regionX;
+        private readonly int m_regionY;
+        private readonly int m_regionZ;
+        private readonly float m_regionBorder;
 		
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Flocking.Bird"/> class.
+		/// Initializes a new instance of the <see cref="OpenSimBirds.Module.BirdsModule.Bird"/> class.
 		/// </summary>
 		/// <param name='l'>
 		/// L. the initial position of this bird
@@ -183,7 +183,7 @@ namespace Flocking
 		/// <param name='target'>
 		/// Target. the flock we would like to think ourselves part of
 		/// </param>
-		void arrive (Vector3 target)
+		void Arrive (Vector3 target)
 		{
 			m_acc += Steer (target, true);
 		}
@@ -227,7 +227,7 @@ namespace Flocking
 		void AvoidObstacles ()
 		{
 			//look tolerance metres ahead
-			Vector3 normVel = Vector3.Normalize(m_vel);
+			Vector3 normVel = Vector3.Normalize(in m_vel);
 			Vector3 inFront = m_loc + Vector3.Multiply(normVel, m_model.Tolerance);
 			if( m_flowMap.WouldHitObstacle( m_loc, inFront ) ) {
 				int hits = System.Threading.Interlocked.Increment(ref s_avoidHits);
@@ -240,7 +240,7 @@ namespace Flocking
 		void AdjustVelocityToAvoidObstacles ()
 		{
 			for( int i = 1; i < 5; i++ ) {
-				Vector3 normVel = Vector3.Normalize(m_vel);
+				Vector3 normVel = Vector3.Normalize(in m_vel);
 				int xDelta = m_rndnums.Next (-i, i);
 				int yDelta = m_rndnums.Next (-i, i);
 				int zDelta = m_rndnums.Next (-i, i);
@@ -278,7 +278,7 @@ namespace Flocking
 		/// </param>
 		Vector3 Separate (List<Bird> birds)
 		{
-			Vector3 steer = new Vector3 (0, 0, 0);
+			Vector3 steer = new (0, 0, 0);
 			int count = 0;
 			// For every bird in the system, check if it's too close
 			foreach (Bird other in birds) {
@@ -320,7 +320,7 @@ namespace Flocking
 		/// </param>
 		Vector3 Align (List<Bird> birds)
 		{
-			Vector3 steer = new Vector3 (0, 0, 0);
+			Vector3 steer = new (0, 0, 0);
 			int count = 0;
 			foreach (Bird other in birds) {
 				float d = Vector3.Distance (m_loc, other.Location);

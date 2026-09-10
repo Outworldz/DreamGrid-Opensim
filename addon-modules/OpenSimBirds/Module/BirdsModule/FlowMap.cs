@@ -32,7 +32,7 @@ using OpenMetaverse;
 using OpenSim.Framework;
 using OpenSim.Region.Framework.Scenes;
 
-namespace Flocking
+namespace OpenSimBirds.Module.BirdsModule
 {
 	public class FlowMap
 	{

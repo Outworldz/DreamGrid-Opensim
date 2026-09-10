@@ -32,7 +32,7 @@ using OpenSim.Framework;
 using OpenSim.Region.Framework.Scenes;
 using log4net;
 
-namespace Flocking
+namespace OpenSimBirds.Module.BirdsModule
 {
 	public class FlockingView
 	{

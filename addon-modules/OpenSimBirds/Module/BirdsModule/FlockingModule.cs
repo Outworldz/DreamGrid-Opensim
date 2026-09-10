@@ -46,7 +46,7 @@ using LSL_List = OpenSim.Region.ScriptEngine.Shared.LSL_Types.list;
 [assembly: Addin("OpenSimBirds", "0.2")]
 [assembly: AddinDependency("OpenSim.Region.Framework", OpenSim.VersionInfo.VersionNumber)]
 
-namespace Flocking
+namespace OpenSimBirds.Module.BirdsModule
 {
     [Extension(Path = "/OpenSim/RegionModules", NodeName = "RegionModule", Id = "OpenSimBirds")]
     public class FlockingModule : INonSharedRegionModule
@@ -56,6 +56,7 @@ namespace Flocking
         public FlowMap flowMap;
 
         private static readonly ILog m_log = LogManager.GetLogger (System.Reflection.MethodBase.GetCurrentMethod ().DeclaringType);
+        private static readonly char[] s_controllerListSeparators = [','];
 
         public string m_name = "OpenSimBirds";
         private string m_regionConfigDir = "";
@@ -79,9 +80,9 @@ namespace Flocking
 		private float m_tolerance;
         private float m_borderSize;
         private int m_maxHeight;
-        private Vector3 m_shoutPos = new Vector3(128f, 128f, 30f); 
-        static object m_sync = new object();
-        private List<UUID> m_allowedControllers = new List<UUID>();
+        private Vector3 m_shoutPos = new (128f, 128f, 30f);
+        static readonly object m_sync = new ();
+        private readonly List<UUID> m_allowedControllers = [];
 
         public IConfigSource m_config;
 
@@ -158,8 +159,7 @@ namespace Flocking
                 string allowedControllers = cnf.GetString("BirdsAllowedControllers", UUID.Zero.ToString());
                 if (allowedControllers != UUID.Zero.ToString())
                 {
-                    string[] ac = allowedControllers.Split(new char[] { ',' });
-                    UUID acUUID;
+                    string[] ac = allowedControllers.Split(s_controllerListSeparators);
                     for (int i = 0; i < ac.Length; i++)
                     {
                         string value = ac[i].Trim();
@@ -179,7 +179,7 @@ namespace Flocking
                             }
                             continue;
                         }
-                        if (UUID.TryParse(ac[i].Trim(), out acUUID))
+                        if (UUID.TryParse(ac[i].Trim(), out UUID acUUID))
                         {
                             m_allowedControllers.Add(acUUID);
                             m_log.InfoFormat("[{0}] Added UUID: {1} to list of allowed users", m_name, acUUID.ToString());
@@ -207,8 +207,7 @@ namespace Flocking
 
                 // init module
                 m_model = new FlockingModel(m_name, m_maxSpeed, m_maxForce, m_neighbourDistance, m_desiredSeparation, m_tolerance, m_borderSize);
-                m_view = new FlockingView(m_name, m_scene);
-                m_view.BirdPrim = m_birdPrim;
+                m_view = new FlockingView(m_name, m_scene) { BirdPrim = m_birdPrim };
                 m_frame = 0;
                 m_shoutPos = new Vector3(scene.RegionInfo.RegionSizeX / 2f, scene.RegionInfo.RegionSizeY / 2f, 30f);
 
@@ -238,8 +237,7 @@ namespace Flocking
 		{
             m_log.InfoFormat("[{0}]: Removing region {1} from this module", m_name, scene.RegionInfo.RegionName);
             if (m_startup) {
-                if (m_view !=null)
-                    m_view.Clear();
+                m_view?.Clear();
 			    scene.EventManager.OnFrame -= FlockUpdate;
 			    scene.EventManager.OnChatFromClient -= SimChatSent;
                 scene.EventManager.OnChatFromWorld -= SimChatSent;
@@ -416,7 +414,7 @@ namespace Flocking
 		
 		private bool IsInWorldCmd (ref string [] args)
 		{
-			if (args.Length > 0 && args [args.Length - 1].Equals ("<ui>")) {
+			if (args.Length > 0 && args [^1].Equals ("<ui>")) {
                 m_log.InfoFormat("[{0}]: Inworld command detected in region {1}", m_name, m_scene.RegionInfo.RegionName);
                 return true;	
 			}
@@ -513,7 +511,7 @@ namespace Flocking
                 int i;
                 int s=m_model.Size;
                 UUID primUuid;
-                List<ScenePresence> avatarsSitList = new List<ScenePresence>();
+                List<ScenePresence> avatarsSitList = [];
                 string avUuids;
                 if (inWorld)
                 {
