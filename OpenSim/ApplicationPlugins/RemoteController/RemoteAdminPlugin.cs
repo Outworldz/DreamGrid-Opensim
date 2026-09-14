@@ -176,6 +176,7 @@ namespace OpenSim.ApplicationPlugins.RemoteController
                     availableMethods["admin_refresh_map"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcRefreshMap);
                     availableMethods["admin_get_opensim_version"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcGetOpenSimVersion);
                     availableMethods["admin_get_agent_count"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcGetAgentCount);
+                    availableMethods["admin_get_dreamgrid_identity"] = (req, ep) => InvokeXmlRpcMethod(req, ep, XmlRpcGetDreamGridIdentity);
 
                     // Either enable full remote functionality or just selected features
                     string enabledMethods = m_config.GetString("enabled_methods", "all");
@@ -2450,6 +2451,28 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             responseData["success"] = true;
 
             //m_log.Debug("[RADMIN]: Get OpenSim Version Request complete");
+        }
+
+        // DreamGrid's startup port-recovery scan finds live OpenSim.exe processes and their bound ports via a Win32
+        // PID/port table (which carries no region identity), then calls this to ask each one directly "what region
+        // UUID(s) do you host, and what is your own PID" - ground truth it can trust over a possibly-stale on-disk
+        // PID.pid file or .ini. Deliberately takes no region_id/region_name filter (unlike every other admin_get_*
+        // region method, which requires one via GetSceneFromRegionParams/CheckRegionParams) since the caller does
+        // not yet know which regions this process hosts - that is exactly what it is asking.
+        private void XmlRpcGetDreamGridIdentity(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)
+        {
+            Hashtable responseData = (Hashtable)response.Value;
+
+            responseData["pid"] = Environment.ProcessId;
+
+            ArrayList regionIds = new ArrayList();
+            m_application.SceneManager.ForEachScene(
+                delegate (Scene scene)
+                {
+                    regionIds.Add(scene.RegionInfo.RegionID.ToString());
+                });
+            responseData["region_ids"] = regionIds;
+            responseData["success"] = true;
         }
 
         private void XmlRpcGetAgentCount(XmlRpcRequest request, XmlRpcResponse response, IPEndPoint remoteClient)

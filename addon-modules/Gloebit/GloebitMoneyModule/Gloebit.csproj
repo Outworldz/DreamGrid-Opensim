@@ -159,6 +159,12 @@
     <Compile Include="GMMLoginBalanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="obj\Debug\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="obj\Release\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <EmbeddedResource Include="Resources\GloebitSubscriptionsMySQL.migrations">
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\GloebitSubscriptionsPGSQL.migrations">

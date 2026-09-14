@@ -30,8 +30,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using log4net;
 using Nini.Config;
 using OpenMetaverse;
@@ -439,6 +441,14 @@ namespace OpenSim
 
             int port = regionInfo.InternalEndPoint.Port;
 
+            // Self-report our own PID to DreamGrid as early as possible in boot - well before RegionReadyModule's
+            // alert (which waits for the script-compile queue to empty, potentially minutes into boot). DreamGrid uses
+            // this to positively identify which OpenSim.exe process belongs to which region, instead of only ever
+            // re-reading a possibly-stale PID.pid file whose PID Windows may since have recycled to an unrelated
+            // process. Fire-and-forget: OpenSim is routinely run standalone with no DreamGrid listening at all, so
+            // this must never block or fail region boot.
+            NotifyDreamGridOfPidFireAndForget(regionInfo);
+
             // set initial RegionID to originRegionID in RegionInfo. (it needs for loding prims)
             // Commented this out because otherwise regions can't register with
             // the grid as there is already another region with the same UUID
@@ -578,6 +588,47 @@ namespace OpenSim
             }
 
             //return clientServers;
+        }
+
+        /// <summary>
+        /// Self-reports this process's own PID and the region's UUID to DreamGrid, as early in boot as possible - see
+        /// the call site in CreateRegion for why (DreamGrid needs a value it can trust more than PID.pid, which this
+        /// process itself writes but which a stale copy can point at a PID Windows has since recycled to an unrelated
+        /// process). Modeled on SmartStart.SmartStartNotify's simple HttpWebRequest style, but as a genuinely
+        /// fire-and-forget async call: OpenSim is routinely run standalone with no DreamGrid listening at all, so this
+        /// must never block the calling (boot) thread, and any failure - unreachable host, timeout, DNS failure, no
+        /// [RegionReady] config section - must be silently swallowed with zero observable effect on region boot.
+        /// </summary>
+        private void NotifyDreamGridOfPidFireAndForget(RegionInfo regionInfo)
+        {
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    IConfig regionReadyConfig = Config.Configs["RegionReady"];
+                    if (regionReadyConfig == null) return;
+
+                    string alertUri = regionReadyConfig.GetString("alert_uri", string.Empty);
+                    if (string.IsNullOrEmpty(alertUri)) return;
+
+                    string json = "{" +
+                        "\"alert\":\"regionpid\"," +
+                        "\"login\":\"regionpid\"," +
+                        "\"region_name\":\"" + regionInfo.RegionName + "\"," +
+                        "\"region_id\":\"" + regionInfo.RegionID + "\"," +
+                        "\"pid\":" + Environment.ProcessId +
+                        "}";
+
+                    using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(3) };
+                    using var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    await client.PostAsync(alertUri, content).ConfigureAwait(false);
+                }
+                catch
+                {
+                    // Silently ignored by design - see method summary. A standalone region with no DreamGrid
+                    // listening must boot exactly as if this call didn't exist.
+                }
+            });
         }
 
         /// <summary>

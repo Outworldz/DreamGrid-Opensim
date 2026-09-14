@@ -546,6 +546,7 @@ namespace OpenSim.Region.UserStatistics
                 usd.run_time = (float)agent_map["run_time"].AsReal();
                 usd.start_time = (float)agent_map["start_time"].AsReal();
                 usd.client_version = agent_map["version"].AsString();
+                OpenSim.Framework.ClientVersionCache.ClientVersionByAgent[agentID] = usd.client_version;
 
                 UserSessionUtil.UpdateMultiItems(ref usd, agent_map["agents_in_view"].AsInteger(),
                                                  (float)agent_map["ping"].AsReal(),

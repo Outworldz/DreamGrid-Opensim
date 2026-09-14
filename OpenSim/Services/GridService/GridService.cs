@@ -518,48 +518,14 @@ namespace OpenSim.Services.GridService
 
 
         //DreamGrid SmartStart
-
-        static async Task<String> GetAsync(HttpClient httpClient, Uri url)
-        {
-            using HttpResponseMessage response = await httpClient.GetAsync(url);
-
-            response.EnsureSuccessStatusCode();
-
-            var Response = await response.Content.ReadAsStringAsync();
-
-            if (string.IsNullOrEmpty(Response))
-            {
-                //m_log.Debug("[LLoginService]: Smart Start returned null");
-                return null;
-            }
-
-            //m_log.Debug("[LLoginService]: Smart Start returned " + Response);
-            return Response;            
-            
-        }
-
         public UUID GetSmartStartALTRegion(UUID regionID, UUID agentID)
         {
             // !!! DreamGrid Smart Start sends requested Region UUID to Dreamgrid.
             // If region is on line, returns same UUID. If Offline, returns UUID for Welcome, brings up the region and teleports you to it.
-            if (m_SmartStartEnabled)
-            {
-                Uri url = new($"{m_SmartStartUrl}?alt={regionID}&agentid={agentID}&password={m_SmartStartMachineID}");
-                
-                //m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
-
-                // Call aynchronous network methods in a try/catch block to handle exceptions.
-                HttpClient sharedClient = new()
-                {
-                    BaseAddress = url
-                };
-                Task<string> task1 = GetAsync(sharedClient, url);
-                if (task1.Result != null)
-                {
-                    regionID = new UUID(task1.Result);
-                }                
-            }
-            return regionID;
+            UUID? result = SmartStartAltClient.Query(regionID, agentID,
+                m_SmartStartEnabled, m_SmartStartUrl, m_SmartStartMachineID,
+                requireNonZeroAgent: false, logTag: "[GridService]");
+            return result ?? regionID;
         }
         public GridRegion GetRegionByUUID(UUID scopeID, UUID regionID)
         {

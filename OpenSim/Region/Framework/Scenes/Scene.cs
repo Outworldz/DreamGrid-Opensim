@@ -794,52 +794,15 @@ namespace OpenSim.Region.Framework.Scenes
         //DreamGrid SmartStart
         public UUID GetSmartStartALTRegion(UUID regionID, UUID agentID)
         {
-
             // !!! DreamGrid Smart Start sends requested Region UUID to Dreamgrid.
             // If region is on line, returns same UUID. If Offline, returns UUID for Welcome, brings up the region and teleports you to it.
-            if (m_SmartStartEnabled && agentID != UUID.Zero)
-            {
-                string url = $"{m_SmartStartUrl}?alt={regionID}&agent=UUI&agentid={agentID}&password={m_SmartStartMachineID}";
-                //m_log.DebugFormat("[LLoginService]: Smart Start Sending request {0}", url);
-
-                System.Net.HttpWebRequest webRequest;
-                try
-                {
-                    webRequest = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
-                }
-                catch
-                {
-                    m_log.Debug("[LLoginService]: Smart Start failed to create url");
-                    return UUID.Zero;
-                }
-
-                webRequest.Timeout = 5000; //5 Second Timeout
-                webRequest.AllowWriteStreamBuffering = false;
-
-                try
-                {
-                    string tempStr;
-                    using (System.Net.HttpWebResponse webResponse = (System.Net.HttpWebResponse)webRequest.GetResponse())
-                    {
-                        using (StreamReader reader = new StreamReader(webResponse.GetResponseStream()))
-                            tempStr = reader.ReadToEnd();
-                    }
-
-                    if (string.IsNullOrEmpty(tempStr))
-                    {
-                       // m_log.Debug("[LLoginService]: Smart Start returned null");
-                        return UUID.Zero;
-                    }
-
-                    //m_log.Debug("[LLoginService]: Smart Start returned " + tempStr);
-                    regionID = UUID.Parse(tempStr);
-                }
-                catch (Exception ex)
-                {
-                    m_log.Warn("[LLoginService]: Smart Start exception: " + ex.Message);
-                }
-            }
-            return regionID;
+            // Also includes this agent's most recently reported viewer version (if WebStatsModule has captured one
+            // yet - see ClientVersionCache) so DreamGrid can enforce a minimum viewer version on the same round trip.
+            ClientVersionCache.ClientVersionByAgent.TryGetValue(agentID, out string clientVersion);
+            UUID? result = SmartStartAltClient.Query(regionID, agentID,
+                m_SmartStartEnabled, m_SmartStartUrl, m_SmartStartMachineID,
+                requireNonZeroAgent: true, logTag: "[Scene]", clientVersion: clientVersion);
+            return result ?? UUID.Zero;
         }
 
         public Scene(RegionInfo regInfo, AgentCircuitManager authen,

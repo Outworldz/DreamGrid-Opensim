@@ -354,52 +354,12 @@ namespace OpenSim.Services.HypergridService
         //DreamGrid Smart Start Done
         public UUID GetSmartStartALTRegion(UUID regionID, UUID agentID)
         {
-
             // !!! DreamGrid Smart Start sends requested Region UUID to Dreamgrid.
             // If region is on line, returns same UUID. If Offline, returns UUID for Welcome, brings up the region and teleports you to it.
-            if (m_SmartStartEnabled && agentID != UUID.Zero)
-            {
-                string url = $"{m_SmartStartUrl}?alt={regionID}&agentid={agentID}&password={m_SmartStartMachineID}";
-               // m_log.DebugFormat("[GateKeeperService]: Smart Start Sending request {0}", url);
-
-                HttpWebRequest webRequest;
-                try
-                {
-                    webRequest = (HttpWebRequest)WebRequest.Create(url);
-                }
-                catch
-                {
-                    m_log.Debug("[GatekeeperService]: Smart Start failed to create url");
-                    return UUID.Zero;
-                }
-
-                webRequest.Timeout = 5000; //5 Second Timeout
-                webRequest.AllowWriteStreamBuffering = false;
-
-                try
-                {
-                    string tempStr;
-                    using (HttpWebResponse webResponse = (HttpWebResponse)webRequest.GetResponse())
-                    {
-                        using (StreamReader reader = new StreamReader(webResponse.GetResponseStream()))
-                            tempStr = reader.ReadToEnd();
-                    }
-
-                    if (string.IsNullOrEmpty(tempStr))
-                    {
-                       // m_log.Debug("[GateKeeperService]: Smart Start returned null");
-                        return UUID.Zero;
-                    }
-
-                   // m_log.Debug("[GateKeeperService]: Smart Start returned " + tempStr);
-                    regionID = UUID.Parse(tempStr);
-                }
-                catch (Exception ex)
-                {
-                    m_log.Warn("[LLoginService]: Smart Start exception: " + ex.Message);
-                }
-            }
-            return regionID;
+            UUID? result = SmartStartAltClient.Query(regionID, agentID,
+                m_SmartStartEnabled, m_SmartStartUrl, m_SmartStartMachineID,
+                requireNonZeroAgent: true, logTag: "[GatekeeperService]");
+            return result ?? UUID.Zero;
         }
 
         #region Login Agent
