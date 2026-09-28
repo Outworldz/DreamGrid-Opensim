@@ -2,7 +2,7 @@
   "profiles": {
     "OpenSim": {
       "commandName": "Project",
-      "commandLineArgs": " -inidirectory=\"Regions\\Outworldz Welcome"
+      "commandLineArgs": " -inidirectory=\"Regions\\Outworldz Welcome\""
     }
   }
 }
