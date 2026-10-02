@@ -1989,32 +1989,14 @@ namespace OpenSim.ApplicationPlugins.RemoteController
             {
                 string command = requestData["command"].ToString();
 
-                // Create a StringWriter to capture the console output
-                using (var writer = new StringWriter())
-                {
-                    var originalOut = Console.Out;
-                    try
-                    {
-                        Console.SetOut(writer);
+                // Run the command straight on the console. Do NOT redirect Console.Out around it: LocalConsole tracks
+                // the prompt's row via Console.CursorTop/SetCursorPosition, which still act on the real window while
+                // its text goes to the redirected writer. That left its saved row stale, so every later line (e.g.
+                // "save oar" progress) was drawn over one line near the top of the DOS box, as if it had a CR and no LF.
+                // Redirecting is process-wide, too, so other threads' log output was swallowed while it was active.
+                MainConsole.Instance.RunCommand(command);
 
-                        // Execute the command
-                        MainConsole.Instance.RunCommand(command);
-                    }
-                    finally
-                    {
-                        // Restore the original console output
-                        Console.SetOut(originalOut);
-                    }
-
-                    // Capturing console output
-                    string consoleOutput = writer.ToString();
-
-                    // Display the captured output in the console
-                    Console.WriteLine(consoleOutput);
-
-                    responseData["success"] = true;
-                    responseData["message"] = consoleOutput;
-                }
+                responseData["success"] = true;
             }
             catch (ArgumentNullException ex)
             {
