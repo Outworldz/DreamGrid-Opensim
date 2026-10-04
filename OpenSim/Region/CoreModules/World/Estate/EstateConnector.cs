@@ -137,7 +137,26 @@ namespace OpenSim.Region.CoreModules.World.Estate
             SendToEstate(EstateID, sendData);
         }
 
+        // Tells the other OpenSim instances in the estate to refresh. Fire and forget (DreamGrid, 2026-10-04): this used
+        // to run on the caller's thread, one instance at a time, each waiting up to 30 s - every OAR load ends with a
+        // TriggerRegionInfoChange, so a load sat 30 s per frozen or busy instance in the estate (1.4 min seen live) just
+        // to tell neighbours to refresh, where nobody usually is. Local regions are still handled by the callers first.
         private void SendToEstate(uint EstateID, Dictionary<string, object> sendData)
+        {
+            Util.FireAndForget(delegate
+            {
+                try
+                {
+                    SendToEstateNow(EstateID, sendData);
+                }
+                catch (Exception e)
+                {
+                    m_log.DebugFormat("[ESTATE CONNECTOR]: Could not notify the estate {0}: {1}", EstateID, e.Message);
+                }
+            }, null, "EstateConnector.SendToEstate", false);
+        }
+
+        private void SendToEstateNow(uint EstateID, Dictionary<string, object> sendData)
         {
             List<UUID> regions = m_EstateModule.Scenes[0].GetEstateRegions((int)EstateID);
 
@@ -178,7 +197,9 @@ namespace OpenSim.Region.CoreModules.World.Estate
                     string url = region.ExternalHostName + ":" + region.HttpPort;
                     if(done.Contains(url))
                         continue;
-                    Call(region, sendData);
+                    // each instance on its own, so one that does not answer never holds up the others
+                    GridRegion target = region;
+                    Util.FireAndForget(delegate { Call(target, sendData); }, null, "EstateConnector.Call", false);
                     done.Add(url);
                 }
             }
