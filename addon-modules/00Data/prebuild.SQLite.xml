@@ -13,7 +13,7 @@
 
 	<ReferencePath>../../../bin/</ReferencePath>
 
-	<Reference name="Mono.Data.Sqlite" />
+	<Reference name="System.Data.SQLite" />
 	<Reference name="OpenMetaverseTypes" path="../../../bin/" />
 
 	<Reference name="OpenSim.Framework" />
