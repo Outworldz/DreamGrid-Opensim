@@ -53,7 +53,8 @@ namespace Diva.Wifi
             string notification;
             string authtoken = null;
             UserAccount account = m_UserAccountService.GetUserAccount(UUID.Zero, first, last);
-            if (account != null)
+            // An account below level 0 (no login, or deleted) may not log in here either
+            if (account != null && account.UserLevel >= 0)
                 authtoken = m_AuthenticationService.Authenticate(account.PrincipalID, encpass, 30);
             if (string.IsNullOrEmpty(authtoken))
                 notification = _("Login failed.", env);
