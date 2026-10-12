@@ -213,9 +213,21 @@ namespace Diva.Wifi
                     if (m_Sessions.TryGetValue(sid, out session) &&
                         session.IpAddress == request.IPEndPoint.Address.ToString())
                     {
-                        sinfo = session;
-                        m_Sessions.AddOrUpdate(sid, session, m_WebApp.SessionTimeout);
-                        success = true;
+                        // The level is read again on every request: an account set to no login, or deleted,
+                        // while it is logged in here loses its session at once instead of at the timeout.
+                        UserAccount current = null;
+                        if (session.Account != null)
+                            current = m_UserAccountService.GetUserAccount(UUID.Zero, session.Account.PrincipalID);
+                        if (session.Account != null && (current == null || current.UserLevel < 0))
+                        {
+                            m_Sessions.Remove(sid);
+                        }
+                        else
+                        {
+                            sinfo = session;
+                            m_Sessions.AddOrUpdate(sid, session, m_WebApp.SessionTimeout);
+                            success = true;
+                        }
                     }
                 }
                 else
