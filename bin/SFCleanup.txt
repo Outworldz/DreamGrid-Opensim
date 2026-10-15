@@ -4,7 +4,7 @@ delete object name "SF Cherries"
 delete object name "SF Oranges"
 delete object name "SF Lemons"
 delete object name "SF Lettuce"
-delete object name "SF Limes
+delete object name "SF Limes"
 delete object name "SF Olives"
 delete object name "SF Onions"
 delete object name "SF Peppers"
