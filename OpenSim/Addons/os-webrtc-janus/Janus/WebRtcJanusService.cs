@@ -56,6 +56,9 @@ namespace osWebRtcVoice
         private bool _JanusDebug = false;
         private bool _MessageDetails = false;
 
+        // [JanusWebRtcVoice] SpatialAudio. False (default) makes region and parcel rooms mono.
+        private bool _SpatialAudio = false;
+
         // Maximum ICE candidates accepted from one VoiceSignalingRequest call.
         // <= 0 means no limit.
         private int _MaxSignalingCandidatesPerRequest = 20;
@@ -96,6 +99,8 @@ namespace osWebRtcVoice
                     // Debugging options
                     _JanusDebug = janusConfig.GetBoolean("JanusDebug", false);
                     _MessageDetails = janusConfig.GetBoolean("MessageDetails", false);
+
+                    _SpatialAudio = janusConfig.GetBoolean("SpatialAudio", false);
 
                     _MaxSignalingCandidatesPerRequest = janusConfig.GetInt("MaxSignalingCandidatesPerRequest", 20);
                     if (_MaxSignalingCandidatesPerRequest < 0)
@@ -319,7 +324,7 @@ namespace osWebRtcVoice
                 string channel_credentials = pRequest.TryGetString("credentials", out string cred) ? cred : string.Empty;
                 string channel_type = pRequest["channel_type"].AsString();
                 string gridHash = pRequest.TryGetValue("gridhash", out OSD ghash) ? ghash.AsString() : string.Empty;
-                bool isSpatial = channel_type == "local";
+                bool isSpatial = _SpatialAudio && channel_type == "local";
 
                 _log.DebugFormat("{0} ProvisionVoiceAccountRequest: parcel_id={1} channel_id={2} channel_type={3} voice_server_type={4}", LogHeader, parcel_local_id, channel_id, channel_type, voice_server_type); 
 
