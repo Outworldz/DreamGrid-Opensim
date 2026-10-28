@@ -88,8 +88,9 @@ namespace osWebRtcVoice
                     _JanusAdminURI = janusConfig.GetString("JanusGatewayAdminURI", string.Empty);
                     _JanusAdminToken = janusConfig.GetString("AdminAPIToken", string.Empty);
 
-                    if (string.IsNullOrEmpty(_JanusServerURI) || string.IsNullOrEmpty(_JanusAPIToken) ||
-                        string.IsNullOrEmpty(_JanusAdminURI) || string.IsNullOrEmpty(_JanusAdminToken))
+                    // Only the gateway URI and API token are needed for voice. The admin URI and token are used
+                    //     only by the "janus list sessions" console command, and belong to the Janus server's owner.
+                    if (string.IsNullOrEmpty(_JanusServerURI) || string.IsNullOrEmpty(_JanusAPIToken))
                     {
                         _log.Error($"{LogHeader} JanusWebRtcVoice configuration section missing required fields");
                         _Enabled = false;
@@ -815,6 +816,12 @@ namespace osWebRtcVoice
         {
             if (_ViewerSession is null || _ViewerSession.Session is null)
                 return;
+
+            if (string.IsNullOrEmpty(_JanusAdminURI) || string.IsNullOrEmpty(_JanusAdminToken))
+            {
+                WriteOut("Janus admin is not configured (JanusGatewayAdminURI and AdminAPIToken in [JanusWebRtcVoice])");
+                return;
+            }
 
             JanusMessageResp resp = await _ViewerSession.Session.SendToJanusAdmin(new JanusMessageReq("list_sessions")).ConfigureAwait(false);
             if (resp is null)
