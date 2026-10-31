@@ -109,7 +109,7 @@ NoVerifyCertHostname=true
 [ServiceList]
 AssetServiceConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:AssetServiceConnector"
 InventoryInConnector="${Const|PrivatePort}/OpenSim.Server.Handlers.dll:XInventoryInConnector"
-
+VoiceConnector=
 
 ;; Uncomment if you have set up Freeswitch (see [FreeswitchService] below)
 ;VoiceConnector = "8004/OpenSim.Server.Handlers.dll:FreeswitchServerConnector"
